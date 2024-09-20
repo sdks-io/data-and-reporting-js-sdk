@@ -82,10 +82,10 @@ export interface PriceTransSummaryRequest {
   /**
    * Product Id
    * Example:
-   * 21	Unleaded - High octane
-   * 22	Unleaded - Medium octane
-   * 23	Unleaded - Low octane
-   * 24	Unleaded Environmental
+   * 21    Unleaded - High octane
+   * 22    Unleaded - Medium octane
+   * 23    Unleaded - Low octane
+   * 24    Unleaded Environmental
    */
   productId?: number;
   /**
@@ -93,10 +93,10 @@ export interface PriceTransSummaryRequest {
    * Optional
    * Max Length: 8
    * Example:
-   * 10	TMF Charges
-   * 11	Tunnel/Bridges
-   * 12	Motorway toll
-   * 13	Ferries
+   * 10    TMF Charges
+   * 11    Tunnel/Bridges
+   * 12    Motorway toll
+   * 13    Ferries
    */
   productCode?: string;
   /**
@@ -124,19 +124,19 @@ export interface PriceTransSummaryRequest {
   /**
    * Transactions Period.
    * Possible values are:
-   * 1.	Last 7 Days
-   * 2.	Last 30 Days
-   * 3.	Last 90 Days
+   * 1.    Last 7 Days
+   * 2.    Last 30 Days
+   * 3.    Last 90 Days
    * Optional - Refer introduction section of this operation for the priority and sequence of different date and invoice number filters that are conditionally applied.
    */
   period?: number;
   /**
    * Site Code as configured in GFN
    * Example:
-   * 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755
-   * 050002 -	CHARNOCK RICHARD STHBOUND MWSA 0755
-   * 050005 -	HARTSHEAD MOOR EASTBOUND MWSA 0761.
-   * 050006 -	HARTSHEAD MOOR WESTBOUND MWSA.
+   * 050001 -    CHARNOCK RICHARD NTHBOUND MWSA 0755
+   * 050002 -    CHARNOCK RICHARD STHBOUND MWSA 0755
+   * 050005 -    HARTSHEAD MOOR EASTBOUND MWSA 0761.
+   * 050006 -    HARTSHEAD MOOR WESTBOUND MWSA.
    * Note: If IncludeFees is true then this filter will be ignored
    */
   siteCode?: string;

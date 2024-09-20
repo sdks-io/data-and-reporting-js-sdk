@@ -29,9 +29,9 @@ export interface SearchDocumentsInvoice {
   /**
    * Document type
    * String containing one of the following values:
-   * •	NAT (National)
-   * •	INT (International)
-   * •	SOA (Statement of Account)
+   * •    NAT (National)
+   * •    INT (International)
+   * •    SOA (Statement of Account)
    */
   documentType?: string | null;
   /** Included tax amount in the invoice */

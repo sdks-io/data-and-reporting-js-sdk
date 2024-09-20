@@ -18,12 +18,12 @@ Allowed Sorting Options
 
 | Name |
 |  --- |
-| `enum1` |
-| `enum2` |
-| `enum3` |
-| `enum4` |
-| `enum5` |
-| `enum6` |
+| `Enum1` |
+| `Enum2` |
+| `Enum3` |
+| `Enum4` |
+| `Enum5` |
+| `Enum6` |
 
 ## Example
 

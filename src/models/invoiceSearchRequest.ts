@@ -16,10 +16,10 @@ export interface InvoiceSearchRequest {
   page?: number;
   /**
    * Sort option –
-   * 1.	InvoiceDate ASC
-   * 2.	InvoiceDate DESC
-   * 3.	NetAmountCustomerCurrency ASC
-   * 4.	NetAmountCustomerCurrency DESC
+   * 1.    InvoiceDate ASC
+   * 2.    InvoiceDate DESC
+   * 3.    NetAmountCustomerCurrency ASC
+   * 4.    NetAmountCustomerCurrency DESC
    * Optional
    * Note:
    * This option uses a column name with a combination of “ASC or DESC” for sorting.

@@ -16,8 +16,8 @@ export interface EIDDocument {
   /**
    * Document type.
    * Possible values:
-   * •	NAT (National)
-   * •	INT (International)
+   * •    NAT (National)
+   * •    INT (International)
    */
   documentType?: string | null;
   /** Document format (CHORUS, DIFI etc.) */
@@ -34,10 +34,10 @@ export interface EIDDocument {
   /**
    * Document status.
    * Possible values:
-   * •	NEW
-   * •	VIEWED
-   * •	DOWNLOADED
-   * •	RESTORED
+   * •    NEW
+   * •    VIEWED
+   * •    DOWNLOADED
+   * •    RESTORED
    */
   documentStatus?: string | null;
   /** Document file name. */

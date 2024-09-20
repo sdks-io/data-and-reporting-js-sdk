@@ -17,7 +17,7 @@
 | `allowFleetIdInput` | `boolean \| undefined` | Optional | True/False.<br>When false, users should not be allowed to enable Fleet Id prompt option while ordering cards under this account. |
 | `band` | `string \| null \| undefined` | Optional | Band Id and Description of the Payer in Card Platform<br>e.g. (Id – Description):<br>1-Platinum<br>2-Gold<br>3-Silver<br>4-Bronze |
 | `billingAddress` | [`Address \| undefined`](../../doc/models/address.md) | Optional | - |
-| `cardGroupPosition` | `string \| null \| undefined` | Optional | Card group position at –<br>•	Payer – Payer level<br>•	Account – Account level |
+| `cardGroupPosition` | `string \| null \| undefined` | Optional | Card group position at –<br>•    Payer – Payer level<br>•    Account – Account level |
 | `correspondenceAddress` | [`Address \| undefined`](../../doc/models/address.md) | Optional | - |
 | `deliveryAddresses` | [`DeliveryAddresses[] \| undefined`](../../doc/models/delivery-addresses.md) | Optional | - |
 | `fleetPin` | `boolean \| undefined` | Optional | Is Fleet Pin optional enabled for the selected account |

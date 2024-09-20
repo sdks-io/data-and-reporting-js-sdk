@@ -41,18 +41,16 @@ This API will also query the relevant invoice documents list and return a refere
 * Search invoices by fixed and custom date periods
 
 ```ts
-async invoiceSearch(
-  requestId: string,
+async invoiceSearch(  requestId: string,
   body?: InvoiceSearchRequest,
-  requestOptions?: RequestOptions
-): Promise<ApiResponse<InvoiceSearchResponse>>
+requestOptions?: RequestOptions): Promise<ApiResponse<InvoiceSearchResponse>>
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`InvoiceSearchRequest \| undefined`](../../doc/models/invoice-search-request.md) | Body, Optional | Invoice Search RequestBody |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
@@ -182,11 +180,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Search400Error`](../../doc/models/invoice-management-v1-search-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Search401Error`](../../doc/models/invoice-management-v1-search-401-error.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Search403Error`](../../doc/models/invoice-management-v1-search-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Search404Error`](../../doc/models/invoice-management-v1-search-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Search500Error`](../../doc/models/invoice-management-v1-search-500-error.md) |
 
 
 # Invoice Summary
@@ -205,18 +203,16 @@ This API returns the high level summary of invoices that match the  given search
 * Search invoices by fixed and custom date periods
 
 ```ts
-async invoiceSummary(
-  requestId: string,
+async invoiceSummary(  requestId: string,
   body?: InvoiceSummaryRequest,
-  requestOptions?: RequestOptions
-): Promise<ApiResponse<InvoiceSummaryResponse>>
+requestOptions?: RequestOptions): Promise<ApiResponse<InvoiceSummaryResponse>>
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`InvoiceSummaryRequest \| undefined`](../../doc/models/invoice-summary-request.md) | Body, Optional | Invoice Search RequestBody |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
@@ -289,11 +285,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Summary400Error`](../../doc/models/invoice-management-v1-summary-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Summary401Error`](../../doc/models/invoice-management-v1-summary-401-error.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Summary403Error`](../../doc/models/invoice-management-v1-summary-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Summary404Error`](../../doc/models/invoice-management-v1-summary-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Summary500Error`](../../doc/models/invoice-management-v1-summary-500-error.md) |
 
 
 # Statement of Account
@@ -311,18 +307,16 @@ The endpoint supports querying SOA documents by various input parameters specifi
 * Search invoice SOA including invoice summary
 
 ```ts
-async statementOfAccount(
-  requestId: string,
+async statementOfAccount(  requestId: string,
   body?: StatementOfAccountRequest,
-  requestOptions?: RequestOptions
-): Promise<ApiResponse<StatementOfAccountResponse>>
+requestOptions?: RequestOptions): Promise<ApiResponse<StatementOfAccountResponse>>
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`StatementOfAccountRequest \| undefined`](../../doc/models/statement-of-account-request.md) | Body, Optional | StatementOfAccount RequestBody |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
@@ -450,11 +444,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Statementofaccount400Error`](../../doc/models/invoice-management-v1-statementofaccount-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Statementofaccount401Error`](../../doc/models/invoice-management-v1-statementofaccount-401-error.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Statementofaccount403Error`](../../doc/models/invoice-management-v1-statementofaccount-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Statementofaccount404Error`](../../doc/models/invoice-management-v1-statementofaccount-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Statementofaccount500Error`](../../doc/models/invoice-management-v1-statementofaccount-500-error.md) |
 
 
 # Dates
@@ -462,18 +456,16 @@ try {
 - This API will return the list of Invoice Dates and Numbers for the given date range. If the dates are not provided then it will fetch the data for past 13 months.
 
 ```ts
-async dates(
-  requestId: string,
+async dates(  requestId: string,
   body?: InvoiceDatesRequest,
-  requestOptions?: RequestOptions
-): Promise<ApiResponse<InvoiceDatesResponseData>>
+requestOptions?: RequestOptions): Promise<ApiResponse<InvoiceDatesResponseData>>
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`InvoiceDatesRequest \| undefined`](../../doc/models/invoice-dates-request.md) | Body, Optional | StatementOfAccount RequestBody |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
@@ -539,11 +531,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Dates400Error`](../../doc/models/invoice-management-v1-dates-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Dates401Error`](../../doc/models/invoice-management-v1-dates-401-error.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Dates403Error`](../../doc/models/invoice-management-v1-dates-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Dates404Error`](../../doc/models/invoice-management-v1-dates-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Dates500Error`](../../doc/models/invoice-management-v1-dates-500-error.md) |
 
 
 # Search Statement of Account
@@ -551,18 +543,16 @@ try {
 - This API will allow querying of SOA from different systems
 
 ```ts
-async searchStatementOfAccount(
-  requestId: string,
+async searchStatementOfAccount(  requestId: string,
   body?: SearchStatementOfAccountRequest,
-  requestOptions?: RequestOptions
-): Promise<ApiResponse<SearchStatementOfAccountResponse>>
+requestOptions?: RequestOptions): Promise<ApiResponse<SearchStatementOfAccountResponse>>
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`SearchStatementOfAccountRequest \| undefined`](../../doc/models/search-statement-of-account-request.md) | Body, Optional | searchstatementofaccount RequestBody |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
@@ -645,11 +635,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Searchstatementofaccount400Error`](../../doc/models/invoice-management-v1-searchstatementofaccount-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Searchstatementofaccount401Error`](../../doc/models/invoice-management-v1-searchstatementofaccount-401-error.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Searchstatementofaccount403Error`](../../doc/models/invoice-management-v1-searchstatementofaccount-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Searchstatementofaccount404Error`](../../doc/models/invoice-management-v1-searchstatementofaccount-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Searchstatementofaccount500Error`](../../doc/models/invoice-management-v1-searchstatementofaccount-500-error.md) |
 
 
 # Search Documents
@@ -657,18 +647,16 @@ try {
 - This API allows querying the details of all invoices successfully uploaded to the Worldline invoice repository and file reference numbers for downloading.
 
 ```ts
-async searchDocuments(
-  requestId: string,
+async searchDocuments(  requestId: string,
   body?: SearchDocumentsRequest,
-  requestOptions?: RequestOptions
-): Promise<ApiResponse<SearchDocumentsResponse>>
+requestOptions?: RequestOptions): Promise<ApiResponse<SearchDocumentsResponse>>
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`SearchDocumentsRequest \| undefined`](../../doc/models/search-documents-request.md) | Body, Optional | SearchDocuments RequestBody |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
@@ -763,11 +751,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Searchdocuments400Error`](../../doc/models/invoice-management-v1-searchdocuments-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Searchdocuments401Error`](../../doc/models/invoice-management-v1-searchdocuments-401-error.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Searchdocuments403Error`](../../doc/models/invoice-management-v1-searchdocuments-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Searchdocuments404Error`](../../doc/models/invoice-management-v1-searchdocuments-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Searchdocuments500Error`](../../doc/models/invoice-management-v1-searchdocuments-500-error.md) |
 
 
 # Eid Search
@@ -775,18 +763,16 @@ try {
 - This API provides the functionality needed for the screen “EID FILES” in the web interface. It allows retrieving a list of EIDs based on search criteria.
 
 ```ts
-async eidSearch(
-  requestId: string,
+async eidSearch(  requestId: string,
   body?: EIDSearchRequest,
-  requestOptions?: RequestOptions
-): Promise<ApiResponse<EIDDocumentResponse>>
+requestOptions?: RequestOptions): Promise<ApiResponse<EIDDocumentResponse>>
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`EIDSearchRequest \| undefined`](../../doc/models/eid-search-request.md) | Body, Optional | EIDSearch RequestBody |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
@@ -866,11 +852,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Eidsearch400Error`](../../doc/models/invoice-management-v1-eidsearch-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Eidsearch401Error`](../../doc/models/invoice-management-v1-eidsearch-401-error.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Eidsearch403Error`](../../doc/models/invoice-management-v1-eidsearch-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Eidsearch404Error`](../../doc/models/invoice-management-v1-eidsearch-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Eidsearch500Error`](../../doc/models/invoice-management-v1-eidsearch-500-error.md) |
 
 
 # Download
@@ -878,18 +864,16 @@ try {
 - This API downloads Invoice Documents i.e., ZIP file with Invoice PDF file and Proofing Elements in XML format from invoice repository.
 
 ```ts
-async download(
-  requestId: string,
+async download(  requestId: string,
   body?: InvoiceDownloadRequest,
-  requestOptions?: RequestOptions
-): Promise<ApiResponse<NodeJS.ReadableStream | Blob>>
+requestOptions?: RequestOptions): Promise<ApiResponse<NodeJS.ReadableStream | Blob>>
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`InvoiceDownloadRequest \| undefined`](../../doc/models/invoice-download-request.md) | Body, Optional | Invoice Download RequestBody |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
@@ -935,11 +919,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Download400Error`](../../doc/models/invoice-management-v1-download-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Download401Error`](../../doc/models/invoice-management-v1-download-401-error.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Download403Error`](../../doc/models/invoice-management-v1-download-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Download404Error`](../../doc/models/invoice-management-v1-download-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Download500Error`](../../doc/models/invoice-management-v1-download-500-error.md) |
 
 
 # Eid Download
@@ -948,18 +932,16 @@ try {
 - The number of EID that can be downloaded at once is limited to 100 documents.
 
 ```ts
-async eidDownload(
-  requestId: string,
+async eidDownload(  requestId: string,
   body?: EIDDownloadRequest,
-  requestOptions?: RequestOptions
-): Promise<ApiResponse<NodeJS.ReadableStream | Blob>>
+requestOptions?: RequestOptions): Promise<ApiResponse<NodeJS.ReadableStream | Blob>>
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`EIDDownloadRequest \| undefined`](../../doc/models/eid-download-request.md) | Body, Optional | EIDInvoice Download RequestBody |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
@@ -1005,9 +987,9 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Eiddownload400Error`](../../doc/models/invoice-management-v1-eiddownload-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Eiddownload401Error`](../../doc/models/invoice-management-v1-eiddownload-401-error.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Eiddownload403Error`](../../doc/models/invoice-management-v1-eiddownload-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Eiddownload404Error`](../../doc/models/invoice-management-v1-eiddownload-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Eiddownload500Error`](../../doc/models/invoice-management-v1-eiddownload-500-error.md) |
 

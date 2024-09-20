@@ -15,14 +15,30 @@ Go to the Shell Developer Portal: [https://developer.shell.com](https://develope
 Run the following command from your project directory to install the package from npm:
 
 ```ts
-npm install data-and-reporting-sdk@1.0.0
+npm install data-and-reporting-sdk@1.1.0
 ```
 
-For additional package details, see the [Npm page for the data-and-reporting-sdk@1.0.0 npm](https://www.npmjs.com/package/data-and-reporting-sdk/v/1.0.0).
+For additional package details, see the [Npm page for the data-and-reporting-sdk@1.1.0 npm](https://www.npmjs.com/package/data-and-reporting-sdk/v/1.1.0).
+
+## Test the SDK
+
+To validate the functionality of this SDK, you can execute all tests located in the `test` directory. This SDK utilizes `Jest` as both the testing framework and test runner.
+
+To run the tests, navigate to the root directory of the SDK and execute the following command:
+
+```bash
+npm run test
+```
+
+Or you can also run tests with coverage report:
+
+```bash
+npm run test:coverage
+```
 
 ## Initialize the API Client
 
-**_Note:_** Documentation for the client can be found [here.](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.0.0/doc/client.md)
+**_Note:_** Documentation for the client can be found [here.](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.1.0/doc/client.md)
 
 The following parameters are configurable for the API Client:
 
@@ -32,8 +48,8 @@ The following parameters are configurable for the API Client:
 | `timeout` | `number` | Timeout for API calls.<br>*Default*: `0` |
 | `httpClientOptions` | `Partial<HttpClientOptions>` | Stable configurable http client options. |
 | `unstableHttpClientOptions` | `any` | Unstable configurable http client options. |
-| `basicAuthCredentials` | [`BasicAuthCredentials`](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.0.0/doc/$a/https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.0.0/basic-authentication.md) | The credential object for basicAuth |
-| `bearerTokenCredentials` | [`BearerTokenCredentials`](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.0.0/doc/$a/https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.0.0/oauth-2-client-credentials-grant.md) | The credential object for bearerToken |
+| `basicAuthCredentials` | [`BasicAuthCredentials`](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.1.0/doc/auth/basic-authentication.md) | The credential object for basicAuth |
+| `bearerTokenCredentials` | [`BearerTokenCredentials`](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.1.0/doc/auth/oauth-2-client-credentials-grant.md) | The credential object for bearerToken |
 
 ### HttpClientOptions
 
@@ -88,18 +104,17 @@ The SDK can be configured to use a different environment for making API calls. A
 
 This API uses the following authentication schemes.
 
-* [`BasicAuth (Basic Authentication)`](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.0.0/doc/$a/https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.0.0/basic-authentication.md)
-* [`BearerToken (OAuth 2 Client Credentials Grant)`](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.0.0/doc/$a/https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.0.0/oauth-2-client-credentials-grant.md)
+* [`BasicAuth (Basic Authentication)`](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.1.0/doc/auth/basic-authentication.md)
+* [`BearerToken (OAuth 2 Client Credentials Grant)`](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.1.0/doc/auth/oauth-2-client-credentials-grant.md)
 
 ## List of APIs
 
-* [O Auth Authorization](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.0.0/doc/controllers/o-auth-authorization.md)
-* [Customer](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.0.0/doc/controllers/customer.md)
-* [Transaction](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.0.0/doc/controllers/transaction.md)
-* [Invoice](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.0.0/doc/controllers/invoice.md)
+* [Customer](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.1.0/doc/controllers/customer.md)
+* [Transaction](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.1.0/doc/controllers/transaction.md)
+* [Invoice](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.1.0/doc/controllers/invoice.md)
 
 ## Classes Documentation
 
-* [ApiResponse](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.0.0/doc/api-response.md)
-* [ApiError](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.0.0/doc/api-error.md)
+* [ApiResponse](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.1.0/doc/api-response.md)
+* [ApiError](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/1.1.0/doc/api-error.md)
 

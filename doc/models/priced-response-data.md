@@ -112,7 +112,7 @@
 | `quantity` | `number \| null \| undefined` | Optional | Quantity of the product |
 | `rebateRate` | `number \| null \| undefined` | Optional | Rebate rate if any |
 | `receiptNumber` | `number \| null \| undefined` | Optional | Reciept number |
-| `refundFlag` | [`PricedTransactionRespV2RefundFlagEnum \| undefined`](../../doc/models/priced-transaction-resp-v2-refund-flag-enum.md) | Optional | Flag to check if there is any refund<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
+| `refundFlag` | [`PricedTransactionRespV2RefundFlagEnum \| undefined`](../../doc/models/priced-transaction-resp-v2-refund-flag-enum.md) | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
 | `siteGroupId` | `number \| null \| undefined` | Optional | Group identifier for the site |
 | `siteGroupName` | `string \| null \| undefined` | Optional | Name of the Site group |
 | `latitude` | `number \| null \| undefined` | Optional | Latitude of the site |
@@ -278,7 +278,6 @@
   "Quantity": 43.28,
   "RebateRate": 0.0022,
   "ReceiptNumber": 6803,
-  "RefundFlag": "Y",
   "SiteGroupId": 202,
   "SiteGroupName": "CZ 9100 ECONOMY NETWORK",
   "Latitude": 53.83606,

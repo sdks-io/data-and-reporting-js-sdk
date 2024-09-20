@@ -14,7 +14,10 @@ import {
   Schema,
   string,
 } from '../schema';
-import { AssociatedAccount, associatedAccountSchema } from './associatedAccount';
+import {
+  AssociatedAccount,
+  associatedAccountSchema,
+} from './associatedAccount';
 import { FeeRuleLocation, feeRuleLocationSchema } from './feeRuleLocation';
 import { FeeRuleProduct, feeRuleProductSchema } from './feeRuleProduct';
 import { FeeRuleTier, feeRuleTierSchema } from './feeRuleTier';

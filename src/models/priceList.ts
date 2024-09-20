@@ -81,10 +81,10 @@ export interface PriceList {
   /**
    * Price Type
    * Possible Values are:
-   * •	Country– Price rule defined at country whereas Price Rule DelcoId same as ColcoId.
-   * •	TPNDelcoPrice – Price rule defined in the TPN whereas Price Rule DelcoId is different from ColcoId.
-   * •	NetworkPrice – Price rule defined at Fuel Network level.
-   * •	Other – Price rule defined at either Site or SiteGroup level.
+   * •    Country– Price rule defined at country whereas Price Rule DelcoId same as ColcoId.
+   * •    TPNDelcoPrice – Price rule defined in the TPN whereas Price Rule DelcoId is different from ColcoId.
+   * •    NetworkPrice – Price rule defined at Fuel Network level.
+   * •    Other – Price rule defined at either Site or SiteGroup level.
    */
   priceType?: string | null;
   /**
@@ -109,9 +109,9 @@ export interface PriceList {
   /**
    * Company Name of the price rule DelCo.
    * E.g.:
-   * •	Pilipinas Shell Petroleum Corp
-   * •	Shell U.K. Oil Products Limited
-   * •	G & V SERVICE STATIONS NV
+   * •    Pilipinas Shell Petroleum Corp
+   * •    Shell U.K. Oil Products Limited
+   * •    G & V SERVICE STATIONS NV
    */
   priceRuleDelcoName?: string | null;
   /**

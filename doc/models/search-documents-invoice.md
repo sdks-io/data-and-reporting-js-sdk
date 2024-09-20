@@ -14,7 +14,7 @@
 | `payerName` | `string \| null \| undefined` | Optional | Customer payer name |
 | `accountNumber` | `string \| null \| undefined` | Optional | Account Number<br>Example: GB99215176 |
 | `accountName` | `string \| null \| undefined` | Optional | Invoice account name |
-| `documentType` | `string \| null \| undefined` | Optional | Document type<br>String containing one of the following values:<br>•	NAT (National)<br>•	INT (International)<br>•	SOA (Statement of Account) |
+| `documentType` | `string \| null \| undefined` | Optional | Document type<br>String containing one of the following values:<br>•    NAT (National)<br>•    INT (International)<br>•    SOA (Statement of Account) |
 | `grossAmount` | `number \| null \| undefined` | Optional | Included tax amount in the invoice |
 | `netAmount` | `number \| null \| undefined` | Optional | - |
 | `taxAmount` | `number \| null \| undefined` | Optional | - |

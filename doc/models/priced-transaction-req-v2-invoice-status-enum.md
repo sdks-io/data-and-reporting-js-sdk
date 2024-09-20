@@ -11,9 +11,9 @@ Invoice status of the transactions. Mandatory Possible options:I - Invoiced, U â
 
 | Name |
 |  --- |
-| `i` |
-| `u` |
-| `a` |
+| `I` |
+| `U` |
+| `A` |
 
 ## Example
 

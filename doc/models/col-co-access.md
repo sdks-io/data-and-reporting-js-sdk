@@ -12,7 +12,7 @@
 | `colCoId` | `string \| null \| undefined` | Optional | Collecting company ID. |
 | `colCoCode` | `string \| null \| undefined` | Optional | Collecting company code. |
 | `colCoCountryName` | `string \| null \| undefined` | Optional | Collecting company’s Country name. ex: United Kingdom |
-| `issuingCountryNumber` | `string \| null \| undefined` | Optional | Issuing Country Number.<br>ex: 032 - Czech Republic |
+| `issuingCountryNumber` | `string \| null \| undefined` | Optional | Issuing Country Number.<br><br>ex: 032 - Czech Republic |
 
 ## Example (as JSON)
 

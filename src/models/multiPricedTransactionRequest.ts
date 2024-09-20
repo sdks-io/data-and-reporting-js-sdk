@@ -39,10 +39,10 @@ export interface MultiPricedTransactionRequest {
   /**
    * List of Payers/Accounts entity.
    * Mandatory.
-   * •	Max number of payers allowed in the input is 10, if it exceeds in the input it will throw an error.
-   * •	This value is configurable. Initial configuration will be 100 and will change to 10 once SFH changes are integrated.
+   * •    Max number of payers allowed in the input is 10, if it exceeds in the input it will throw an error.
+   * •    This value is configurable. Initial configuration will be 100 and will change to 10 once SFH changes are integrated.
    * Note:
-   * 1.	At least one payer should be present.
+   * 1.    At least one payer should be present.
    * Accounts information are optional.
    */
   accounts: MultiPricedTransactionRequestAccountsItems[];
@@ -78,9 +78,9 @@ export interface MultiPricedTransactionRequest {
   /**
    * Transactions Period.
    * Possible values are:
-   * 1.	Last 7 Days
-   * 2.	Last 30 Days
-   * 3.	Last 90 Days
+   * 1.    Last 7 Days
+   * 2.    Last 30 Days
+   * 3.    Last 90 Days
    */
   period?: number;
   /**
@@ -105,7 +105,6 @@ export interface MultiPricedTransactionRequest {
    * Note:
    * 1) If value is not blank then the system will ignore the InvoiceStatus parameter and it will return all the billed transactions for the given invoice date.
    * 2) If IncludeFees is true then this filter will be ignored
-   * 
    * Format: yyyyMMdd
    */
   invoiceDate?: string;
@@ -161,12 +160,12 @@ export interface MultiPricedTransactionRequest {
   includeFees?: boolean;
   /**
    * Allowed Sorting Options:
-   * 1.	TransactionDateAscending
-   * 2.	TransactionDateDescending
-   * 3.	GrossAmountDescending
-   * 4.	GrossAmountAscending
-   * 5.	NetAmountAscending
-   * 6.	NetAmountDescensding
+   * 1.    TransactionDateAscending
+   * 2.    TransactionDateDescending
+   * 3.    GrossAmountDescending
+   * 4.    GrossAmountAscending
+   * 5.    NetAmountAscending
+   * 6.    NetAmountDescensding
    * Example value to be passed: 1,3
    * Note: If IncludeFees is ‘True’ then sorting is not allowed. This parameter will be ignored.
    */

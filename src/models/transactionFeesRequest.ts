@@ -103,10 +103,10 @@ export interface TransactionFeesRequest {
   toDate?: string | null;
   /**
    * Fee items Period. This is ignored when FromDate/Todate is supplied on the request.
-   * 1.	Last 7 Days
-   * 2.	Last 30 Days
-   * 3.	Last 90 Days
-   * 4.	Last 180 Days
+   * 1.    Last 7 Days
+   * 2.    Last 30 Days
+   * 3.    Last 90 Days
+   * 4.    Last 180 Days
    * Example : Pass 1 for Last 7 days fee items
    */
   period?: number | null;
@@ -116,11 +116,11 @@ export interface TransactionFeesRequest {
    * Product Id
    * Optional
    * Example: Sample list of product ids and description.
-   * 100	Service fee
-   * 102	Invoice production fee
-   * 103	Account fee
-   * 104	Transaction fee
-   * 105	Card membership fee
+   * 100    Service fee
+   * 102    Invoice production fee
+   * 103    Account fee
+   * 104    Transaction fee
+   * 105    Card membership fee
    */
   productId?: number | null;
   /**
@@ -143,10 +143,10 @@ export interface TransactionFeesRequest {
   lineItemDescription?: string | null;
   /**
    * Allowed Sorting Options:
-   * •	FeeDateAscending
-   * •	FeeDateDescending
-   * •	NetAmountAscending
-   * •	NetAmountDescending
+   * •    FeeDateAscending
+   * •    FeeDateDescending
+   * •    NetAmountAscending
+   * •    NetAmountDescending
    * Optional.
    * Default: 1
    */

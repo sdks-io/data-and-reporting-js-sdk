@@ -110,9 +110,9 @@ export interface InvoiceSearchRequestFilters {
   soAReferenceNumber?: string | null;
   /**
    * Invoice date search period. Valid values –
-   * 1.	Last 7 days – Issued in last 7 days.
-   * 2.	Last 30 days – Issued in last 30 days.
-   * 3.	Last 90 days – Issued in last 90 days.
+   * 1.    Last 7 days – Issued in last 7 days.
+   * 2.    Last 30 days – Issued in last 30 days.
+   * 3.    Last 90 days – Issued in last 90 days.
    * Optional.
    * This input is a search criterion, if given.
    * Example: 1
@@ -120,11 +120,11 @@ export interface InvoiceSearchRequestFilters {
   period?: number | null;
   /**
    * Status of the invoice. Valid values –
-   * •	Due – Invoices due for payment and is within the due date.
-   * •	Paid – Fully paid Invoices.
-   * •	Overdue – Invoices due of payment and has crossed the due date.
-   * •	CreditNote – Credit notes
-   * •	CreditStatement
+   * •    Due – Invoices due for payment and is within the due date.
+   * •    Paid – Fully paid Invoices.
+   * •    Overdue – Invoices due of payment and has crossed the due date.
+   * •    CreditNote – Credit notes
+   * •    CreditStatement
    * Optional.
    * This input is a search criterion, if given.
    */
@@ -138,8 +138,8 @@ export interface InvoiceSearchRequestFilters {
    * Whether to include the additional invoice details in the API response.
    * Optional. Default value “False”.
    * The parameters that are populated
-   * •	DocumentReference
-   * •	AdditionalDocuments
+   * •    DocumentReference
+   * •    AdditionalDocuments
    * The above fields will not be present in the response when the respective data is not available in the source system.
    */
   includeEInvoiceDetails?: boolean | null;
@@ -154,9 +154,9 @@ export interface InvoiceSearchRequestFilters {
   accounts?: Accounts[];
   /**
    * Invoice type. Allowed values –
-   * •	Original – Original document.
-   * •	Reversal – Reversed document.
-   * •	Replacement – Replaced document.
+   * •    Original – Original document.
+   * •    Reversal – Reversed document.
+   * •    Replacement – Replaced document.
    * Optional. (When not passed all invoice, types are considered for search)
    * This input is a search criterion, if given.
    * Example: Original

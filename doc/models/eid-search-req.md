@@ -15,8 +15,8 @@
 | `accountGroupName` | `string \| null \| undefined` | Optional | Account group name<br>Optional.<br>This input is a search criterion, if given. |
 | `fromDate` | `string \| null \| undefined` | Optional | EID date searched from this date.<br>Optional. |
 | `toDate` | `string \| null \| undefined` | Optional | Invoice date searched until this date.<br>Optional. |
-| `invoiceType` | `string \| null \| undefined` | Optional | Invoice type.<br>Optional.<br>Possible values:<br>•	NAT (National)<br>•	INT (International) |
-| `invoiceStatus` | `string \| null \| undefined` | Optional | Status of the document.<br>Optional.<br>Possible values:<br>•	NEW<br>•	VIEWED<br>•	DOWNLOADED<br>•	RESTORED |
+| `invoiceType` | `string \| null \| undefined` | Optional | Invoice type.<br>Optional.<br>Possible values:<br>•    NAT (National)<br>•    INT (International) |
+| `invoiceStatus` | `string \| null \| undefined` | Optional | Status of the document.<br>Optional.<br>Possible values:<br>•    NEW<br>•    VIEWED<br>•    DOWNLOADED<br>•    RESTORED |
 | `sortBy` | `string[] \| undefined` | Optional | Sort option –<br>•    InvoiceNumber ASC<br>•    InvoiceDate ASC<br>•    InvoiceNumber DESC<br>•    InvoiceDate DESC<br>Optional |
 
 ## Example (as JSON)

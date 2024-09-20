@@ -7,6 +7,7 @@
 import {
   basicAuthenticationProvider,
   compositeAuthenticationProvider,
+  OAuthConfiguration,
   requestAuthenticationProvider,
 } from './authentication';
 import { BearerTokenManager } from './bearerTokenManager';
@@ -20,29 +21,39 @@ export function createAuthProviderFromConfig(
   const authConfig = {
     basicAuth:
       config.basicAuthCredentials &&
-      basicAuthenticationProvider (
+      basicAuthenticationProvider(
         config.basicAuthCredentials.username,
         config.basicAuthCredentials.password
-    ),
+      ),
     bearerToken:
       config.bearerTokenCredentials &&
-      requestAuthenticationProvider (
+      requestAuthenticationProvider(
         config.bearerTokenCredentials.oAuthToken,
-        bearerTokenTokenProvider(bearerToken, config.bearerTokenCredentials.oAuthTokenProvider),
-        config.bearerTokenCredentials.oAuthOnTokenUpdate
-    ),
+        bearerTokenTokenProvider(
+          bearerToken,
+          config.bearerTokenCredentials.oAuthTokenProvider
+        ),
+        config.bearerTokenCredentials.oAuthOnTokenUpdate,
+        {
+          clockSkew: config.bearerTokenCredentials.oAuthClockSkew,
+        } as OAuthConfiguration
+      ),
   };
 
-  return compositeAuthenticationProvider <
+  return compositeAuthenticationProvider<
     keyof typeof authConfig,
     typeof authConfig
-  > (authConfig);
+  >(authConfig);
 }
 
 function bearerTokenTokenProvider(
   bearerToken: () => BearerTokenManager | undefined,
-  defaultProvider: ((lastOAuthToken: OAuthToken | undefined,
-    authManager: BearerTokenManager) => Promise<OAuthToken>) | undefined
+  defaultProvider:
+    | ((
+        lastOAuthToken: OAuthToken | undefined,
+        authManager: BearerTokenManager
+      ) => Promise<OAuthToken>)
+    | undefined
 ): ((token: OAuthToken | undefined) => Promise<OAuthToken>) | undefined {
   return (token: OAuthToken | undefined) => {
     const manager = bearerToken();
@@ -55,4 +66,3 @@ function bearerTokenTokenProvider(
     return defaultProvider(token, manager);
   };
 }
-

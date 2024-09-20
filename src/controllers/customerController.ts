@@ -5,10 +5,6 @@
  */
 
 import { ApiResponse, RequestOptions } from '../core';
-import { DefaultError } from '../errors/defaultError';
-import {
-  ErrorUserAccessError1Error,
-} from '../errors/errorUserAccessError1Error';
 import { AccountRequest, accountRequestSchema } from '../models/accountRequest';
 import {
   AccountResponse,
@@ -49,9 +45,9 @@ import {
   customerPriceListResponseSchema,
 } from '../models/customerPriceListResponse';
 import {
-  LoggedInUserRequest,
-  loggedInUserRequestSchema,
-} from '../models/loggedInUserRequest';
+  FleetmanagementV1UserLoggedinuserRequest,
+  fleetmanagementV1UserLoggedinuserRequestSchema,
+} from '../models/fleetmanagementV1UserLoggedinuserRequest';
 import {
   LoggedInUserResponse,
   loggedInUserResponseSchema,
@@ -60,28 +56,68 @@ import { PayerRequest, payerRequestSchema } from '../models/payerRequest';
 import { PayerResponse, payerResponseSchema } from '../models/payerResponse';
 import { optional, string } from '../schema';
 import { BaseController } from './baseController';
+import { FleetmanagementV1CustomerAccounts400Error } from '../errors/fleetmanagementV1CustomerAccounts400Error';
+import { FleetmanagementV1CustomerAccounts401Error } from '../errors/fleetmanagementV1CustomerAccounts401Error';
+import { FleetmanagementV1CustomerAccounts403Error } from '../errors/fleetmanagementV1CustomerAccounts403Error';
+import { FleetmanagementV1CustomerAccounts404Error } from '../errors/fleetmanagementV1CustomerAccounts404Error';
+import { FleetmanagementV1CustomerAccounts500Error } from '../errors/fleetmanagementV1CustomerAccounts500Error';
+import { FleetmanagementV1CustomerAuditreport400Error } from '../errors/fleetmanagementV1CustomerAuditreport400Error';
+import { FleetmanagementV1CustomerAuditreport401Error } from '../errors/fleetmanagementV1CustomerAuditreport401Error';
+import { FleetmanagementV1CustomerAuditreport403Error } from '../errors/fleetmanagementV1CustomerAuditreport403Error';
+import { FleetmanagementV1CustomerAuditreport404Error } from '../errors/fleetmanagementV1CustomerAuditreport404Error';
+import { FleetmanagementV1CustomerAuditreport500Error } from '../errors/fleetmanagementV1CustomerAuditreport500Error';
+import { FleetmanagementV1CustomerCardgroups400Error } from '../errors/fleetmanagementV1CustomerCardgroups400Error';
+import { FleetmanagementV1CustomerCardgroups401Error } from '../errors/fleetmanagementV1CustomerCardgroups401Error';
+import { FleetmanagementV1CustomerCardgroups403Error } from '../errors/fleetmanagementV1CustomerCardgroups403Error';
+import { FleetmanagementV1CustomerCardgroups404Error } from '../errors/fleetmanagementV1CustomerCardgroups404Error';
+import { FleetmanagementV1CustomerCardgroups500Error } from '../errors/fleetmanagementV1CustomerCardgroups500Error';
+import { FleetmanagementV1CustomerCustomer400Error } from '../errors/fleetmanagementV1CustomerCustomer400Error';
+import { FleetmanagementV1CustomerCustomer401Error } from '../errors/fleetmanagementV1CustomerCustomer401Error';
+import { FleetmanagementV1CustomerCustomer403Error } from '../errors/fleetmanagementV1CustomerCustomer403Error';
+import { FleetmanagementV1CustomerCustomer404Error } from '../errors/fleetmanagementV1CustomerCustomer404Error';
+import { FleetmanagementV1CustomerCustomer500Error } from '../errors/fleetmanagementV1CustomerCustomer500Error';
+import { FleetmanagementV1CustomerPayers400Error } from '../errors/fleetmanagementV1CustomerPayers400Error';
+import { FleetmanagementV1CustomerPayers401Error } from '../errors/fleetmanagementV1CustomerPayers401Error';
+import { FleetmanagementV1CustomerPayers403Error } from '../errors/fleetmanagementV1CustomerPayers403Error';
+import { FleetmanagementV1CustomerPayers404Error } from '../errors/fleetmanagementV1CustomerPayers404Error';
+import { FleetmanagementV1CustomerPayers500Error } from '../errors/fleetmanagementV1CustomerPayers500Error';
+import { FleetmanagementV1UserLoggedinuser400Error } from '../errors/fleetmanagementV1UserLoggedinuser400Error';
+import { FleetmanagementV1UserLoggedinuser401Error } from '../errors/fleetmanagementV1UserLoggedinuser401Error';
+import { FleetmanagementV1UserLoggedinuser403Error } from '../errors/fleetmanagementV1UserLoggedinuser403Error';
+import { FleetmanagementV1UserLoggedinuser404Error } from '../errors/fleetmanagementV1UserLoggedinuser404Error';
+import { FleetmanagementV1UserLoggedinuser500Error } from '../errors/fleetmanagementV1UserLoggedinuser500Error';
+import { FleetmanagementV2CustomerCardtype400Error } from '../errors/fleetmanagementV2CustomerCardtype400Error';
+import { FleetmanagementV2CustomerCardtype401Error } from '../errors/fleetmanagementV2CustomerCardtype401Error';
+import { FleetmanagementV2CustomerCardtype403Error } from '../errors/fleetmanagementV2CustomerCardtype403Error';
+import { FleetmanagementV2CustomerCardtype404Error } from '../errors/fleetmanagementV2CustomerCardtype404Error';
+import { FleetmanagementV2CustomerCardtype500Error } from '../errors/fleetmanagementV2CustomerCardtype500Error';
+import { FleetmanagementV2CustomerPricelist400Error } from '../errors/fleetmanagementV2CustomerPricelist400Error';
+import { FleetmanagementV2CustomerPricelist401Error } from '../errors/fleetmanagementV2CustomerPricelist401Error';
+import { FleetmanagementV2CustomerPricelist403Error } from '../errors/fleetmanagementV2CustomerPricelist403Error';
+import { FleetmanagementV2CustomerPricelist404Error } from '../errors/fleetmanagementV2CustomerPricelist404Error';
+import { FleetmanagementV2CustomerPricelist500Error } from '../errors/fleetmanagementV2CustomerPricelist500Error';
 
 export class CustomerController extends BaseController {
   /**
    * This API allows querying the user data of the logged in user.</br>
-   *
    * This API will return the user access details such as payers and/or accounts. </br>
-   *
    * This API will also validate that logged in user has access to the requested API, on failure it will
    * return HasAPIAccess flag as false in response.</br>
    *
-   * @param apikey       This is the API key of the specific environment which needs to
-   *                                                   be passed by the client.
-   * @param requestId    Mandatory UUID (according to RFC 4122 standards) for requests
-   *                                                   and responses. This will be played back in the response from the
-   *                                                   request.
+   * @param apikey       This is the API key of the specific
+   *                                                                        environment which needs to be passed by the
+   *                                                                        client.
+   * @param requestId    Mandatory UUID (according to RFC 4122
+   *                                                                        standards) for requests and responses. This
+   *                                                                        will be played back in the response from
+   *                                                                        the request.
    * @param body         Logged in user request body
    * @return Response from the API call
    */
   async loggedinUser(
     apikey: string,
     requestId: string,
-    body?: LoggedInUserRequest,
+    body?: FleetmanagementV1UserLoggedinuserRequest,
     requestOptions?: RequestOptions
   ): Promise<ApiResponse<LoggedInUserResponse>> {
     const req = this.createRequest(
@@ -91,17 +127,37 @@ export class CustomerController extends BaseController {
     const mapped = req.prepareArgs({
       apikey: [apikey, string()],
       requestId: [requestId, string()],
-      body: [body, optional(loggedInUserRequestSchema)],
+      body: [body, optional(fleetmanagementV1UserLoggedinuserRequestSchema)],
     });
     req.header('apikey', mapped.apikey);
     req.header('RequestId', mapped.requestId);
     req.header('Content-Type', 'application/json');
     req.json(mapped.body);
-    req.throwOn(400, DefaultError, 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).');
-    req.throwOn(401, DefaultError, 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n');
-    req.throwOn(403, ErrorUserAccessError1Error, 'The server understood the request but refuses to authorize it.\r\n');
-    req.throwOn(404, DefaultError, 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n');
-    req.throwOn(500, DefaultError, 'The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n');
+    req.throwOn(
+      400,
+      FleetmanagementV1UserLoggedinuser400Error,
+      'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
+    );
+    req.throwOn(
+      401,
+      FleetmanagementV1UserLoggedinuser401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
+    );
+    req.throwOn(
+      403,
+      FleetmanagementV1UserLoggedinuser403Error,
+      'The server understood the request but refuses to authorize it.'
+    );
+    req.throwOn(
+      404,
+      FleetmanagementV1UserLoggedinuser404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
+    );
+    req.throwOn(
+      500,
+      FleetmanagementV1UserLoggedinuser500Error,
+      'The server encountered an unexpected condition the prevented it from fulfilling the request.'
+    );
     req.authenticate([{ basicAuth: true }]);
     return req.callAsJson(loggedInUserResponseSchema, requestOptions);
   }
@@ -157,11 +213,31 @@ export class CustomerController extends BaseController {
     req.header('RequestId', mapped.requestId);
     req.header('Content-Type', 'application/json');
     req.json(mapped.body);
-    req.throwOn(400, DefaultError, 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).');
-    req.throwOn(401, DefaultError, 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n');
-    req.throwOn(403, ErrorUserAccessError1Error, 'The server understood the request but refuses to authorize it.\r\n');
-    req.throwOn(404, DefaultError, 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n');
-    req.throwOn(500, DefaultError, 'The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n');
+    req.throwOn(
+      400,
+      FleetmanagementV1CustomerPayers400Error,
+      'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
+    );
+    req.throwOn(
+      401,
+      FleetmanagementV1CustomerPayers401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
+    );
+    req.throwOn(
+      403,
+      FleetmanagementV1CustomerPayers403Error,
+      'The server understood the request but refuses to authorize it.'
+    );
+    req.throwOn(
+      404,
+      FleetmanagementV1CustomerPayers404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
+    );
+    req.throwOn(
+      500,
+      FleetmanagementV1CustomerPayers500Error,
+      'The server encountered an unexpected condition the prevented it from fulfilling the request.'
+    );
     req.authenticate([{ basicAuth: true }]);
     return req.callAsJson(payerResponseSchema, requestOptions);
   }
@@ -201,11 +277,31 @@ export class CustomerController extends BaseController {
     req.header('RequestId', mapped.requestId);
     req.header('Content-Type', 'application/json');
     req.json(mapped.body);
-    req.throwOn(400, DefaultError, 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).');
-    req.throwOn(401, DefaultError, 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n');
-    req.throwOn(403, ErrorUserAccessError1Error, 'The server understood the request but refuses to authorize it.\r\n');
-    req.throwOn(404, DefaultError, 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n');
-    req.throwOn(500, DefaultError, 'The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n');
+    req.throwOn(
+      400,
+      FleetmanagementV1CustomerCustomer400Error,
+      'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
+    );
+    req.throwOn(
+      401,
+      FleetmanagementV1CustomerCustomer401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
+    );
+    req.throwOn(
+      403,
+      FleetmanagementV1CustomerCustomer403Error,
+      'The server understood the request but refuses to authorize it.'
+    );
+    req.throwOn(
+      404,
+      FleetmanagementV1CustomerCustomer404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
+    );
+    req.throwOn(
+      500,
+      FleetmanagementV1CustomerCustomer500Error,
+      'The server encountered an unexpected condition the prevented it from fulfilling the request.'
+    );
     req.authenticate([{ basicAuth: true }]);
     return req.callAsJson(customerDetailResponseSchema, requestOptions);
   }
@@ -261,11 +357,31 @@ export class CustomerController extends BaseController {
     req.header('RequestId', mapped.requestId);
     req.header('Content-Type', 'application/json');
     req.json(mapped.body);
-    req.throwOn(400, DefaultError, 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).');
-    req.throwOn(401, DefaultError, 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n');
-    req.throwOn(403, ErrorUserAccessError1Error, 'The server understood the request but refuses to authorize it.\r\n');
-    req.throwOn(404, DefaultError, 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n');
-    req.throwOn(500, DefaultError, 'The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n');
+    req.throwOn(
+      400,
+      FleetmanagementV2CustomerPricelist400Error,
+      'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
+    );
+    req.throwOn(
+      401,
+      FleetmanagementV2CustomerPricelist401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
+    );
+    req.throwOn(
+      403,
+      FleetmanagementV2CustomerPricelist403Error,
+      'The server understood the request but refuses to authorize it.'
+    );
+    req.throwOn(
+      404,
+      FleetmanagementV2CustomerPricelist404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
+    );
+    req.throwOn(
+      500,
+      FleetmanagementV2CustomerPricelist500Error,
+      'The server encountered an unexpected condition the prevented it from fulfilling the request.'
+    );
     req.authenticate([{ basicAuth: true }]);
     return req.callAsJson(customerPriceListResponseSchema, requestOptions);
   }
@@ -301,11 +417,31 @@ export class CustomerController extends BaseController {
     req.header('RequestId', mapped.requestId);
     req.header('Content-Type', 'application/json');
     req.json(mapped.body);
-    req.throwOn(400, DefaultError, 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).');
-    req.throwOn(401, DefaultError, 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n');
-    req.throwOn(403, ErrorUserAccessError1Error, 'The server understood the request but refuses to authorize it.\r\n');
-    req.throwOn(404, DefaultError, 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n');
-    req.throwOn(500, DefaultError, 'The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n');
+    req.throwOn(
+      400,
+      FleetmanagementV1CustomerAccounts400Error,
+      'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
+    );
+    req.throwOn(
+      401,
+      FleetmanagementV1CustomerAccounts401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
+    );
+    req.throwOn(
+      403,
+      FleetmanagementV1CustomerAccounts403Error,
+      'The server understood the request but refuses to authorize it.'
+    );
+    req.throwOn(
+      404,
+      FleetmanagementV1CustomerAccounts404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
+    );
+    req.throwOn(
+      500,
+      FleetmanagementV1CustomerAccounts500Error,
+      'The server encountered an unexpected condition the prevented it from fulfilling the request.'
+    );
     req.authenticate([{ basicAuth: true }]);
     return req.callAsJson(accountResponseSchema, requestOptions);
   }
@@ -340,11 +476,31 @@ export class CustomerController extends BaseController {
     req.header('RequestId', mapped.requestId);
     req.header('Content-Type', 'application/json');
     req.json(mapped.body);
-    req.throwOn(400, DefaultError, 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).');
-    req.throwOn(401, DefaultError, 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n');
-    req.throwOn(403, ErrorUserAccessError1Error, 'The server understood the request but refuses to authorize it.\r\n');
-    req.throwOn(404, DefaultError, 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n');
-    req.throwOn(500, DefaultError, 'The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n');
+    req.throwOn(
+      400,
+      FleetmanagementV2CustomerCardtype400Error,
+      'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
+    );
+    req.throwOn(
+      401,
+      FleetmanagementV2CustomerCardtype401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
+    );
+    req.throwOn(
+      403,
+      FleetmanagementV2CustomerCardtype403Error,
+      'The server understood the request but refuses to authorize it.'
+    );
+    req.throwOn(
+      404,
+      FleetmanagementV2CustomerCardtype404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
+    );
+    req.throwOn(
+      500,
+      FleetmanagementV2CustomerCardtype500Error,
+      'The server encountered an unexpected condition the prevented it from fulfilling the request.'
+    );
     req.authenticate([{ basicAuth: true }]);
     return req.callAsJson(cardTypeResponseSchema, requestOptions);
   }
@@ -354,16 +510,13 @@ export class CustomerController extends BaseController {
    * supports paging.\
    *
    *
-   *
    * When the card group type is configured as ‘Vertical’ in cards platform, this operation will return
    * all card groups from the given account or if no account is passed in the input, then will return
    * card groups from all the accounts under the payer.
    *
    *
-   *
    * When the card group type is configured as ‘Horizontal’ in cards platform, this API will return all
    * card groups configured directly under the payer.
-   *
    *
    *
    * Accounts with cancelled status will not be considered for cardgroups search for the configured (E.g.,
@@ -398,11 +551,31 @@ export class CustomerController extends BaseController {
     req.header('RequestId', mapped.requestId);
     req.header('Content-Type', 'application/json');
     req.json(mapped.body);
-    req.throwOn(400, DefaultError, 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).');
-    req.throwOn(401, DefaultError, 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n');
-    req.throwOn(403, ErrorUserAccessError1Error, 'The server understood the request but refuses to authorize it.\r\n');
-    req.throwOn(404, DefaultError, 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n');
-    req.throwOn(500, DefaultError, 'The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n');
+    req.throwOn(
+      400,
+      FleetmanagementV1CustomerCardgroups400Error,
+      'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
+    );
+    req.throwOn(
+      401,
+      FleetmanagementV1CustomerCardgroups401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
+    );
+    req.throwOn(
+      403,
+      FleetmanagementV1CustomerCardgroups403Error,
+      'The server understood the request but refuses to authorize it.'
+    );
+    req.throwOn(
+      404,
+      FleetmanagementV1CustomerCardgroups404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
+    );
+    req.throwOn(
+      500,
+      FleetmanagementV1CustomerCardgroups500Error,
+      'The server encountered an unexpected condition the prevented it from fulfilling the request.'
+    );
     req.authenticate([{ basicAuth: true }]);
     return req.callAsJson(cardGroupResponseSchema, requestOptions);
   }
@@ -475,11 +648,31 @@ export class CustomerController extends BaseController {
     req.header('RequestId', mapped.requestId);
     req.header('Content-Type', 'application/json');
     req.json(mapped.body);
-    req.throwOn(400, DefaultError, 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).');
-    req.throwOn(401, DefaultError, 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n');
-    req.throwOn(403, ErrorUserAccessError1Error, 'The server understood the request but refuses to authorize it.\r\n');
-    req.throwOn(404, DefaultError, 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n');
-    req.throwOn(500, DefaultError, 'The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n');
+    req.throwOn(
+      400,
+      FleetmanagementV1CustomerAuditreport400Error,
+      'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
+    );
+    req.throwOn(
+      401,
+      FleetmanagementV1CustomerAuditreport401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
+    );
+    req.throwOn(
+      403,
+      FleetmanagementV1CustomerAuditreport403Error,
+      'The server understood the request but refuses to authorize it.'
+    );
+    req.throwOn(
+      404,
+      FleetmanagementV1CustomerAuditreport404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
+    );
+    req.throwOn(
+      500,
+      FleetmanagementV1CustomerAuditreport500Error,
+      'The server encountered an unexpected condition the prevented it from fulfilling the request.'
+    );
     req.authenticate([{ basicAuth: true }]);
     return req.callAsJson(auditResponseSchema, requestOptions);
   }

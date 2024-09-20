@@ -5,20 +5,16 @@
  */
 
 import { lazy, object, optional, Schema, string } from '../schema';
-import {
-  DefaultErrorFaultDetail,
-  defaultErrorFaultDetailSchema,
-} from './defaultErrorFaultDetail';
+import { Detail, detailSchema } from './detail';
 
 /** Error object */
 export interface DefaultErrorFault {
   /** Error Description */
   faultstring?: string;
-  /** Details about the error */
-  detail?: DefaultErrorFaultDetail;
+  detail?: Detail;
 }
 
 export const defaultErrorFaultSchema: Schema<DefaultErrorFault> = object({
   faultstring: ['faultstring', optional(string())],
-  detail: ['detail', optional(lazy(() => defaultErrorFaultDetailSchema))],
+  detail: ['detail', optional(lazy(() => detailSchema))],
 });

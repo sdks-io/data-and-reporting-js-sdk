@@ -18,4 +18,6 @@ export enum PricedTransactionReqV2PeriodEnum {
 /**
  * Schema for PricedTransactionReqV2PeriodEnum
  */
-export const  pricedTransactionReqV2PeriodEnumSchema: Schema<PricedTransactionReqV2PeriodEnum> = numberEnum(PricedTransactionReqV2PeriodEnum);
+export const pricedTransactionReqV2PeriodEnumSchema: Schema<PricedTransactionReqV2PeriodEnum> = numberEnum(
+  PricedTransactionReqV2PeriodEnum
+);

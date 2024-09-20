@@ -12,10 +12,10 @@ export interface PricedTransSummaryResponseTransactionsSummaryItems {
   /**
    * Product Code
    * Examples:
-   * 10	TMF Charges
-   * 11	Tunnel/Bridges
-   * 12	Motorway toll
-   * 13	Ferries
+   * 10    TMF Charges
+   * 11    Tunnel/Bridges
+   * 12    Motorway toll
+   * 13    Ferries
    */
   productCode?: string | null;
   /**
@@ -30,24 +30,24 @@ export interface PricedTransSummaryResponseTransactionsSummaryItems {
   /**
    * Product Group Id
    * Example:
-   * 1	Parent Product Group
-   * 2	All Fuels
-   * 3	Motor gasoline
-   * 4	2 stroke
-   * 5	Autogas
-   * 6	CNG
+   * 1    Parent Product Group
+   * 2    All Fuels
+   * 3    Motor gasoline
+   * 4    2 stroke
+   * 5    Autogas
+   * 6    CNG
    */
   productGroupId?: number | null;
   /**
    * Product Group Name
    * Example:
-   * 1	Parent Product Group
-   * 2	All Fuels
-   * 3	Motor gasoline
-   * 4	2 stroke
-   * 5	Autogas
-   * 6	CNG
-   * 7	Automotive Gas Oil
+   * 1    Parent Product Group
+   * 2    All Fuels
+   * 3    Motor gasoline
+   * 4    2 stroke
+   * 5    Autogas
+   * 6    CNG
+   * 7    Automotive Gas Oil
    */
   productGroupName?: string | null;
   /**

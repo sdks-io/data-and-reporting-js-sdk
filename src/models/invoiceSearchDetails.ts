@@ -54,57 +54,57 @@ export interface InvoiceSearchDetails {
   /**
    * Current billing frequency of the account.
    * A few of the possible IDs and Description are below:
-   * 1	Daily (all days)
-   * 2	Daily (only working days)
-   * 3	Weekly - Monday
-   * 4	Weekly - Tuesday
-   * 5	Weekly - Wednesday
-   * 6	Weekly - Thursday
-   * 7	Weekly - Friday
-   * 8	Weekly - Saturday
-   * 9	Weekly - Sunday
-   * 10	Monthly - 1st
+   * 1    Daily (all days)
+   * 2    Daily (only working days)
+   * 3    Weekly - Monday
+   * 4    Weekly - Tuesday
+   * 5    Weekly - Wednesday
+   * 6    Weekly - Thursday
+   * 7    Weekly - Friday
+   * 8    Weekly - Saturday
+   * 9    Weekly - Sunday
+   * 10    Monthly - 1st
    * Example: Weekly – Wednesday
    */
   currentBillingFrequency?: string | null;
   /**
    * Current billing frequency id of the account.
    * A few of the possible IDs and Description are below:
-   * 1	Daily (all days)
-   * 2	Daily (only working days)
-   * 3	Weekly - Monday
-   * 4	Weekly - Tuesday
-   * 5	Weekly - Wednesday
-   * 6	Weekly - Thursday
-   * 7	Weekly - Friday
-   * 8	Weekly - Saturday
-   * 9	Weekly - Sunday
-   * 10	Monthly - 1st
+   * 1    Daily (all days)
+   * 2    Daily (only working days)
+   * 3    Weekly - Monday
+   * 4    Weekly - Tuesday
+   * 5    Weekly - Wednesday
+   * 6    Weekly - Thursday
+   * 7    Weekly - Friday
+   * 8    Weekly - Saturday
+   * 9    Weekly - Sunday
+   * 10    Monthly - 1st
    * Example: 5
    */
   currentBillingFrequencyId?: number | null;
   /**
    * Current distribution method name of the account.
    * Example : Id & Description
-   * 1	e-mail
-   * 2	Fax
-   * 3	Courier to Customer
-   * 4	Courier to Client
-   * 5	Print
-   * 6	FTP
-   * 7	SMS
+   * 1    e-mail
+   * 2    Fax
+   * 3    Courier to Customer
+   * 4    Courier to Client
+   * 5    Print
+   * 6    FTP
+   * 7    SMS
    */
   currentDistributionMethod?: string | null;
   /**
    * Current distribution method id of the account.
    * Example : Id & Description
-   * 1	e-mail
-   * 2	Fax
-   * 3	Courier to Customer
-   * 4	Courier to Client
-   * 5	Print
-   * 6	FTP
-   * 7	SMS
+   * 1    e-mail
+   * 2    Fax
+   * 3    Courier to Customer
+   * 4    Courier to Client
+   * 5    Print
+   * 6    FTP
+   * 7    SMS
    */
   currentDistributionMethodId?: number | null;
   /**
@@ -193,21 +193,21 @@ export interface InvoiceSearchDetails {
   payerNumber?: string | null;
   /**
    * A few of the possible IDs and Descriptions are below:
-   * 1	14 days after Invoice
-   * 2	15 days after Invoice
-   * 3	21 days after Invoice
-   * 4	30 days after Invoice
-   * 5	45 days after Invoice
+   * 1    14 days after Invoice
+   * 2    15 days after Invoice
+   * 3    21 days after Invoice
+   * 4    30 days after Invoice
+   * 5    45 days after Invoice
    */
   paymentTerms?: string | null;
   /**
    * Payment terms id of the payment customer.
    * A few of the possible IDs and Descriptions are below:
-   * 1	14 days after Invoice
-   * 2	15 days after Invoice
-   * 3	21 days after Invoice
-   * 4	30 days after Invoice
-   * 5	45 days after Invoice
+   * 1    14 days after Invoice
+   * 2    15 days after Invoice
+   * 3    21 days after Invoice
+   * 4    30 days after Invoice
+   * 5    45 days after Invoice
    */
   paymentTermsId?: number | null;
   /**
@@ -222,32 +222,32 @@ export interface InvoiceSearchDetails {
   reversalInvoiceId?: number | null;
   /**
    * Status of the document. Valid values –
-   * •	[Empty] – For all document types except for Invoice and Statement.
-   * •	Due – Invoices/Statements due for payment and is within the due date.
-   * •	Paid – Fully paid Invoices/Statements.
+   * •    [Empty] – For all document types except for Invoice and Statement.
+   * •    Due – Invoices/Statements due for payment and is within the due date.
+   * •    Paid – Fully paid Invoices/Statements.
    * Overdue – Invoices/Statements due of payment and has crossed the due date.
    */
   status?: string | null;
   /**
    * Billing type description.
    * Example: Id & Description
-   * -3	Guarantee History
-   * -1	Initial Balance
-   * 0	Standard Invoice
-   * 1	Immediate Invoice
-   * 2	Guarantee
-   * 4	Advanced DD Invoice
+   * -3    Guarantee History
+   * -1    Initial Balance
+   * 0    Standard Invoice
+   * 1    Immediate Invoice
+   * 2    Guarantee
+   * 4    Advanced DD Invoice
    */
   summaryDocumentBillingType?: string | null;
   /**
    * Billing type id.
    * Example: Id & Description
-   * -3	Guarantee History
-   * -1	Initial Balance
-   * 0	Standard Invoice
-   * 1	Immediate Invoice
-   * 2	Guarantee
-   * 4	Advanced DD Invoice
+   * -3    Guarantee History
+   * -1    Initial Balance
+   * 0    Standard Invoice
+   * 1    Immediate Invoice
+   * 2    Guarantee
+   * 4    Advanced DD Invoice
    */
   summaryDocumentBillingTypeId?: number | null;
   /**
@@ -296,18 +296,18 @@ export interface InvoiceSearchDetails {
   /**
    * Invoice type description.
    * A few of the possible IDs and Description are below:
-   * 1	Original
-   * 2	Reversal
-   * 3	Replacement
+   * 1    Original
+   * 2    Reversal
+   * 3    Replacement
    * Example: Original
    */
   type?: string | null;
   /**
    * Invoice type id.
    * A few of the possible IDs and Descriptions are below:
-   * 1	Original
-   * 2	Reversal
-   * 3	Replacement
+   * 1    Original
+   * 2    Reversal
+   * 3    Replacement
    * Example: 1
    */
   typeId?: number | null;

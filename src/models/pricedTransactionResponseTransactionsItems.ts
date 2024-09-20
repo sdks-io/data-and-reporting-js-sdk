@@ -15,11 +15,11 @@ import {
   Schema,
   string,
 } from '../schema';
-import { ErrorStatus, errorStatusSchema } from './errorStatus';
 import {
-  PricedTransactionItemsLocationItems,
-  pricedTransactionItemsLocationItemsSchema,
-} from './pricedTransactionItemsLocationItems';
+  PricedTransactionResponseTransactionsItemsLocation,
+  pricedTransactionResponseTransactionsItemsLocationSchema,
+} from './containers/pricedTransactionResponseTransactionsItemsLocation';
+import { ErrorStatus, errorStatusSchema } from './errorStatus';
 
 export interface PricedTransactionResponseTransactionsItems {
   /**
@@ -144,15 +144,15 @@ export interface PricedTransactionResponseTransactionsItems {
   /**
    * Site Code
    * Example:
-   * 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755
-   * 050002 -	CHARNOCK RICHARD STHBOUND MWSA 0755
+   * 050001 -    CHARNOCK RICHARD NTHBOUND MWSA 0755
+   * 050002 -    CHARNOCK RICHARD STHBOUND MWSA 0755
    */
   siteCode?: string | null;
   /**
    * Site Name
    * Example:
-   * 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755
-   * 050002 -	CHARNOCK RICHARD STHBOUND MWSA 0755
+   * 050001 -    CHARNOCK RICHARD NTHBOUND MWSA 0755
+   * 050002 -    CHARNOCK RICHARD STHBOUND MWSA 0755
    */
   siteName?: string | null;
   /**
@@ -167,17 +167,17 @@ export interface PricedTransactionResponseTransactionsItems {
    * Geography Location entity for Site Location
    * Note: - The value could be null/blank for fees item
    */
-  location?: (PricedTransactionItemsLocationItems | null)[];
+  location?: PricedTransactionResponseTransactionsItemsLocation[];
   /** Card Group Name */
   cardGroupName?: string | null;
   /** Receipt Number */
   receiptNumber?: string | null;
   /**
    * Product Code
-   * 10	TMF Charges
-   * 11	Tunnel/Bridges
-   * 12	Motorway toll
-   * 13	Ferries
+   * 10    TMF Charges
+   * 11    Tunnel/Bridges
+   * 12    Motorway toll
+   * 13    Ferries
    */
   productCode?: string | null;
   /**
@@ -191,24 +191,24 @@ export interface PricedTransactionResponseTransactionsItems {
   /**
    * Product Group Id
    * Example:
-   * 1	Parent Product Group
-   * 2	All Fuels
-   * 3	Motor gasoline
-   * 4	2 stroke
-   * 5	Autogas
-   * 6	CNG
+   * 1    Parent Product Group
+   * 2    All Fuels
+   * 3    Motor gasoline
+   * 4    2 stroke
+   * 5    Autogas
+   * 6    CNG
    */
   productGroupId?: number | null;
   /**
    * Product Group Name
    * Example:
-   * 1	Parent Product Group
-   * 2	All Fuels
-   * 3	Motor gasoline
-   * 4	2 stroke
-   * 5	Autogas
-   * 6	CNG
-   * 7	Automotive Gas Oil
+   * 1    Parent Product Group
+   * 2    All Fuels
+   * 3    Motor gasoline
+   * 4    2 stroke
+   * 5    Autogas
+   * 6    CNG
+   * 7    Automotive Gas Oil
    */
   productGroupName?: string | null;
   /** DelCo Exchange Rate (Site exchange rate) */
@@ -222,9 +222,9 @@ export interface PricedTransactionResponseTransactionsItems {
   isShellSite?: boolean | null;
   /**
    * Network as configured in GFN (Shell PH, ESSO, etc.,)
-   * 100013	STEINDORFER
-   * 100015	S.A. BELGIAN SHELL N.V.
-   * 100016	ESSO BE
+   * 100013    STEINDORFER
+   * 100015    S.A. BELGIAN SHELL N.V.
+   * 100016    ESSO BE
    * Note: - The value could be null/blank for fees item
    */
   network?: string | null;
@@ -388,13 +388,13 @@ export interface PricedTransactionResponseTransactionsItems {
   cRMNumber?: string | null;
   /**
    * Sales Item Dispute Status if disputed
-   * 0	No Dispute
-   * 1	In Dispute
-   * 2	Re-Instated
-   * 3	Adjusted
-   * 4	Written Off by Colco
-   * 5	Written Off by Delco
-   * 6	Charged Back to Site
+   * 0    No Dispute
+   * 1    In Dispute
+   * 2    Re-Instated
+   * 3    Adjusted
+   * 4    Written Off by Colco
+   * 5    Written Off by Delco
+   * 6    Charged Back to Site
    * Note: - The value could be null/blank for fees item.
    */
   disputeStatus?: string | null;
@@ -603,9 +603,7 @@ export const pricedTransactionResponseTransactionsItemsSchema: Schema<PricedTran
     siteCountry: ['SiteCountry', optional(nullable(string()))],
     location: [
       'Location',
-      optional(
-        array(nullable(lazy(() => pricedTransactionItemsLocationItemsSchema)))
-      ),
+      optional(array(pricedTransactionResponseTransactionsItemsLocationSchema)),
     ],
     cardGroupName: ['CardGroupName', optional(nullable(string()))],
     receiptNumber: ['ReceiptNumber', optional(nullable(string()))],

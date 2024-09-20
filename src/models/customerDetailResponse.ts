@@ -16,7 +16,10 @@ import {
   string,
 } from '../schema';
 import { Address, addressSchema } from './address';
-import { DeliveryAddresses, deliveryAddressesSchema } from './deliveryAddresses';
+import {
+  DeliveryAddresses,
+  deliveryAddressesSchema,
+} from './deliveryAddresses';
 import { ErrorStatus, errorStatusSchema } from './errorStatus';
 import { PINAdviceTypes, pINAdviceTypesSchema } from './pINAdviceTypes';
 
@@ -48,8 +51,8 @@ export interface CustomerDetailResponse {
   billingAddress?: Address;
   /**
    * Card group position at –
-   * •	Payer – Payer level
-   * •	Account – Account level
+   * •    Payer – Payer level
+   * •    Account – Account level
    */
   cardGroupPosition?: string | null;
   correspondenceAddress?: Address;
@@ -96,10 +99,10 @@ export interface CustomerDetailResponse {
   /**
    * Default PIN AdviceType of the customer.
    * Possible Values:
-   * 1.	Paper
-   * 2.	Email
-   * 3.	SMS
-   * 4.	None
+   * 1.    Paper
+   * 2.    Email
+   * 3.    SMS
+   * 4.    None
    */
   defaultPINAdviceType?: number | null;
   pINAdviceTypes?: PINAdviceTypes[];

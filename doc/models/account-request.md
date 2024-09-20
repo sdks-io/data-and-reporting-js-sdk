@@ -9,7 +9,7 @@
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `status` | `string \| null \| undefined` | Optional | Account Status.<br>Optional if StatusList is passed, else mandatory.<br>Ignored if StatusList is passed.<br>Allowed values:<br>•	ALL<br>•	ACTIVE<br>•	BLOCKED<br>•	CANCELLED<br>•	CREDITLOCK<br>•	DELINQUENCYLOCK |
+| `status` | `string \| null \| undefined` | Optional | Account Status.<br>Optional if StatusList is passed, else mandatory.<br>Ignored if StatusList is passed.<br>Allowed values:<br>•    ALL<br>•    ACTIVE<br>•    BLOCKED<br>•    CANCELLED<br>•    CREDITLOCK<br>•    DELINQUENCYLOCK |
 | `includeCardSummary` | `boolean \| undefined` | Optional | Include card summary details in the response.<br><br>When passed as false, the card summary related parameters on response will be set to null.<br><br>Optional – default value: true.<br>**Default**: `true` |
 | `payerId` | `number \| null \| undefined` | Optional | Payer id of the customer.<br>Optional if PayerNumber is passed, else Mandatory. |
 | `payerNumber` | `string \| null \| undefined` | Optional | PayerNumber of the customer.<br>Optional if PayerId is passed, else Mandatory. |
@@ -23,7 +23,7 @@
 | `returnTollsCustomerId` | `boolean \| undefined` | Optional | Return e-Toll Customer details When True. |
 | `accounts` | [`Accounts[] \| undefined`](../../doc/models/accounts.md) | Optional | - |
 | `accountName` | `string \| null \| undefined` | Optional | Account Name of the customer.<br>Optional.<br>Minimum of 4 characters should be provided else not considered.<br>Accounts those have the entered value at any part of the Name will be returned. |
-| `statusList` | `(string \| null)[] \| undefined` | Optional | Account Statuses.<br>Optional<br>Multiple statuses are allowed to be included in the search criteria.<br>Allowed values:<br>•	ACTIVE<br>•	BLOCKED<br>•	CANCELLED<br>•	CREDITLOCK<br>•	DELINQUENCYLOCK |
+| `statusList` | `(string \| null)[] \| undefined` | Optional | Account Statuses.<br>Optional<br>Multiple statuses are allowed to be included in the search criteria.<br>Allowed values:<br>•    ACTIVE<br>•    BLOCKED<br>•    CANCELLED<br>•    CREDITLOCK<br>•    DELINQUENCYLOCK |
 
 ## Example (as JSON)
 

@@ -17,4 +17,6 @@ export enum PricedTransactionRespV2RefundFlagEnum {
 /**
  * Schema for PricedTransactionRespV2RefundFlagEnum
  */
-export const  pricedTransactionRespV2RefundFlagEnumSchema: Schema<PricedTransactionRespV2RefundFlagEnum> = stringEnum(PricedTransactionRespV2RefundFlagEnum);
+export const pricedTransactionRespV2RefundFlagEnumSchema: Schema<PricedTransactionRespV2RefundFlagEnum> = stringEnum(
+  PricedTransactionRespV2RefundFlagEnum
+);

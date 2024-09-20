@@ -19,14 +19,14 @@ import { Accounts, accountsSchema } from './accounts';
 export interface AuditRequest {
   /**
    * Status of requests to be fetched.
-   * •	Success
-   * •	Failed
-   * •	InProgress
-   * •	Submitted
-   * •	Rejected
-   * •	PendingApproval
-   * •	All
-   * •	MailedToCSC
+   * •    Success
+   * •    Failed
+   * •    InProgress
+   * •    Submitted
+   * •    Rejected
+   * •    PendingApproval
+   * •    All
+   * •    MailedToCSC
    * Optional
    * If not passed “All” will be considered as the default value.
    */
@@ -76,10 +76,10 @@ export interface AuditRequest {
   requestedOperation?: string[];
   /**
    * Allowed Sorting Options:
-   * 1.	SubmittedDateDescending
-   * 2.	SubmittedDateAscending
-   * 3.	AccountNumberAscending
-   * 4.	AccountNumberDescending
+   * 1.    SubmittedDateDescending
+   * 2.    SubmittedDateAscending
+   * 3.    AccountNumberAscending
+   * 4.    AccountNumberDescending
    * Optional: Default value is 1
    * Example value to be passed: 1,3
    */

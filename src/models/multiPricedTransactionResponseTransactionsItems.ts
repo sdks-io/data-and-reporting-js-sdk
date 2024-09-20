@@ -167,13 +167,13 @@ export interface MultiPricedTransactionResponseTransactionsItems {
   /**
    * Site Code
    * Example:
-   * 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755
+   * 050001 -    CHARNOCK RICHARD NTHBOUND MWSA 0755
    */
   siteCode?: string | null;
   /**
    * Site Name
    * Example:
-   * 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755
+   * 050001 -    CHARNOCK RICHARD NTHBOUND MWSA 0755
    */
   siteName?: string | null;
   /**
@@ -188,9 +188,9 @@ export interface MultiPricedTransactionResponseTransactionsItems {
   receiptNumber?: string | null;
   /**
    * Product Code
-   * 10	TMF Charges
-   * 11	Tunnel/Bridges
-   * 12	Motorway toll
+   * 10    TMF Charges
+   * 11    Tunnel/Bridges
+   * 12    Motorway toll
    */
   productCode?: string | null;
   /**
@@ -205,21 +205,21 @@ export interface MultiPricedTransactionResponseTransactionsItems {
   /**
    * Product Group Id
    * Example:
-   * 1	Parent Product Group
-   * 2	All Fuels
-   * 3	Motor gasoline
-   * 4	2 stroke
-   * 5	Autogas
+   * 1    Parent Product Group
+   * 2    All Fuels
+   * 3    Motor gasoline
+   * 4    2 stroke
+   * 5    Autogas
    */
   productGroupId?: number | null;
   /**
    * Product Group Name
    * Example:
-   * 1	Parent Product Group
-   * 2	All Fuels
-   * 3	Motor gasoline
-   * 4	2 stroke
-   * 5	Autogas
+   * 1    Parent Product Group
+   * 2    All Fuels
+   * 3    Motor gasoline
+   * 4    2 stroke
+   * 5    Autogas
    */
   productGroupName?: string | null;
   /**
@@ -236,9 +236,9 @@ export interface MultiPricedTransactionResponseTransactionsItems {
   isShellSite?: boolean | null;
   /**
    * Network  (Shell PH, ESSO, etc.,)
-   * 100013	STEINDORFER
-   * 100015	S.A. BELGIAN SHELL N.V.
-   * 100016	ESSO BE
+   * 100013    STEINDORFER
+   * 100015    S.A. BELGIAN SHELL N.V.
+   * 100016    ESSO BE
    * Note: - The value could be null/blank for fees item.
    */
   network?: string | null;
@@ -441,13 +441,13 @@ export interface MultiPricedTransactionResponseTransactionsItems {
   cRMNumber?: string | null;
   /**
    * Sales Item Dispute Status if disputed
-   * 0	No Dispute
-   * 1	In Dispute
-   * 2	Re-Instated
-   * 3	Adjusted
-   * 4	Written Off by Colco
-   * 5	Written Off by Delco
-   * 6	Charged Back to Site
+   * 0    No Dispute
+   * 1    In Dispute
+   * 2    Re-Instated
+   * 3    Adjusted
+   * 4    Written Off by Colco
+   * 5    Written Off by Delco
+   * 6    Charged Back to Site
    */
   disputeStatus?: string | null;
   /**

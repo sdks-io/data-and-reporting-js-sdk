@@ -5,11 +5,6 @@
  */
 
 import { ApiResponse, RequestOptions } from '../core';
-import { DefaultError } from '../errors/defaultError';
-import { ErrorObjectError } from '../errors/errorObjectError';
-import {
-  ErrorUserAccessError1Error,
-} from '../errors/errorUserAccessError1Error';
 import {
   CardUsageSummaryRequest,
   cardUsageSummaryRequestSchema,
@@ -112,6 +107,71 @@ import {
 } from '../models/volumeBasedPricingResponse';
 import { optional, string } from '../schema';
 import { BaseController } from './baseController';
+import { FleetmanagementV1TransactionCardusagesummary400Error } from '../errors/fleetmanagementV1TransactionCardusagesummary400Error';
+import { FleetmanagementV1TransactionCardusagesummary401Error } from '../errors/fleetmanagementV1TransactionCardusagesummary401Error';
+import { FleetmanagementV1TransactionCardusagesummary403Error } from '../errors/fleetmanagementV1TransactionCardusagesummary403Error';
+import { FleetmanagementV1TransactionCardusagesummary404Error } from '../errors/fleetmanagementV1TransactionCardusagesummary404Error';
+import { FleetmanagementV1TransactionCardusagesummary500Error } from '../errors/fleetmanagementV1TransactionCardusagesummary500Error';
+import { FleetmanagementV1TransactionExceptions400Error } from '../errors/fleetmanagementV1TransactionExceptions400Error';
+import { FleetmanagementV1TransactionExceptions401Error } from '../errors/fleetmanagementV1TransactionExceptions401Error';
+import { FleetmanagementV1TransactionExceptions403Error } from '../errors/fleetmanagementV1TransactionExceptions403Error';
+import { FleetmanagementV1TransactionExceptions404Error } from '../errors/fleetmanagementV1TransactionExceptions404Error';
+import { FleetmanagementV1TransactionExceptions500Error } from '../errors/fleetmanagementV1TransactionExceptions500Error';
+import { FleetmanagementV1TransactionFees400Error } from '../errors/fleetmanagementV1TransactionFees400Error';
+import { FleetmanagementV1TransactionFees401Error } from '../errors/fleetmanagementV1TransactionFees401Error';
+import { FleetmanagementV1TransactionFees403Error } from '../errors/fleetmanagementV1TransactionFees403Error';
+import { FleetmanagementV1TransactionFees404Error } from '../errors/fleetmanagementV1TransactionFees404Error';
+import { FleetmanagementV1TransactionFees500Error } from '../errors/fleetmanagementV1TransactionFees500Error';
+import { FleetmanagementV1TransactionFeessummary400Error } from '../errors/fleetmanagementV1TransactionFeessummary400Error';
+import { FleetmanagementV1TransactionFeessummary401Error } from '../errors/fleetmanagementV1TransactionFeessummary401Error';
+import { FleetmanagementV1TransactionFeessummary403Error } from '../errors/fleetmanagementV1TransactionFeessummary403Error';
+import { FleetmanagementV1TransactionFeessummary404Error } from '../errors/fleetmanagementV1TransactionFeessummary404Error';
+import { FleetmanagementV1TransactionFeessummary500Error } from '../errors/fleetmanagementV1TransactionFeessummary500Error';
+import { FleetmanagementV1TransactionFuelconsumption400Error } from '../errors/fleetmanagementV1TransactionFuelconsumption400Error';
+import { FleetmanagementV1TransactionFuelconsumption401Error } from '../errors/fleetmanagementV1TransactionFuelconsumption401Error';
+import { FleetmanagementV1TransactionFuelconsumption403Error } from '../errors/fleetmanagementV1TransactionFuelconsumption403Error';
+import { FleetmanagementV1TransactionFuelconsumption404Error } from '../errors/fleetmanagementV1TransactionFuelconsumption404Error';
+import { FleetmanagementV1TransactionFuelconsumption500Error } from '../errors/fleetmanagementV1TransactionFuelconsumption500Error';
+import { FleetmanagementV1TransactionMultipayerspricedtransactions400Error } from '../errors/fleetmanagementV1TransactionMultipayerspricedtransactions400Error';
+import { FleetmanagementV1TransactionMultipayerspricedtransactions401Error } from '../errors/fleetmanagementV1TransactionMultipayerspricedtransactions401Error';
+import { FleetmanagementV1TransactionMultipayerspricedtransactions403Error } from '../errors/fleetmanagementV1TransactionMultipayerspricedtransactions403Error';
+import { FleetmanagementV1TransactionMultipayerspricedtransactions404Error } from '../errors/fleetmanagementV1TransactionMultipayerspricedtransactions404Error';
+import { FleetmanagementV1TransactionMultipayerspricedtransactions500Error } from '../errors/fleetmanagementV1TransactionMultipayerspricedtransactions500Error';
+import { FleetmanagementV1TransactionPricedtransactions400Error } from '../errors/fleetmanagementV1TransactionPricedtransactions400Error';
+import { FleetmanagementV1TransactionPricedtransactions401Error } from '../errors/fleetmanagementV1TransactionPricedtransactions401Error';
+import { FleetmanagementV1TransactionPricedtransactions403Error } from '../errors/fleetmanagementV1TransactionPricedtransactions403Error';
+import { FleetmanagementV1TransactionPricedtransactions404Error } from '../errors/fleetmanagementV1TransactionPricedtransactions404Error';
+import { FleetmanagementV1TransactionPricedtransactions500Error } from '../errors/fleetmanagementV1TransactionPricedtransactions500Error';
+import { FleetmanagementV1TransactionPricedtransactionssummary400Error } from '../errors/fleetmanagementV1TransactionPricedtransactionssummary400Error';
+import { FleetmanagementV1TransactionPricedtransactionssummary401Error } from '../errors/fleetmanagementV1TransactionPricedtransactionssummary401Error';
+import { FleetmanagementV1TransactionPricedtransactionssummary403Error } from '../errors/fleetmanagementV1TransactionPricedtransactionssummary403Error';
+import { FleetmanagementV1TransactionPricedtransactionssummary404Error } from '../errors/fleetmanagementV1TransactionPricedtransactionssummary404Error';
+import { FleetmanagementV1TransactionPricedtransactionssummary500Error } from '../errors/fleetmanagementV1TransactionPricedtransactionssummary500Error';
+import { FleetmanagementV1TransactionUpdateodometer400Error } from '../errors/fleetmanagementV1TransactionUpdateodometer400Error';
+import { FleetmanagementV1TransactionUpdateodometer401Error } from '../errors/fleetmanagementV1TransactionUpdateodometer401Error';
+import { FleetmanagementV1TransactionUpdateodometer403Error } from '../errors/fleetmanagementV1TransactionUpdateodometer403Error';
+import { FleetmanagementV1TransactionUpdateodometer404Error } from '../errors/fleetmanagementV1TransactionUpdateodometer404Error';
+import { FleetmanagementV1TransactionUpdateodometer500Error } from '../errors/fleetmanagementV1TransactionUpdateodometer500Error';
+import { FleetmanagementV1TransactionVolumebasedbonus400Error } from '../errors/fleetmanagementV1TransactionVolumebasedbonus400Error';
+import { FleetmanagementV1TransactionVolumebasedbonus401Error } from '../errors/fleetmanagementV1TransactionVolumebasedbonus401Error';
+import { FleetmanagementV1TransactionVolumebasedbonus403Error } from '../errors/fleetmanagementV1TransactionVolumebasedbonus403Error';
+import { FleetmanagementV1TransactionVolumebasedbonus404Error } from '../errors/fleetmanagementV1TransactionVolumebasedbonus404Error';
+import { FleetmanagementV1TransactionVolumebasedbonus500Error } from '../errors/fleetmanagementV1TransactionVolumebasedbonus500Error';
+import { FleetmanagementV1TransactionVolumebasedpricing400Error } from '../errors/fleetmanagementV1TransactionVolumebasedpricing400Error';
+import { FleetmanagementV1TransactionVolumebasedpricing401Error } from '../errors/fleetmanagementV1TransactionVolumebasedpricing401Error';
+import { FleetmanagementV1TransactionVolumebasedpricing403Error } from '../errors/fleetmanagementV1TransactionVolumebasedpricing403Error';
+import { FleetmanagementV1TransactionVolumebasedpricing404Error } from '../errors/fleetmanagementV1TransactionVolumebasedpricing404Error';
+import { FleetmanagementV1TransactionVolumebasedpricing500Error } from '../errors/fleetmanagementV1TransactionVolumebasedpricing500Error';
+import { TransactionDataV1Priced400Error } from '../errors/transactionDataV1Priced400Error';
+import { TransactionDataV1Priced401Error } from '../errors/transactionDataV1Priced401Error';
+import { TransactionDataV1Priced403Error } from '../errors/transactionDataV1Priced403Error';
+import { TransactionDataV1Priced404Error } from '../errors/transactionDataV1Priced404Error';
+import { TransactionDataV1Priced500Error } from '../errors/transactionDataV1Priced500Error';
+import { TransactionDataV1Recent400Error } from '../errors/transactionDataV1Recent400Error';
+import { TransactionDataV1Recent401Error } from '../errors/transactionDataV1Recent401Error';
+import { TransactionDataV1Recent403Error } from '../errors/transactionDataV1Recent403Error';
+import { TransactionDataV1Recent404Error } from '../errors/transactionDataV1Recent404Error';
+import { TransactionDataV1Recent500Error } from '../errors/transactionDataV1Recent500Error';
 
 export class TransactionController extends BaseController {
   /**
@@ -159,17 +219,17 @@ export class TransactionController extends BaseController {
    *
    * This API fetches transactions for a period based on the below parameters and priority order:
    *
-   * 1.	InvoiceNumber
+   * 1.    InvoiceNumber
    *
-   * 2.	InvoiceDate
+   * 2.    InvoiceDate
    *
-   * 3.	FromDate, ToDate
+   * 3.    FromDate, ToDate
    *
-   * 4.	PostingFromDate, PostingToDate (Can be used only when IncludeFees = false)
+   * 4.    PostingFromDate, PostingToDate (Can be used only when IncludeFees = false)
    *
-   * 5.	InvoiceDateFrom, InvoiceDateTo
+   * 5.    InvoiceDateFrom, InvoiceDateTo
    *
-   * 6.	Period
+   * 6.    Period
    *
    *
    *
@@ -216,11 +276,31 @@ export class TransactionController extends BaseController {
     req.header('RequestId', mapped.requestId);
     req.header('Content-Type', 'application/json');
     req.json(mapped.body);
-    req.throwOn(400, DefaultError, 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).');
-    req.throwOn(401, DefaultError, 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n');
-    req.throwOn(403, ErrorUserAccessError1Error, 'The server understood the request but refuses to authorize it.\r\n');
-    req.throwOn(404, DefaultError, 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n');
-    req.throwOn(500, DefaultError, 'The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n');
+    req.throwOn(
+      400,
+      FleetmanagementV1TransactionPricedtransactions400Error,
+      'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
+    );
+    req.throwOn(
+      401,
+      FleetmanagementV1TransactionPricedtransactions401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
+    );
+    req.throwOn(
+      403,
+      FleetmanagementV1TransactionPricedtransactions403Error,
+      'The server understood the request but refuses to authorize it.'
+    );
+    req.throwOn(
+      404,
+      FleetmanagementV1TransactionPricedtransactions404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
+    );
+    req.throwOn(
+      500,
+      FleetmanagementV1TransactionPricedtransactions500Error,
+      'The server encountered an unexpected condition the prevented it from fulfilling the request.'
+    );
     req.authenticate([{ basicAuth: true }]);
     return req.callAsJson(pricedTransactionResponseSchema, requestOptions);
   }
@@ -273,17 +353,17 @@ export class TransactionController extends BaseController {
    *
    * This API fetches transactions for a period based on the below parameters and priority order:
    *
-   * 1.	InvoiceNumber
+   * 1.    InvoiceNumber
    *
-   * 2.	InvoiceDate
+   * 2.    InvoiceDate
    *
-   * 3.	FromDate, ToDate
+   * 3.    FromDate, ToDate
    *
-   * 4.	PostingFromDate, PostingToDate (Can be used only when IncludeFees = false)
+   * 4.    PostingFromDate, PostingToDate (Can be used only when IncludeFees = false)
    *
-   * 5.	InvoiceDateFrom, InvoiceDateTo
+   * 5.    InvoiceDateFrom, InvoiceDateTo
    *
-   * 6.	Period
+   * 6.    Period
    *
    *
    *
@@ -322,11 +402,31 @@ export class TransactionController extends BaseController {
     req.header('RequestId', mapped.requestId);
     req.header('Content-Type', 'application/json');
     req.json(mapped.body);
-    req.throwOn(400, DefaultError, 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).');
-    req.throwOn(401, DefaultError, 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n');
-    req.throwOn(403, ErrorUserAccessError1Error, 'The server understood the request but refuses to authorize it.\r\n');
-    req.throwOn(404, DefaultError, 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n');
-    req.throwOn(500, DefaultError, 'The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n');
+    req.throwOn(
+      400,
+      FleetmanagementV1TransactionPricedtransactionssummary400Error,
+      'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
+    );
+    req.throwOn(
+      401,
+      FleetmanagementV1TransactionPricedtransactionssummary401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
+    );
+    req.throwOn(
+      403,
+      FleetmanagementV1TransactionPricedtransactionssummary403Error,
+      'The server understood the request but refuses to authorize it.'
+    );
+    req.throwOn(
+      404,
+      FleetmanagementV1TransactionPricedtransactionssummary404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
+    );
+    req.throwOn(
+      500,
+      FleetmanagementV1TransactionPricedtransactionssummary500Error,
+      'The server encountered an unexpected condition the prevented it from fulfilling the request.'
+    );
     req.authenticate([{ basicAuth: true }]);
     return req.callAsJson(pricedTransSummaryResponseSchema, requestOptions);
   }
@@ -370,17 +470,17 @@ export class TransactionController extends BaseController {
    *
    * This API fetches transactions for a period based on the below parameters and priority order:
    *
-   * 1.	InvoiceNumber
+   * 1.    InvoiceNumber
    *
-   * 2.	InvoiceDate
+   * 2.    InvoiceDate
    *
-   * 3.	FromDate, ToDate
+   * 3.    FromDate, ToDate
    *
-   * 4.	PostingFromDate, PostingToDate (Can be used only when IncludeFees = false)
+   * 4.    PostingFromDate, PostingToDate (Can be used only when IncludeFees = false)
    *
-   * 5.	InvoiceDateFrom, InvoiceDateTo
+   * 5.    InvoiceDateFrom, InvoiceDateTo
    *
-   * 6.	Period
+   * 6.    Period
    *
    *
    *
@@ -419,18 +519,37 @@ export class TransactionController extends BaseController {
     req.header('RequestId', mapped.requestId);
     req.header('Content-Type', 'application/json');
     req.json(mapped.body);
-    req.throwOn(400, DefaultError, 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).');
-    req.throwOn(401, DefaultError, 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n');
-    req.throwOn(403, ErrorUserAccessError1Error, 'The server understood the request but refuses to authorize it.\r\n');
-    req.throwOn(404, DefaultError, 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n');
-    req.throwOn(500, DefaultError, 'The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n');
+    req.throwOn(
+      400,
+      FleetmanagementV1TransactionMultipayerspricedtransactions400Error,
+      'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
+    );
+    req.throwOn(
+      401,
+      FleetmanagementV1TransactionMultipayerspricedtransactions401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
+    );
+    req.throwOn(
+      403,
+      FleetmanagementV1TransactionMultipayerspricedtransactions403Error,
+      'The server understood the request but refuses to authorize it.'
+    );
+    req.throwOn(
+      404,
+      FleetmanagementV1TransactionMultipayerspricedtransactions404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
+    );
+    req.throwOn(
+      500,
+      FleetmanagementV1TransactionMultipayerspricedtransactions500Error,
+      'The server encountered an unexpected condition the prevented it from fulfilling the request.'
+    );
     req.authenticate([{ basicAuth: true }]);
     return req.callAsJson(multiPricedTransactionResponseSchema, requestOptions);
   }
 
   /**
    * This operation is to provide the expenditure analysis for a card for the past 7 months.
-   *
    * The response contains a daily summary of the transactions (billed & unbilled) from 1st of the last 7
    * months for the requested card grouped by card, site-group and product.
    *
@@ -461,11 +580,31 @@ export class TransactionController extends BaseController {
     req.header('RequestId', mapped.requestId);
     req.header('Content-Type', 'application/json');
     req.json(mapped.body);
-    req.throwOn(400, DefaultError, 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).');
-    req.throwOn(401, DefaultError, 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n');
-    req.throwOn(403, ErrorUserAccessError1Error, 'The server understood the request but refuses to authorize it.\r\n');
-    req.throwOn(404, DefaultError, 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n');
-    req.throwOn(500, DefaultError, 'The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n');
+    req.throwOn(
+      400,
+      FleetmanagementV1TransactionCardusagesummary400Error,
+      'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
+    );
+    req.throwOn(
+      401,
+      FleetmanagementV1TransactionCardusagesummary401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
+    );
+    req.throwOn(
+      403,
+      FleetmanagementV1TransactionCardusagesummary403Error,
+      'The server understood the request but refuses to authorize it.'
+    );
+    req.throwOn(
+      404,
+      FleetmanagementV1TransactionCardusagesummary404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
+    );
+    req.throwOn(
+      500,
+      FleetmanagementV1TransactionCardusagesummary500Error,
+      'The server encountered an unexpected condition the prevented it from fulfilling the request.'
+    );
     req.authenticate([{ basicAuth: true }]);
     return req.callAsJson(cardUsageSummaryResponseSchema, requestOptions);
   }
@@ -473,7 +612,6 @@ export class TransactionController extends BaseController {
   /**
    * - This API provides the details of the bonus and/or association bonus rules setup for the given
    * payer and that are active on the current date.
-   *
    * - This API also returns the details of the monthly breakup of current period consumption as well as
    * the details of the previously calculated bonus and consumption of the applicable payers.
    *
@@ -506,11 +644,31 @@ export class TransactionController extends BaseController {
     req.header('RequestId', mapped.requestId);
     req.header('Content-Type', 'application/json');
     req.json(mapped.body);
-    req.throwOn(400, DefaultError, 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).');
-    req.throwOn(401, DefaultError, 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n');
-    req.throwOn(403, ErrorUserAccessError1Error, 'The server understood the request but refuses to authorize it.\r\n');
-    req.throwOn(404, DefaultError, 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n');
-    req.throwOn(500, DefaultError, 'The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n');
+    req.throwOn(
+      400,
+      FleetmanagementV1TransactionVolumebasedbonus400Error,
+      'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
+    );
+    req.throwOn(
+      401,
+      FleetmanagementV1TransactionVolumebasedbonus401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
+    );
+    req.throwOn(
+      403,
+      FleetmanagementV1TransactionVolumebasedbonus403Error,
+      'The server understood the request but refuses to authorize it.'
+    );
+    req.throwOn(
+      404,
+      FleetmanagementV1TransactionVolumebasedbonus404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
+    );
+    req.throwOn(
+      500,
+      FleetmanagementV1TransactionVolumebasedbonus500Error,
+      'The server encountered an unexpected condition the prevented it from fulfilling the request.'
+    );
     req.authenticate([{ basicAuth: true }]);
     return req.callAsJson(volumeBasedBonusResponseSchema, requestOptions);
   }
@@ -551,11 +709,31 @@ export class TransactionController extends BaseController {
     req.header('RequestId', mapped.requestId);
     req.header('Content-Type', 'application/json');
     req.json(mapped.body);
-    req.throwOn(400, DefaultError, 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).');
-    req.throwOn(401, DefaultError, 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n');
-    req.throwOn(403, ErrorUserAccessError1Error, 'The server understood the request but refuses to authorize it.\r\n');
-    req.throwOn(404, DefaultError, 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n');
-    req.throwOn(500, DefaultError, 'The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n');
+    req.throwOn(
+      400,
+      FleetmanagementV1TransactionVolumebasedpricing400Error,
+      'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
+    );
+    req.throwOn(
+      401,
+      FleetmanagementV1TransactionVolumebasedpricing401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
+    );
+    req.throwOn(
+      403,
+      FleetmanagementV1TransactionVolumebasedpricing403Error,
+      'The server understood the request but refuses to authorize it.'
+    );
+    req.throwOn(
+      404,
+      FleetmanagementV1TransactionVolumebasedpricing404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
+    );
+    req.throwOn(
+      500,
+      FleetmanagementV1TransactionVolumebasedpricing500Error,
+      'The server encountered an unexpected condition the prevented it from fulfilling the request.'
+    );
     req.authenticate([{ basicAuth: true }]);
     return req.callAsJson(volumeBasedPricingResponseSchema, requestOptions);
   }
@@ -616,11 +794,31 @@ export class TransactionController extends BaseController {
     req.header('RequestId', mapped.requestId);
     req.header('Content-Type', 'application/json');
     req.json(mapped.body);
-    req.throwOn(400, DefaultError, 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).');
-    req.throwOn(401, DefaultError, 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n');
-    req.throwOn(403, ErrorUserAccessError1Error, 'The server understood the request but refuses to authorize it.\r\n');
-    req.throwOn(404, DefaultError, 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n');
-    req.throwOn(500, DefaultError, 'The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n');
+    req.throwOn(
+      400,
+      FleetmanagementV1TransactionFees400Error,
+      'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
+    );
+    req.throwOn(
+      401,
+      FleetmanagementV1TransactionFees401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
+    );
+    req.throwOn(
+      403,
+      FleetmanagementV1TransactionFees403Error,
+      'The server understood the request but refuses to authorize it.'
+    );
+    req.throwOn(
+      404,
+      FleetmanagementV1TransactionFees404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
+    );
+    req.throwOn(
+      500,
+      FleetmanagementV1TransactionFees500Error,
+      'The server encountered an unexpected condition the prevented it from fulfilling the request.'
+    );
     req.authenticate([{ basicAuth: true }]);
     return req.callAsJson(transactionFeesResponseSchema, requestOptions);
   }
@@ -680,11 +878,31 @@ export class TransactionController extends BaseController {
     req.header('RequestId', mapped.requestId);
     req.header('Content-Type', 'application/json');
     req.json(mapped.body);
-    req.throwOn(400, DefaultError, 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).');
-    req.throwOn(401, DefaultError, 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n');
-    req.throwOn(403, ErrorUserAccessError1Error, 'The server understood the request but refuses to authorize it.\r\n');
-    req.throwOn(404, DefaultError, 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n');
-    req.throwOn(500, DefaultError, 'The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n');
+    req.throwOn(
+      400,
+      FleetmanagementV1TransactionFeessummary400Error,
+      'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
+    );
+    req.throwOn(
+      401,
+      FleetmanagementV1TransactionFeessummary401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
+    );
+    req.throwOn(
+      403,
+      FleetmanagementV1TransactionFeessummary403Error,
+      'The server understood the request but refuses to authorize it.'
+    );
+    req.throwOn(
+      404,
+      FleetmanagementV1TransactionFeessummary404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
+    );
+    req.throwOn(
+      500,
+      FleetmanagementV1TransactionFeessummary500Error,
+      'The server encountered an unexpected condition the prevented it from fulfilling the request.'
+    );
     req.authenticate([{ basicAuth: true }]);
     return req.callAsJson(feeSummaryResponseSchema, requestOptions);
   }
@@ -725,11 +943,31 @@ export class TransactionController extends BaseController {
     req.header('RequestId', mapped.requestId);
     req.header('Content-Type', 'application/json');
     req.json(mapped.body);
-    req.throwOn(400, DefaultError, 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).');
-    req.throwOn(401, DefaultError, 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n');
-    req.throwOn(403, ErrorUserAccessError1Error, 'The server understood the request but refuses to authorize it.\r\n');
-    req.throwOn(404, DefaultError, 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n');
-    req.throwOn(500, DefaultError, 'The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n');
+    req.throwOn(
+      400,
+      FleetmanagementV1TransactionFuelconsumption400Error,
+      'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
+    );
+    req.throwOn(
+      401,
+      FleetmanagementV1TransactionFuelconsumption401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
+    );
+    req.throwOn(
+      403,
+      FleetmanagementV1TransactionFuelconsumption403Error,
+      'The server understood the request but refuses to authorize it.'
+    );
+    req.throwOn(
+      404,
+      FleetmanagementV1TransactionFuelconsumption404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
+    );
+    req.throwOn(
+      500,
+      FleetmanagementV1TransactionFuelconsumption500Error,
+      'The server encountered an unexpected condition the prevented it from fulfilling the request.'
+    );
     req.authenticate([{ basicAuth: true }]);
     return req.callAsJson(fuelConsumptionResponseSchema, requestOptions);
   }
@@ -766,11 +1004,31 @@ export class TransactionController extends BaseController {
     req.header('RequestId', mapped.requestId);
     req.header('Content-Type', 'application/json');
     req.json(mapped.body);
-    req.throwOn(400, DefaultError, 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).');
-    req.throwOn(401, DefaultError, 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n');
-    req.throwOn(403, ErrorUserAccessError1Error, 'The server understood the request but refuses to authorize it.\r\n');
-    req.throwOn(404, DefaultError, 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n');
-    req.throwOn(500, DefaultError, 'The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n');
+    req.throwOn(
+      400,
+      FleetmanagementV1TransactionUpdateodometer400Error,
+      'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
+    );
+    req.throwOn(
+      401,
+      FleetmanagementV1TransactionUpdateodometer401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
+    );
+    req.throwOn(
+      403,
+      FleetmanagementV1TransactionUpdateodometer403Error,
+      'The server understood the request but refuses to authorize it.'
+    );
+    req.throwOn(
+      404,
+      FleetmanagementV1TransactionUpdateodometer404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
+    );
+    req.throwOn(
+      500,
+      FleetmanagementV1TransactionUpdateodometer500Error,
+      'The server encountered an unexpected condition the prevented it from fulfilling the request.'
+    );
     req.authenticate([{ basicAuth: true }]);
     return req.callAsJson(updateOdometerResponseSchema, requestOptions);
   }
@@ -778,7 +1036,6 @@ export class TransactionController extends BaseController {
   /**
    * - This API provides the details of the Cards or Transaction related exceptions based on the given
    * conditions for the Requested period.
-   *
    * - This API will return the Transactions related exceptions when the OutputType input parameter is
    * passed as ‘Transaction’ else will return the Cards related exceptions.
    *
@@ -811,11 +1068,31 @@ export class TransactionController extends BaseController {
     req.header('RequestId', mapped.requestId);
     req.header('Content-Type', 'application/json');
     req.json(mapped.body);
-    req.throwOn(400, DefaultError, 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).');
-    req.throwOn(401, DefaultError, 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\r\n');
-    req.throwOn(403, ErrorUserAccessError1Error, 'The server understood the request but refuses to authorize it.\r\n');
-    req.throwOn(404, DefaultError, 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\r\n');
-    req.throwOn(500, DefaultError, 'The server encountered an unexpected condition the prevented it from fulfilling the request.\r\n');
+    req.throwOn(
+      400,
+      FleetmanagementV1TransactionExceptions400Error,
+      'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
+    );
+    req.throwOn(
+      401,
+      FleetmanagementV1TransactionExceptions401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
+    );
+    req.throwOn(
+      403,
+      FleetmanagementV1TransactionExceptions403Error,
+      'The server understood the request but refuses to authorize it.'
+    );
+    req.throwOn(
+      404,
+      FleetmanagementV1TransactionExceptions404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
+    );
+    req.throwOn(
+      500,
+      FleetmanagementV1TransactionExceptions500Error,
+      'The server encountered an unexpected condition the prevented it from fulfilling the request.'
+    );
     req.authenticate([{ basicAuth: true }]);
     return req.callAsJson(transactionExceptionsResponseSchema, requestOptions);
   }
@@ -825,7 +1102,6 @@ export class TransactionController extends BaseController {
    * Unbilled etc. sales items). It provides a flexible search criteria and supports pagination. E.g., if
    * the request is made at 08:30 AM on 18 Aug 2022 then transactions until 16 Aug 2022 08:30 AM
    * (including) can be retrieved.
-   *
    *
    *
    * #### Supported operations
@@ -865,11 +1141,27 @@ export class TransactionController extends BaseController {
     req.header('RequestId', mapped.requestId);
     req.header('Content-Type', 'application/json');
     req.json(mapped.body);
-    req.throwOn(400, ErrorObjectError, 'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n');
-    req.throwOn(401, ErrorObjectError, 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\n');
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
-    req.throwOn(404, ErrorObjectError, 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n');
-    req.throwOn(500, ErrorObjectError, 'The server encountered an unexpected condition that  prevented it from fulfilling the request.\n');
+    req.throwOn(
+      400,
+      TransactionDataV1Recent400Error,
+      'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
+    );
+    req.throwOn(
+      401,
+      TransactionDataV1Recent401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
+    );
+    req.throwOn(403, TransactionDataV1Recent403Error, 'Forbidden');
+    req.throwOn(
+      404,
+      TransactionDataV1Recent404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
+    );
+    req.throwOn(
+      500,
+      TransactionDataV1Recent500Error,
+      'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
+    );
     req.authenticate([{ bearerToken: true }]);
     return req.callAsJson(recentTransactionsResponseSchema, requestOptions);
   }
@@ -960,11 +1252,27 @@ export class TransactionController extends BaseController {
     req.header('RequestId', mapped.requestId);
     req.header('Content-Type', 'application/json');
     req.json(mapped.body);
-    req.throwOn(400, ErrorObjectError, 'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n');
-    req.throwOn(401, ErrorObjectError, 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\n');
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
-    req.throwOn(404, ErrorObjectError, 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n');
-    req.throwOn(500, ErrorObjectError, 'The server encountered an unexpected condition that  prevented it from fulfilling the request.\n');
+    req.throwOn(
+      400,
+      TransactionDataV1Priced400Error,
+      'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
+    );
+    req.throwOn(
+      401,
+      TransactionDataV1Priced401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
+    );
+    req.throwOn(403, TransactionDataV1Priced403Error, 'Forbidden');
+    req.throwOn(
+      404,
+      TransactionDataV1Priced404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
+    );
+    req.throwOn(
+      500,
+      TransactionDataV1Priced500Error,
+      'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
+    );
     req.authenticate([{ bearerToken: true }]);
     return req.callAsJson(pricedTransactionResponseV2Schema, requestOptions);
   }

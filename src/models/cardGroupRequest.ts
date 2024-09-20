@@ -59,9 +59,9 @@ export interface CardGroupRequest {
    * Card Group Status
    * Mandatory
    * Allowed values:
-   * •	ALL
-   * •	TERMINATED
-   * •	ACTIVE
+   * •    ALL
+   * •    TERMINATED
+   * •    ACTIVE
    */
   status?: string | null;
   /**

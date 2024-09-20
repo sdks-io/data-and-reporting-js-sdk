@@ -34,8 +34,8 @@ export interface SearchStatementOfAccount {
   /**
    * Due date for payment. Format: yyyyMMdd
    * Note:
-   * •	Clients to convert this to appropriate DateTime type.
-   * •	SoA due date is considered as the latest due date of the invoices within the SoA
+   * •    Clients to convert this to appropriate DateTime type.
+   * •    SoA due date is considered as the latest due date of the invoices within the SoA
    */
   dueDate?: string | null;
   /**
@@ -45,9 +45,9 @@ export interface SearchStatementOfAccount {
   invoicedOnBehalfOf?: string | null;
   /**
    * Status of the document. Valid values –
-   * 1.	Paid – Fully paid all Invoices with in the SOA.
-   * 2.	Overdue – At least one invoice payment due date is less than current date with in the SOA.
-   * 3.	Due – At least one invoice is due for payment and is within the due date. There is no invoice overdue for payment.
+   * 1.    Paid – Fully paid all Invoices with in the SOA.
+   * 2.    Overdue – At least one invoice payment due date is less than current date with in the SOA.
+   * 3.    Due – At least one invoice is due for payment and is within the due date. There is no invoice overdue for payment.
    */
   status?: string | null;
   /** Total gross amount in customer currency. */

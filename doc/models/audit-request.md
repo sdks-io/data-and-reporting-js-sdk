@@ -9,7 +9,7 @@
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `status` | `string \| undefined` | Optional | Status of requests to be fetched.<br>•	Success<br>•	Failed<br>•	InProgress<br>•	Submitted<br>•	Rejected<br>•	PendingApproval<br>•	All<br>•	MailedToCSC<br>Optional<br>If not passed “All” will be considered as the default value. |
+| `status` | `string \| undefined` | Optional | Status of requests to be fetched.<br>•    Success<br>•    Failed<br>•    InProgress<br>•    Submitted<br>•    Rejected<br>•    PendingApproval<br>•    All<br>•    MailedToCSC<br>Optional<br>If not passed “All” will be considered as the default value. |
 | `payerNumber` | `string \| null \| undefined` | Optional | Payer Number of the selected payer.<br>Optional if PayerId is passed else Mandatory |
 | `payerId` | `number \| null \| undefined` | Optional | Payer Id  of the selected payer.<br>Optional if PayerNumber is passed else Mandatory<br>Example: 123456 |
 | `accountNumber` | `string \| null \| undefined` | Optional | - |

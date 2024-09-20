@@ -14,10 +14,7 @@ import {
   Schema,
   string,
 } from '../schema';
-import {
-  ExceptionSiteLocation,
-  exceptionSiteLocationSchema,
-} from './exceptionSiteLocation';
+import { Location, locationSchema } from './location';
 
 export interface TransactionExceptions {
   /** Unique Sales Item Identifier */
@@ -120,8 +117,7 @@ export interface TransactionExceptions {
   siteName?: string | null;
   /** Site Country */
   siteCountry?: string | null;
-  /** Geography Location entity for Site Location */
-  location?: ExceptionSiteLocation;
+  location?: Location;
   /** Card Group Name */
   cardGroupName?: string | null;
   /** Receipt Number */
@@ -249,13 +245,13 @@ export interface TransactionExceptions {
   cRMNumber?: string | null;
   /**
    * Sales Item Dispute Status if disputed
-   * 0	No Dispute
-   * 1	In Dispute
-   * 2	Re-Instated
-   * 3	Adjusted
-   * 4	Written Off by Colco
-   * 5	Written Off by Delco
-   * 6	Charged Back to Site
+   * 0    No Dispute
+   * 1    In Dispute
+   * 2    Re-Instated
+   * 3    Adjusted
+   * 4    Written Off by Colco
+   * 5    Written Off by Delco
+   * 6    Charged Back to Site
    */
   disputeStatus?: string | null;
   /** Unit discount in customer currency */
@@ -349,7 +345,7 @@ export const transactionExceptionsSchema: Schema<TransactionExceptions> = object
     siteCode: ['SiteCode', optional(nullable(string()))],
     siteName: ['SiteName', optional(nullable(string()))],
     siteCountry: ['SiteCountry', optional(nullable(string()))],
-    location: ['Location', optional(lazy(() => exceptionSiteLocationSchema))],
+    location: ['Location', optional(lazy(() => locationSchema))],
     cardGroupName: ['CardGroupName', optional(nullable(string()))],
     receiptNumber: ['ReceiptNumber', optional(nullable(string()))],
     productCode: ['ProductCode', optional(nullable(string()))],

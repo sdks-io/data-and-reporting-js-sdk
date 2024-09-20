@@ -30,10 +30,10 @@ export interface Tier {
   /**
    * Tiered pricing group period.
    * Possible Values
-   * 1.	Monthly
-   * 2.	Quarterly
-   * 3.	Semi Annually
-   * 4.	Annual
+   * 1.    Monthly
+   * 2.    Quarterly
+   * 3.    Semi Annually
+   * 4.    Annual
    */
   tieredPricingGroupPeriod?: string | null;
   /** Discount value to be applied to the List price or pump price. */

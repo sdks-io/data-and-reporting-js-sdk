@@ -20,8 +20,8 @@ export interface PayerRequest {
    * List of Payer entity.
    * Optional.
    * Note:
-   * •	Max number of payers allowed in the input is 10, if it exceeds in the input it will throw an error.
-   * •	This value is configurable. Initial configuration will be 1000 and will change to 10 once SFH changes are integrated.
+   * •    Max number of payers allowed in the input is 10, if it exceeds in the input it will throw an error.
+   * •    This value is configurable. Initial configuration will be 1000 and will change to 10 once SFH changes are integrated.
    */
   payers?: Payers[];
   /** Returns only the high-level basic details of payers. Set this field to ‘true’ when only the basic details are required to get the result quicker. */
@@ -37,8 +37,8 @@ export interface PayerRequest {
    * Default value 50
    * Return 250 rows only in the response if -1 is supplied as page size.
    * Note:
-   * •	Max page size is 250, if the user provided value is more than 250 then it will throw error.
-   * •	This value is configurable.
+   * •    Max page size is 250, if the user provided value is more than 250 then it will throw error.
+   * •    This value is configurable.
    */
   pageSize?: number;
 }

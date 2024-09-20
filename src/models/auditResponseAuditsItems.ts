@@ -73,23 +73,23 @@ export interface AuditResponseAuditsItems {
   /**
    * User requested operation.
    * Possible values:
-   * •	OrderCard
-   * •	CreateCardGroup
-   * •	PINReminder
-   * •	MoveCard
-   * •	UpdateCardStatus
-   * •	UpdateCardGroup
-   * •	AutoRenew
-   * •	BulkCardOrder
-   * •	BulkCardBlock
-   * •	BulkCardOrderMultiAccount
-   * •	MobilePaymentRegistration
-   * •	UpdateCompanyInfo
-   * •	BCOSummary
-   * •	BCOMultiAccountSummary
-   * •	BCBSummary
-   * •	FundTransfer
-   * •	DeliveryAddressUpdate
+   * •    OrderCard
+   * •    CreateCardGroup
+   * •    PINReminder
+   * •    MoveCard
+   * •    UpdateCardStatus
+   * •    UpdateCardGroup
+   * •    AutoRenew
+   * •    BulkCardOrder
+   * •    BulkCardBlock
+   * •    BulkCardOrderMultiAccount
+   * •    MobilePaymentRegistration
+   * •    UpdateCompanyInfo
+   * •    BCOSummary
+   * •    BCOMultiAccountSummary
+   * •    BCBSummary
+   * •    FundTransfer
+   * •    DeliveryAddressUpdate
    */
   requestedOperation?: string | null;
   /** Reference number for the requested operation. */
@@ -97,35 +97,35 @@ export interface AuditResponseAuditsItems {
   /**
    * Request type initiated under the requested operation.
    * Possible values:
-   * •	OrderCard
-   * •	CreateCardGroup
-   * •	PINReminder
-   * •	MoveCard
-   * •	UpdateCardStatus
-   * •	UpdateCardGroup
-   * •	AutoRenew
-   * •	BulkCardOrder
-   * •	BulkCardBlock
-   * •	BulkCardOrderMultiAccount
-   * •	MobilePaymentRegistration
-   * •	UpdateCompanyInfo
-   * •	BCOSummary
-   * •	BCOMultiAccountSummary
-   * •	BCBSummary
-   * •	FundTransfer
-   * •	DeliveryAddressUpdate
+   * •    OrderCard
+   * •    CreateCardGroup
+   * •    PINReminder
+   * •    MoveCard
+   * •    UpdateCardStatus
+   * •    UpdateCardGroup
+   * •    AutoRenew
+   * •    BulkCardOrder
+   * •    BulkCardBlock
+   * •    BulkCardOrderMultiAccount
+   * •    MobilePaymentRegistration
+   * •    UpdateCompanyInfo
+   * •    BCOSummary
+   * •    BCOMultiAccountSummary
+   * •    BCBSummary
+   * •    FundTransfer
+   * •    DeliveryAddressUpdate
    */
   requestType?: string | null;
   /**
    * Status of the request.
    * Possible values:
-   * •	Success
-   * •	Failed
-   * •	InProgress
-   * •	Submitted
-   * •	Rejected
-   * •	PendingApproval
-   * •	MailedToCSC
+   * •    Success
+   * •    Failed
+   * •    InProgress
+   * •    Submitted
+   * •    Rejected
+   * •    PendingApproval
+   * •    MailedToCSC
    */
   status?: string | null;
   /**

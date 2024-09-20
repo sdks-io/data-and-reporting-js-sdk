@@ -44,20 +44,20 @@
 | `isInvoiced` | `boolean \| null \| undefined` | Optional | True when the transaction is already invoice, else return False |
 | `invoiceNumber` | `string \| null \| undefined` | Optional | Invoice Number if invoiced<br>S04500493 |
 | `invoiceDate` | `string \| null \| undefined` | Optional | Invoice Date<br>Format: yyyyMMdd HH:mm:ss |
-| `siteCode` | `string \| null \| undefined` | Optional | Site Code<br>Example:<br>050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755<br>050002 -	CHARNOCK RICHARD STHBOUND MWSA 0755 |
-| `siteName` | `string \| null \| undefined` | Optional | Site Name<br>Example:<br>050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755<br>050002 -	CHARNOCK RICHARD STHBOUND MWSA 0755 |
+| `siteCode` | `string \| null \| undefined` | Optional | Site Code<br>Example:<br>050001 -    CHARNOCK RICHARD NTHBOUND MWSA 0755<br>050002 -    CHARNOCK RICHARD STHBOUND MWSA 0755 |
+| `siteName` | `string \| null \| undefined` | Optional | Site Name<br>Example:<br>050001 -    CHARNOCK RICHARD NTHBOUND MWSA 0755<br>050002 -    CHARNOCK RICHARD STHBOUND MWSA 0755 |
 | `siteCountry` | `string \| null \| undefined` | Optional | Site Country<br>Example: France, Germany<br>Note: - The value could be null/blank for fees item.<br>Geography Location entity for Site Location<br>Note: - The value could be null/blank for fees item. |
-| `location` | [`(PricedTransactionItemsLocationItems \| null)[] \| undefined`](../../doc/models/priced-transaction-items-location-items.md) | Optional | Geography Location entity for Site Location<br>Note: - The value could be null/blank for fees item |
+| `location` | [`PricedTransactionResponseTransactionsItemsLocation[] \| undefined`](../../doc/models/containers/priced-transaction-response-transactions-items-location.md) | Optional | This is Array of a container for one-of cases. |
 | `cardGroupName` | `string \| null \| undefined` | Optional | Card Group Name |
 | `receiptNumber` | `string \| null \| undefined` | Optional | Receipt Number |
-| `productCode` | `string \| null \| undefined` | Optional | Product Code<br>10	TMF Charges<br>11	Tunnel/Bridges<br>12	Motorway toll<br>13	Ferries |
+| `productCode` | `string \| null \| undefined` | Optional | Product Code<br>10    TMF Charges<br>11    Tunnel/Bridges<br>12    Motorway toll<br>13    Ferries |
 | `productName` | `string \| null \| undefined` | Optional | Product Name<br>Unleaded - High octane<br>Unleaded - Medium octane<br>Unleaded - Low octane<br>Unleaded Environmental |
-| `productGroupId` | `number \| null \| undefined` | Optional | Product Group Id<br>Example:<br>1	Parent Product Group<br>2	All Fuels<br>3	Motor gasoline<br>4	2 stroke<br>5	Autogas<br>6	CNG |
-| `productGroupName` | `string \| null \| undefined` | Optional | Product Group Name<br>Example:<br>1	Parent Product Group<br>2	All Fuels<br>3	Motor gasoline<br>4	2 stroke<br>5	Autogas<br>6	CNG<br>7	Automotive Gas Oil |
+| `productGroupId` | `number \| null \| undefined` | Optional | Product Group Id<br>Example:<br>1    Parent Product Group<br>2    All Fuels<br>3    Motor gasoline<br>4    2 stroke<br>5    Autogas<br>6    CNG |
+| `productGroupName` | `string \| null \| undefined` | Optional | Product Group Name<br>Example:<br>1    Parent Product Group<br>2    All Fuels<br>3    Motor gasoline<br>4    2 stroke<br>5    Autogas<br>6    CNG<br>7    Automotive Gas Oil |
 | `delCoExchangeRate` | `number \| null \| undefined` | Optional | DelCo Exchange Rate (Site exchange rate) |
 | `colCoExchangeRate` | `number \| null \| undefined` | Optional | ColCo Exchange Rate (Customer exchange rate) |
 | `isShellSite` | `boolean \| null \| undefined` | Optional | True when transaction occurred at a Shell site else return False<br>Note: - The value could be null/blank for fees item. |
-| `network` | `string \| null \| undefined` | Optional | Network as configured in GFN (Shell PH, ESSO, etc.,)<br>100013	STEINDORFER<br>100015	S.A. BELGIAN SHELL N.V.<br>100016	ESSO BE<br>Note: - The value could be null/blank for fees item |
+| `network` | `string \| null \| undefined` | Optional | Network as configured in GFN (Shell PH, ESSO, etc.,)<br>100013    STEINDORFER<br>100015    S.A. BELGIAN SHELL N.V.<br>100016    ESSO BE<br>Note: - The value could be null/blank for fees item |
 | `siteGroupId` | `number \| null \| undefined` | Optional | Site Group Id<br>Example: 202<br>Note: - The value could be null/blank for fees item. |
 | `siteGroupName` | `string \| null \| undefined` | Optional | Site Group Name<br>Example: CZ 9100 ECONOMY NETWORK |
 | `postingDate` | `string \| null \| undefined` | Optional | Transaction Posting Date<br>Format: yyyyMMdd HHmmss |
@@ -100,7 +100,7 @@
 | `transactionLine` | `string \| null \| undefined` | Optional | Transaction line item number |
 | `allowClearing` | `string \| null \| undefined` | Optional | Is the Sales Item allowed for clearing? i.e. not written off<br>Example: “Y” or “N”<br>Note: - The value could be null/blank for fees item. |
 | `cRMNumber` | `string \| null \| undefined` | Optional | CRM Case number if the sales item is in dispute<br>Note: - The value could be null/blank for fees item. |
-| `disputeStatus` | `string \| null \| undefined` | Optional | Sales Item Dispute Status if disputed<br>0	No Dispute<br>1	In Dispute<br>2	Re-Instated<br>3	Adjusted<br>4	Written Off by Colco<br>5	Written Off by Delco<br>6	Charged Back to Site<br>Note: - The value could be null/blank for fees item. |
+| `disputeStatus` | `string \| null \| undefined` | Optional | Sales Item Dispute Status if disputed<br>0    No Dispute<br>1    In Dispute<br>2    Re-Instated<br>3    Adjusted<br>4    Written Off by Colco<br>5    Written Off by Delco<br>6    Charged Back to Site<br>Note: - The value could be null/blank for fees item. |
 | `rebateRate` | `number \| null \| undefined` | Optional | Unit discount in customer currency.<br>Example: 28.279000<br>Note: - The value could be null/blank for fees item |
 | `delCoToColCoExchangeRate` | `number \| null \| undefined` | Optional | Exchange rate from transaction currency to customer currency.<br>Example: 1<br>Note: - The value could be null/blank for fees item |
 | `netEuroAmount` | `number \| null \| undefined` | Optional | Net euro amount.<br>Example: 37.93<br>Note: - The value could be null/blank for fees item |

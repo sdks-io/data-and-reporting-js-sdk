@@ -83,10 +83,10 @@ export interface PriceTransactionRequest {
   /**
    * Product Id
    * Example:
-   * 21	Unleaded - High octane
-   * 22	Unleaded - Medium octane
-   * 23	Unleaded - Low octane
-   * 24	Unleaded Environmental
+   * 21    Unleaded - High octane
+   * 22    Unleaded - Medium octane
+   * 23    Unleaded - Low octane
+   * 24    Unleaded Environmental
    */
   productId?: number | null;
   /**
@@ -94,10 +94,10 @@ export interface PriceTransactionRequest {
    * Optional
    * Max Length: 8
    * Example:
-   * 10	TMF Charges
-   * 11	Tunnel/Bridges
-   * 12	Motorway toll
-   * 13	Ferries
+   * 10    TMF Charges
+   * 11    Tunnel/Bridges
+   * 12    Motorway toll
+   * 13    Ferries
    */
   productCode?: string | null;
   /**
@@ -109,16 +109,16 @@ export interface PriceTransactionRequest {
   cardGroupId?: number | null;
   /**
    * Allowed Sorting Options:
-   * 1.	TransactionDateAscending
-   * 2.	TransactionDateDescending
-   * 3.	GrossAmountDescending
-   * 4.	GrossAmountAscending
-   * 5.	DriverNameAscending (If Driver Name is null then VRN value will be considered)
-   * 6.	DriverNameDescending (If Driver Name is null then VRN value will be considered)
-   * 7.	VRNAscending (If VRN is null then Driver Name value will be considered)
-   * 8.	VRNDescending (If VRN is null then Driver Name value will be considered)
-   * 9.	NetAmountAscending
-   * 10.	NetAmountDescensding
+   * 1.    TransactionDateAscending
+   * 2.    TransactionDateDescending
+   * 3.    GrossAmountDescending
+   * 4.    GrossAmountAscending
+   * 5.    DriverNameAscending (If Driver Name is null then VRN value will be considered)
+   * 6.    DriverNameDescending (If Driver Name is null then VRN value will be considered)
+   * 7.    VRNAscending (If VRN is null then Driver Name value will be considered)
+   * 8.    VRNDescending (If VRN is null then Driver Name value will be considered)
+   * 9.    NetAmountAscending
+   * 10.    NetAmountDescensding
    * Example value to be passed: “1,3”
    */
   sortOrder?: string | null;
@@ -140,19 +140,19 @@ export interface PriceTransactionRequest {
   /**
    * Transactions Period.
    * Possible values are:
-   * 1.	Last 7 Days
-   * 2.	Last 30 Days
-   * 3.	Last 90 Days
+   * 1.    Last 7 Days
+   * 2.    Last 30 Days
+   * 3.    Last 90 Days
    * Optional - Refer introduction section of this operation for the priority and sequence of different date and invoice number filters that are conditionally applied.
    */
   period?: number | null;
   /**
    * Site Code as configured in GFN
    * Example:
-   * 050001 -	CHARNOCK RICHARD NTHBOUND MWSA 0755
-   * 050002 -	CHARNOCK RICHARD STHBOUND MWSA 0755
-   * 050005 -	HARTSHEAD MOOR EASTBOUND MWSA 0761.
-   * 050006 -	HARTSHEAD MOOR WESTBOUND MWSA.
+   * 050001 -    CHARNOCK RICHARD NTHBOUND MWSA 0755
+   * 050002 -    CHARNOCK RICHARD STHBOUND MWSA 0755
+   * 050005 -    HARTSHEAD MOOR EASTBOUND MWSA 0761.
+   * 050006 -    HARTSHEAD MOOR WESTBOUND MWSA.
    * Note: If IncludeFees is true then this filter will be ignored
    */
   siteCode?: string | null;

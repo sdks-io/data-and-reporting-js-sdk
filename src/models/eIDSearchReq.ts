@@ -50,18 +50,18 @@ export interface EIDSearchReq {
    * Invoice type.
    * Optional.
    * Possible values:
-   * •	NAT (National)
-   * •	INT (International)
+   * •    NAT (National)
+   * •    INT (International)
    */
   invoiceType?: string | null;
   /**
    * Status of the document.
    * Optional.
    * Possible values:
-   * •	NEW
-   * •	VIEWED
-   * •	DOWNLOADED
-   * •	RESTORED
+   * •    NEW
+   * •    VIEWED
+   * •    DOWNLOADED
+   * •    RESTORED
    */
   invoiceStatus?: string | null;
   /**

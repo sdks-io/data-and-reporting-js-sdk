@@ -12,7 +12,7 @@ This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbi
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `colCoCode` | `string \| null` | Required | Collecting Company Code (Shell Code) of the selected payer. |
-| `invoiceStatus` | [`PricedTransactionReqV2InvoiceStatusEnum \| null`](../../doc/models/priced-transaction-req-v2-invoice-status-enum.md) | Required | Invoice status of the transactions. Mandatory Possible options:I - Invoiced, U – Un-Invoiced, A – All<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
+| `invoiceStatus` | `unknown` | Required | - |
 | `payerNumber` | `string \| null` | Required | Payer Number of the selected payer.<br>**Constraints**: *Minimum Length*: `1` |
 | `accountId` | `number \| null \| undefined` | Optional | Account Id (GFN customer id) |
 | `accountNumber` | `string \| null \| undefined` | Optional | Account Number of the selected account. |
@@ -32,10 +32,10 @@ This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbi
 | `feeTypeId` | `number \| null \| undefined` | Optional | Card Id (i.e. Unique Card Id in GFN) |
 | `lineItemDescription` | `string \| null \| undefined` | Optional | Item identifier in the transaction.<br>**Constraints**: *Minimum Length*: `4`, *Maximum Length*: `128` |
 | `cards` | `number[] \| undefined` | Optional | This entity accepts the list of CardId to filter in the response.<br>Note: The number of cardId allowed to be passed in the request is configurable to a maximum of 500 cards.<br>**Constraints**: *Minimum Items*: `1`, *Maximum Items*: `500` |
-| `sortOrder` | [`PricedTransactionReqV2SortOrderEnum \| undefined`](../../doc/models/priced-transaction-req-v2-sort-order-enum.md) | Optional | Allowed Sorting Options<br><br>1. TransactionDateAscending<br>2. TransactionDateDescending<br>3. GrossAmountDescending<br>4. GrossAmountAscending<br>5. NetAmountAscending<br>6. NetAmountDescensding<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
+| `sortOrder` | [`PricedTransactionReqV2SortOrderEnum \| undefined`](../../doc/models/priced-transaction-req-v2-sort-order-enum.md) | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
 | `fromDate` | `string \| null \| undefined` | Optional | From transaction delivery date<br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `19` |
 | `toDate` | `string \| null \| undefined` | Optional | To transaction delivery date<br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `19` |
-| `period` | [`PricedTransactionReqV2PeriodEnum \| undefined`](../../doc/models/priced-transaction-req-v2-period-enum.md) | Optional | Pass below one of the value as per the required transaction period<br><br>1. Last 7 Days<br>2. Last 30 Days<br>3. Last 90 Days |
+| `period` | [`PricedTransactionReqV2PeriodEnum \| undefined`](../../doc/models/priced-transaction-req-v2-period-enum.md) | Optional | - |
 | `postingDateFrom` | `string \| null \| undefined` | Optional | Transaction posting start date and time<br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `19` |
 | `postingDateTo` | `string \| null \| undefined` | Optional | Transaction posting end date and time<br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `19` |
 | `transactionItemId` | `string \| null \| undefined` | Optional | Unique id of the transaction that may include one or more salesitems |
@@ -54,7 +54,10 @@ This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbi
 ```json
 {
   "ColCoCode": "032",
-  "InvoiceStatus": "A",
+  "InvoiceStatus": {
+    "key1": "val1",
+    "key2": "val2"
+  },
   "PayerNumber": "DE26685263",
   "AccountId": 29484,
   "AccountNumber": "DE26667080",
@@ -72,10 +75,8 @@ This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbi
   "SiteGroupId": 202,
   "FeeTypeId": 275549,
   "LineItemDescription": "ABC3",
-  "SortOrder": "5",
   "FromDate": "2022-01-01 00:00:00",
   "ToDate": "2022-01-01 00:00:00",
-  "Period": 3,
   "PostingDateFrom": "2022-01-01 00:00:00",
   "PostingDateTo": "2022-01-01 00:00:00",
   "TransactionItemId": "io9KVXk1UkW57XWKyeaHHg",

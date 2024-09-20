@@ -20,9 +20,12 @@ export interface Configuration {
     oAuthClientId: string;
     oAuthClientSecret: string;
     oAuthToken?: OAuthToken;
-    oAuthTokenProvider?: (lastOAuthToken: OAuthToken | undefined,
-      authManager: BearerTokenManager) => Promise<OAuthToken>;
+    oAuthTokenProvider?: (
+      lastOAuthToken: OAuthToken | undefined,
+      authManager: BearerTokenManager
+    ) => Promise<OAuthToken>;
     oAuthOnTokenUpdate?: (token: OAuthToken) => void;
+    oAuthClockSkew?: number;
   };
   httpClientOptions?: Partial<HttpClientOptions>;
   unstable_httpClientOptions?: any;

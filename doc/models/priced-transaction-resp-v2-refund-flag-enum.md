@@ -11,8 +11,8 @@ Flag to check if there is any refund
 
 | Name |
 |  --- |
-| `y` |
-| `n` |
+| `Y` |
+| `N` |
 
 ## Example
 

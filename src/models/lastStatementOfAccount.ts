@@ -66,51 +66,51 @@ export interface LastStatementOfAccount {
   /**
    * Payment method description of the Payer.
    * Example: Id & Description
-   * •	Incoming - Direct Debit
-   * •	Incoming - Cheque
-   * •	Incoming - Direct Debit A
-   * •	Incoming - Bank Transfer
-   * •	Incoming - Cash
+   * •    Incoming - Direct Debit
+   * •    Incoming - Cheque
+   * •    Incoming - Direct Debit A
+   * •    Incoming - Bank Transfer
+   * •    Incoming - Cash
    */
   paymentMethod?: string | null;
   /**
    * Payment method Id of the Payer.
    * Example: Id & Description
-   * •	Incoming - Direct Debit
-   * •	Incoming - Cheque
-   * •	Incoming - Direct Debit A
-   * •	Incoming - Bank Transfer
-   * •	Incoming - Cash
+   * •    Incoming - Direct Debit
+   * •    Incoming - Cheque
+   * •    Incoming - Direct Debit A
+   * •    Incoming - Bank Transfer
+   * •    Incoming - Cash
    */
   paymentMethodId?: number | null;
   /**
    * Payment terms description of the Payer.
    * Example: Id & Description
-   * •	14 days after Invoice
-   * •	15 days after Invoice
-   * •	21 days after Invoice
-   * •	30 days after Invoice
-   * •	45 days after Invoice
-   * •	0 days after invoice
-   * •	days after invoice
-   * •	days after invoice
-   * •	7 days after invoice
-   * •	10th of the following month
+   * •    14 days after Invoice
+   * •    15 days after Invoice
+   * •    21 days after Invoice
+   * •    30 days after Invoice
+   * •    45 days after Invoice
+   * •    0 days after invoice
+   * •    days after invoice
+   * •    days after invoice
+   * •    7 days after invoice
+   * •    10th of the following month
    */
   paymentTerms?: string | null;
   /**
    * Payment terms Id of the Payer.
    * Example: Id & Description
-   * •	14 days after Invoice
-   * •	15 days after Invoice
-   * •	21 days after Invoice
-   * •	30 days after Invoice
-   * •	45 days after Invoice
-   * •	0 days after invoice
-   * •	days after invoice
-   * •	days after invoice
-   * •	7 days after invoice
-   * •	10th of the following month
+   * •    14 days after Invoice
+   * •    15 days after Invoice
+   * •    21 days after Invoice
+   * •    30 days after Invoice
+   * •    45 days after Invoice
+   * •    0 days after invoice
+   * •    days after invoice
+   * •    days after invoice
+   * •    7 days after invoice
+   * •    10th of the following month
    */
   paymentTermsId?: number | null;
   /** Statement of account reference number */

@@ -11,7 +11,7 @@ Error response
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `fault` | [`DefaultErrorFault \| undefined`](../../doc/models/default-error-fault.md) | Optional | Error object |
+| `fault` | [`Fault \| undefined`](../../doc/models/fault.md) | Optional | - |
 
 ## Example (as JSON)
 

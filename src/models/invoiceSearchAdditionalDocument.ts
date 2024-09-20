@@ -14,7 +14,7 @@ export interface InvoiceSearchAdditionalDocument {
    * Type of the additional document.
    * Mandatory
    * Possible values:
-   * •	KSeF - Applicable for Poland market.
+   * •    KSeF - Applicable for Poland market.
    */
   type?: string | null;
   /** True if a KSeF PDF will be produced for the customer. */

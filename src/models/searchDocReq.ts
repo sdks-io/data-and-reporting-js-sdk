@@ -52,10 +52,10 @@ export interface SearchDocReq {
    * The status of the invoices
    * Optional
    * One of the following values:
-   * •	NEW
-   * •	VIEWED
-   * •	DOWNLOADED
-   * •	RESTORED
+   * •    NEW
+   * •    VIEWED
+   * •    DOWNLOADED
+   * •    RESTORED
    */
   invoiceStatus?: string | null;
   /**
@@ -92,20 +92,20 @@ export interface SearchDocReq {
    * Optional
    * This parameter will be ignored if GrossAmount parameter is not set.
    * One of the following values:
-   * •	LT (Less Than)
-   * •	LE (Lesser or Equal)
-   * •	EQ (equal)
-   * •	GE (Greater or equal)
-   * •	GT (Greater than)
+   * •    LT (Less Than)
+   * •    LE (Lesser or Equal)
+   * •    EQ (equal)
+   * •    GE (Greater or equal)
+   * •    GT (Greater than)
    */
   grossAmountOperator?: string | null;
   /**
    * Document Type
    * Optional
    * One of the following values:
-   * •	NAT (National)
-   * •	INT (International)
-   * •	SOA (Statement of Account)
+   * •    NAT (National)
+   * •    INT (International)
+   * •    SOA (Statement of Account)
    */
   documentType?: string | null;
   /** Two letter ISO country code. */

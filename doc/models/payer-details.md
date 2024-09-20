@@ -41,9 +41,9 @@
 | `localCurrencyExchangeRate` | `number \| null \| undefined` | Optional | Exchange rate from OU base currency to local currency. |
 | `localCurrencyExchangeRateSoA` | `number \| null \| undefined` | Optional | Exchange rate from SoA credit limit currency to local currency |
 | `billingFrequencyTypeId` | `number \| null \| undefined` | Optional | Billing/Invoice frequency Identifier. Indicates the frequency in which the transactions will be considered for invoicing in a bulling run<br>E.g.: 1, 2, 3, etc. |
-| `billingFrequencyType` | `string \| null \| undefined` | Optional | Billing/Invoice frequency. The frequency in which the transactions will be considered for invoicing in a bulling run<br>E.g.:<br>1	Daily (all days)<br>2	Daily (only working days)<br>3	Weekly - Monday<br>4	Weekly – Tuesday<br>Etc. |
+| `billingFrequencyType` | `string \| null \| undefined` | Optional | Billing/Invoice frequency. The frequency in which the transactions will be considered for invoicing in a bulling run<br>E.g.:<br>1    Daily (all days)<br>2    Daily (only working days)<br>3    Weekly - Monday<br>4    Weekly – Tuesday<br>Etc. |
 | `billingRunFrequencyTypeId` | `number \| null \| undefined` | Optional | Frequency at which the billing process is triggered.<br>E.g.: 1, 2, 3, etc. |
-| `billingRunFrequnecy` | `string \| null \| undefined` | Optional | Frequency at which the billing process is triggered.E.g.:<br>1	Daily (all days)<br>2	Daily (only working days)<br>3	Weekly - Monday<br>4	Weekly – Tuesday<br>Etc. |
+| `billingRunFrequnecy` | `string \| null \| undefined` | Optional | Frequency at which the billing process is triggered.E.g.:<br>1    Daily (all days)<br>2    Daily (only working days)<br>3    Weekly - Monday<br>4    Weekly – Tuesday<br>Etc. |
 | `day1Run` | `number \| null \| undefined` | Optional | The first day in a month when the billing should run in case of multiple billing runs configured with in a single month. |
 | `day2Run` | `number \| null \| undefined` | Optional | The second day in a month when the billing should run in case of multiple billing runs configured with in a single month. |
 | `day3Run` | `number \| null \| undefined` | Optional | The third day in a month when the billing should run in case of multiple billing runs configured with in a single month. |
@@ -110,9 +110,9 @@
 | `hasActiveVolBasedPricing` | `boolean \| undefined` | Optional | True, if the payer is setup for volume-based pricing and is active on the current date, else false.<br><br>This field is returned only when IncludeBonusParameters is set to True in the request. Else set to null. |
 | `hasActiveVolBasedBonus` | `boolean \| undefined` | Optional | True, if the payer is setup for volume-based bonus and is active on the current date, else false.<br>This field is returned only when IncludeBonusParameters is set to True in the request. Else set to null. |
 | `hasActiveVolBasedAssociationBonus` | `boolean \| undefined` | Optional | True, if the payer is setup for volume-based association bonus and is active on the current date, else false.<br>This field is returned only when IncludeBonusParameters is set to True in the request. Else set to null. |
-| `financeCurrency` | [`FinanceCurrency \| undefined`](../../doc/models/finance-currency.md) | Optional | This entity will not be present in the response if the ‘IncludeFinanceCurrency’ flag in the request is ‘false’ |
+| `financeCurrency` | [`FinanceCurrency2 \| undefined`](../../doc/models/finance-currency-2.md) | Optional | - |
 | `tollsCustomerId` | `string \| null \| undefined` | Optional | Customer id in e-TM system<br>This field will have value only when ReturnTollsCustomerId is set to true in the request else set to null or empty. |
-| `tollsColcoCountryTypeId` | `string \| null \| undefined` | Optional | String	Colco country type id in e-TM system<br>This field will have value only when ReturnTollsCustomerId is set to true in the request else set to null or empty. |
+| `tollsColcoCountryTypeId` | `string \| null \| undefined` | Optional | String    Colco country type id in e-TM system<br>This field will have value only when ReturnTollsCustomerId is set to true in the request else set to null or empty. |
 | `contracts` | [`CustomerContract[] \| undefined`](../../doc/models/customer-contract.md) | Optional | - |
 
 ## Example (as JSON)

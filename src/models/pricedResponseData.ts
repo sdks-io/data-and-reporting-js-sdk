@@ -225,7 +225,6 @@ export interface PricedResponseData {
   rebateRate?: number | null;
   /** Reciept number */
   receiptNumber?: number | null;
-  /** Flag to check if there is any refund */
   refundFlag?: PricedTransactionRespV2RefundFlagEnum;
   /** Group identifier for the site */
   siteGroupId?: number | null;

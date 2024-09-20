@@ -18,4 +18,6 @@ export enum PricedTransactionReqV2InvoiceStatusEnum {
 /**
  * Schema for PricedTransactionReqV2InvoiceStatusEnum
  */
-export const  pricedTransactionReqV2InvoiceStatusEnumSchema: Schema<PricedTransactionReqV2InvoiceStatusEnum> = stringEnum(PricedTransactionReqV2InvoiceStatusEnum);
+export const pricedTransactionReqV2InvoiceStatusEnumSchema: Schema<PricedTransactionReqV2InvoiceStatusEnum> = stringEnum(
+  PricedTransactionReqV2InvoiceStatusEnum
+);

@@ -27,7 +27,7 @@
 | `pricePerUnit` | `number \| null \| undefined` | Optional | Price per unit |
 | `currencyCode` | `string \| null \| undefined` | Optional | Currency Code.<br>Format : 3 digit ISO code |
 | `currencySymbol` | `string \| null \| undefined` | Optional | Currency Symbol<br>Example: £ |
-| `priceType` | `string \| null \| undefined` | Optional | Price Type<br>Possible Values are:<br>•	Country– Price rule defined at country whereas Price Rule DelcoId same as ColcoId.<br>•	TPNDelcoPrice – Price rule defined in the TPN whereas Price Rule DelcoId is different from ColcoId.<br>•	NetworkPrice – Price rule defined at Fuel Network level.<br>•	Other – Price rule defined at either Site or SiteGroup level. |
+| `priceType` | `string \| null \| undefined` | Optional | Price Type<br>Possible Values are:<br>•    Country– Price rule defined at country whereas Price Rule DelcoId same as ColcoId.<br>•    TPNDelcoPrice – Price rule defined in the TPN whereas Price Rule DelcoId is different from ColcoId.<br>•    NetworkPrice – Price rule defined at Fuel Network level.<br>•    Other – Price rule defined at either Site or SiteGroup level. |
 | `siteGroupId` | `number \| null \| undefined` | Optional | Site-Group ID<br>E.g.: 100007 |
 | `siteGroupName` | `string \| null \| undefined` | Optional | Site-Group name |
 | `siteCode` | `number \| null \| undefined` | Optional | Site Code |
@@ -36,7 +36,7 @@
 | `fuelNetworkId` | `number \| null \| undefined` | Optional | Fuel Network ID |
 | `networkName` | `string \| null \| undefined` | Optional | Network Name |
 | `priceRuleDelcoId` | `number \| null \| undefined` | Optional | PriceRuleDelcoId |
-| `priceRuleDelcoName` | `string \| null \| undefined` | Optional | Company Name of the price rule DelCo.<br><br>E.g.:<br>•	Pilipinas Shell Petroleum Corp<br>•	Shell U.K. Oil Products Limited<br>•	G & V SERVICE STATIONS NV |
+| `priceRuleDelcoName` | `string \| null \| undefined` | Optional | Company Name of the price rule DelCo.<br><br>E.g.:<br>•    Pilipinas Shell Petroleum Corp<br>•    Shell U.K. Oil Products Limited<br>•    G & V SERVICE STATIONS NV |
 | `priceRuleCountry` | `string \| null \| undefined` | Optional | PriceRuleCountry<br>E.g.: United Kingdom |
 | `priceRuleCountryCode` | `string \| null \| undefined` | Optional | ISO Code of PriceRuleCountry<br>E.g.: UK, NL, etc., |
 | `priceRuleBasisId` | `number \| null \| undefined` | Optional | PriceRuleBasisId |

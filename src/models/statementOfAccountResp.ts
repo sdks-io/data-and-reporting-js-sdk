@@ -5,11 +5,14 @@
  */
 
 import { array, lazy, nullable, object, optional, Schema } from '../schema';
-import { InvoicesSummaries, invoicesSummariesSchema } from './invoicesSummaries';
 import {
-  LastStatementOfAccount,
-  lastStatementOfAccountSchema,
-} from './lastStatementOfAccount';
+  InvoicesSummaries,
+  invoicesSummariesSchema,
+} from './invoicesSummaries';
+import {
+  LastStatementOfAccount2,
+  lastStatementOfAccount2Schema,
+} from './lastStatementOfAccount2';
 import {
   MonthlyInvoiceTrend,
   monthlyInvoiceTrendSchema,
@@ -24,8 +27,7 @@ import {
 } from './paymentsSinceLastSOA';
 
 export interface StatementOfAccountResp {
-  /** Latest statement of the account generated for the given Payer. */
-  lastStatementOfAccount?: LastStatementOfAccount;
+  lastStatementOfAccount?: LastStatementOfAccount2;
   monthlyInvoiceTrend?: MonthlyInvoiceTrend[] | null;
   pastStatementOfAccounts?: PastStatementOfAccounts[];
   paymentsSinceLastSOA?: PaymentsSinceLastSOA[] | null;
@@ -36,7 +38,7 @@ export const statementOfAccountRespSchema: Schema<StatementOfAccountResp> = obje
   {
     lastStatementOfAccount: [
       'LastStatementOfAccount',
-      optional(lazy(() => lastStatementOfAccountSchema)),
+      optional(lazy(() => lastStatementOfAccount2Schema)),
     ],
     monthlyInvoiceTrend: [
       'MonthlyInvoiceTrend',

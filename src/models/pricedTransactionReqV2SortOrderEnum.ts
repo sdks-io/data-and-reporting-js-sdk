@@ -21,4 +21,6 @@ export enum PricedTransactionReqV2SortOrderEnum {
 /**
  * Schema for PricedTransactionReqV2SortOrderEnum
  */
-export const  pricedTransactionReqV2SortOrderEnumSchema: Schema<PricedTransactionReqV2SortOrderEnum> = stringEnum(PricedTransactionReqV2SortOrderEnum);
+export const pricedTransactionReqV2SortOrderEnumSchema: Schema<PricedTransactionReqV2SortOrderEnum> = stringEnum(
+  PricedTransactionReqV2SortOrderEnum
+);

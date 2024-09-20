@@ -123,15 +123,15 @@ export interface FeeItem {
   /**
    * Product Group Id
    * Example: Sample list
-   * 22	Card related fees
-   * 23	Monetary Adjustment
+   * 22    Card related fees
+   * 23    Monetary Adjustment
    */
   productGroupId?: number | null;
   /**
    * Product Group Name
    * Example: Sample list
-   * 22	Card related fees
-   * 23	Monetary Adjustment
+   * 22    Card related fees
+   * 23    Monetary Adjustment
    */
   productGroupName?: string | null;
   /** Line Item Description generally the quantity as printed on Invoice or the manually keyed in description for manual fees */

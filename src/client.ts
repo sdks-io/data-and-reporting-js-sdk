@@ -26,7 +26,7 @@ import {
   HttpClientInterface,
   RetryConfiguration,
 } from './core';
- import { HttpClient } from './clientAdapter';
+import { HttpClient } from './clientAdapter';
 
 const USER_AGENT = 'APIMATIC 3.0';
 
@@ -51,22 +51,15 @@ export class Client implements ClientInterface {
         ? this._config.httpClientOptions.timeout
         : this._config.timeout;
     this._requestBuilderFactory = createRequestHandlerFactory(
-      server => getBaseUri(server, this._config),
-      createAuthProviderFromConfig(
-        this._config,
-        () => this.bearerTokenManager
-      ),
+      (server) => getBaseUri(server, this._config),
+      createAuthProviderFromConfig(this._config, () => this.bearerTokenManager),
       new HttpClient(AbortError, {
         timeout: this._timeout,
         clientConfigOverrides: this._config.unstable_httpClientOptions,
         httpAgent: this._config.httpClientOptions?.httpAgent,
         httpsAgent: this._config.httpClientOptions?.httpsAgent,
       }),
-      [
-        withErrorHandlers,
-        withUserAgent,
-        withAuthenticationByDefault,
-      ],
+      [withErrorHandlers, withUserAgent, withAuthenticationByDefault],
       this._retryConfig
     );
     if (this._config.bearerTokenCredentials) {
@@ -95,7 +88,10 @@ function createHttpClientAdapter(client: HttpClient): HttpClientInterface {
   };
 }
 
-function getBaseUri(server: Server = 'OAuth Server', config: Configuration): string {
+function getBaseUri(
+  server: Server = 'OAuth Server',
+  config: Configuration
+): string {
   if (config.environment === Environment.SIT) {
     if (server === 'OAuth Server') {
       return 'https://api-test.shell.com';
@@ -139,7 +135,7 @@ function tap(
 ): SdkRequestBuilderFactory {
   return (...args) => {
     const requestBuilder = requestBuilderFactory(...args);
-    callback.forEach(c => c(requestBuilder));
+    callback.forEach((c) => c(requestBuilder));
     return requestBuilder;
   };
 }
@@ -153,5 +149,5 @@ function withUserAgent(rb: SdkRequestBuilder) {
 }
 
 function withAuthenticationByDefault(rb: SdkRequestBuilder) {
-  rb.authenticate([{ basicAuth: true }, { bearerToken: true }]); 
+  rb.authenticate([{ basicAuth: true }, { bearerToken: true }]);
 }

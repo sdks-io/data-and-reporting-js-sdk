@@ -13,11 +13,8 @@ import {
   optional,
   Schema,
   string,
+  unknown,
 } from '../schema';
-import {
-  PricedTransactionReqV2InvoiceStatusEnum,
-  pricedTransactionReqV2InvoiceStatusEnumSchema,
-} from './pricedTransactionReqV2InvoiceStatusEnum';
 import {
   PricedTransactionReqV2PeriodEnum,
   pricedTransactionReqV2PeriodEnumSchema,
@@ -31,8 +28,7 @@ import {
 export interface PricedRequestData {
   /** Collecting Company Code (Shell Code) of the selected payer. */
   colCoCode: string | null;
-  /** Invoice status of the transactions. Mandatory Possible options:I - Invoiced, U – Un-Invoiced, A – All */
-  invoiceStatus: PricedTransactionReqV2InvoiceStatusEnum | null;
+  invoiceStatus?: unknown;
   /** Payer Number of the selected payer. */
   payerNumber: string | null;
   /** Account Id (GFN customer id) */
@@ -74,26 +70,11 @@ export interface PricedRequestData {
    * Note: The number of cardId allowed to be passed in the request is configurable to a maximum of 500 cards.
    */
   cards?: number[];
-  /**
-   * Allowed Sorting Options
-   * 1.    TransactionDateAscending
-   * 2.    TransactionDateDescending
-   * 3.    GrossAmountDescending
-   * 4.    GrossAmountAscending
-   * 5.    NetAmountAscending
-   * 6.    NetAmountDescensding
-   */
   sortOrder?: PricedTransactionReqV2SortOrderEnum;
   /** From transaction delivery date */
   fromDate?: string | null;
   /** To transaction delivery date */
   toDate?: string | null;
-  /**
-   * Pass below one of the value as per the required transaction period
-   * 1. Last 7 Days
-   * 2. Last 30 Days
-   * 3. Last 90 Days
-   */
   period?: PricedTransactionReqV2PeriodEnum;
   /** Transaction posting start date and time */
   postingDateFrom?: string | null;
@@ -129,10 +110,7 @@ export interface PricedRequestData {
 
 export const pricedRequestDataSchema: Schema<PricedRequestData> = object({
   colCoCode: ['ColCoCode', nullable(string())],
-  invoiceStatus: [
-    'InvoiceStatus',
-    nullable(pricedTransactionReqV2InvoiceStatusEnumSchema),
-  ],
+  invoiceStatus: ['InvoiceStatus', optional(unknown())],
   payerNumber: ['PayerNumber', nullable(string())],
   accountId: ['AccountId', optional(nullable(number()))],
   accountNumber: ['AccountNumber', optional(nullable(string()))],
