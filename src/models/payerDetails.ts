@@ -18,7 +18,7 @@ import {
 import { Address, addressSchema } from './address';
 import { BankAccount, bankAccountSchema } from './bankAccount';
 import { CustomerContract, customerContractSchema } from './customerContract';
-import { FinanceCurrency2, financeCurrency2Schema } from './financeCurrency2';
+import { FinanceCurrency, financeCurrencySchema } from './financeCurrency';
 import {
   InvoiceDistributionMethod,
   invoiceDistributionMethodSchema,
@@ -290,7 +290,8 @@ export interface PayerDetails {
    * This field is returned only when IncludeBonusParameters is set to True in the request. Else set to null.
    */
   hasActiveVolBasedAssociationBonus?: boolean;
-  financeCurrency?: FinanceCurrency2;
+  /** This entity will not be present in the response if the ‘IncludeFinanceCurrency’ flag in the request is ‘false’ */
+  financeCurrency?: FinanceCurrency;
   /**
    * Customer id in e-TM system
    * This field will have value only when ReturnTollsCustomerId is set to true in the request else set to null or empty.
@@ -486,7 +487,7 @@ export const payerDetailsSchema: Schema<PayerDetails> = object({
   ],
   financeCurrency: [
     'FinanceCurrency',
-    optional(lazy(() => financeCurrency2Schema)),
+    optional(lazy(() => financeCurrencySchema)),
   ],
   tollsCustomerId: ['TollsCustomerId', optional(nullable(string()))],
   tollsColcoCountryTypeId: [

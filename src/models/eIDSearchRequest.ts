@@ -11,7 +11,7 @@ export interface EIDSearchRequest {
   filters?: EIDSearchReq;
   /** Specify the page of results to be returned. */
   page?: number;
-  /** Specify the number of records to returned; Max 1000 */
+  /** Specify the number of records to returned; Max 100 */
   pageSize?: number;
 }
 

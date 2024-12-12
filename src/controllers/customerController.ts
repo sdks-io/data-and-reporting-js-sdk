@@ -56,46 +56,8 @@ import { PayerRequest, payerRequestSchema } from '../models/payerRequest';
 import { PayerResponse, payerResponseSchema } from '../models/payerResponse';
 import { optional, string } from '../schema';
 import { BaseController } from './baseController';
-import { FleetmanagementV1CustomerAccounts400Error } from '../errors/fleetmanagementV1CustomerAccounts400Error';
-import { FleetmanagementV1CustomerAccounts401Error } from '../errors/fleetmanagementV1CustomerAccounts401Error';
-import { FleetmanagementV1CustomerAccounts403Error } from '../errors/fleetmanagementV1CustomerAccounts403Error';
-import { FleetmanagementV1CustomerAccounts404Error } from '../errors/fleetmanagementV1CustomerAccounts404Error';
-import { FleetmanagementV1CustomerAccounts500Error } from '../errors/fleetmanagementV1CustomerAccounts500Error';
-import { FleetmanagementV1CustomerAuditreport400Error } from '../errors/fleetmanagementV1CustomerAuditreport400Error';
-import { FleetmanagementV1CustomerAuditreport401Error } from '../errors/fleetmanagementV1CustomerAuditreport401Error';
-import { FleetmanagementV1CustomerAuditreport403Error } from '../errors/fleetmanagementV1CustomerAuditreport403Error';
-import { FleetmanagementV1CustomerAuditreport404Error } from '../errors/fleetmanagementV1CustomerAuditreport404Error';
-import { FleetmanagementV1CustomerAuditreport500Error } from '../errors/fleetmanagementV1CustomerAuditreport500Error';
-import { FleetmanagementV1CustomerCardgroups400Error } from '../errors/fleetmanagementV1CustomerCardgroups400Error';
-import { FleetmanagementV1CustomerCardgroups401Error } from '../errors/fleetmanagementV1CustomerCardgroups401Error';
-import { FleetmanagementV1CustomerCardgroups403Error } from '../errors/fleetmanagementV1CustomerCardgroups403Error';
-import { FleetmanagementV1CustomerCardgroups404Error } from '../errors/fleetmanagementV1CustomerCardgroups404Error';
-import { FleetmanagementV1CustomerCardgroups500Error } from '../errors/fleetmanagementV1CustomerCardgroups500Error';
-import { FleetmanagementV1CustomerCustomer400Error } from '../errors/fleetmanagementV1CustomerCustomer400Error';
-import { FleetmanagementV1CustomerCustomer401Error } from '../errors/fleetmanagementV1CustomerCustomer401Error';
-import { FleetmanagementV1CustomerCustomer403Error } from '../errors/fleetmanagementV1CustomerCustomer403Error';
-import { FleetmanagementV1CustomerCustomer404Error } from '../errors/fleetmanagementV1CustomerCustomer404Error';
-import { FleetmanagementV1CustomerCustomer500Error } from '../errors/fleetmanagementV1CustomerCustomer500Error';
-import { FleetmanagementV1CustomerPayers400Error } from '../errors/fleetmanagementV1CustomerPayers400Error';
-import { FleetmanagementV1CustomerPayers401Error } from '../errors/fleetmanagementV1CustomerPayers401Error';
-import { FleetmanagementV1CustomerPayers403Error } from '../errors/fleetmanagementV1CustomerPayers403Error';
-import { FleetmanagementV1CustomerPayers404Error } from '../errors/fleetmanagementV1CustomerPayers404Error';
-import { FleetmanagementV1CustomerPayers500Error } from '../errors/fleetmanagementV1CustomerPayers500Error';
-import { FleetmanagementV1UserLoggedinuser400Error } from '../errors/fleetmanagementV1UserLoggedinuser400Error';
-import { FleetmanagementV1UserLoggedinuser401Error } from '../errors/fleetmanagementV1UserLoggedinuser401Error';
-import { FleetmanagementV1UserLoggedinuser403Error } from '../errors/fleetmanagementV1UserLoggedinuser403Error';
-import { FleetmanagementV1UserLoggedinuser404Error } from '../errors/fleetmanagementV1UserLoggedinuser404Error';
-import { FleetmanagementV1UserLoggedinuser500Error } from '../errors/fleetmanagementV1UserLoggedinuser500Error';
-import { FleetmanagementV2CustomerCardtype400Error } from '../errors/fleetmanagementV2CustomerCardtype400Error';
-import { FleetmanagementV2CustomerCardtype401Error } from '../errors/fleetmanagementV2CustomerCardtype401Error';
-import { FleetmanagementV2CustomerCardtype403Error } from '../errors/fleetmanagementV2CustomerCardtype403Error';
-import { FleetmanagementV2CustomerCardtype404Error } from '../errors/fleetmanagementV2CustomerCardtype404Error';
-import { FleetmanagementV2CustomerCardtype500Error } from '../errors/fleetmanagementV2CustomerCardtype500Error';
-import { FleetmanagementV2CustomerPricelist400Error } from '../errors/fleetmanagementV2CustomerPricelist400Error';
-import { FleetmanagementV2CustomerPricelist401Error } from '../errors/fleetmanagementV2CustomerPricelist401Error';
-import { FleetmanagementV2CustomerPricelist403Error } from '../errors/fleetmanagementV2CustomerPricelist403Error';
-import { FleetmanagementV2CustomerPricelist404Error } from '../errors/fleetmanagementV2CustomerPricelist404Error';
-import { FleetmanagementV2CustomerPricelist500Error } from '../errors/fleetmanagementV2CustomerPricelist500Error';
+import { DefaultError } from '../errors/defaultError';
+import { ErrorUserAccessError1Error } from '../errors/errorUserAccessError1Error';
 
 export class CustomerController extends BaseController {
   /**
@@ -135,27 +97,27 @@ export class CustomerController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      FleetmanagementV1UserLoggedinuser400Error,
+      DefaultError,
       'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      FleetmanagementV1UserLoggedinuser401Error,
+      DefaultError,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
     req.throwOn(
       403,
-      FleetmanagementV1UserLoggedinuser403Error,
+      ErrorUserAccessError1Error,
       'The server understood the request but refuses to authorize it.'
     );
     req.throwOn(
       404,
-      FleetmanagementV1UserLoggedinuser404Error,
+      DefaultError,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      FleetmanagementV1UserLoggedinuser500Error,
+      DefaultError,
       'The server encountered an unexpected condition the prevented it from fulfilling the request.'
     );
     req.authenticate([{ basicAuth: true }]);
@@ -215,27 +177,27 @@ export class CustomerController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      FleetmanagementV1CustomerPayers400Error,
+      DefaultError,
       'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      FleetmanagementV1CustomerPayers401Error,
+      DefaultError,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
     req.throwOn(
       403,
-      FleetmanagementV1CustomerPayers403Error,
+      ErrorUserAccessError1Error,
       'The server understood the request but refuses to authorize it.'
     );
     req.throwOn(
       404,
-      FleetmanagementV1CustomerPayers404Error,
+      DefaultError,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      FleetmanagementV1CustomerPayers500Error,
+      DefaultError,
       'The server encountered an unexpected condition the prevented it from fulfilling the request.'
     );
     req.authenticate([{ basicAuth: true }]);
@@ -279,27 +241,27 @@ export class CustomerController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      FleetmanagementV1CustomerCustomer400Error,
+      DefaultError,
       'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      FleetmanagementV1CustomerCustomer401Error,
+      DefaultError,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
     req.throwOn(
       403,
-      FleetmanagementV1CustomerCustomer403Error,
+      ErrorUserAccessError1Error,
       'The server understood the request but refuses to authorize it.'
     );
     req.throwOn(
       404,
-      FleetmanagementV1CustomerCustomer404Error,
+      DefaultError,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      FleetmanagementV1CustomerCustomer500Error,
+      DefaultError,
       'The server encountered an unexpected condition the prevented it from fulfilling the request.'
     );
     req.authenticate([{ basicAuth: true }]);
@@ -359,27 +321,27 @@ export class CustomerController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      FleetmanagementV2CustomerPricelist400Error,
+      DefaultError,
       'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      FleetmanagementV2CustomerPricelist401Error,
+      DefaultError,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
     req.throwOn(
       403,
-      FleetmanagementV2CustomerPricelist403Error,
+      ErrorUserAccessError1Error,
       'The server understood the request but refuses to authorize it.'
     );
     req.throwOn(
       404,
-      FleetmanagementV2CustomerPricelist404Error,
+      DefaultError,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      FleetmanagementV2CustomerPricelist500Error,
+      DefaultError,
       'The server encountered an unexpected condition the prevented it from fulfilling the request.'
     );
     req.authenticate([{ basicAuth: true }]);
@@ -419,27 +381,27 @@ export class CustomerController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      FleetmanagementV1CustomerAccounts400Error,
+      DefaultError,
       'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      FleetmanagementV1CustomerAccounts401Error,
+      DefaultError,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
     req.throwOn(
       403,
-      FleetmanagementV1CustomerAccounts403Error,
+      ErrorUserAccessError1Error,
       'The server understood the request but refuses to authorize it.'
     );
     req.throwOn(
       404,
-      FleetmanagementV1CustomerAccounts404Error,
+      DefaultError,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      FleetmanagementV1CustomerAccounts500Error,
+      DefaultError,
       'The server encountered an unexpected condition the prevented it from fulfilling the request.'
     );
     req.authenticate([{ basicAuth: true }]);
@@ -478,27 +440,27 @@ export class CustomerController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      FleetmanagementV2CustomerCardtype400Error,
+      DefaultError,
       'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      FleetmanagementV2CustomerCardtype401Error,
+      DefaultError,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
     req.throwOn(
       403,
-      FleetmanagementV2CustomerCardtype403Error,
+      ErrorUserAccessError1Error,
       'The server understood the request but refuses to authorize it.'
     );
     req.throwOn(
       404,
-      FleetmanagementV2CustomerCardtype404Error,
+      DefaultError,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      FleetmanagementV2CustomerCardtype500Error,
+      DefaultError,
       'The server encountered an unexpected condition the prevented it from fulfilling the request.'
     );
     req.authenticate([{ basicAuth: true }]);
@@ -553,27 +515,27 @@ export class CustomerController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      FleetmanagementV1CustomerCardgroups400Error,
+      DefaultError,
       'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      FleetmanagementV1CustomerCardgroups401Error,
+      DefaultError,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
     req.throwOn(
       403,
-      FleetmanagementV1CustomerCardgroups403Error,
+      ErrorUserAccessError1Error,
       'The server understood the request but refuses to authorize it.'
     );
     req.throwOn(
       404,
-      FleetmanagementV1CustomerCardgroups404Error,
+      DefaultError,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      FleetmanagementV1CustomerCardgroups500Error,
+      DefaultError,
       'The server encountered an unexpected condition the prevented it from fulfilling the request.'
     );
     req.authenticate([{ basicAuth: true }]);
@@ -650,27 +612,27 @@ export class CustomerController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      FleetmanagementV1CustomerAuditreport400Error,
+      DefaultError,
       'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      FleetmanagementV1CustomerAuditreport401Error,
+      DefaultError,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
     req.throwOn(
       403,
-      FleetmanagementV1CustomerAuditreport403Error,
+      ErrorUserAccessError1Error,
       'The server understood the request but refuses to authorize it.'
     );
     req.throwOn(
       404,
-      FleetmanagementV1CustomerAuditreport404Error,
+      DefaultError,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      FleetmanagementV1CustomerAuditreport500Error,
+      DefaultError,
       'The server encountered an unexpected condition the prevented it from fulfilling the request.'
     );
     req.authenticate([{ basicAuth: true }]);

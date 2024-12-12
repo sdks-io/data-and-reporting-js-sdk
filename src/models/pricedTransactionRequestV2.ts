@@ -5,10 +5,14 @@
  */
 
 import { lazy, number, object, optional, Schema } from '../schema';
-import { Filters, filtersSchema } from './filters';
+import {
+  PricedRequestData,
+  pricedRequestDataSchema,
+} from './pricedRequestData';
 
 export interface PricedTransactionRequestV2 {
-  filters?: Filters;
+  /** This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbilled sales items) from SFSBI. It provides a flexible search criteria and supports paging */
+  filters?: PricedRequestData;
   /** Specify the page of results to be returned. */
   page?: number;
   /** Specify the number of records to returned; Max 1000 */
@@ -17,7 +21,7 @@ export interface PricedTransactionRequestV2 {
 
 export const pricedTransactionRequestV2Schema: Schema<PricedTransactionRequestV2> = object(
   {
-    filters: ['Filters', optional(lazy(() => filtersSchema))],
+    filters: ['Filters', optional(lazy(() => pricedRequestDataSchema))],
     page: ['Page', optional(number())],
     pageSize: ['PageSize', optional(number())],
   }

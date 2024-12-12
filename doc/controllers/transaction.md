@@ -66,10 +66,12 @@ If none of the above parameters are provided then last 7 days transactions will 
 This operation can fetch transactions that are old up to 24 (configurable) months. However, the date range between any of the ‘From’ and ‘To’ dates in the above combination cannot be more than 210 (configurable) days.
 
 ```ts
-async pricedTransactions(  apikey: string,
+async pricedTransactions(
+  apikey: string,
   requestId: string,
   body?: PriceTransactionRequest,
-requestOptions?: RequestOptions): Promise<ApiResponse<PricedTransactionResponse>>
+  requestOptions?: RequestOptions
+): Promise<ApiResponse<PricedTransactionResponse>>
 ```
 
 ## Parameters
@@ -272,11 +274,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`FleetmanagementV1TransactionPricedtransactions400Error`](../../doc/models/fleetmanagement-v1-transaction-pricedtransactions-400-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`FleetmanagementV1TransactionPricedtransactions401Error`](../../doc/models/fleetmanagement-v1-transaction-pricedtransactions-401-error.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`FleetmanagementV1TransactionPricedtransactions403Error`](../../doc/models/fleetmanagement-v1-transaction-pricedtransactions-403-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`FleetmanagementV1TransactionPricedtransactions404Error`](../../doc/models/fleetmanagement-v1-transaction-pricedtransactions-404-error.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`FleetmanagementV1TransactionPricedtransactions500Error`](../../doc/models/fleetmanagement-v1-transaction-pricedtransactions-500-error.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultError`](../../doc/models/default-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultError`](../../doc/models/default-error.md) |
+| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Error`](../../doc/models/error-user-access-error-1-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultError`](../../doc/models/default-error.md) |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultError`](../../doc/models/default-error.md) |
 
 
 # Priced Transactions Summary
@@ -317,10 +319,12 @@ This API considers only one of the above set of parameters at a time. For exampl
 If none of the above parameters are provided then last 7 days transactions will be fetched.
 
 ```ts
-async pricedTransactionsSummary(  apikey: string,
+async pricedTransactionsSummary(
+  apikey: string,
   requestId: string,
   body?: PriceTransSummaryRequest,
-requestOptions?: RequestOptions): Promise<ApiResponse<PricedTransSummaryResponse>>
+  requestOptions?: RequestOptions
+): Promise<ApiResponse<PricedTransSummaryResponse>>
 ```
 
 ## Parameters
@@ -425,11 +429,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`FleetmanagementV1TransactionPricedtransactionssummary400Error`](../../doc/models/fleetmanagement-v1-transaction-pricedtransactionssummary-400-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`FleetmanagementV1TransactionPricedtransactionssummary401Error`](../../doc/models/fleetmanagement-v1-transaction-pricedtransactionssummary-401-error.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`FleetmanagementV1TransactionPricedtransactionssummary403Error`](../../doc/models/fleetmanagement-v1-transaction-pricedtransactionssummary-403-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`FleetmanagementV1TransactionPricedtransactionssummary404Error`](../../doc/models/fleetmanagement-v1-transaction-pricedtransactionssummary-404-error.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`FleetmanagementV1TransactionPricedtransactionssummary500Error`](../../doc/models/fleetmanagement-v1-transaction-pricedtransactionssummary-500-error.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultError`](../../doc/models/default-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultError`](../../doc/models/default-error.md) |
+| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Error`](../../doc/models/error-user-access-error-1-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultError`](../../doc/models/default-error.md) |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultError`](../../doc/models/default-error.md) |
 
 
 # Multipriced Transactions
@@ -466,10 +470,12 @@ This API considers only one of the above set of parameters at a time. For exampl
 If none of the above parameters are provided then last 7 days transactions will be fetched.
 
 ```ts
-async multipricedTransactions(  apikey: string,
+async multipricedTransactions(
+  apikey: string,
   requestId: string,
   body?: MultiPricedTransactionRequest,
-requestOptions?: RequestOptions): Promise<ApiResponse<MultiPricedTransactionResponse>>
+  requestOptions?: RequestOptions
+): Promise<ApiResponse<MultiPricedTransactionResponse>>
 ```
 
 ## Parameters
@@ -690,11 +696,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`FleetmanagementV1TransactionMultipayerspricedtransactions400Error`](../../doc/models/fleetmanagement-v1-transaction-multipayerspricedtransactions-400-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`FleetmanagementV1TransactionMultipayerspricedtransactions401Error`](../../doc/models/fleetmanagement-v1-transaction-multipayerspricedtransactions-401-error.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`FleetmanagementV1TransactionMultipayerspricedtransactions403Error`](../../doc/models/fleetmanagement-v1-transaction-multipayerspricedtransactions-403-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`FleetmanagementV1TransactionMultipayerspricedtransactions404Error`](../../doc/models/fleetmanagement-v1-transaction-multipayerspricedtransactions-404-error.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`FleetmanagementV1TransactionMultipayerspricedtransactions500Error`](../../doc/models/fleetmanagement-v1-transaction-multipayerspricedtransactions-500-error.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultError`](../../doc/models/default-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultError`](../../doc/models/default-error.md) |
+| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Error`](../../doc/models/error-user-access-error-1-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultError`](../../doc/models/default-error.md) |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultError`](../../doc/models/default-error.md) |
 
 
 # Card Usage Summary
@@ -703,10 +709,12 @@ This operation is to provide the expenditure analysis for a card for the past 7 
 The response contains a daily summary of the transactions (billed & unbilled) from 1st of the last 7 months for the requested card grouped by card, site-group and product.
 
 ```ts
-async cardUsageSummary(  apikey: string,
+async cardUsageSummary(
+  apikey: string,
   requestId: string,
   body?: CardUsageSummaryRequest,
-requestOptions?: RequestOptions): Promise<ApiResponse<CardUsageSummaryResponse>>
+  requestOptions?: RequestOptions
+): Promise<ApiResponse<CardUsageSummaryResponse>>
 ```
 
 ## Parameters
@@ -748,11 +756,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`FleetmanagementV1TransactionCardusagesummary400Error`](../../doc/models/fleetmanagement-v1-transaction-cardusagesummary-400-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`FleetmanagementV1TransactionCardusagesummary401Error`](../../doc/models/fleetmanagement-v1-transaction-cardusagesummary-401-error.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`FleetmanagementV1TransactionCardusagesummary403Error`](../../doc/models/fleetmanagement-v1-transaction-cardusagesummary-403-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`FleetmanagementV1TransactionCardusagesummary404Error`](../../doc/models/fleetmanagement-v1-transaction-cardusagesummary-404-error.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`FleetmanagementV1TransactionCardusagesummary500Error`](../../doc/models/fleetmanagement-v1-transaction-cardusagesummary-500-error.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultError`](../../doc/models/default-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultError`](../../doc/models/default-error.md) |
+| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Error`](../../doc/models/error-user-access-error-1-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultError`](../../doc/models/default-error.md) |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultError`](../../doc/models/default-error.md) |
 
 
 # Volume Based Bonus
@@ -761,10 +769,12 @@ try {
 - This API also returns the details of the monthly breakup of current period consumption as well as the details of the previously calculated bonus and consumption of the applicable payers.
 
 ```ts
-async volumeBasedBonus(  apikey: string,
+async volumeBasedBonus(
+  apikey: string,
   requestId: string,
   body?: VolumeBasedBonusRequest,
-requestOptions?: RequestOptions): Promise<ApiResponse<VolumeBasedBonusResponse>>
+  requestOptions?: RequestOptions
+): Promise<ApiResponse<VolumeBasedBonusResponse>>
 ```
 
 ## Parameters
@@ -806,11 +816,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`FleetmanagementV1TransactionVolumebasedbonus400Error`](../../doc/models/fleetmanagement-v1-transaction-volumebasedbonus-400-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`FleetmanagementV1TransactionVolumebasedbonus401Error`](../../doc/models/fleetmanagement-v1-transaction-volumebasedbonus-401-error.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`FleetmanagementV1TransactionVolumebasedbonus403Error`](../../doc/models/fleetmanagement-v1-transaction-volumebasedbonus-403-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`FleetmanagementV1TransactionVolumebasedbonus404Error`](../../doc/models/fleetmanagement-v1-transaction-volumebasedbonus-404-error.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`FleetmanagementV1TransactionVolumebasedbonus500Error`](../../doc/models/fleetmanagement-v1-transaction-volumebasedbonus-500-error.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultError`](../../doc/models/default-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultError`](../../doc/models/default-error.md) |
+| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Error`](../../doc/models/error-user-access-error-1-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultError`](../../doc/models/default-error.md) |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultError`](../../doc/models/default-error.md) |
 
 
 # Volume Based Pricing
@@ -819,10 +829,12 @@ try {
 - It will also show historical and current volume consumption and related tier applied for the following month.
 
 ```ts
-async volumeBasedPricing(  apikey: string,
+async volumeBasedPricing(
+  apikey: string,
   requestId: string,
   body?: VolumeBasedPricingRequest,
-requestOptions?: RequestOptions): Promise<ApiResponse<VolumeBasedPricingResponse>>
+  requestOptions?: RequestOptions
+): Promise<ApiResponse<VolumeBasedPricingResponse>>
 ```
 
 ## Parameters
@@ -864,11 +876,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`FleetmanagementV1TransactionVolumebasedpricing400Error`](../../doc/models/fleetmanagement-v1-transaction-volumebasedpricing-400-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`FleetmanagementV1TransactionVolumebasedpricing401Error`](../../doc/models/fleetmanagement-v1-transaction-volumebasedpricing-401-error.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`FleetmanagementV1TransactionVolumebasedpricing403Error`](../../doc/models/fleetmanagement-v1-transaction-volumebasedpricing-403-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`FleetmanagementV1TransactionVolumebasedpricing404Error`](../../doc/models/fleetmanagement-v1-transaction-volumebasedpricing-404-error.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`FleetmanagementV1TransactionVolumebasedpricing500Error`](../../doc/models/fleetmanagement-v1-transaction-volumebasedpricing-500-error.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultError`](../../doc/models/default-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultError`](../../doc/models/default-error.md) |
+| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Error`](../../doc/models/error-user-access-error-1-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultError`](../../doc/models/default-error.md) |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultError`](../../doc/models/default-error.md) |
 
 
 # Fees
@@ -889,10 +901,12 @@ To get the summary of charges, the endpoint *transaction/feessummary* should be 
 * Get fees by product
 
 ```ts
-async fees(  apikey: string,
+async fees(
+  apikey: string,
   requestId: string,
   body?: TransactionFeesRequest,
-requestOptions?: RequestOptions): Promise<ApiResponse<TransactionFeesResponse>>
+  requestOptions?: RequestOptions
+): Promise<ApiResponse<TransactionFeesResponse>>
 ```
 
 ## Parameters
@@ -1060,11 +1074,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`FleetmanagementV1TransactionFees400Error`](../../doc/models/fleetmanagement-v1-transaction-fees-400-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`FleetmanagementV1TransactionFees401Error`](../../doc/models/fleetmanagement-v1-transaction-fees-401-error.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`FleetmanagementV1TransactionFees403Error`](../../doc/models/fleetmanagement-v1-transaction-fees-403-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`FleetmanagementV1TransactionFees404Error`](../../doc/models/fleetmanagement-v1-transaction-fees-404-error.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`FleetmanagementV1TransactionFees500Error`](../../doc/models/fleetmanagement-v1-transaction-fees-500-error.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultError`](../../doc/models/default-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultError`](../../doc/models/default-error.md) |
+| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Error`](../../doc/models/error-user-access-error-1-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultError`](../../doc/models/default-error.md) |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultError`](../../doc/models/default-error.md) |
 
 
 # Fee Summary Response
@@ -1085,10 +1099,12 @@ The endpoint supports the exact same search criteria as the endpoint *transactio
 * Get fees by product
 
 ```ts
-async feeSummaryResponse(  apikey: string,
+async feeSummaryResponse(
+  apikey: string,
   requestId: string,
   body?: TransactionFeesRequest,
-requestOptions?: RequestOptions): Promise<ApiResponse<FeeSummaryResponse>>
+  requestOptions?: RequestOptions
+): Promise<ApiResponse<FeeSummaryResponse>>
 ```
 
 ## Parameters
@@ -1176,11 +1192,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`FleetmanagementV1TransactionFeessummary400Error`](../../doc/models/fleetmanagement-v1-transaction-feessummary-400-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`FleetmanagementV1TransactionFeessummary401Error`](../../doc/models/fleetmanagement-v1-transaction-feessummary-401-error.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`FleetmanagementV1TransactionFeessummary403Error`](../../doc/models/fleetmanagement-v1-transaction-feessummary-403-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`FleetmanagementV1TransactionFeessummary404Error`](../../doc/models/fleetmanagement-v1-transaction-feessummary-404-error.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`FleetmanagementV1TransactionFeessummary500Error`](../../doc/models/fleetmanagement-v1-transaction-feessummary-500-error.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultError`](../../doc/models/default-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultError`](../../doc/models/default-error.md) |
+| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Error`](../../doc/models/error-user-access-error-1-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultError`](../../doc/models/default-error.md) |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultError`](../../doc/models/default-error.md) |
 
 
 # Fuel Consumption
@@ -1189,10 +1205,12 @@ try {
 - This operation response will contains card & transaction details for given period aggregated by payer, account, cardGroup, PAN, DriverName and VRN
 
 ```ts
-async fuelConsumption(  apikey: string,
+async fuelConsumption(
+  apikey: string,
   requestId: string,
   body?: FuelConsumptionRequest,
-requestOptions?: RequestOptions): Promise<ApiResponse<FuelConsumptionResponse>>
+  requestOptions?: RequestOptions
+): Promise<ApiResponse<FuelConsumptionResponse>>
 ```
 
 ## Parameters
@@ -1276,11 +1294,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`FleetmanagementV1TransactionFuelconsumption400Error`](../../doc/models/fleetmanagement-v1-transaction-fuelconsumption-400-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`FleetmanagementV1TransactionFuelconsumption401Error`](../../doc/models/fleetmanagement-v1-transaction-fuelconsumption-401-error.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`FleetmanagementV1TransactionFuelconsumption403Error`](../../doc/models/fleetmanagement-v1-transaction-fuelconsumption-403-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`FleetmanagementV1TransactionFuelconsumption404Error`](../../doc/models/fleetmanagement-v1-transaction-fuelconsumption-404-error.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`FleetmanagementV1TransactionFuelconsumption500Error`](../../doc/models/fleetmanagement-v1-transaction-fuelconsumption-500-error.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultError`](../../doc/models/default-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultError`](../../doc/models/default-error.md) |
+| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Error`](../../doc/models/error-user-access-error-1-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultError`](../../doc/models/default-error.md) |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultError`](../../doc/models/default-error.md) |
 
 
 # Update Odometer
@@ -1289,10 +1307,12 @@ try {
 - This is an asynchronous operation. If opted, the user will be notified on completion of processing.
 
 ```ts
-async updateOdometer(  apikey: string,
+async updateOdometer(
+  apikey: string,
   requestId: string,
   body?: UpdateOdometerRequest,
-requestOptions?: RequestOptions): Promise<ApiResponse<UpdateOdometerResponse>>
+  requestOptions?: RequestOptions
+): Promise<ApiResponse<UpdateOdometerResponse>>
 ```
 
 ## Parameters
@@ -1369,11 +1389,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`FleetmanagementV1TransactionUpdateodometer400Error`](../../doc/models/fleetmanagement-v1-transaction-updateodometer-400-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`FleetmanagementV1TransactionUpdateodometer401Error`](../../doc/models/fleetmanagement-v1-transaction-updateodometer-401-error.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`FleetmanagementV1TransactionUpdateodometer403Error`](../../doc/models/fleetmanagement-v1-transaction-updateodometer-403-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`FleetmanagementV1TransactionUpdateodometer404Error`](../../doc/models/fleetmanagement-v1-transaction-updateodometer-404-error.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`FleetmanagementV1TransactionUpdateodometer500Error`](../../doc/models/fleetmanagement-v1-transaction-updateodometer-500-error.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultError`](../../doc/models/default-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultError`](../../doc/models/default-error.md) |
+| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Error`](../../doc/models/error-user-access-error-1-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultError`](../../doc/models/default-error.md) |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultError`](../../doc/models/default-error.md) |
 
 
 # Transaction Exceptions
@@ -1382,10 +1402,12 @@ try {
 - This API will return the Transactions related exceptions when the OutputType input parameter is passed as ‘Transaction’ else will return the Cards related exceptions.
 
 ```ts
-async transactionExceptions(  apikey: string,
+async transactionExceptions(
+  apikey: string,
   requestId: string,
   body?: TransactionExceptionsRequest,
-requestOptions?: RequestOptions): Promise<ApiResponse<TransactionExceptionsResponse>>
+  requestOptions?: RequestOptions
+): Promise<ApiResponse<TransactionExceptionsResponse>>
 ```
 
 ## Parameters
@@ -1476,11 +1498,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`FleetmanagementV1TransactionExceptions400Error`](../../doc/models/fleetmanagement-v1-transaction-exceptions-400-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`FleetmanagementV1TransactionExceptions401Error`](../../doc/models/fleetmanagement-v1-transaction-exceptions-401-error.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`FleetmanagementV1TransactionExceptions403Error`](../../doc/models/fleetmanagement-v1-transaction-exceptions-403-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`FleetmanagementV1TransactionExceptions404Error`](../../doc/models/fleetmanagement-v1-transaction-exceptions-404-error.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`FleetmanagementV1TransactionExceptions500Error`](../../doc/models/fleetmanagement-v1-transaction-exceptions-500-error.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultError`](../../doc/models/default-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultError`](../../doc/models/default-error.md) |
+| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Error`](../../doc/models/error-user-access-error-1-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultError`](../../doc/models/default-error.md) |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultError`](../../doc/models/default-error.md) |
 
 
 # Recent Transactions New
@@ -1506,9 +1528,11 @@ This endpoint allows querying last 48 hours of transaction data of Shell Card (i
     * Search by Product and/or Product group
 
 ```ts
-async recentTransactionsNew(  requestId: string,
+async recentTransactionsNew(
+  requestId: string,
   body?: RecentTransactionRequest,
-requestOptions?: RequestOptions): Promise<ApiResponse<RecentTransactionsResponse>>
+  requestOptions?: RequestOptions
+): Promise<ApiResponse<RecentTransactionsResponse>>
 ```
 
 ## Parameters
@@ -1657,11 +1681,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Recent400Error`](../../doc/models/transaction-data-v1-recent-400-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Recent401Error`](../../doc/models/transaction-data-v1-recent-401-error.md) |
-| 403 | Forbidden | [`TransactionDataV1Recent403Error`](../../doc/models/transaction-data-v1-recent-403-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Recent404Error`](../../doc/models/transaction-data-v1-recent-404-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Recent500Error`](../../doc/models/transaction-data-v1-recent-500-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
 
 
 # Priced Transactions V2
@@ -1700,9 +1724,11 @@ Transactions that are posted but not yet priced, billed or that are in error wil
   * EVChargeEndTime
 
 ```ts
-async pricedTransactionsV2(  requestId: string,
+async pricedTransactionsV2(
+  requestId: string,
   body?: PricedTransactionRequestV2,
-requestOptions?: RequestOptions): Promise<ApiResponse<PricedTransactionResponseV2>>
+  requestOptions?: RequestOptions
+): Promise<ApiResponse<PricedTransactionResponseV2>>
 ```
 
 ## Parameters
@@ -1973,9 +1999,9 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Priced400Error`](../../doc/models/transaction-data-v1-priced-400-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Priced401Error`](../../doc/models/transaction-data-v1-priced-401-error.md) |
-| 403 | Forbidden | [`TransactionDataV1Priced403Error`](../../doc/models/transaction-data-v1-priced-403-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Priced404Error`](../../doc/models/transaction-data-v1-priced-404-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Priced500Error`](../../doc/models/transaction-data-v1-priced-500-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
 

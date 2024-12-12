@@ -14,7 +14,10 @@ import {
   Schema,
   string,
 } from '../schema';
-import { Location, locationSchema } from './location';
+import {
+  ExceptionSiteLocation,
+  exceptionSiteLocationSchema,
+} from './exceptionSiteLocation';
 
 export interface TransactionExceptions {
   /** Unique Sales Item Identifier */
@@ -117,7 +120,8 @@ export interface TransactionExceptions {
   siteName?: string | null;
   /** Site Country */
   siteCountry?: string | null;
-  location?: Location;
+  /** Geography Location entity for Site Location */
+  location?: ExceptionSiteLocation;
   /** Card Group Name */
   cardGroupName?: string | null;
   /** Receipt Number */
@@ -345,7 +349,7 @@ export const transactionExceptionsSchema: Schema<TransactionExceptions> = object
     siteCode: ['SiteCode', optional(nullable(string()))],
     siteName: ['SiteName', optional(nullable(string()))],
     siteCountry: ['SiteCountry', optional(nullable(string()))],
-    location: ['Location', optional(lazy(() => locationSchema))],
+    location: ['Location', optional(lazy(() => exceptionSiteLocationSchema))],
     cardGroupName: ['CardGroupName', optional(nullable(string()))],
     receiptNumber: ['ReceiptNumber', optional(nullable(string()))],
     productCode: ['ProductCode', optional(nullable(string()))],

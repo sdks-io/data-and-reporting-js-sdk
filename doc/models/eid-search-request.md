@@ -11,7 +11,7 @@
 |  --- | --- | --- | --- |
 | `filters` | [`EIDSearchReq \| undefined`](../../doc/models/eid-search-req.md) | Optional | - |
 | `page` | `number \| undefined` | Optional | Specify the page of results to be returned. |
-| `pageSize` | `number \| undefined` | Optional | Specify the number of records to returned; Max 1000 |
+| `pageSize` | `number \| undefined` | Optional | Specify the number of records to returned; Max 100 |
 
 ## Example (as JSON)
 
