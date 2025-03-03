@@ -12,11 +12,13 @@ This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbi
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `colCoCode` | `string \| null` | Required | Collecting Company Code (Shell Code) of the selected payer. |
-| `invoiceStatus` | `unknown` | Required | - |
+| `colCoId` | `number \| undefined` | Optional | The Collecting Company Id in the Shell Card Platform. |
+| `invoiceStatus` | [`PricedTransactionReqV2InvoiceStatusEnum`](../../doc/models/priced-transaction-req-v2-invoice-status-enum.md) | Required | Invoice status of the transactions. Mandatory Possible options:I - Invoiced, U – Un-Invoiced, A – All<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
 | `payerNumber` | `string \| null` | Required | Payer Number of the selected payer.<br>**Constraints**: *Minimum Length*: `1` |
 | `accountId` | `number \| null \| undefined` | Optional | Account Id (GFN customer id) |
 | `accountNumber` | `string \| null \| undefined` | Optional | Account Number of the selected account. |
 | `driverName` | `string \| null \| undefined` | Optional | Driver Name (of Card record)<br>**Constraints**: *Minimum Length*: `4`, *Maximum Length*: `40` |
+| `cardId` | `number \| undefined` | Optional | Unique Card Id in the Shell Card Platform |
 | `cardGroupId` | `number \| null \| undefined` | Optional | Card Group Id in GFN |
 | `cardPAN` | `string \| null \| undefined` | Optional | Full Card PAN |
 | `productCode` | `string \| null \| undefined` | Optional | Product Code – Global as per GFN configuration<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `8` |
@@ -54,14 +56,13 @@ This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbi
 ```json
 {
   "ColCoCode": "032",
-  "InvoiceStatus": {
-    "key1": "val1",
-    "key2": "val2"
-  },
+  "ColCoId": 32,
+  "InvoiceStatus": "A",
   "PayerNumber": "DE26685263",
   "AccountId": 29484,
   "AccountNumber": "DE26667080",
   "DriverName": "HH NX 508",
+  "CardId": 12435,
   "CardGroupId": 40000,
   "CardPAN": "7002051006629890645",
   "ProductCode": "10",

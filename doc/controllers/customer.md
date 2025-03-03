@@ -48,7 +48,7 @@ async loggedinUser(
 
 ## Response Type
 
-[`LoggedInUserResponse`](../../doc/models/logged-in-user-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [LoggedInUserResponse](../../doc/models/logged-in-user-response.md).
 
 ## Example Usage
 
@@ -206,7 +206,7 @@ async payers(
 
 ## Response Type
 
-[`PayerResponse`](../../doc/models/payer-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [PayerResponse](../../doc/models/payer-response.md).
 
 ## Example Usage
 
@@ -481,7 +481,7 @@ async customer(
 
 ## Response Type
 
-[`CustomerDetailResponse`](../../doc/models/customer-detail-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [CustomerDetailResponse](../../doc/models/customer-detail-response.md).
 
 ## Example Usage
 
@@ -649,7 +649,7 @@ async customerPriceList(
 
 ## Response Type
 
-[`CustomerPriceListResponse`](../../doc/models/customer-price-list-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [CustomerPriceListResponse](../../doc/models/customer-price-list-response.md).
 
 ## Example Usage
 
@@ -801,7 +801,7 @@ async accounts(
 
 ## Response Type
 
-[`AccountResponse`](../../doc/models/account-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [AccountResponse](../../doc/models/account-response.md).
 
 ## Example Usage
 
@@ -971,7 +971,7 @@ async cardType(
 
 ## Response Type
 
-[`CardTypeResponse`](../../doc/models/card-type-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [CardTypeResponse](../../doc/models/card-type-response.md).
 
 ## Example Usage
 
@@ -1138,7 +1138,7 @@ async cardGroups(
 
 ## Response Type
 
-[`CardGroupResponse`](../../doc/models/card-group-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [CardGroupResponse](../../doc/models/card-group-response.md).
 
 ## Example Usage
 
@@ -1275,7 +1275,7 @@ async auditReport(
 
 ## Response Type
 
-[`AuditResponse`](../../doc/models/audit-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [AuditResponse](../../doc/models/audit-response.md).
 
 ## Example Usage
 

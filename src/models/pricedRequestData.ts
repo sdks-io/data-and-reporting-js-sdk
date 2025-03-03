@@ -13,8 +13,11 @@ import {
   optional,
   Schema,
   string,
-  unknown,
 } from '../schema';
+import {
+  PricedTransactionReqV2InvoiceStatusEnum,
+  pricedTransactionReqV2InvoiceStatusEnumSchema,
+} from './pricedTransactionReqV2InvoiceStatusEnum';
 import {
   PricedTransactionReqV2PeriodEnum,
   pricedTransactionReqV2PeriodEnumSchema,
@@ -28,7 +31,10 @@ import {
 export interface PricedRequestData {
   /** Collecting Company Code (Shell Code) of the selected payer. */
   colCoCode: string | null;
-  invoiceStatus?: unknown;
+  /** The Collecting Company Id in the Shell Card Platform. */
+  colCoId?: number;
+  /** Invoice status of the transactions. Mandatory Possible options:I - Invoiced, U – Un-Invoiced, A – All */
+  invoiceStatus: PricedTransactionReqV2InvoiceStatusEnum;
   /** Payer Number of the selected payer. */
   payerNumber: string | null;
   /** Account Id (GFN customer id) */
@@ -37,6 +43,8 @@ export interface PricedRequestData {
   accountNumber?: string | null;
   /** Driver Name (of Card record) */
   driverName?: string | null;
+  /** Unique Card Id in the Shell Card Platform */
+  cardId?: number;
   /** Card Group Id in GFN */
   cardGroupId?: number | null;
   /** Full Card PAN */
@@ -116,11 +124,16 @@ export interface PricedRequestData {
 
 export const pricedRequestDataSchema: Schema<PricedRequestData> = object({
   colCoCode: ['ColCoCode', nullable(string())],
-  invoiceStatus: ['InvoiceStatus', optional(unknown())],
+  colCoId: ['ColCoId', optional(number())],
+  invoiceStatus: [
+    'InvoiceStatus',
+    pricedTransactionReqV2InvoiceStatusEnumSchema,
+  ],
   payerNumber: ['PayerNumber', nullable(string())],
   accountId: ['AccountId', optional(nullable(number()))],
   accountNumber: ['AccountNumber', optional(nullable(string()))],
   driverName: ['DriverName', optional(nullable(string()))],
+  cardId: ['CardId', optional(number())],
   cardGroupId: ['CardGroupId', optional(nullable(number()))],
   cardPAN: ['CardPAN', optional(nullable(string()))],
   productCode: ['ProductCode', optional(nullable(string()))],

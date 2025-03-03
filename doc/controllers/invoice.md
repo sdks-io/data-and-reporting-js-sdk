@@ -58,7 +58,7 @@ async invoiceSearch(
 
 ## Response Type
 
-[`InvoiceSearchResponse`](../../doc/models/invoice-search-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [InvoiceSearchResponse](../../doc/models/invoice-search-response.md).
 
 ## Example Usage
 
@@ -222,7 +222,7 @@ async invoiceSummary(
 
 ## Response Type
 
-[`InvoiceSummaryResponse`](../../doc/models/invoice-summary-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [InvoiceSummaryResponse](../../doc/models/invoice-summary-response.md).
 
 ## Example Usage
 
@@ -328,7 +328,7 @@ async statementOfAccount(
 
 ## Response Type
 
-[`StatementOfAccountResponse`](../../doc/models/statement-of-account-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [StatementOfAccountResponse](../../doc/models/statement-of-account-response.md).
 
 ## Example Usage
 
@@ -479,7 +479,7 @@ async dates(
 
 ## Response Type
 
-[`InvoiceDatesResponseData`](../../doc/models/invoice-dates-response-data.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [InvoiceDatesResponseData](../../doc/models/invoice-dates-response-data.md).
 
 ## Example Usage
 
@@ -568,7 +568,7 @@ async searchStatementOfAccount(
 
 ## Response Type
 
-[`SearchStatementOfAccountResponse`](../../doc/models/search-statement-of-account-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [SearchStatementOfAccountResponse](../../doc/models/search-statement-of-account-response.md).
 
 ## Example Usage
 
@@ -674,7 +674,7 @@ async searchDocuments(
 
 ## Response Type
 
-[`SearchDocumentsResponse`](../../doc/models/search-documents-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [SearchDocumentsResponse](../../doc/models/search-documents-response.md).
 
 ## Example Usage
 
@@ -792,7 +792,7 @@ async eidSearch(
 
 ## Response Type
 
-[`EIDDocumentResponse`](../../doc/models/eid-document-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [EIDDocumentResponse](../../doc/models/eid-document-response.md).
 
 ## Example Usage
 
@@ -895,7 +895,7 @@ async download(
 
 ## Response Type
 
-`NodeJS.ReadableStream | Blob`
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type NodeJS.ReadableStream | Blob.
 
 ## Example Usage
 
@@ -965,7 +965,7 @@ async eidDownload(
 
 ## Response Type
 
-`NodeJS.ReadableStream | Blob`
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type NodeJS.ReadableStream | Blob.
 
 ## Example Usage
 

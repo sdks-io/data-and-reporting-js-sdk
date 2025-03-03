@@ -6,6 +6,7 @@
 
 import {
   PricedTransactionRequestV2,
+  PricedTransactionReqV2InvoiceStatusEnum,
   PricedTransactionReqV2PeriodEnum,
   PricedTransactionReqV2SortOrderEnum,
   PricedTransactionResponseV2,
@@ -161,7 +162,7 @@ describe('TransactionController', () => {
     const body: PricedTransactionRequestV2 = {
       filters: {
         colCoCode: '032',
-        invoiceStatus: { 'key1': 'val1', 'key2': 'val2' },
+        invoiceStatus: PricedTransactionReqV2InvoiceStatusEnum.A,
         payerNumber: 'DE26685263',
         accountId: 29484,
         accountNumber: 'DE26667080',

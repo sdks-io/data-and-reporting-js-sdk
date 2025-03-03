@@ -85,7 +85,7 @@ async pricedTransactions(
 
 ## Response Type
 
-[`PricedTransactionResponse`](../../doc/models/priced-transaction-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [PricedTransactionResponse](../../doc/models/priced-transaction-response.md).
 
 ## Example Usage
 
@@ -338,7 +338,7 @@ async pricedTransactionsSummary(
 
 ## Response Type
 
-[`PricedTransSummaryResponse`](../../doc/models/priced-trans-summary-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [PricedTransSummaryResponse](../../doc/models/priced-trans-summary-response.md).
 
 ## Example Usage
 
@@ -489,7 +489,7 @@ async multipricedTransactions(
 
 ## Response Type
 
-[`MultiPricedTransactionResponse`](../../doc/models/multi-priced-transaction-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [MultiPricedTransactionResponse](../../doc/models/multi-priced-transaction-response.md).
 
 ## Example Usage
 
@@ -728,7 +728,7 @@ async cardUsageSummary(
 
 ## Response Type
 
-[`CardUsageSummaryResponse`](../../doc/models/card-usage-summary-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [CardUsageSummaryResponse](../../doc/models/card-usage-summary-response.md).
 
 ## Example Usage
 
@@ -788,7 +788,7 @@ async volumeBasedBonus(
 
 ## Response Type
 
-[`VolumeBasedBonusResponse`](../../doc/models/volume-based-bonus-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [VolumeBasedBonusResponse](../../doc/models/volume-based-bonus-response.md).
 
 ## Example Usage
 
@@ -848,7 +848,7 @@ async volumeBasedPricing(
 
 ## Response Type
 
-[`VolumeBasedPricingResponse`](../../doc/models/volume-based-pricing-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [VolumeBasedPricingResponse](../../doc/models/volume-based-pricing-response.md).
 
 ## Example Usage
 
@@ -920,7 +920,7 @@ async fees(
 
 ## Response Type
 
-[`TransactionFeesResponse`](../../doc/models/transaction-fees-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [TransactionFeesResponse](../../doc/models/transaction-fees-response.md).
 
 ## Example Usage
 
@@ -1118,7 +1118,7 @@ async feeSummaryResponse(
 
 ## Response Type
 
-[`FeeSummaryResponse`](../../doc/models/fee-summary-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [FeeSummaryResponse](../../doc/models/fee-summary-response.md).
 
 ## Example Usage
 
@@ -1224,7 +1224,7 @@ async fuelConsumption(
 
 ## Response Type
 
-[`FuelConsumptionResponse`](../../doc/models/fuel-consumption-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [FuelConsumptionResponse](../../doc/models/fuel-consumption-response.md).
 
 ## Example Usage
 
@@ -1326,7 +1326,7 @@ async updateOdometer(
 
 ## Response Type
 
-[`UpdateOdometerResponse`](../../doc/models/update-odometer-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [UpdateOdometerResponse](../../doc/models/update-odometer-response.md).
 
 ## Example Usage
 
@@ -1421,7 +1421,7 @@ async transactionExceptions(
 
 ## Response Type
 
-[`TransactionExceptionsResponse`](../../doc/models/transaction-exceptions-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [TransactionExceptionsResponse](../../doc/models/transaction-exceptions-response.md).
 
 ## Example Usage
 
@@ -1545,7 +1545,7 @@ async recentTransactionsNew(
 
 ## Response Type
 
-[`RecentTransactionsResponse`](../../doc/models/recent-transactions-response.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [RecentTransactionsResponse](../../doc/models/recent-transactions-response.md).
 
 ## Example Usage
 
@@ -1741,7 +1741,7 @@ async pricedTransactionsV2(
 
 ## Response Type
 
-[`PricedTransactionResponseV2`](../../doc/models/priced-transaction-response-v2.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [PricedTransactionResponseV2](../../doc/models/priced-transaction-response-v2.md).
 
 ## Example Usage
 
@@ -1751,7 +1751,7 @@ const requestId = '2b0cbe11-f109-4c43-9201-49af0370df1c';
 const body: PricedTransactionRequestV2 = {
   filters: {
     colCoCode: '032',
-    invoiceStatus: { 'key1': 'val1', 'key2': 'val2' },
+    invoiceStatus: PricedTransactionReqV2InvoiceStatusEnum.A,
     payerNumber: 'DE26685263',
     accountId: 29484,
     accountNumber: 'DE26667080',

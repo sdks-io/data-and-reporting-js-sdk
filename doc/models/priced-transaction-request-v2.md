@@ -19,16 +19,13 @@
 {
   "Filters": {
     "ColCoCode": "ColCoCode8",
-    "InvoiceStatus": {
-      "key1": "val1",
-      "key2": "val2"
-    },
+    "ColCoId": 0,
+    "InvoiceStatus": "U",
     "PayerNumber": "PayerNumber0",
     "AccountId": 108,
     "AccountNumber": "AccountNumber2",
     "DriverName": "DriverName8",
-    "CardGroupId": 154,
-    "CardPAN": "CardPAN8"
+    "CardId": 14
   },
   "Page": 230,
   "PageSize": 210
