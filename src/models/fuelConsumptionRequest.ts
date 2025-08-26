@@ -12,12 +12,12 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
-import { Accounts, accountsSchema } from './accounts';
+} from '../schema.js';
+import { Accounts, accountsSchema } from './accounts.js';
 import {
   FuelConsumptionCard,
   fuelConsumptionCardSchema,
-} from './fuelConsumptionCard';
+} from './fuelConsumptionCard.js';
 
 export interface FuelConsumptionRequest {
   /**

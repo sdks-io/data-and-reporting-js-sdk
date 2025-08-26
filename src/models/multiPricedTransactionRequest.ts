@@ -13,11 +13,11 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
+} from '../schema.js';
 import {
   MultiPricedTransactionRequestAccountsItems,
   multiPricedTransactionRequestAccountsItemsSchema,
-} from './multiPricedTransactionRequestAccountsItems';
+} from './multiPricedTransactionRequestAccountsItems.js';
 
 export interface MultiPricedTransactionRequest {
   /**

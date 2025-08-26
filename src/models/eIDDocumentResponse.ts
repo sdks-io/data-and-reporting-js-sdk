@@ -13,8 +13,8 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
-import { EIDDocument, eIDDocumentSchema } from './eIDDocument';
+} from '../schema.js';
+import { EIDDocument, eIDDocumentSchema } from './eIDDocument.js';
 
 export interface EIDDocumentResponse {
   /** UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. */

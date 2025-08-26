@@ -14,15 +14,21 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
-import { Address, addressSchema } from './address';
-import { BankAccount, bankAccountSchema } from './bankAccount';
-import { CustomerContract, customerContractSchema } from './customerContract';
-import { FinanceCurrency, financeCurrencySchema } from './financeCurrency';
+} from '../schema.js';
+import { Address, addressSchema } from './address.js';
+import { BankAccount, bankAccountSchema } from './bankAccount.js';
+import {
+  CustomerContract,
+  customerContractSchema,
+} from './customerContract.js';
+import {
+  FinanceCurrency2,
+  financeCurrency2Schema,
+} from './financeCurrency2.js';
 import {
   InvoiceDistributionMethod,
   invoiceDistributionMethodSchema,
-} from './invoiceDistributionMethod';
+} from './invoiceDistributionMethod.js';
 
 export interface PayerDetails {
   /** Collecting company id of the customer. */
@@ -290,8 +296,7 @@ export interface PayerDetails {
    * This field is returned only when IncludeBonusParameters is set to True in the request. Else set to null.
    */
   hasActiveVolBasedAssociationBonus?: boolean;
-  /** This entity will not be present in the response if the ‘IncludeFinanceCurrency’ flag in the request is ‘false’ */
-  financeCurrency?: FinanceCurrency;
+  financeCurrency?: FinanceCurrency2;
   /**
    * Customer id in e-TM system
    * This field will have value only when ReturnTollsCustomerId is set to true in the request else set to null or empty.
@@ -487,7 +492,7 @@ export const payerDetailsSchema: Schema<PayerDetails> = object({
   ],
   financeCurrency: [
     'FinanceCurrency',
-    optional(lazy(() => financeCurrencySchema)),
+    optional(lazy(() => financeCurrency2Schema)),
   ],
   tollsCustomerId: ['TollsCustomerId', optional(nullable(string()))],
   tollsColcoCountryTypeId: [

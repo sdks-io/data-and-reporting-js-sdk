@@ -7,19 +7,17 @@
 import {
   array,
   boolean,
-  lazy,
   nullable,
   number,
   object,
   optional,
   Schema,
   string,
-} from '../schema';
+} from '../schema.js';
 import {
   PricedTransactionResponseTransactionsItemsLocation,
   pricedTransactionResponseTransactionsItemsLocationSchema,
-} from './containers/pricedTransactionResponseTransactionsItemsLocation';
-import { ErrorStatus, errorStatusSchema } from './errorStatus';
+} from './containers/pricedTransactionResponseTransactionsItemsLocation.js';
 
 export interface PricedTransactionResponseTransactionsItems {
   /**
@@ -529,9 +527,6 @@ export interface PricedTransactionResponseTransactionsItems {
    * Note: - The value could be null/blank for fees item
    */
   transactionTypeDescription?: string | null;
-  error?: ErrorStatus;
-  /** API Request Id */
-  requestId?: string;
 }
 
 export const pricedTransactionResponseTransactionsItemsSchema: Schema<PricedTransactionResponseTransactionsItems> = object(
@@ -756,7 +751,5 @@ export const pricedTransactionResponseTransactionsItemsSchema: Schema<PricedTran
       'TransactionTypeDescription',
       optional(nullable(string())),
     ],
-    error: ['Error', optional(lazy(() => errorStatusSchema))],
-    requestId: ['RequestId', optional(string())],
   }
 );

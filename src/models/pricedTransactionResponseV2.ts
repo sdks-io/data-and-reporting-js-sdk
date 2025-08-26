@@ -12,11 +12,11 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
+} from '../schema.js';
 import {
   PricedResponseData,
   pricedResponseDataSchema,
-} from './pricedResponseData';
+} from './pricedResponseData.js';
 
 export interface PricedTransactionResponseV2 {
   /** Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the req */

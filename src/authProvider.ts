@@ -5,37 +5,30 @@
  */
 
 import {
-  basicAuthenticationProvider,
   compositeAuthenticationProvider,
   OAuthConfiguration,
   requestAuthenticationProvider,
-} from './authentication';
-import { BearerTokenManager } from './bearerTokenManager';
-import { Configuration } from './configuration';
-import { OAuthToken } from './models/oAuthToken';
+} from './authentication.js';
+import { ClientCredentialsAuthManager } from './clientCredentialsAuthManager.js';
+import { Configuration } from './configuration.js';
+import { OAuthToken } from './models/oAuthToken.js';
 
 export function createAuthProviderFromConfig(
   config: Partial<Configuration>,
-  bearerToken: () => BearerTokenManager | undefined
+  bearerToken: () => ClientCredentialsAuthManager
 ) {
   const authConfig = {
-    basicAuth:
-      config.basicAuthCredentials &&
-      basicAuthenticationProvider(
-        config.basicAuthCredentials.username,
-        config.basicAuthCredentials.password
-      ),
     bearerToken:
-      config.bearerTokenCredentials &&
+      config.clientCredentialsAuthCredentials &&
       requestAuthenticationProvider(
-        config.bearerTokenCredentials.oAuthToken,
+        config.clientCredentialsAuthCredentials.oAuthToken,
         bearerTokenTokenProvider(
           bearerToken,
-          config.bearerTokenCredentials.oAuthTokenProvider
+          config.clientCredentialsAuthCredentials.oAuthTokenProvider
         ),
-        config.bearerTokenCredentials.oAuthOnTokenUpdate,
+        config.clientCredentialsAuthCredentials.oAuthOnTokenUpdate,
         {
-          clockSkew: config.bearerTokenCredentials.oAuthClockSkew,
+          clockSkew: config.clientCredentialsAuthCredentials.oAuthClockSkew,
         } as OAuthConfiguration
       ),
   };
@@ -47,19 +40,16 @@ export function createAuthProviderFromConfig(
 }
 
 function bearerTokenTokenProvider(
-  bearerToken: () => BearerTokenManager | undefined,
+  bearerToken: () => ClientCredentialsAuthManager,
   defaultProvider:
     | ((
         lastOAuthToken: OAuthToken | undefined,
-        authManager: BearerTokenManager
+        authManager: ClientCredentialsAuthManager
       ) => Promise<OAuthToken>)
     | undefined
 ): ((token: OAuthToken | undefined) => Promise<OAuthToken>) | undefined {
   return (token: OAuthToken | undefined) => {
     const manager = bearerToken();
-    if (manager === undefined) {
-      throw Error('Unable to find the OAuthManager instance');
-    }
     if (defaultProvider === undefined) {
       return manager.updateToken(token);
     }

@@ -12,34 +12,42 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
+} from '../schema.js';
 import {
-  AuditResponseAuditsItems,
-  auditResponseAuditsItemsSchema,
-} from './auditResponseAuditsItems';
-import { ErrorStatus, errorStatusSchema } from './errorStatus';
+  AuditArrayElements,
+  auditArrayElementsSchema,
+} from './auditArrayElements.js';
+import { Warning, warningSchema } from './warning.js';
 
 export interface AuditResponse {
-  audits?: AuditResponseAuditsItems[];
-  /** Current Page */
-  currentPage?: number;
-  /** Total row count matched for the given input criteria */
-  rowCount?: number;
-  /** Calculated page count based on page size from the incoming API request and total number of rows matched for the given input criteria */
-  totalPages?: number;
-  error?: ErrorStatus;
-  /** API RequestId */
+  /** Unique identifier for the request. This will be played back in the response from the request. */
   requestId?: string;
+  /** Status of the request */
+  status?: string;
+  data?: AuditArrayElements[];
+  /** Current Page */
+  page?: number;
+  /** Total row count matched for the given input criteria */
+  totalRecords?: number;
+  /** Calculated page count based on page size from the incoming API request and total number of rows matched for the given input criteria. Return 1 if the page size is -1 as all records are returned. */
+  totalPages?: number;
+  /** Page Size – Number of records to show on current page. */
+  pageSize?: number;
+  /**
+   * A list of Warning entity.
+   * This entity will hold the details of the scheduled System Outages of any dependent applications of this service.
+   * Note: If there is no scheduled outage information available, in the configuration in AMS, for this service, this parameter won’t be present in output.
+   */
+  warnings?: Warning[];
 }
 
 export const auditResponseSchema: Schema<AuditResponse> = object({
-  audits: [
-    'Audits',
-    optional(array(lazy(() => auditResponseAuditsItemsSchema))),
-  ],
-  currentPage: ['CurrentPage', optional(number())],
-  rowCount: ['RowCount', optional(number())],
-  totalPages: ['TotalPages', optional(number())],
-  error: ['Error', optional(lazy(() => errorStatusSchema))],
   requestId: ['RequestId', optional(string())],
+  status: ['Status', optional(string())],
+  data: ['Data', optional(array(lazy(() => auditArrayElementsSchema)))],
+  page: ['Page', optional(number())],
+  totalRecords: ['TotalRecords', optional(number())],
+  totalPages: ['TotalPages', optional(number())],
+  pageSize: ['PageSize', optional(number())],
+  warnings: ['Warnings', optional(array(lazy(() => warningSchema)))],
 });

@@ -14,11 +14,11 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
+} from '../schema.js';
 import {
   InvoiceSearchAdditionalDocument,
   invoiceSearchAdditionalDocumentSchema,
-} from './invoiceSearchAdditionalDocument';
+} from './invoiceSearchAdditionalDocument.js';
 
 export interface InvoiceSearchDetails {
   /**

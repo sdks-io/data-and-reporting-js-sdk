@@ -18,7 +18,7 @@
 | `dailyVolumeLimit` | `number \| null \| undefined` | Optional | Maximum volume of fuel that can be bought on the card in a day. |
 | `weeklyVolumeLimit` | `number \| null \| undefined` | Optional | Maximum volume of fuel that can be bought on the card in a week. |
 | `monthlyVolumeLimit` | `number \| null \| undefined` | Optional | Maximum volume of fuel that can be bought on the card in a month. |
-| `annualVolumeLimit` | `number \| null \| undefined` | Optional | Maximum volume of fuel that can be bought on the card in a year.<br>**Default**: `0` |
+| `annualVolumeLimit` | `number \| null \| undefined` | Optional | Maximum volume of fuel that can be bought on the card in a year.<br><br>**Default**: `0` |
 | `lifeTimeVolumeLimit` | `number \| null \| undefined` | Optional | Maximum volume of fuel that can be bought on the card in the card’s life time. |
 | `transactionSpendLimit` | `number \| null \| undefined` | Optional | Maximum amount that can be spend on the card in a transaction. |
 | `transactionVolumeLimit` | `number \| null \| undefined` | Optional | Maximum volume of fuel that can be bought on the card in a transaction. |

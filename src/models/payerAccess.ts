@@ -12,7 +12,7 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
+} from '../schema.js';
 
 export interface PayerAccess {
   /** Whether this payer is the default payer of the user. */

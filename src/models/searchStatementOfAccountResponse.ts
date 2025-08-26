@@ -12,11 +12,11 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
+} from '../schema.js';
 import {
   SearchStatementOfAccount,
   searchStatementOfAccountSchema,
-} from './searchStatementOfAccount';
+} from './searchStatementOfAccount.js';
 
 export interface SearchStatementOfAccountResponse {
   /** Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the req */

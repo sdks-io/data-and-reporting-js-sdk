@@ -13,8 +13,8 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
-import { Tier, tierSchema } from './tier';
+} from '../schema.js';
+import { Tier, tierSchema } from './tier.js';
 
 export interface PriceList {
   /**

@@ -9,7 +9,7 @@
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `lastStatementOfAccount` | [`LastStatementOfAccount \| undefined`](../../doc/models/last-statement-of-account.md) | Optional | Latest statement of the account generated for the given Payer. |
+| `lastStatementOfAccount` | [`LastStatementOfAccount2 \| undefined`](../../doc/models/last-statement-of-account-2.md) | Optional | - |
 | `monthlyInvoiceTrend` | [`MonthlyInvoiceTrend[] \| null \| undefined`](../../doc/models/monthly-invoice-trend.md) | Optional | - |
 | `pastStatementOfAccounts` | [`PastStatementOfAccounts[] \| undefined`](../../doc/models/past-statement-of-accounts.md) | Optional | - |
 | `paymentsSinceLastSOA` | [`PaymentsSinceLastSOA[] \| null \| undefined`](../../doc/models/payments-since-last-soa.md) | Optional | - |

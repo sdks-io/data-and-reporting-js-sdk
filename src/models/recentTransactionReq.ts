@@ -12,7 +12,7 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
+} from '../schema.js';
 
 export interface RecentTransactionReq {
   /** Three character Collecting Company Code (Shell Code) of the selected payer */

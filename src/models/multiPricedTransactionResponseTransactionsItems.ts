@@ -14,8 +14,8 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
-import { SiteLocation, siteLocationSchema } from './siteLocation';
+} from '../schema.js';
+import { SiteLocation, siteLocationSchema } from './siteLocation.js';
 
 export interface MultiPricedTransactionResponseTransactionsItems {
   /**

@@ -15,12 +15,12 @@ import {
   RecentTransactionsResponse,
   TransactionController,
 } from '../src';
-import { testClient } from './testClient';
+import { testClient } from './testClient.js';
 import {
   expectHeadersToMatch,
   expectMatchingWithOptions,
   makeApiCall,
-} from './testHelper';
+} from './testHelper.js';
 
 describe('TransactionController', () => {
   let controller : TransactionController;

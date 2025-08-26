@@ -9,36 +9,36 @@
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `accountName` | `string \| null \| undefined` | Optional | Name of the account<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `36` |
+| `accountName` | `string \| null \| undefined` | Optional | Name of the account<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `36` |
 | `accountId` | `number \| null \| undefined` | Optional | Account Id (i.e. Customer Id of the Sub Account in GFN) of the selected account. |
 | `accountNumber` | `string \| null \| undefined` | Optional | AccountNumber of the selected account. |
-| `accountShortName` | `string \| null \| undefined` | Optional | Nick name of the account<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `25` |
-| `additional1` | `string \| null \| undefined` | Optional | Addtional SerialId or endpoint Id<br>**Constraints**: *Minimum Length*: `14`, *Maximum Length*: `20` |
-| `additional2` | `string \| null \| undefined` | Optional | Addtional SerialId or endpoint Id<br>**Constraints**: *Minimum Length*: `14`, *Maximum Length*: `20` |
-| `additional3` | `string \| null \| undefined` | Optional | Addtional SerialId or endpoint Id<br>**Constraints**: *Minimum Length*: `14`, *Maximum Length*: `20` |
-| `additional4` | `string \| null \| undefined` | Optional | Addtional SerialId or endpoint Id<br>**Constraints**: *Minimum Length*: `14`, *Maximum Length*: `20` |
-| `allowClearing` | `string \| null \| undefined` | Optional | Allow clearings<br>**Constraints**: *Minimum Length*: `4`, *Maximum Length*: `25` |
-| `authorisationCode` | `number \| null \| undefined` | Optional | Autorization code<br>**Constraints**: `>= 1`, `<= 999999` |
-| `transactionStatus` | `string \| null \| undefined` | Optional | Status of the transaction<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
-| `driverName` | `string \| null \| undefined` | Optional | Driver Name of Card record<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `25` |
-| `cardExpiryPeriod` | `number \| null \| undefined` | Optional | Expiry period of the card<br>**Constraints**: `>= 1`, `<= 9999` |
+| `accountShortName` | `string \| null \| undefined` | Optional | Nick name of the account<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `25` |
+| `additional1` | `string \| null \| undefined` | Optional | Addtional SerialId or endpoint Id<br><br>**Constraints**: *Minimum Length*: `14`, *Maximum Length*: `20` |
+| `additional2` | `string \| null \| undefined` | Optional | Addtional SerialId or endpoint Id<br><br>**Constraints**: *Minimum Length*: `14`, *Maximum Length*: `20` |
+| `additional3` | `string \| null \| undefined` | Optional | Addtional SerialId or endpoint Id<br><br>**Constraints**: *Minimum Length*: `14`, *Maximum Length*: `20` |
+| `additional4` | `string \| null \| undefined` | Optional | Addtional SerialId or endpoint Id<br><br>**Constraints**: *Minimum Length*: `14`, *Maximum Length*: `20` |
+| `allowClearing` | `string \| null \| undefined` | Optional | Allow clearings<br><br>**Constraints**: *Minimum Length*: `4`, *Maximum Length*: `25` |
+| `authorisationCode` | `number \| null \| undefined` | Optional | Autorization code<br><br>**Constraints**: `>= 1`, `<= 999999` |
+| `transactionStatus` | `string \| null \| undefined` | Optional | Status of the transaction<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
+| `driverName` | `string \| null \| undefined` | Optional | Driver Name of Card record<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `25` |
+| `cardExpiryPeriod` | `number \| null \| undefined` | Optional | Expiry period of the card<br><br>**Constraints**: `>= 1`, `<= 9999` |
 | `cardExpiry` | `string \| null \| undefined` | Optional | Card Expiry Date |
-| `cardGroupId` | `number \| null \| undefined` | Optional | Card Group Code<br>**Constraints**: `>= 1`, `<= 99999` |
+| `cardGroupId` | `number \| null \| undefined` | Optional | Card Group Code<br><br>**Constraints**: `>= 1`, `<= 99999` |
 | `cardGroupName` | `string \| null \| undefined` | Optional | Group nmae of the card |
-| `issuerCode` | `number \| null \| undefined` | Optional | Issuer code<br>**Constraints**: `>= 1`, `<= 9999` |
-| `cardPAN` | `string \| null \| undefined` | Optional | Full Card PAN<br>**Constraints**: *Minimum Length*: `19`, *Maximum Length*: `19` |
-| `releaseCode` | `number \| null \| undefined` | Optional | Release code<br>**Constraints**: `>= 1`, `<= 10` |
-| `cardSequenceNumber` | `number \| null \| undefined` | Optional | Sequesnce number of the card<br>**Constraints**: `>= 1`, `<= 999` |
-| `cardType` | `string \| null \| undefined` | Optional | Type of card<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `50` |
-| `colCoCode` | `string \| null \| undefined` | Optional | Collecting Company Code (Shell Code) of the selected payer.<br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `3` |
+| `issuerCode` | `number \| null \| undefined` | Optional | Issuer code<br><br>**Constraints**: `>= 1`, `<= 9999` |
+| `cardPAN` | `string \| null \| undefined` | Optional | Full Card PAN<br><br>**Constraints**: *Minimum Length*: `19`, *Maximum Length*: `19` |
+| `releaseCode` | `number \| null \| undefined` | Optional | Release code<br><br>**Constraints**: `>= 1`, `<= 10` |
+| `cardSequenceNumber` | `number \| null \| undefined` | Optional | Sequesnce number of the card<br><br>**Constraints**: `>= 1`, `<= 999` |
+| `cardType` | `string \| null \| undefined` | Optional | Type of card<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `50` |
+| `colCoCode` | `string \| null \| undefined` | Optional | Collecting Company Code (Shell Code) of the selected payer.<br><br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `3` |
 | `unitDiscountInvoiceCurrency` | `number \| null \| undefined` | Optional | Unit discount Invoice currency |
 | `colCoExchangeRate` | `number \| undefined` | Optional | Colco exchange rate |
-| `invoiceCurrencySymbol` | `string \| null \| undefined` | Optional | Currency symbol on which the invoice was raised<br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `3` |
+| `invoiceCurrencySymbol` | `string \| null \| undefined` | Optional | Currency symbol on which the invoice was raised<br><br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `3` |
 | `correctionFlag` | `boolean \| null \| undefined` | Optional | Is there any correction |
-| `cRMNumber` | `number \| null \| undefined` | Optional | CRM number<br>**Constraints**: `>= 10`, `<= 10` |
-| `customerCountry` | `string \| null \| undefined` | Optional | Customer country<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `30` |
-| `customerCurrencyCode` | `string \| null \| undefined` | Optional | Curreny which customer uses to transact.<br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `3` |
-| `customerCurrencySymbol` | `string \| null \| undefined` | Optional | Custome currency symbol<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
+| `cRMNumber` | `number \| null \| undefined` | Optional | CRM number<br><br>**Constraints**: `>= 10`, `<= 10` |
+| `customerCountry` | `string \| null \| undefined` | Optional | Customer country<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `30` |
+| `customerCurrencyCode` | `string \| null \| undefined` | Optional | Curreny which customer uses to transact.<br><br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `3` |
+| `customerCurrencySymbol` | `string \| null \| undefined` | Optional | Custome currency symbol<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
 | `rebateonNetAmountInCustomerCurrency` | `number \| null \| undefined` | Optional | Rebate on net amount in customer currency |
 | `effectiveDiscountInCustomerCurrency` | `number \| null \| undefined` | Optional | Effective discount in customers currency |
 | `effectiveUnitDiscountInCustomerCurrency` | `number \| null \| undefined` | Optional | effectiive unit discount in customers currency |
@@ -68,42 +68,42 @@
 | `delcoRetailValueTotalNet` | `number \| null \| undefined` | Optional | Delco per unit price after tax |
 | `transactionCurrencySymbol` | `string \| null \| undefined` | Optional | Currency used for transaction. |
 | `discountType` | `string \| null \| undefined` | Optional | Type of discount available |
-| `disputeStatus` | `boolean \| null \| undefined` | Optional | Is there any dispute status?True or False<br>**Default**: `false` |
-| `isShellSite` | `boolean \| undefined` | Optional | Is it a shell sites?True or False<br>**Default**: `false` |
+| `disputeStatus` | `boolean \| null \| undefined` | Optional | Is there any dispute status?True or False<br><br>**Default**: `false` |
+| `isShellSite` | `boolean \| undefined` | Optional | Is it a shell sites?True or False<br><br>**Default**: `false` |
 | `fleetIdInput` | `string \| null \| undefined` | Optional | Fleet identifier |
 | `incomingProductCode` | `number \| null \| undefined` | Optional | In coming product code |
 | `postingDate` | `string \| null \| undefined` | Optional | Date of Posting |
 | `postingTime` | `string \| null \| undefined` | Optional | Time whern posting happened |
 | `productCode` | `number \| null \| undefined` | Optional | Product Code - 21 Unleaded - High octane,22 Unleaded - Medium octane,23 Unleaded - Low octane,24 Unleaded Environmental |
-| `productName` | `string \| null \| undefined` | Optional | Name of the product<br>**Constraints**: *Minimum Length*: `8`, *Maximum Length*: `30` |
+| `productName` | `string \| null \| undefined` | Optional | Name of the product<br><br>**Constraints**: *Minimum Length*: `8`, *Maximum Length*: `30` |
 | `productGroupId` | `number \| null \| undefined` | Optional | Id of the product to which group it belongs |
-| `incomingCurrencyCode` | `string \| null \| undefined` | Optional | In coming currecncy code<br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `3` |
+| `incomingCurrencyCode` | `string \| null \| undefined` | Optional | In coming currecncy code<br><br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `3` |
 | `incomingSiteDescription` | `string \| null \| undefined` | Optional | In coming Site description |
-| `location` | `string \| null \| undefined` | Optional | Location of the Shell site<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
-| `siteName` | `string \| null \| undefined` | Optional | Shell site name<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
+| `location` | `string \| null \| undefined` | Optional | Location of the Shell site<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
+| `siteName` | `string \| null \| undefined` | Optional | Shell site name<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
 | `siteCode` | `number \| null \| undefined` | Optional | Shell site code |
 | `incomingSiteNumber` | `number \| null \| undefined` | Optional | In coming site number |
-| `invoiceCurrencyCode` | `string \| null \| undefined` | Optional | Currency code on which the invoice is raised<br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `3` |
+| `invoiceCurrencyCode` | `string \| null \| undefined` | Optional | Currency code on which the invoice is raised<br><br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `3` |
 | `invoiceDate` | `string \| null \| undefined` | Optional | Date on which the invoice was raised |
 | `invoiceNumber` | `number \| null \| undefined` | Optional | Invoice number |
 | `fuelProduct` | `boolean \| null \| undefined` | Optional | Is it a fuel product? True or False |
-| `vATApplicable` | `string \| null \| undefined` | Optional | Is VAT applicable?Y or N<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
-| `payerName` | `string \| null \| undefined` | Optional | Name of the payer<br>**Constraints**: *Minimum Length*: `20`, *Maximum Length*: `50` |
-| `payerNumber` | `string \| null \| undefined` | Optional | Payer account number<br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `15` |
-| `parentCustomerNumber` | `string \| null \| undefined` | Optional | Parent account number of the payer<br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `15` |
+| `vATApplicable` | `string \| null \| undefined` | Optional | Is VAT applicable?Y or N<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
+| `payerName` | `string \| null \| undefined` | Optional | Name of the payer<br><br>**Constraints**: *Minimum Length*: `20`, *Maximum Length*: `50` |
+| `payerNumber` | `string \| null \| undefined` | Optional | Payer account number<br><br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `15` |
+| `parentCustomerNumber` | `string \| null \| undefined` | Optional | Parent account number of the payer<br><br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `15` |
 | `payerGroup` | `string \| null \| undefined` | Optional | The group which the payer belongs to |
-| `payerGroupName` | `string \| null \| undefined` | Optional | Name of the group to which the payer belongs to.<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
+| `payerGroupName` | `string \| null \| undefined` | Optional | Name of the group to which the payer belongs to.<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
 | `checkDigit` | `number \| null \| undefined` | Optional | Check digit |
 | `netInvoiceIndicator` | `string \| null \| undefined` | Optional | After tax net invoice number |
 | `delcoCode` | `number \| null \| undefined` | Optional | Delco code |
-| `networkCode` | `number \| null \| undefined` | Optional | Network  code of the payer<br>**Constraints**: `>= 3`, `<= 3` |
-| `purchasedInCountry` | `string \| null \| undefined` | Optional | Country of purchase<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
-| `siteCountry` | `string \| null \| undefined` | Optional | Country where the site exists<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
-| `vATCountry` | `string \| null \| undefined` | Optional | Country where VAT is applicable<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
-| `delcoName` | `string \| null \| undefined` | Optional | Name of the delivery company<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
-| `network` | `string \| null \| undefined` | Optional | Network of the Delivery company<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `25` |
+| `networkCode` | `number \| null \| undefined` | Optional | Network  code of the payer<br><br>**Constraints**: `>= 3`, `<= 3` |
+| `purchasedInCountry` | `string \| null \| undefined` | Optional | Country of purchase<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
+| `siteCountry` | `string \| null \| undefined` | Optional | Country where the site exists<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
+| `vATCountry` | `string \| null \| undefined` | Optional | Country where VAT is applicable<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
+| `delcoName` | `string \| null \| undefined` | Optional | Name of the delivery company<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
+| `network` | `string \| null \| undefined` | Optional | Network of the Delivery company<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `25` |
 | `odometerInput` | `number \| null \| undefined` | Optional | Odometet input |
-| `originalSalesItemId` | `string \| null \| undefined` | Optional | Original item identifier for sales<br>**Constraints**: *Minimum Length*: `4`, *Maximum Length*: `25` |
+| `originalSalesItemId` | `string \| null \| undefined` | Optional | Original item identifier for sales<br><br>**Constraints**: *Minimum Length*: `4`, *Maximum Length*: `25` |
 | `fleetIDDescription` | `string \| null \| undefined` | Optional | Fleet identifier description |
 | `parentCustomerId` | `number \| null \| undefined` | Optional | Identifier of parent customer |
 | `pINIndicator` | `string \| null \| undefined` | Optional | PIN indicator |
@@ -121,8 +121,8 @@
 | `euroRebateAmount` | `number \| null \| undefined` | Optional | Rebate amount in Euros |
 | `netEuroAmount` | `number \| null \| undefined` | Optional | Net amount in Euros |
 | `euroVATAmount` | `number \| null \| undefined` | Optional | Vat amount in Euros |
-| `parentCustomerName` | `string \| null \| undefined` | Optional | Customers parent name<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
-| `isInvoiced` | `boolean \| null \| undefined` | Optional | Is invoice raised<br>**Default**: `false` |
+| `parentCustomerName` | `string \| null \| undefined` | Optional | Customers parent name<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
+| `isInvoiced` | `boolean \| null \| undefined` | Optional | Is invoice raised<br><br>**Default**: `false` |
 | `transactionCurrencyCode` | `string \| null \| undefined` | Optional | Transaction currency code |
 | `creditDebitCode` | `string \| null \| undefined` | Optional | Is it Credit or debit C for credit D for Debit |
 | `transactionDate` | `string \| null \| undefined` | Optional | Date of transaction |
@@ -136,37 +136,37 @@
 | `vATCategory` | `string \| null \| undefined` | Optional | To which category and counry does the  VAT come under |
 | `vATRate` | `number \| null \| undefined` | Optional | VAT rate |
 | `vehicleRegistration` | `string \| null \| undefined` | Optional | Vehicle registration number |
-| `isCancelled` | `string \| null \| undefined` | Optional | Check if the pruchase is cancelled<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
+| `isCancelled` | `string \| null \| undefined` | Optional | Check if the pruchase is cancelled<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
 | `colCoGrossAmount` | `number \| null \| undefined` | Optional | Gross amount from Colco |
 | `colCoNetAmount` | `number \| null \| undefined` | Optional | Net amount from Colco |
 | `colCoVATAmount` | `number \| null \| undefined` | Optional | Colco VAT amount |
-| `originalCurrencySymbol` | `string \| null \| undefined` | Optional | Original currency code<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
-| `originalCurrencyCode` | `string \| null \| undefined` | Optional | Original currency code<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
+| `originalCurrencySymbol` | `string \| null \| undefined` | Optional | Original currency code<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
+| `originalCurrencyCode` | `string \| null \| undefined` | Optional | Original currency code<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
 | `originalVATAmount` | `number \| null \| undefined` | Optional | Original VAT amount |
-| `embossText` | `string \| null \| undefined` | Optional | Comapany name embosses in text<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
+| `embossText` | `string \| null \| undefined` | Optional | Comapany name embosses in text<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
 | `originalExchangeRate` | `number \| null \| undefined` | Optional | Orginal exchange rate |
 | `originalTransactionItemInvoiceDate` | `string \| null \| undefined` | Optional | Original treansaction date |
-| `feeTypeId` | `number \| null \| undefined` | Optional | Fee type identifier<br>**Constraints**: `>= 1`, `<= 1` |
-| `lineItemDescription` | `boolean \| null \| undefined` | Optional | Line item identifier of the product<br>**Default**: `false` |
-| `feeRuleDescription` | `string \| null \| undefined` | Optional | Fee rule description<br>**Constraints**: *Minimum Length*: `8`, *Maximum Length*: `25` |
-| `frequency` | `number \| null \| undefined` | Optional | Frequency of transaction<br>**Constraints**: `>= 1`, `<= 1` |
-| `feeRuleId` | `number \| null \| undefined` | Optional | Fee rule identifier<br>**Constraints**: `>= 1`, `<= 1` |
+| `feeTypeId` | `number \| null \| undefined` | Optional | Fee type identifier<br><br>**Constraints**: `>= 1`, `<= 1` |
+| `lineItemDescription` | `boolean \| null \| undefined` | Optional | Line item identifier of the product<br><br>**Default**: `false` |
+| `feeRuleDescription` | `string \| null \| undefined` | Optional | Fee rule description<br><br>**Constraints**: *Minimum Length*: `8`, *Maximum Length*: `25` |
+| `frequency` | `number \| null \| undefined` | Optional | Frequency of transaction<br><br>**Constraints**: `>= 1`, `<= 1` |
+| `feeRuleId` | `number \| null \| undefined` | Optional | Fee rule identifier<br><br>**Constraints**: `>= 1`, `<= 1` |
 | `systemEntryDate` | `string \| null \| undefined` | Optional | Entry date in the system |
 | `systemEntryTime` | `string \| null \| undefined` | Optional | Entry time in the system |
-| `isManual` | `string \| null \| undefined` | Optional | Checking if its manual<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
-| `originalTransactionItemId` | `string \| null \| undefined` | Optional | Is it manual<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
+| `isManual` | `string \| null \| undefined` | Optional | Checking if its manual<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
+| `originalTransactionItemId` | `string \| null \| undefined` | Optional | Is it manual<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
 | `originalTransactionItemInvoiceNumber` | `number \| null \| undefined` | Optional | Original invoice transaction number |
 | `originalTransactionItemInvoiceId` | `number \| null \| undefined` | Optional | Original Invoice transaction Identifier |
-| `payerShortName` | `string \| null \| undefined` | Optional | Payers short name<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
-| `reverseCharge` | `string \| null \| undefined` | Optional | Is reverse charge?<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
+| `payerShortName` | `string \| null \| undefined` | Optional | Payers short name<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
+| `reverseCharge` | `string \| null \| undefined` | Optional | Is reverse charge?<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
 | `originalGrossAmount` | `number \| null \| undefined` | Optional | Original gross amount |
 | `originalNetAmount` | `number \| null \| undefined` | Optional | Original Net amount |
-| `unitOfMeasure` | `string \| null \| undefined` | Optional | Unit of measure<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
-| `roadType` | `string \| null \| undefined` | Optional | Type of road<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
-| `customerCountryIsoCode` | `string \| null \| undefined` | Optional | Customer country ISO Code<br>**Constraints**: *Minimum Length*: `2`, *Maximum Length*: `2` |
-| `eVOperator` | `string \| null \| undefined` | Optional | EvOperator Name<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `20` |
-| `eVSerialId` | `string \| null \| undefined` | Optional | Ev Operator identifier<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
-| `eVChargePointSerial` | `string \| null \| undefined` | Optional | EV Charging point iserial identifier<br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
+| `unitOfMeasure` | `string \| null \| undefined` | Optional | Unit of measure<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
+| `roadType` | `string \| null \| undefined` | Optional | Type of road<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
+| `customerCountryIsoCode` | `string \| null \| undefined` | Optional | Customer country ISO Code<br><br>**Constraints**: *Minimum Length*: `2`, *Maximum Length*: `2` |
+| `eVOperator` | `string \| null \| undefined` | Optional | EvOperator Name<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `20` |
+| `eVSerialId` | `string \| null \| undefined` | Optional | Ev Operator identifier<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
+| `eVChargePointSerial` | `string \| null \| undefined` | Optional | EV Charging point iserial identifier<br><br>**Constraints**: *Minimum Length*: `5`, *Maximum Length*: `50` |
 | `eVChargePointConnectorType` | `number \| null \| undefined` | Optional | Ev chariging connector type |
 | `eVChargePointConnectorTypeDescription` | `string \| null \| undefined` | Optional | EV charging point connector type description |
 | `eVChargeDuration` | `string \| null \| undefined` | Optional | Ev charging Duration |

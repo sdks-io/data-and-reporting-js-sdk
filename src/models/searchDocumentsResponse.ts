@@ -13,11 +13,11 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
+} from '../schema.js';
 import {
   SearchDocumentsInvoice,
   searchDocumentsInvoiceSchema,
-} from './searchDocumentsInvoice';
+} from './searchDocumentsInvoice.js';
 
 export interface SearchDocumentsResponse {
   /** UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. */

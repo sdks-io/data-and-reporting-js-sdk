@@ -12,11 +12,11 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
+} from '../schema.js';
 import {
   RecentTransactions,
   recentTransactionsSchema,
-} from './recentTransactions';
+} from './recentTransactions.js';
 
 export interface RecentTransactionsResponse {
   /** RequestID is unique identifier value that is attached to requests and messages that allow reference to a particular transaction or event chain. */

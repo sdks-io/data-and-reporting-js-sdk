@@ -14,19 +14,19 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
+} from '../schema.js';
 import {
   CardDayTimeRestrictions,
   cardDayTimeRestrictionsSchema,
-} from './cardDayTimeRestrictions';
+} from './cardDayTimeRestrictions.js';
 import {
   CardUsageRestrictions,
   cardUsageRestrictionsSchema,
-} from './cardUsageRestrictions';
+} from './cardUsageRestrictions.js';
 import {
   PurchaseCategories,
   purchaseCategoriesSchema,
-} from './purchaseCategories';
+} from './purchaseCategories.js';
 
 export interface CardTypeResponseCustomerCardTypesItems {
   /** True/False – Whether the cards of this card type can have PIN. */
@@ -74,7 +74,7 @@ export interface CardTypeResponseCustomerCardTypesItems {
   /** Token Type Name. */
   tokenTypeName?: string | null;
   usageRestrictions?: CardUsageRestrictions;
-  /** Is Europay, MasterCard, and Visa Contactless enabled or not */
+  /** Is Europay, MasterCard, and Visa Contactless enabled or not. */
   eMVContactless?: boolean;
   /** Whether the card type is enabled for RFID (Radio Frequency Identification) */
   rFID?: boolean;

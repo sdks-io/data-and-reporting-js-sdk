@@ -10,10 +10,10 @@
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `colCoCode` | `number \| null` | Required | Three character Collecting Company Code (Shell Code) of the selected payer |
-| `payerNumber` | `string \| null` | Required | Unique Identifier for the customer at payment point.<br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `10` |
+| `payerNumber` | `string \| null` | Required | Unique Identifier for the customer at payment point.<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `10` |
 | `accountNumber` | `string \| null \| undefined` | Optional | Customer account number. |
 | `productCode` | `string \| null \| undefined` | Optional | Global product code |
-| `purchasedInCountry` | `string \| null \| undefined` | Optional | Delco country<br>**Constraints**: *Minimum Length*: `2`, *Maximum Length*: `2` |
+| `purchasedInCountry` | `string \| null \| undefined` | Optional | Delco country<br><br>**Constraints**: *Minimum Length*: `2`, *Maximum Length*: `2` |
 | `cardPAN` | `string \| null \| undefined` | Optional | Card identifier number masked |
 | `fromDateTime` | `string \| null \| undefined` | Optional | Start date and time of transactions |
 | `toDateTime` | `string \| null \| undefined` | Optional | End date and time of transactions. Mandatory if FromDateTime is provided. |

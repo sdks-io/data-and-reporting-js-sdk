@@ -14,13 +14,12 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
-import { AccountAccess, accountAccessSchema } from './accountAccess';
-import { ColCoAccess, colCoAccessSchema } from './colCoAccess';
-import { EIDAccess, eIDAccessSchema } from './eIDAccess';
-import { ErrorStatus, errorStatusSchema } from './errorStatus';
-import { PayerAccess, payerAccessSchema } from './payerAccess';
-import { Role, roleSchema } from './role';
+} from '../schema.js';
+import { AccountAccess, accountAccessSchema } from './accountAccess.js';
+import { ColCoAccess, colCoAccessSchema } from './colCoAccess.js';
+import { EIDAccess, eIDAccessSchema } from './eIDAccess.js';
+import { PayerAccess, payerAccessSchema } from './payerAccess.js';
+import { Role, roleSchema } from './role.js';
 
 export interface LoggedInUserResponse {
   /** Logged in User Identifier */
@@ -101,9 +100,6 @@ export interface LoggedInUserResponse {
    * Count may vary based on customer operations hence it may not be an up to date value.
    */
   cardCount?: number | null;
-  error?: ErrorStatus;
-  /** Request Id of the API call */
-  requestId?: string;
 }
 
 export const loggedInUserResponseSchema: Schema<LoggedInUserResponse> = object({
@@ -142,6 +138,4 @@ export const loggedInUserResponseSchema: Schema<LoggedInUserResponse> = object({
   payerCount: ['PayerCount', optional(nullable(number()))],
   accountCount: ['AccountCount', optional(nullable(number()))],
   cardCount: ['CardCount', optional(nullable(number()))],
-  error: ['Error', optional(lazy(() => errorStatusSchema))],
-  requestId: ['RequestId', optional(string())],
 });

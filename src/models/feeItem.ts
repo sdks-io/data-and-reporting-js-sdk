@@ -14,8 +14,11 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
-import { FeesFeeRuleTiers, feesFeeRuleTiersSchema } from './feesFeeRuleTiers';
+} from '../schema.js';
+import {
+  FeesFeeRuleTiers,
+  feesFeeRuleTiersSchema,
+} from './feesFeeRuleTiers.js';
 
 export interface FeeItem {
   /** Fee Item unique identifier in the H3 Cards Platform */

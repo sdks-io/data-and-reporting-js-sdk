@@ -13,8 +13,8 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
-import { UpdateOdometer, updateOdometerSchema } from './updateOdometer';
+} from '../schema.js';
+import { UpdateOdometer, updateOdometerSchema } from './updateOdometer.js';
 
 export interface UpdateOdometerRequest {
   /**

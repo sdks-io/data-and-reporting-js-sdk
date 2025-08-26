@@ -13,19 +13,19 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
+} from '../schema.js';
 import {
   PricedTransactionReqV2InvoiceStatusEnum,
   pricedTransactionReqV2InvoiceStatusEnumSchema,
-} from './pricedTransactionReqV2InvoiceStatusEnum';
+} from './pricedTransactionReqV2InvoiceStatusEnum.js';
 import {
   PricedTransactionReqV2PeriodEnum,
   pricedTransactionReqV2PeriodEnumSchema,
-} from './pricedTransactionReqV2PeriodEnum';
+} from './pricedTransactionReqV2PeriodEnum.js';
 import {
   PricedTransactionReqV2SortOrderEnum,
   pricedTransactionReqV2SortOrderEnumSchema,
-} from './pricedTransactionReqV2SortOrderEnum';
+} from './pricedTransactionReqV2SortOrderEnum.js';
 
 /** This endpoint allows querying the transaction data (i.e. Priced, Billed and Unbilled sales items) from SFSBI. It provides a flexible search criteria and supports paging */
 export interface PricedRequestData {
@@ -33,7 +33,6 @@ export interface PricedRequestData {
   colCoCode: string | null;
   /** The Collecting Company Id in the Shell Card Platform. */
   colCoId?: number;
-  /** Invoice status of the transactions. Mandatory Possible options:I - Invoiced, U – Un-Invoiced, A – All */
   invoiceStatus: PricedTransactionReqV2InvoiceStatusEnum;
   /** Payer Number of the selected payer. */
   payerNumber: string | null;
@@ -83,12 +82,6 @@ export interface PricedRequestData {
   fromDate?: string | null;
   /** To transaction delivery date */
   toDate?: string | null;
-  /**
-   * Pass below one of the value as per the required transaction period
-   * 1. Last 7 Days
-   * 2. Last 30 Days
-   * 3. Last 90 Days
-   */
   period?: PricedTransactionReqV2PeriodEnum;
   /** Transaction posting start date and time */
   postingDateFrom?: string | null;

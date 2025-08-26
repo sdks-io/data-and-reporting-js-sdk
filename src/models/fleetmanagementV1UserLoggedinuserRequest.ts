@@ -12,7 +12,7 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
+} from '../schema.js';
 
 export interface FleetmanagementV1UserLoggedinuserRequest {
   /** True/False. The output will include the payer group information only when true is passed. */

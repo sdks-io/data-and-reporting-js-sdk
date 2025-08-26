@@ -52,13 +52,13 @@ async invoiceSearch(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br><br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`InvoiceSearchRequest \| undefined`](../../doc/models/invoice-search-request.md) | Body, Optional | Invoice Search RequestBody |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 ## Response Type
 
-This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [InvoiceSearchResponse](../../doc/models/invoice-search-response.md).
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [`InvoiceSearchResponse`](../../doc/models/invoice-search-response.md).
 
 ## Example Usage
 
@@ -91,9 +91,9 @@ const body: InvoiceSearchRequest = {
 
 try {
   const { result, ...httpResponse } = await invoiceController.invoiceSearch(
-  requestId,
-  body
-);
+    requestId,
+    body
+  );
   // Get more response info...
   // const { statusCode, headers } = httpResponse;
 } catch (error) {
@@ -216,13 +216,13 @@ async invoiceSummary(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br><br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`InvoiceSummaryRequest \| undefined`](../../doc/models/invoice-summary-request.md) | Body, Optional | Invoice Search RequestBody |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 ## Response Type
 
-This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [InvoiceSummaryResponse](../../doc/models/invoice-summary-response.md).
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [`InvoiceSummaryResponse`](../../doc/models/invoice-summary-response.md).
 
 ## Example Usage
 
@@ -253,9 +253,9 @@ const body: InvoiceSummaryRequest = {
 
 try {
   const { result, ...httpResponse } = await invoiceController.invoiceSummary(
-  requestId,
-  body
-);
+    requestId,
+    body
+  );
   // Get more response info...
   // const { statusCode, headers } = httpResponse;
 } catch (error) {
@@ -322,13 +322,13 @@ async statementOfAccount(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br><br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`StatementOfAccountRequest \| undefined`](../../doc/models/statement-of-account-request.md) | Body, Optional | StatementOfAccount RequestBody |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 ## Response Type
 
-This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [StatementOfAccountResponse](../../doc/models/statement-of-account-response.md).
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [`StatementOfAccountResponse`](../../doc/models/statement-of-account-response.md).
 
 ## Example Usage
 
@@ -350,9 +350,9 @@ const body: StatementOfAccountRequest = {
 
 try {
   const { result, ...httpResponse } = await invoiceController.statementOfAccount(
-  requestId,
-  body
-);
+    requestId,
+    body
+  );
   // Get more response info...
   // const { statusCode, headers } = httpResponse;
 } catch (error) {
@@ -473,13 +473,13 @@ async dates(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br><br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`InvoiceDatesRequest \| undefined`](../../doc/models/invoice-dates-request.md) | Body, Optional | StatementOfAccount RequestBody |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 ## Response Type
 
-This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [InvoiceDatesResponseData](../../doc/models/invoice-dates-response-data.md).
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [`InvoiceDatesResponseData`](../../doc/models/invoice-dates-response-data.md).
 
 ## Example Usage
 
@@ -503,9 +503,9 @@ const body: InvoiceDatesRequest = {
 
 try {
   const { result, ...httpResponse } = await invoiceController.dates(
-  requestId,
-  body
-);
+    requestId,
+    body
+  );
   // Get more response info...
   // const { statusCode, headers } = httpResponse;
 } catch (error) {
@@ -562,13 +562,13 @@ async searchStatementOfAccount(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br><br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`SearchStatementOfAccountRequest \| undefined`](../../doc/models/search-statement-of-account-request.md) | Body, Optional | searchstatementofaccount RequestBody |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 ## Response Type
 
-This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [SearchStatementOfAccountResponse](../../doc/models/search-statement-of-account-response.md).
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [`SearchStatementOfAccountResponse`](../../doc/models/search-statement-of-account-response.md).
 
 ## Example Usage
 
@@ -597,9 +597,9 @@ const body: SearchStatementOfAccountRequest = {
 
 try {
   const { result, ...httpResponse } = await invoiceController.searchStatementOfAccount(
-  requestId,
-  body
-);
+    requestId,
+    body
+  );
   // Get more response info...
   // const { statusCode, headers } = httpResponse;
 } catch (error) {
@@ -668,13 +668,13 @@ async searchDocuments(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br><br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`SearchDocumentsRequest \| undefined`](../../doc/models/search-documents-request.md) | Body, Optional | SearchDocuments RequestBody |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 ## Response Type
 
-This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [SearchDocumentsResponse](../../doc/models/search-documents-response.md).
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [`SearchDocumentsResponse`](../../doc/models/search-documents-response.md).
 
 ## Example Usage
 
@@ -715,9 +715,9 @@ const body: SearchDocumentsRequest = {
 
 try {
   const { result, ...httpResponse } = await invoiceController.searchDocuments(
-  requestId,
-  body
-);
+    requestId,
+    body
+  );
   // Get more response info...
   // const { statusCode, headers } = httpResponse;
 } catch (error) {
@@ -786,13 +786,13 @@ async eidSearch(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br><br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`EIDSearchRequest \| undefined`](../../doc/models/eid-search-request.md) | Body, Optional | EIDSearch RequestBody |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 ## Response Type
 
-This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [EIDDocumentResponse](../../doc/models/eid-document-response.md).
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [`EIDDocumentResponse`](../../doc/models/eid-document-response.md).
 
 ## Example Usage
 
@@ -806,6 +806,7 @@ const body: EIDSearchRequest = {
     accountGroupId: [
       '122'
     ],
+    accountGroupName: null,
     fromDate: '2017/08/30',
     toDate: '2017/10/31',
     invoiceType: 'NAT',
@@ -820,9 +821,9 @@ const body: EIDSearchRequest = {
 
 try {
   const { result, ...httpResponse } = await invoiceController.eidSearch(
-  requestId,
-  body
-);
+    requestId,
+    body
+  );
   // Get more response info...
   // const { statusCode, headers } = httpResponse;
 } catch (error) {
@@ -889,13 +890,13 @@ async download(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br><br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`InvoiceDownloadRequest \| undefined`](../../doc/models/invoice-download-request.md) | Body, Optional | Invoice Download RequestBody |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 ## Response Type
 
-This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type NodeJS.ReadableStream | Blob.
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type `NodeJS.ReadableStream | Blob`.
 
 ## Example Usage
 
@@ -918,9 +919,9 @@ const body: InvoiceDownloadRequest = {
 
 try {
   const { result, ...httpResponse } = await invoiceController.download(
-  requestId,
-  body
-);
+    requestId,
+    body
+  );
   // Get more response info...
   // const { statusCode, headers } = httpResponse;
 } catch (error) {
@@ -959,13 +960,13 @@ async eidDownload(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
+| `requestId` | `string` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request.<br><br>**Constraints**: *Minimum Length*: `36`, *Maximum Length*: `36`, *Pattern*: `^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$` |
 | `body` | [`EIDDownloadRequest \| undefined`](../../doc/models/eid-download-request.md) | Body, Optional | EIDInvoice Download RequestBody |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 ## Response Type
 
-This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type NodeJS.ReadableStream | Blob.
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type `NodeJS.ReadableStream | Blob`.
 
 ## Example Usage
 
@@ -988,9 +989,9 @@ const body: EIDDownloadRequest = {
 
 try {
   const { result, ...httpResponse } = await invoiceController.eidDownload(
-  requestId,
-  body
-);
+    requestId,
+    body
+  );
   // Get more response info...
   // const { statusCode, headers } = httpResponse;
 } catch (error) {

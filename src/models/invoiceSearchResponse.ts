@@ -13,11 +13,11 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
+} from '../schema.js';
 import {
   InvoiceSearchDetails,
   invoiceSearchDetailsSchema,
-} from './invoiceSearchDetails';
+} from './invoiceSearchDetails.js';
 
 export interface InvoiceSearchResponse {
   /** API Request Id */

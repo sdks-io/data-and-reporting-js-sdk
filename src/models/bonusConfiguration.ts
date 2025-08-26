@@ -13,14 +13,14 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
+} from '../schema.js';
 import {
   AssociatedAccount,
   associatedAccountSchema,
-} from './associatedAccount';
-import { FeeRuleLocation, feeRuleLocationSchema } from './feeRuleLocation';
-import { FeeRuleProduct, feeRuleProductSchema } from './feeRuleProduct';
-import { FeeRuleTier, feeRuleTierSchema } from './feeRuleTier';
+} from './associatedAccount.js';
+import { FeeRuleLocation, feeRuleLocationSchema } from './feeRuleLocation.js';
+import { FeeRuleProduct, feeRuleProductSchema } from './feeRuleProduct.js';
+import { FeeRuleTier, feeRuleTierSchema } from './feeRuleTier.js';
 
 export interface BonusConfiguration {
   /** Account identifier of the Pricing Account associated with the Payer. */

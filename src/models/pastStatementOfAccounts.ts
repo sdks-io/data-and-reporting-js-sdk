@@ -12,7 +12,7 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
+} from '../schema.js';
 
 export interface PastStatementOfAccounts {
   /** Invoiced amount under this statement of account and due for payment. */

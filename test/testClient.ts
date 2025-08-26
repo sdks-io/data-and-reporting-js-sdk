@@ -13,8 +13,6 @@ function createConfigurationFromEnvironment(): Partial<Configuration> {
 
   const environment = process.env.SHELL_DATA_REPORTING_AP_IS_LIB_ENVIRONMENT;
   const timeout = process.env.SHELL_DATA_REPORTING_AP_IS_LIB_TIMEOUT;
-  const username = process.env.SHELL_DATA_REPORTING_AP_IS_LIB_USERNAME;
-  const password = process.env.SHELL_DATA_REPORTING_AP_IS_LIB_PASSWORD;
   const oAuthClientId = process.env.SHELL_DATA_REPORTING_AP_IS_LIB_O_AUTH_CLIENT_ID;
   const oAuthClientSecret = process.env.SHELL_DATA_REPORTING_AP_IS_LIB_O_AUTH_CLIENT_SECRET;
 
@@ -26,12 +24,8 @@ function createConfigurationFromEnvironment(): Partial<Configuration> {
     config.timeout = parseInt(timeout);
   }
 
-  if (username !== undefined && password !== undefined) {
-    config.basicAuthCredentials = { username: username, password: password };
-  }
-
   if (oAuthClientId !== undefined && oAuthClientSecret !== undefined) {
-    config.bearerTokenCredentials = {
+    config.clientCredentialsAuthCredentials = {
       oAuthClientId: oAuthClientId,
       oAuthClientSecret: oAuthClientSecret,
     };

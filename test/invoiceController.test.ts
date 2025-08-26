@@ -23,12 +23,12 @@ import {
   StatementOfAccountRequest,
   StatementOfAccountResponse,
 } from '../src';
-import { testClient } from './testClient';
+import { testClient } from './testClient.js';
 import {
   expectHeadersToMatch,
   expectMatchingWithOptions,
   makeApiCall,
-} from './testHelper';
+} from './testHelper.js';
 
 describe('InvoiceController', () => {
   let controller : InvoiceController;
@@ -270,6 +270,7 @@ describe('InvoiceController', () => {
             totalSummaryBillingDocuments: 1,
             unallocatedPayment: 0,
           },
+          monthlyInvoiceTrend: null,
           pastStatementOfAccounts: [
             {
               amountDue: 136604.83,
@@ -308,12 +309,11 @@ describe('InvoiceController', () => {
               localCurrencyExchangeRate: 24.405,
             }
           ],
+          paymentsSinceLastSOA: null,
+          invoicesSummaries: null,
         }
       ],
     };
-    (expected.data ?? [])[0].monthlyInvoiceTrend = null;
-    (expected.data ?? [])[0].paymentsSinceLastSOA = null;
-    (expected.data ?? [])[0].invoicesSummaries = null;
 
     expect(response.result).not.toBeNull();
     expectMatchingWithOptions(
@@ -532,6 +532,7 @@ describe('InvoiceController', () => {
         accountGroupId: [
           '122'
         ],
+        accountGroupName: null,
         fromDate: '2017/08/30',
         toDate: '2017/10/31',
         invoiceType: 'NAT',
@@ -543,7 +544,6 @@ describe('InvoiceController', () => {
       page: 1,
       pageSize: 10,
     };
-    body.filters.accountGroupName = null;
 
     const response = await makeApiCall(
       () => controller.eidSearch(requestId, body)

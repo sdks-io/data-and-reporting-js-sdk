@@ -14,8 +14,8 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
-import { Accounts, accountsSchema } from './accounts';
+} from '../schema.js';
+import { Accounts, accountsSchema } from './accounts.js';
 
 export interface TransactionFeesRequest {
   /**
@@ -151,10 +151,6 @@ export interface TransactionFeesRequest {
    * Default: 1
    */
   sortOrder?: string | null;
-  /** Page Number */
-  currentPage?: number | null;
-  /** Page Size – Number of records to show on a page */
-  pageSize?: number | null;
 }
 
 export const transactionFeesRequestSchema: Schema<TransactionFeesRequest> = object(
@@ -180,7 +176,5 @@ export const transactionFeesRequestSchema: Schema<TransactionFeesRequest> = obje
     productCode: ['ProductCode', optional(nullable(string()))],
     lineItemDescription: ['LineItemDescription', optional(nullable(string()))],
     sortOrder: ['SortOrder', optional(nullable(string()))],
-    currentPage: ['CurrentPage', optional(nullable(number()))],
-    pageSize: ['PageSize', optional(nullable(number()))],
   }
 );

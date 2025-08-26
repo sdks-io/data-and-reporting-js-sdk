@@ -133,8 +133,6 @@
 | `customerRetailValueTotalGross` | `number \| null \| undefined` | Optional | Retail gross price (or gross pump price) in customer currency |
 | `customerRetailValueTotalNet` | `number \| null \| undefined` | Optional | Retail gross price (or gross pump price) in customer currency<br>Retail net price (or net pump price) in customer currency |
 | `transactionTypeDescription` | `string \| null \| undefined` | Optional | Transaction Type Description<br>Note: - The value could be null/blank for fees item |
-| `error` | [`ErrorStatus \| undefined`](../../doc/models/error-status.md) | Optional | - |
-| `requestId` | `string \| undefined` | Optional | API Request Id |
 
 ## Example (as JSON)
 

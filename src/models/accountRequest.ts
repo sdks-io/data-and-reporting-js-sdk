@@ -14,8 +14,8 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
-import { Accounts, accountsSchema } from './accounts';
+} from '../schema.js';
+import { Accounts, accountsSchema } from './accounts.js';
 
 export interface AccountRequest {
   /**
@@ -77,7 +77,7 @@ export interface AccountRequest {
    */
   invoicePointsOnly?: boolean | null;
   /**
-   * Collecting Company Id (in GFN) of the selected payer.
+   * Collecting Company Id  of the selected payer.
    * Optional if ColCoCode or ColCoCountryCode  is passed else Mandatory.
    */
   colCoId?: number | null;

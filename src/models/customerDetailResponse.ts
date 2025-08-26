@@ -14,14 +14,13 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
-import { Address, addressSchema } from './address';
+} from '../schema.js';
+import { Address, addressSchema } from './address.js';
 import {
   DeliveryAddresses,
   deliveryAddressesSchema,
-} from './deliveryAddresses';
-import { ErrorStatus, errorStatusSchema } from './errorStatus';
-import { PINAdviceTypes, pINAdviceTypesSchema } from './pINAdviceTypes';
+} from './deliveryAddresses.js';
+import { PINAdviceTypes, pINAdviceTypesSchema } from './pINAdviceTypes.js';
 
 export interface CustomerDetailResponse {
   /** Account Id of the selected account. */
@@ -106,9 +105,6 @@ export interface CustomerDetailResponse {
    */
   defaultPINAdviceType?: number | null;
   pINAdviceTypes?: PINAdviceTypes[];
-  error?: ErrorStatus;
-  /** API Request id */
-  requestId?: string | null;
   /** PIN change allowed for card holder or not. */
   pINChangeAllowedByCardholder?: boolean;
   /** PIN change allowed from fleetpin or not. */
@@ -160,8 +156,6 @@ export const customerDetailResponseSchema: Schema<CustomerDetailResponse> = obje
       'PINAdviceTypes',
       optional(array(lazy(() => pINAdviceTypesSchema))),
     ],
-    error: ['Error', optional(lazy(() => errorStatusSchema))],
-    requestId: ['RequestId', optional(nullable(string()))],
     pINChangeAllowedByCardholder: [
       'PINChangeAllowedByCardholder',
       optional(boolean()),

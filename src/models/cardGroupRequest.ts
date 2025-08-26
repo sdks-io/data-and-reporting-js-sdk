@@ -13,8 +13,8 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
-import { Accounts, accountsSchema } from './accounts';
+} from '../schema.js';
+import { Accounts, accountsSchema } from './accounts.js';
 
 export interface CardGroupRequest {
   /**
@@ -64,19 +64,6 @@ export interface CardGroupRequest {
    * •    ACTIVE
    */
   status?: string | null;
-  /**
-   * Page Number (as shown to the users)
-   * Optional
-   * Default value 1
-   */
-  currentPage?: number;
-  /**
-   * Page Size – Number of records to show on a page.
-   * Optional
-   * Default value 50.
-   * Return all rows if -1 is supplied as page size.
-   */
-  pageSize?: number;
 }
 
 export const cardGroupRequestSchema: Schema<CardGroupRequest> = object({
@@ -87,6 +74,4 @@ export const cardGroupRequestSchema: Schema<CardGroupRequest> = object({
   account: ['Account', optional(array(lazy(() => accountsSchema)))],
   cardGroupName: ['CardGroupName', optional(nullable(string()))],
   status: ['Status', optional(nullable(string()))],
-  currentPage: ['CurrentPage', optional(number())],
-  pageSize: ['PageSize', optional(number())],
 });

@@ -13,11 +13,11 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
+} from '../schema.js';
 import {
   PricedTransactionRespV2RefundFlagEnum,
   pricedTransactionRespV2RefundFlagEnumSchema,
-} from './pricedTransactionRespV2RefundFlagEnum';
+} from './pricedTransactionRespV2RefundFlagEnum.js';
 
 export interface PricedResponseData {
   /** Name of the account */

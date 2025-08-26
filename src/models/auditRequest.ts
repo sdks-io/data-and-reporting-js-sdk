@@ -13,8 +13,8 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
-import { Accounts, accountsSchema } from './accounts';
+} from '../schema.js';
+import { Accounts, accountsSchema } from './accounts.js';
 
 export interface AuditRequest {
   /**
@@ -61,17 +61,26 @@ export interface AuditRequest {
   colCoId?: number | null;
   accounts?: Accounts;
   /**
-   * Page Size – Number of records to show on a page
+   * Type of requests to be fetched.
    * Optional
-   * Default value 50
-   */
-  pageSize?: number;
-  /**
-   * To search for requests submitted until this date.
-   * Optional
-   * Format: yyyyMMdd
-   * Example: 20200130
-   * If ToDate is not provided and FromDate is provided, then ToDate will be considered as current date or 30 days from FromDate, whichever is earlier. However, when both FromDate and ToDate is not provided then last 30 days will be considered for filtering.
+   * Allowed values:
+   * •    OrderCard
+   * •    CreateCardGroup
+   * •    PINReminder
+   * •    MoveCard
+   * •    UpdateCardStatus
+   * •    UpdateCardGroup
+   * •    AutoRenew
+   * •    BulkCardOrder
+   * •    BulkCardBlock
+   * •    BulkCardOrderMultiAccount
+   * •    MobilePaymentRegistration
+   * •    UpdateCompanyInfo
+   * •    BCOSummary
+   * •    BCOMultiAccountSummary
+   * •    BCBSummary
+   * •    FundTransfer
+   * •    DeliveryAddressUpdate
    */
   requestedOperation?: string[];
   /**
@@ -90,12 +99,6 @@ export interface AuditRequest {
    * Minimum length is 4 characters (configurable). Else, an error (0007) will be returned. When valid text is provided, MS will return all the records that contains the Search Text within any of the look up fields
    */
   searchText?: string | null;
-  /**
-   * Page Number (as shown to the users)
-   * Optional
-   * Default value 1
-   */
-  currentPage?: number | null;
   /**
    * To search for requests submitted from this date.
    * Optional
@@ -123,11 +126,9 @@ export const auditRequestSchema: Schema<AuditRequest> = object({
   colCoCode: ['ColCoCode', optional(nullable(number()))],
   colCoId: ['ColCoId', optional(nullable(number()))],
   accounts: ['Accounts', optional(lazy(() => accountsSchema))],
-  pageSize: ['PageSize', optional(number())],
   requestedOperation: ['RequestedOperation', optional(array(string()))],
   sortOrder: ['SortOrder', optional(nullable(string()))],
   searchText: ['SearchText', optional(nullable(string()))],
-  currentPage: ['CurrentPage', optional(nullable(number()))],
   fromDate: ['FromDate', optional(nullable(string()))],
   toDate: ['ToDate', optional(nullable(string()))],
 });

@@ -9,7 +9,7 @@
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `colCoId` | `string \| null \| undefined` | Optional | Collecting company id. |
+| `colCoId` | `number \| null \| undefined` | Optional | Collecting company id. |
 | `colCoCode` | `number \| null \| undefined` | Optional | Collecting company Code |
 | `accountGroupId` | `string \| null \| undefined` | Optional | Identifier for the EID account group configured for the user. |
 
@@ -17,7 +17,7 @@
 
 ```json
 {
-  "ColCoId": "14",
+  "ColCoId": 14,
   "ColCoCode": 14,
   "AccountGroupId": "345"
 }

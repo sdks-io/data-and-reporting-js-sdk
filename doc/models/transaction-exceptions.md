@@ -50,7 +50,7 @@
 | `siteCode` | `string \| null \| undefined` | Optional | Site Code |
 | `siteName` | `string \| null \| undefined` | Optional | Site Name |
 | `siteCountry` | `string \| null \| undefined` | Optional | Site Country |
-| `location` | [`ExceptionSiteLocation \| undefined`](../../doc/models/exception-site-location.md) | Optional | Geography Location entity for Site Location |
+| `location` | [`Location \| undefined`](../../doc/models/location.md) | Optional | - |
 | `cardGroupName` | `string \| null \| undefined` | Optional | Card Group Name |
 | `receiptNumber` | `string \| null \| undefined` | Optional | Receipt Number |
 | `productCode` | `string \| null \| undefined` | Optional | Product Code |

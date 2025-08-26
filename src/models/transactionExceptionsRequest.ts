@@ -13,9 +13,12 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
-import { Accounts, accountsSchema } from './accounts';
-import { ExceptionProduct, exceptionProductSchema } from './exceptionProduct';
+} from '../schema.js';
+import { Accounts, accountsSchema } from './accounts.js';
+import {
+  ExceptionProduct,
+  exceptionProductSchema,
+} from './exceptionProduct.js';
 
 export interface TransactionExceptionsRequest {
   /**

@@ -16,8 +16,6 @@
 | `account` | [`Accounts[] \| undefined`](../../doc/models/accounts.md) | Optional | - |
 | `cardGroupName` | `string \| null \| undefined` | Optional | Card Group Name<br>Optional.<br>Minimum of 2 characters should be provided else not considered.<br>CardGroups those have the entered value at any part |
 | `status` | `string \| null \| undefined` | Optional | Card Group Status<br>Mandatory<br>Allowed values:<br>•    ALL<br>•    TERMINATED<br>•    ACTIVE |
-| `currentPage` | `number \| undefined` | Optional | Page Number (as shown to the users)<br>Optional<br>Default value 1 |
-| `pageSize` | `number \| undefined` | Optional | Page Size – Number of records to show on a page.<br>Optional<br>Default value 50.<br>Return all rows if -1 is supplied as page size. |
 
 ## Example (as JSON)
 
@@ -29,7 +27,6 @@
   "PayerNumber": "GB00123456",
   "CardGroupName": "test",
   "Status": "ALL",
-  "PageSize": 1,
   "Account": [
     {
       "AccountId": 66,

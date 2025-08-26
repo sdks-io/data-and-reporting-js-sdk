@@ -12,7 +12,7 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
+} from '../schema.js';
 
 export interface SearchSOAReq {
   /** Collecting Company Code of the selected payer. */

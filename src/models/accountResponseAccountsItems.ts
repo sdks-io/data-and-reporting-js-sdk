@@ -14,12 +14,15 @@ import {
   optional,
   Schema,
   string,
-} from '../schema';
-import { CustomerContract, customerContractSchema } from './customerContract';
+} from '../schema.js';
+import {
+  CustomerContract,
+  customerContractSchema,
+} from './customerContract.js';
 import {
   InvoiceDistributionMethod,
   invoiceDistributionMethodSchema,
-} from './invoiceDistributionMethod';
+} from './invoiceDistributionMethod.js';
 
 export interface AccountResponseAccountsItems {
   /** Account Full Name */
