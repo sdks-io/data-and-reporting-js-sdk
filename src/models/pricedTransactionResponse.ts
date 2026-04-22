@@ -14,13 +14,12 @@ export interface PricedTransactionResponse {
   transactions?: PricedTransactionResponseTransactionsItems[];
 }
 
-export const pricedTransactionResponseSchema: Schema<PricedTransactionResponse> = object(
-  {
-    transactions: [
-      'Transactions',
-      optional(
-        array(lazy(() => pricedTransactionResponseTransactionsItemsSchema))
-      ),
-    ],
-  }
+export const pricedTransactionResponseSchema: Schema<PricedTransactionResponse> = lazy(
+  () =>
+    object({
+      transactions: [
+        'Transactions',
+        optional(array(pricedTransactionResponseTransactionsItemsSchema)),
+      ],
+    })
 );

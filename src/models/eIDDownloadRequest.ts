@@ -11,6 +11,6 @@ export interface EIDDownloadRequest {
   filters?: EIDDownloadReq;
 }
 
-export const eIDDownloadRequestSchema: Schema<EIDDownloadRequest> = object({
-  filters: ['Filters', optional(lazy(() => eIDDownloadReqSchema))],
-});
+export const eIDDownloadRequestSchema: Schema<EIDDownloadRequest> = lazy(() =>
+  object({ filters: ['Filters', optional(eIDDownloadReqSchema)] })
+);

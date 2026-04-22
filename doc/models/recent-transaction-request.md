@@ -25,7 +25,7 @@
     "AccountNumber": "GB00001233",
     "ProductCode": "22",
     "PurchasedInCountry": "GB",
-    "CardPAN": "700205******890645",
+    "CardPAN": "7002051006629890645",
     "FromDateTime": "2020-11-09 13:56:03.000",
     "ToDateTime": "2020-12-09 13:56:03.000",
     "TransactionStatus": "APPROVED",

@@ -11,11 +11,9 @@ export interface CardUsageSummaryResponse {
   usageSummary?: UsageSummary[];
 }
 
-export const cardUsageSummaryResponseSchema: Schema<CardUsageSummaryResponse> = object(
-  {
-    usageSummary: [
-      'UsageSummary',
-      optional(array(lazy(() => usageSummarySchema))),
-    ],
-  }
+export const cardUsageSummaryResponseSchema: Schema<CardUsageSummaryResponse> = lazy(
+  () =>
+    object({
+      usageSummary: ['UsageSummary', optional(array(usageSummarySchema))],
+    })
 );

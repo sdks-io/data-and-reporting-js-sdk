@@ -14,6 +14,7 @@ export interface PriceTransSummaryReq {
   filters?: PriceTransSummaryRequest;
 }
 
-export const priceTransSummaryReqSchema: Schema<PriceTransSummaryReq> = object({
-  filters: ['Filters', optional(lazy(() => priceTransSummaryRequestSchema))],
-});
+export const priceTransSummaryReqSchema: Schema<PriceTransSummaryReq> = lazy(
+  () =>
+    object({ filters: ['Filters', optional(priceTransSummaryRequestSchema)] })
+);

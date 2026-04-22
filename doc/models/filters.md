@@ -35,7 +35,7 @@
 | `sortOrder` | [`PricedTransactionReqV2SortOrderEnum \| undefined`](../../doc/models/priced-transaction-req-v2-sort-order-enum.md) | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1` |
 | `fromDate` | `string \| null \| undefined` | Optional | From transaction delivery date<br><br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `19` |
 | `toDate` | `string \| null \| undefined` | Optional | To transaction delivery date<br><br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `19` |
-| `period` | [`PricedTransactionReqV2PeriodEnum \| undefined`](../../doc/models/priced-transaction-req-v2-period-enum.md) | Optional | - |
+| `period` | [`PricedTransactionReqV2PeriodEnum \| undefined`](../../doc/models/priced-transaction-req-v2-period-enum.md) | Optional | Pass below one of the value as per the required transaction period<br><br>1. Last 7 Days<br>2. Last 30 Days<br>3. Last 90 Days |
 | `postingDateFrom` | `string \| null \| undefined` | Optional | Transaction posting start date and time<br><br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `19` |
 | `postingDateTo` | `string \| null \| undefined` | Optional | Transaction posting end date and time<br><br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `19` |
 | `transactionItemId` | `string \| null \| undefined` | Optional | Unique id of the transaction that may include one or more salesitems |
@@ -76,6 +76,7 @@
   "LineItemDescription": "ABC3",
   "FromDate": "2022-01-01 00:00:00",
   "ToDate": "2022-01-01 00:00:00",
+  "Period": 3,
   "PostingDateFrom": "2022-01-01 00:00:00",
   "PostingDateTo": "2022-01-01 00:00:00",
   "TransactionItemId": "io9KVXk1UkW57XWKyeaHHg",

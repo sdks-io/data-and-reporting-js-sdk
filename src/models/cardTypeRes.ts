@@ -18,11 +18,13 @@ export interface CardTypeRes {
   data?: CardTypeResponseCustomerCardTypesItems[];
 }
 
-export const cardTypeResSchema: Schema<CardTypeRes> = object({
-  requestId: ['RequestId', optional(string())],
-  status: ['Status', optional(string())],
-  data: [
-    'Data',
-    optional(array(lazy(() => cardTypeResponseCustomerCardTypesItemsSchema))),
-  ],
-});
+export const cardTypeResSchema: Schema<CardTypeRes> = lazy(() =>
+  object({
+    requestId: ['RequestId', optional(string())],
+    status: ['Status', optional(string())],
+    data: [
+      'Data',
+      optional(array(cardTypeResponseCustomerCardTypesItemsSchema)),
+    ],
+  })
+);

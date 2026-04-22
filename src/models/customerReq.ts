@@ -14,6 +14,6 @@ export interface CustomerReq {
   filters?: CustomerDetailRequest;
 }
 
-export const customerReqSchema: Schema<CustomerReq> = object({
-  filters: ['Filters', optional(lazy(() => customerDetailRequestSchema))],
-});
+export const customerReqSchema: Schema<CustomerReq> = lazy(() =>
+  object({ filters: ['Filters', optional(customerDetailRequestSchema)] })
+);

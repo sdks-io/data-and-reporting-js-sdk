@@ -14,6 +14,6 @@ export interface InvoiceDatesRequest {
   filters?: InvoiceDatesRequestFilters;
 }
 
-export const invoiceDatesRequestSchema: Schema<InvoiceDatesRequest> = object({
-  filters: ['Filters', optional(lazy(() => invoiceDatesRequestFiltersSchema))],
-});
+export const invoiceDatesRequestSchema: Schema<InvoiceDatesRequest> = lazy(() =>
+  object({ filters: ['Filters', optional(invoiceDatesRequestFiltersSchema)] })
+);

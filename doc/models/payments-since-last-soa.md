@@ -1,5 +1,5 @@
 
-# Payments Since Last SOA
+# Payments since Last SOA
 
 List of payments made by the customer after the latest Statement of Account.
 Note: All the payments made by the customer will be returned when there is no Statement of Account available for customer.

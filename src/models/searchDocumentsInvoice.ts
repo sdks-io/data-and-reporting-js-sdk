@@ -46,10 +46,11 @@ export interface SearchDocumentsInvoice {
   netAmount?: number | null;
   taxAmount?: number | null;
   currencyCode?: string | null;
-  invoiceStatus?: string | null;
   invoiceDate?: string | null;
   dueDate?: string | null;
   vATCountryISOCode?: string | null;
+  /** Unique identifier for the invoice in KSeF system. This field is populated only when the invoice is registered in KSeF system. */
+  ksefDocumentReference?: string;
 }
 
 export const searchDocumentsInvoiceSchema: Schema<SearchDocumentsInvoice> = object(
@@ -64,9 +65,9 @@ export const searchDocumentsInvoiceSchema: Schema<SearchDocumentsInvoice> = obje
     netAmount: ['NetAmount', optional(nullable(number()))],
     taxAmount: ['TaxAmount', optional(nullable(number()))],
     currencyCode: ['CurrencyCode', optional(nullable(string()))],
-    invoiceStatus: ['InvoiceStatus', optional(nullable(string()))],
     invoiceDate: ['InvoiceDate', optional(nullable(string()))],
     dueDate: ['DueDate', optional(nullable(string()))],
     vATCountryISOCode: ['VATCountryISOCode', optional(nullable(string()))],
+    ksefDocumentReference: ['KsefDocumentReference', optional(string())],
   }
 );

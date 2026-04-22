@@ -71,7 +71,51 @@ import {
 } from '../models/statementOfAccountResponse.js';
 import { optional, string } from '../schema.js';
 import { BaseController } from './baseController.js';
-import { ErrorObjectError } from '../errors/errorObjectError.js';
+import { InvoiceManagementV1Dates400Error } from '../errors/invoiceManagementV1Dates400Error.js';
+import { InvoiceManagementV1Dates401Error } from '../errors/invoiceManagementV1Dates401Error.js';
+import { InvoiceManagementV1Dates403Error } from '../errors/invoiceManagementV1Dates403Error.js';
+import { InvoiceManagementV1Dates404Error } from '../errors/invoiceManagementV1Dates404Error.js';
+import { InvoiceManagementV1Dates500Error } from '../errors/invoiceManagementV1Dates500Error.js';
+import { InvoiceManagementV1Download400Error } from '../errors/invoiceManagementV1Download400Error.js';
+import { InvoiceManagementV1Download401Error } from '../errors/invoiceManagementV1Download401Error.js';
+import { InvoiceManagementV1Download403Error } from '../errors/invoiceManagementV1Download403Error.js';
+import { InvoiceManagementV1Download404Error } from '../errors/invoiceManagementV1Download404Error.js';
+import { InvoiceManagementV1Download500Error } from '../errors/invoiceManagementV1Download500Error.js';
+import { InvoiceManagementV1Eiddownload400Error } from '../errors/invoiceManagementV1Eiddownload400Error.js';
+import { InvoiceManagementV1Eiddownload401Error } from '../errors/invoiceManagementV1Eiddownload401Error.js';
+import { InvoiceManagementV1Eiddownload403Error } from '../errors/invoiceManagementV1Eiddownload403Error.js';
+import { InvoiceManagementV1Eiddownload404Error } from '../errors/invoiceManagementV1Eiddownload404Error.js';
+import { InvoiceManagementV1Eiddownload500Error } from '../errors/invoiceManagementV1Eiddownload500Error.js';
+import { InvoiceManagementV1Eidsearch400Error } from '../errors/invoiceManagementV1Eidsearch400Error.js';
+import { InvoiceManagementV1Eidsearch401Error } from '../errors/invoiceManagementV1Eidsearch401Error.js';
+import { InvoiceManagementV1Eidsearch403Error } from '../errors/invoiceManagementV1Eidsearch403Error.js';
+import { InvoiceManagementV1Eidsearch404Error } from '../errors/invoiceManagementV1Eidsearch404Error.js';
+import { InvoiceManagementV1Eidsearch500Error } from '../errors/invoiceManagementV1Eidsearch500Error.js';
+import { InvoiceManagementV1Search400Error } from '../errors/invoiceManagementV1Search400Error.js';
+import { InvoiceManagementV1Search401Error } from '../errors/invoiceManagementV1Search401Error.js';
+import { InvoiceManagementV1Search403Error } from '../errors/invoiceManagementV1Search403Error.js';
+import { InvoiceManagementV1Search404Error } from '../errors/invoiceManagementV1Search404Error.js';
+import { InvoiceManagementV1Search500Error } from '../errors/invoiceManagementV1Search500Error.js';
+import { InvoiceManagementV1Searchdocuments400Error } from '../errors/invoiceManagementV1Searchdocuments400Error.js';
+import { InvoiceManagementV1Searchdocuments401Error } from '../errors/invoiceManagementV1Searchdocuments401Error.js';
+import { InvoiceManagementV1Searchdocuments403Error } from '../errors/invoiceManagementV1Searchdocuments403Error.js';
+import { InvoiceManagementV1Searchdocuments404Error } from '../errors/invoiceManagementV1Searchdocuments404Error.js';
+import { InvoiceManagementV1Searchdocuments500Error } from '../errors/invoiceManagementV1Searchdocuments500Error.js';
+import { InvoiceManagementV1Searchstatementofaccount400Error } from '../errors/invoiceManagementV1Searchstatementofaccount400Error.js';
+import { InvoiceManagementV1Searchstatementofaccount401Error } from '../errors/invoiceManagementV1Searchstatementofaccount401Error.js';
+import { InvoiceManagementV1Searchstatementofaccount403Error } from '../errors/invoiceManagementV1Searchstatementofaccount403Error.js';
+import { InvoiceManagementV1Searchstatementofaccount404Error } from '../errors/invoiceManagementV1Searchstatementofaccount404Error.js';
+import { InvoiceManagementV1Searchstatementofaccount500Error } from '../errors/invoiceManagementV1Searchstatementofaccount500Error.js';
+import { InvoiceManagementV1Statementofaccount400Error } from '../errors/invoiceManagementV1Statementofaccount400Error.js';
+import { InvoiceManagementV1Statementofaccount401Error } from '../errors/invoiceManagementV1Statementofaccount401Error.js';
+import { InvoiceManagementV1Statementofaccount403Error } from '../errors/invoiceManagementV1Statementofaccount403Error.js';
+import { InvoiceManagementV1Statementofaccount404Error } from '../errors/invoiceManagementV1Statementofaccount404Error.js';
+import { InvoiceManagementV1Statementofaccount500Error } from '../errors/invoiceManagementV1Statementofaccount500Error.js';
+import { InvoiceManagementV1Summary400Error } from '../errors/invoiceManagementV1Summary400Error.js';
+import { InvoiceManagementV1Summary401Error } from '../errors/invoiceManagementV1Summary401Error.js';
+import { InvoiceManagementV1Summary403Error } from '../errors/invoiceManagementV1Summary403Error.js';
+import { InvoiceManagementV1Summary404Error } from '../errors/invoiceManagementV1Summary404Error.js';
+import { InvoiceManagementV1Summary500Error } from '../errors/invoiceManagementV1Summary500Error.js';
 
 export class InvoiceController extends BaseController {
   /**
@@ -124,23 +168,23 @@ export class InvoiceController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      InvoiceManagementV1Search400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      InvoiceManagementV1Search401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, InvoiceManagementV1Search403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
+      InvoiceManagementV1Search404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      InvoiceManagementV1Search500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
@@ -195,23 +239,23 @@ export class InvoiceController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      InvoiceManagementV1Summary400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      InvoiceManagementV1Summary401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, InvoiceManagementV1Summary403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
+      InvoiceManagementV1Summary404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      InvoiceManagementV1Summary500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
@@ -265,23 +309,27 @@ export class InvoiceController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      InvoiceManagementV1Statementofaccount400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      InvoiceManagementV1Statementofaccount401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(
+      403,
+      InvoiceManagementV1Statementofaccount403Error,
+      'Forbidden'
+    );
     req.throwOn(
       404,
-      ErrorObjectError,
+      InvoiceManagementV1Statementofaccount404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      InvoiceManagementV1Statementofaccount500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
@@ -313,23 +361,23 @@ export class InvoiceController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      InvoiceManagementV1Dates400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      InvoiceManagementV1Dates401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, InvoiceManagementV1Dates403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
+      InvoiceManagementV1Dates404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      InvoiceManagementV1Dates500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
@@ -363,23 +411,27 @@ export class InvoiceController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      InvoiceManagementV1Searchstatementofaccount400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      InvoiceManagementV1Searchstatementofaccount401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(
+      403,
+      InvoiceManagementV1Searchstatementofaccount403Error,
+      'Forbidden'
+    );
     req.throwOn(
       404,
-      ErrorObjectError,
+      InvoiceManagementV1Searchstatementofaccount404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      InvoiceManagementV1Searchstatementofaccount500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
@@ -417,23 +469,23 @@ export class InvoiceController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      InvoiceManagementV1Searchdocuments400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      InvoiceManagementV1Searchdocuments401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, InvoiceManagementV1Searchdocuments403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
+      InvoiceManagementV1Searchdocuments404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      InvoiceManagementV1Searchdocuments500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
@@ -465,23 +517,23 @@ export class InvoiceController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      InvoiceManagementV1Eidsearch400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      InvoiceManagementV1Eidsearch401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, InvoiceManagementV1Eidsearch403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
+      InvoiceManagementV1Eidsearch404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      InvoiceManagementV1Eidsearch500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
@@ -513,23 +565,23 @@ export class InvoiceController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      InvoiceManagementV1Download400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      InvoiceManagementV1Download401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, InvoiceManagementV1Download403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
+      InvoiceManagementV1Download404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      InvoiceManagementV1Download500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
@@ -568,23 +620,23 @@ export class InvoiceController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      InvoiceManagementV1Eiddownload400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      InvoiceManagementV1Eiddownload401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, InvoiceManagementV1Eiddownload403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
+      InvoiceManagementV1Eiddownload404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      InvoiceManagementV1Eiddownload500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);

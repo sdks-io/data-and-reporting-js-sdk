@@ -111,58 +111,53 @@ export interface CustomerDetailResponse {
   pINChangeAllowedFromFleetPIN?: boolean;
 }
 
-export const customerDetailResponseSchema: Schema<CustomerDetailResponse> = object(
-  {
-    accountId: ['AccountId', optional(nullable(number()))],
-    accountName: ['AccountName', optional(nullable(string()))],
-    accountNumber: ['AccountNumber', optional(nullable(string()))],
-    accountShortName: ['AccountShortName', optional(nullable(string()))],
-    accountTradingName: ['AccountTradingName', optional(nullable(string()))],
-    allowFleetIdInput: ['AllowFleetIdInput', optional(boolean())],
-    band: ['Band', optional(nullable(string()))],
-    billingAddress: ['BillingAddress', optional(lazy(() => addressSchema))],
-    cardGroupPosition: ['CardGroupPosition', optional(nullable(string()))],
-    correspondenceAddress: [
-      'CorrespondenceAddress',
-      optional(lazy(() => addressSchema)),
-    ],
-    deliveryAddresses: [
-      'DeliveryAddresses',
-      optional(array(lazy(() => deliveryAddressesSchema))),
-    ],
-    fleetPin: ['FleetPin', optional(boolean())],
-    fullName: ['FullName', optional(nullable(string()))],
-    invoiceCustomerId: ['InvoiceCustomerId', optional(nullable(number()))],
-    invoiceCustomerShortName: [
-      'InvoiceCustomerShortName',
-      optional(nullable(string())),
-    ],
-    isInvoicePoint: ['IsInvoicePoint', optional(nullable(boolean()))],
-    marketingSegmentation: [
-      'MarketingSegmentation',
-      optional(nullable(string())),
-    ],
-    vATNumber: ['VATNumber', optional(nullable(string()))],
-    payerId: ['PayerId', optional(nullable(number()))],
-    payerName: ['PayerName', optional(nullable(string()))],
-    payerNumber: ['PayerNumber', optional(nullable(string()))],
-    selfSelectedPin: ['SelfSelectedPin', optional(nullable(boolean()))],
-    status: ['Status', optional(nullable(string()))],
-    defaultPINAdviceType: [
-      'DefaultPINAdviceType',
-      optional(nullable(number())),
-    ],
-    pINAdviceTypes: [
-      'PINAdviceTypes',
-      optional(array(lazy(() => pINAdviceTypesSchema))),
-    ],
-    pINChangeAllowedByCardholder: [
-      'PINChangeAllowedByCardholder',
-      optional(boolean()),
-    ],
-    pINChangeAllowedFromFleetPIN: [
-      'PINChangeAllowedFromFleetPIN',
-      optional(boolean()),
-    ],
-  }
+export const customerDetailResponseSchema: Schema<CustomerDetailResponse> = lazy(
+  () =>
+    object({
+      accountId: ['AccountId', optional(nullable(number()))],
+      accountName: ['AccountName', optional(nullable(string()))],
+      accountNumber: ['AccountNumber', optional(nullable(string()))],
+      accountShortName: ['AccountShortName', optional(nullable(string()))],
+      accountTradingName: ['AccountTradingName', optional(nullable(string()))],
+      allowFleetIdInput: ['AllowFleetIdInput', optional(boolean())],
+      band: ['Band', optional(nullable(string()))],
+      billingAddress: ['BillingAddress', optional(addressSchema)],
+      cardGroupPosition: ['CardGroupPosition', optional(nullable(string()))],
+      correspondenceAddress: ['CorrespondenceAddress', optional(addressSchema)],
+      deliveryAddresses: [
+        'DeliveryAddresses',
+        optional(array(deliveryAddressesSchema)),
+      ],
+      fleetPin: ['FleetPin', optional(boolean())],
+      fullName: ['FullName', optional(nullable(string()))],
+      invoiceCustomerId: ['InvoiceCustomerId', optional(nullable(number()))],
+      invoiceCustomerShortName: [
+        'InvoiceCustomerShortName',
+        optional(nullable(string())),
+      ],
+      isInvoicePoint: ['IsInvoicePoint', optional(nullable(boolean()))],
+      marketingSegmentation: [
+        'MarketingSegmentation',
+        optional(nullable(string())),
+      ],
+      vATNumber: ['VATNumber', optional(nullable(string()))],
+      payerId: ['PayerId', optional(nullable(number()))],
+      payerName: ['PayerName', optional(nullable(string()))],
+      payerNumber: ['PayerNumber', optional(nullable(string()))],
+      selfSelectedPin: ['SelfSelectedPin', optional(nullable(boolean()))],
+      status: ['Status', optional(nullable(string()))],
+      defaultPINAdviceType: [
+        'DefaultPINAdviceType',
+        optional(nullable(number())),
+      ],
+      pINAdviceTypes: ['PINAdviceTypes', optional(array(pINAdviceTypesSchema))],
+      pINChangeAllowedByCardholder: [
+        'PINChangeAllowedByCardholder',
+        optional(boolean()),
+      ],
+      pINChangeAllowedFromFleetPIN: [
+        'PINChangeAllowedFromFleetPIN',
+        optional(boolean()),
+      ],
+    })
 );

@@ -18,10 +18,11 @@ export interface StatementOfAccountResponse {
   data?: StatementOfAccountResp[];
 }
 
-export const statementOfAccountResponseSchema: Schema<StatementOfAccountResponse> = object(
-  {
-    requestId: ['RequestId', optional(string())],
-    status: ['Status', optional(string())],
-    data: ['Data', optional(array(lazy(() => statementOfAccountRespSchema)))],
-  }
+export const statementOfAccountResponseSchema: Schema<StatementOfAccountResponse> = lazy(
+  () =>
+    object({
+      requestId: ['RequestId', optional(string())],
+      status: ['Status', optional(string())],
+      data: ['Data', optional(array(statementOfAccountRespSchema))],
+    })
 );

@@ -5,11 +5,12 @@
  */
 
 import {
+  isMappedValueValidForSchema,
+  lazy,
   nullable,
   oneOf,
   Schema,
   unknown,
-  validateAndMap,
 } from '../../schema.js';
 import {
   PricedTransactionItemsLocationItems,
@@ -22,8 +23,8 @@ export type PricedTransactionResponseTransactionsItemsLocation =
   | PricedTransactionItemsLocationItems
   | null;
 
-export const pricedTransactionResponseTransactionsItemsLocationSchema: Schema<PricedTransactionResponseTransactionsItemsLocation> = oneOf(
-  [nullable(unknown()), pricedTransactionItemsLocationItemsSchema]
+export const pricedTransactionResponseTransactionsItemsLocationSchema: Schema<PricedTransactionResponseTransactionsItemsLocation> = lazy(
+  () => oneOf([nullable(unknown()), pricedTransactionItemsLocationItemsSchema])
 );
 
 export namespace PricedTransactionResponseTransactionsItemsLocation {
@@ -35,10 +36,9 @@ export namespace PricedTransactionResponseTransactionsItemsLocation {
   export function isPricedTransactionItemsLocationItems(
     value: unknown
   ): value is PricedTransactionItemsLocationItems {
-    const validationResult = validateAndMap(
+    return isMappedValueValidForSchema(
       value,
       pricedTransactionItemsLocationItemsSchema
     );
-    return validationResult.errors === false;
   }
 }

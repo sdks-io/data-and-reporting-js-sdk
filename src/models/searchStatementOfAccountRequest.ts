@@ -15,10 +15,11 @@ export interface SearchStatementOfAccountRequest {
   pageSize?: number;
 }
 
-export const searchStatementOfAccountRequestSchema: Schema<SearchStatementOfAccountRequest> = object(
-  {
-    filters: ['Filters', optional(lazy(() => searchSOAReqSchema))],
-    page: ['Page', optional(number())],
-    pageSize: ['PageSize', optional(number())],
-  }
+export const searchStatementOfAccountRequestSchema: Schema<SearchStatementOfAccountRequest> = lazy(
+  () =>
+    object({
+      filters: ['Filters', optional(searchSOAReqSchema)],
+      page: ['Page', optional(number())],
+      pageSize: ['PageSize', optional(number())],
+    })
 );

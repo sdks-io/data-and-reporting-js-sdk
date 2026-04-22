@@ -186,30 +186,31 @@ export interface MultiPricedTransactionRequest {
   pageSize?: number;
 }
 
-export const multiPricedTransactionRequestSchema: Schema<MultiPricedTransactionRequest> = object(
-  {
-    colCoId: ['ColCoId', optional(number())],
-    colCoCode: ['ColCoCode', number()],
-    accounts: [
-      'Accounts',
-      array(lazy(() => multiPricedTransactionRequestAccountsItemsSchema)),
-    ],
-    invoiceStatus: ['InvoiceStatus', optional(string())],
-    purchasedInCountry: ['PurchasedInCountry', optional(string())],
-    fromDate: ['FromDate', optional(string())],
-    toDate: ['ToDate', optional(string())],
-    period: ['Period', optional(number())],
-    postingDateFrom: ['PostingDateFrom', optional(string())],
-    postingDateTo: ['PostingDateTo', optional(string())],
-    invoiceDate: ['InvoiceDate', optional(string())],
-    invoiceNumber: ['InvoiceNumber', optional(string())],
-    validInvoiceDateOnly: ['ValidInvoiceDateOnly', optional(boolean())],
-    invoiceFromDate: ['InvoiceFromDate', optional(string())],
-    invoiceToDate: ['InvoiceToDate', optional(string())],
-    fuelOnly: ['FuelOnly', optional(boolean())],
-    includeFees: ['IncludeFees', optional(boolean())],
-    sortOrder: ['SortOrder', optional(string())],
-    currentPage: ['CurrentPage', optional(number())],
-    pageSize: ['PageSize', optional(number())],
-  }
+export const multiPricedTransactionRequestSchema: Schema<MultiPricedTransactionRequest> = lazy(
+  () =>
+    object({
+      colCoId: ['ColCoId', optional(number())],
+      colCoCode: ['ColCoCode', number()],
+      accounts: [
+        'Accounts',
+        array(multiPricedTransactionRequestAccountsItemsSchema),
+      ],
+      invoiceStatus: ['InvoiceStatus', optional(string())],
+      purchasedInCountry: ['PurchasedInCountry', optional(string())],
+      fromDate: ['FromDate', optional(string())],
+      toDate: ['ToDate', optional(string())],
+      period: ['Period', optional(number())],
+      postingDateFrom: ['PostingDateFrom', optional(string())],
+      postingDateTo: ['PostingDateTo', optional(string())],
+      invoiceDate: ['InvoiceDate', optional(string())],
+      invoiceNumber: ['InvoiceNumber', optional(string())],
+      validInvoiceDateOnly: ['ValidInvoiceDateOnly', optional(boolean())],
+      invoiceFromDate: ['InvoiceFromDate', optional(string())],
+      invoiceToDate: ['InvoiceToDate', optional(string())],
+      fuelOnly: ['FuelOnly', optional(boolean())],
+      includeFees: ['IncludeFees', optional(boolean())],
+      sortOrder: ['SortOrder', optional(string())],
+      currentPage: ['CurrentPage', optional(number())],
+      pageSize: ['PageSize', optional(number())],
+    })
 );

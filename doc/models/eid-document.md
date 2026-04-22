@@ -17,7 +17,6 @@
 | `documentDate` | `string \| null \| undefined` | Optional | Document date.<br>Example: 20170101 |
 | `numberOfInvoices` | `number \| null \| undefined` | Optional | Number of invoices |
 | `fileSize` | `number \| null \| undefined` | Optional | Document size |
-| `documentStatus` | `string \| null \| undefined` | Optional | Document status.<br>Possible values:<br>•    NEW<br>•    VIEWED<br>•    DOWNLOADED<br>•    RESTORED |
 | `documentName` | `string \| null \| undefined` | Optional | Document file name. |
 
 ## Example (as JSON)

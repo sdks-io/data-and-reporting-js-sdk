@@ -17,6 +17,9 @@
 | `cardId` | `number \| null \| undefined` | Optional | Card Id<br>Optional<br>When both Card Id and Card PAN are not present on request, the response will have all the fee items under the selected payer or account.<br>Example: 275549 |
 | `cardPAN` | `string \| null \| undefined` | Optional | Full Card PAN<br>Optional<br>When both Card Id and Card PAN are not present on request, the response will have all the fee items under the selected payer or account or card group. |
 | `invoiceStatus` | `string \| null \| undefined` | Optional | Invoice status of the fee items<br>Mandatory<br>Possible options:<br>I - Invoiced<br>U – Un-Invoiced<br>A – All |
+| `invoiceNumber` | `string \| null \| undefined` | Optional | Invoice Number<br>Optional |
+| `postedDateFrom` | `string \| null \| undefined` | Optional | Fee Item Posted Date From<br>Optional<br>Format: yyyyMMdd |
+| `postedDateTo` | `string \| null \| undefined` | Optional | Fee Item Posted Date To<br>Optional<br>Format: yyyyMMdd |
 | `feeTypeGroup` | `string \| null \| undefined` | Optional | Fee type group in under which the Fee item is generated.<br>Optional.<br>Allowed values:<br><br>- Account Charges<br>- Card Charges<br>- Others Charges |
 | `feeTypeId` | `number \| null \| undefined` | Optional | Fee Type Id.<br>Optional.<br>Example:<br><br>1. Simple Fee<br>2. Card Event Fee<br>3. Customer Event Fee |
 | `fromDate` | `string \| null \| undefined` | Optional | Fee Item FromDate/Time<br>Should be with in last 24 months<br>Optional<br>Maximum of 210 days duration allowed per search, its configurable.<br>Format: yyyyMMdd |

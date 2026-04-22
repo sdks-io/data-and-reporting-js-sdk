@@ -112,66 +112,74 @@ export interface BonusConfiguration {
   feeRuleProducts?: FeeRuleProduct[];
 }
 
-export const bonusConfigurationSchema: Schema<BonusConfiguration> = object({
-  pricingAccountId: ['PricingAccountId', optional(nullable(number()))],
-  pricingAccountNumber: ['PricingAccountNumber', optional(nullable(string()))],
-  pricingAccountShortName: [
-    'PricingAccountShortName',
-    optional(nullable(string())),
-  ],
-  pricingAccountFullName: [
-    'PricingAccountFullName',
-    optional(nullable(string())),
-  ],
-  feeRuleId: ['FeeRuleId', optional(nullable(number()))],
-  feeRuleDescription: ['FeeRuleDescription', optional(nullable(string()))],
-  feeRuleDateEffective: ['FeeRuleDateEffective', optional(nullable(string()))],
-  feeRuleDateTerminated: [
-    'FeeRuleDateTerminated',
-    optional(nullable(string())),
-  ],
-  bonusPaidTo: ['BonusPaidTo', optional(nullable(string()))],
-  bonusPaidToAccountId: ['BonusPaidToAccountId', optional(nullable(number()))],
-  bonusPaidToAccountNumber: [
-    'BonusPaidToAccountNumber',
-    optional(nullable(string())),
-  ],
-  bonusPaidToAccountShortName: [
-    'BonusPaidToAccountShortName',
-    optional(nullable(string())),
-  ],
-  bonusPaidToAccountFullName: [
-    'BonusPaidToAccountFullName',
-    optional(nullable(string())),
-  ],
-  frequency: ['Frequency', optional(nullable(string()))],
-  nextCalculationDate: ['NextCalculationDate', optional(nullable(string()))],
-  previousCalculatedDate: [
-    'PreviousCalculatedDate',
-    optional(nullable(string())),
-  ],
-  feeRuleBasis: ['FeeRuleBasis', optional(nullable(string()))],
-  feeRuleCurrencyCode: ['FeeRuleCurrencyCode', optional(nullable(string()))],
-  feeRuleCurrencySymbol: [
-    'FeeRuleCurrencySymbol',
-    optional(nullable(string())),
-  ],
-  feeRuleAvailableFrom: ['FeeRuleAvailableFrom', optional(nullable(string()))],
-  feeRuleAvailableTo: ['FeeRuleAvailableTo', optional(nullable(string()))],
-  feeRuleLocations: [
-    'FeeRuleLocations',
-    optional(array(lazy(() => feeRuleLocationSchema))),
-  ],
-  feeRuleTiers: [
-    'FeeRuleTiers',
-    optional(array(lazy(() => feeRuleTierSchema))),
-  ],
-  associatedAccounts: [
-    'AssociatedAccounts',
-    optional(array(lazy(() => associatedAccountSchema))),
-  ],
-  feeRuleProducts: [
-    'FeeRuleProducts',
-    optional(array(lazy(() => feeRuleProductSchema))),
-  ],
-});
+export const bonusConfigurationSchema: Schema<BonusConfiguration> = lazy(() =>
+  object({
+    pricingAccountId: ['PricingAccountId', optional(nullable(number()))],
+    pricingAccountNumber: [
+      'PricingAccountNumber',
+      optional(nullable(string())),
+    ],
+    pricingAccountShortName: [
+      'PricingAccountShortName',
+      optional(nullable(string())),
+    ],
+    pricingAccountFullName: [
+      'PricingAccountFullName',
+      optional(nullable(string())),
+    ],
+    feeRuleId: ['FeeRuleId', optional(nullable(number()))],
+    feeRuleDescription: ['FeeRuleDescription', optional(nullable(string()))],
+    feeRuleDateEffective: [
+      'FeeRuleDateEffective',
+      optional(nullable(string())),
+    ],
+    feeRuleDateTerminated: [
+      'FeeRuleDateTerminated',
+      optional(nullable(string())),
+    ],
+    bonusPaidTo: ['BonusPaidTo', optional(nullable(string()))],
+    bonusPaidToAccountId: [
+      'BonusPaidToAccountId',
+      optional(nullable(number())),
+    ],
+    bonusPaidToAccountNumber: [
+      'BonusPaidToAccountNumber',
+      optional(nullable(string())),
+    ],
+    bonusPaidToAccountShortName: [
+      'BonusPaidToAccountShortName',
+      optional(nullable(string())),
+    ],
+    bonusPaidToAccountFullName: [
+      'BonusPaidToAccountFullName',
+      optional(nullable(string())),
+    ],
+    frequency: ['Frequency', optional(nullable(string()))],
+    nextCalculationDate: ['NextCalculationDate', optional(nullable(string()))],
+    previousCalculatedDate: [
+      'PreviousCalculatedDate',
+      optional(nullable(string())),
+    ],
+    feeRuleBasis: ['FeeRuleBasis', optional(nullable(string()))],
+    feeRuleCurrencyCode: ['FeeRuleCurrencyCode', optional(nullable(string()))],
+    feeRuleCurrencySymbol: [
+      'FeeRuleCurrencySymbol',
+      optional(nullable(string())),
+    ],
+    feeRuleAvailableFrom: [
+      'FeeRuleAvailableFrom',
+      optional(nullable(string())),
+    ],
+    feeRuleAvailableTo: ['FeeRuleAvailableTo', optional(nullable(string()))],
+    feeRuleLocations: [
+      'FeeRuleLocations',
+      optional(array(feeRuleLocationSchema)),
+    ],
+    feeRuleTiers: ['FeeRuleTiers', optional(array(feeRuleTierSchema))],
+    associatedAccounts: [
+      'AssociatedAccounts',
+      optional(array(associatedAccountSchema)),
+    ],
+    feeRuleProducts: ['FeeRuleProducts', optional(array(feeRuleProductSchema))],
+  })
+);

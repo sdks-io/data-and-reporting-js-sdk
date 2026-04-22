@@ -459,7 +459,6 @@ describe('InvoiceController', () => {
           '6400013693',
           '9421000010'
         ],
-        invoiceStatus: 'NEW',
         issuingDateFrom: '2023/05/01',
         issuingDateTo: '2023/06/30',
         dueDateFrom: '2023/05/04',
@@ -490,7 +489,7 @@ describe('InvoiceController', () => {
     const expected: SearchDocumentsResponse = {
       requestId: 'a8b81c1d-f44a-4365-8113-8958061c0b7e',
       status: 'SUCCESS',
-      data: [
+      invoices: [
         {
           documentReference: 311161,
           invoiceNumber: '6400013693',
@@ -502,7 +501,6 @@ describe('InvoiceController', () => {
           netAmount: 0,
           taxAmount: 0,
           currencyCode: 'EUR',
-          invoiceStatus: 'NEW',
           invoiceDate: '2023/01/31',
           dueDate: '2023/02/07',
           vATCountryISOCode: 'DE',
@@ -536,7 +534,6 @@ describe('InvoiceController', () => {
         fromDate: '2017/08/30',
         toDate: '2017/10/31',
         invoiceType: 'NAT',
-        invoiceStatus: 'NEW',
         sortBy: [
           'DocumentDate ASC'
         ],
@@ -558,7 +555,7 @@ describe('InvoiceController', () => {
     const expected: EIDDocumentResponse = {
       requestId: 'a0a1596f-b242-4672-b513-66c5e5554195',
       status: 'SUCCESS',
-      data: [
+      document: [
         {
           documentId: 15029,
           accountGroupId: '122',
@@ -568,7 +565,6 @@ describe('InvoiceController', () => {
           documentDate: '2022/12/28',
           numberOfInvoices: 1,
           fileSize: 1624,
-          documentStatus: 'DOWNLOADED',
           documentName: '032_122_INT_28122022.TXT',
         }
       ],

@@ -68,32 +68,33 @@ export interface StatementOfAccountRequestFilters {
   accounts?: Accounts[];
 }
 
-export const statementOfAccountRequestFiltersSchema: Schema<StatementOfAccountRequestFilters> = object(
-  {
-    colCoCode: ['ColCoCode', optional(nullable(number()))],
-    payerId: ['PayerId', optional(nullable(number()))],
-    payerNumber: ['PayerNumber', optional(nullable(string()))],
-    includeMonthlyInvoiceTrend: [
-      'IncludeMonthlyInvoiceTrend',
-      optional(nullable(boolean())),
-    ],
-    includePastStatementOfAccounts: [
-      'IncludePastStatementOfAccounts',
-      optional(nullable(boolean())),
-    ],
-    dueOrOverDueSOADocumentsOnly: [
-      'DueOrOverDueSOADocumentsOnly',
-      optional(nullable(boolean())),
-    ],
-    numberOfSOADocuments: [
-      'NumberOfSOADocuments',
-      optional(nullable(number())),
-    ],
-    includeAccountInvoicesSummary: [
-      'IncludeAccountInvoicesSummary',
-      optional(nullable(boolean())),
-    ],
-    colCoId: ['ColCoId', optional(nullable(number()))],
-    accounts: ['Accounts', optional(array(lazy(() => accountsSchema)))],
-  }
+export const statementOfAccountRequestFiltersSchema: Schema<StatementOfAccountRequestFilters> = lazy(
+  () =>
+    object({
+      colCoCode: ['ColCoCode', optional(nullable(number()))],
+      payerId: ['PayerId', optional(nullable(number()))],
+      payerNumber: ['PayerNumber', optional(nullable(string()))],
+      includeMonthlyInvoiceTrend: [
+        'IncludeMonthlyInvoiceTrend',
+        optional(nullable(boolean())),
+      ],
+      includePastStatementOfAccounts: [
+        'IncludePastStatementOfAccounts',
+        optional(nullable(boolean())),
+      ],
+      dueOrOverDueSOADocumentsOnly: [
+        'DueOrOverDueSOADocumentsOnly',
+        optional(nullable(boolean())),
+      ],
+      numberOfSOADocuments: [
+        'NumberOfSOADocuments',
+        optional(nullable(number())),
+      ],
+      includeAccountInvoicesSummary: [
+        'IncludeAccountInvoicesSummary',
+        optional(nullable(boolean())),
+      ],
+      colCoId: ['ColCoId', optional(nullable(number()))],
+      accounts: ['Accounts', optional(array(accountsSchema))],
+    })
 );

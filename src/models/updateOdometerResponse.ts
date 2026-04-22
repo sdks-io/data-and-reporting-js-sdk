@@ -16,12 +16,13 @@ export interface UpdateOdometerResponse {
   updateOdometerReferences?: UpdateOdometerReference[];
 }
 
-export const updateOdometerResponseSchema: Schema<UpdateOdometerResponse> = object(
-  {
-    serviceReference: ['ServiceReference', optional(number())],
-    updateOdometerReferences: [
-      'UpdateOdometerReferences',
-      optional(array(lazy(() => updateOdometerReferenceSchema))),
-    ],
-  }
+export const updateOdometerResponseSchema: Schema<UpdateOdometerResponse> = lazy(
+  () =>
+    object({
+      serviceReference: ['ServiceReference', optional(number())],
+      updateOdometerReferences: [
+        'UpdateOdometerReferences',
+        optional(array(updateOdometerReferenceSchema)),
+      ],
+    })
 );

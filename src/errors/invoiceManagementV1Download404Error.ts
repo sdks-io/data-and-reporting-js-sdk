@@ -8,9 +8,9 @@ import { ApiError } from '../core.js';
 import { ErrorDetails } from '../models/errorDetails.js';
 
 /**
- * Creates an instance of ErrorObject
+ * Creates an instance of InvoiceManagementV1Download404
  */
-interface ErrorObject {
+interface InvoiceManagementV1Download404 {
   /** Unique request identifier passed from end user. This identifier helps in tracing a transaction */
   RequestId?: string;
   /** Indicates overall status of the request. Allowed values: SUCCES, FAILED, PARTIAL_SUCCESS */
@@ -18,4 +18,6 @@ interface ErrorObject {
   Errors?: ErrorDetails[];
 }
 
-export class ErrorObjectError extends ApiError<ErrorObject> {}
+export class InvoiceManagementV1Download404Error extends ApiError<
+  InvoiceManagementV1Download404
+> {}

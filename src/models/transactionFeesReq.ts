@@ -18,8 +18,10 @@ export interface TransactionFeesReq {
   pageSize?: number | null;
 }
 
-export const transactionFeesReqSchema: Schema<TransactionFeesReq> = object({
-  filters: ['Filters', optional(lazy(() => transactionFeesRequestSchema))],
-  page: ['Page', optional(nullable(number()))],
-  pageSize: ['PageSize', optional(nullable(number()))],
-});
+export const transactionFeesReqSchema: Schema<TransactionFeesReq> = lazy(() =>
+  object({
+    filters: ['Filters', optional(transactionFeesRequestSchema)],
+    page: ['Page', optional(nullable(number()))],
+    pageSize: ['PageSize', optional(nullable(number()))],
+  })
+);

@@ -49,16 +49,6 @@ export interface SearchDocReq {
    */
   invoiceNumberList?: string[];
   /**
-   * The status of the invoices
-   * Optional
-   * One of the following values:
-   * •    NEW
-   * •    VIEWED
-   * •    DOWNLOADED
-   * •    RESTORED
-   */
-  invoiceStatus?: string | null;
-  /**
    * Invoice Issuing Date Range/From
    * Optional
    * Format: yyyy/MM/dd
@@ -134,7 +124,6 @@ export const searchDocReqSchema: Schema<SearchDocReq> = object({
   accountNumberList: ['AccountNumberList', optional(array(string()))],
   invoiceNumber: ['InvoiceNumber', optional(nullable(string()))],
   invoiceNumberList: ['InvoiceNumberList', optional(array(string()))],
-  invoiceStatus: ['InvoiceStatus', optional(nullable(string()))],
   issuingDateFrom: ['IssuingDateFrom', optional(nullable(string()))],
   issuingDateTo: ['IssuingDateTo', optional(nullable(string()))],
   dueDateFrom: ['DueDateFrom', optional(nullable(string()))],

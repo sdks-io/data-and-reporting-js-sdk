@@ -54,15 +54,16 @@ export class Client implements ClientInterface {
       ...this._config,
       clientCredentialsAuthCredentials: this._config
         .clientCredentialsAuthCredentials || {
-        oAuthClientId: '',
-        oAuthClientSecret: '',
+        oAuthClientId: this._config.oAuthClientId || '',
+        oAuthClientSecret: this._config.oAuthClientSecret || '',
+        oAuthToken: this._config.oAuthToken,
       },
     };
 
     this._requestBuilderFactory = createRequestHandlerFactory(
       (server) => getBaseUri(server, this._config),
       createAuthProviderFromConfig(
-        this._config,
+        clonedConfig,
         () => this.clientCredentialsAuthManager
       ),
       new HttpClient(AbortError, {
@@ -91,6 +92,28 @@ export class Client implements ClientInterface {
   public withConfiguration(config: Partial<Configuration>) {
     return new Client({ ...this._config, ...config });
   }
+
+  /**
+   * Create a client instance from a JSON configuration string
+   * @param jsonConfig - JSON string containing the configuration
+   * @returns A new Client instance
+   */
+  public static fromJsonConfig(jsonConfig: string): Client {
+    return new Client(Configuration.fromJsonConfig(jsonConfig));
+  }
+
+  /**
+   * Create a client instance from environment variables
+   * @param envVariables - Optional object containing environment variables
+   * @returns A new Client instance
+   */
+  public static fromEnvironment(
+    envVariables?: Record<string, string | undefined>
+  ): Client {
+    return new Client(
+      Configuration.fromEnvironment(envVariables || process.env)
+    );
+  }
 }
 
 function createHttpClientAdapter(client: HttpClient): HttpClientInterface {
@@ -99,10 +122,7 @@ function createHttpClientAdapter(client: HttpClient): HttpClientInterface {
   };
 }
 
-function getBaseUri(
-  server: Server = 'OAuth Server',
-  config: Configuration
-): string {
+function getBaseUri(server: Server = 'Shell', config: Configuration): string {
   if (config.environment === Environment.SIT) {
     if (server === 'OAuth Server') {
       return 'https://api-test.shell.com';

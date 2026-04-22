@@ -18,19 +18,20 @@ export interface VolumeBasedBonusResponse {
   historicalBonusPaid?: BonusHistory[];
 }
 
-export const volumeBasedBonusResponseSchema: Schema<VolumeBasedBonusResponse> = object(
-  {
-    configuration: [
-      'Configuration',
-      optional(array(lazy(() => bonusConfigurationSchema))),
-    ],
-    currentPeriodConsumption: [
-      'CurrentPeriodConsumption',
-      optional(array(lazy(() => currentVolumeSchema))),
-    ],
-    historicalBonusPaid: [
-      'HistoricalBonusPaid',
-      optional(array(lazy(() => bonusHistorySchema))),
-    ],
-  }
+export const volumeBasedBonusResponseSchema: Schema<VolumeBasedBonusResponse> = lazy(
+  () =>
+    object({
+      configuration: [
+        'Configuration',
+        optional(array(bonusConfigurationSchema)),
+      ],
+      currentPeriodConsumption: [
+        'CurrentPeriodConsumption',
+        optional(array(currentVolumeSchema)),
+      ],
+      historicalBonusPaid: [
+        'HistoricalBonusPaid',
+        optional(array(bonusHistorySchema)),
+      ],
+    })
 );

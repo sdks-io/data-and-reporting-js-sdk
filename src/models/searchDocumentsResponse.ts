@@ -24,7 +24,7 @@ export interface SearchDocumentsResponse {
   requestId?: string;
   /** Indicates overall status of the request. Allowed values: SUCCES, FAILED */
   status?: string;
-  data?: SearchDocumentsInvoice[];
+  invoices?: SearchDocumentsInvoice[];
   /** Total number of elements corresponding to the request */
   totalRecords?: number;
   /** Number of elements in the page content. Will be lesser or equal to the size param. */
@@ -35,14 +35,15 @@ export interface SearchDocumentsResponse {
   isLastPage?: boolean;
 }
 
-export const searchDocumentsResponseSchema: Schema<SearchDocumentsResponse> = object(
-  {
-    requestId: ['RequestId', optional(string())],
-    status: ['Status', optional(string())],
-    data: ['Data', optional(array(lazy(() => searchDocumentsInvoiceSchema)))],
-    totalRecords: ['TotalRecords', optional(number())],
-    totalRecordsOnPage: ['TotalRecordsOnPage', optional(number())],
-    isFirstPage: ['IsFirstPage', optional(boolean())],
-    isLastPage: ['IsLastPage', optional(boolean())],
-  }
+export const searchDocumentsResponseSchema: Schema<SearchDocumentsResponse> = lazy(
+  () =>
+    object({
+      requestId: ['RequestId', optional(string())],
+      status: ['Status', optional(string())],
+      invoices: ['Invoices', optional(array(searchDocumentsInvoiceSchema))],
+      totalRecords: ['TotalRecords', optional(number())],
+      totalRecordsOnPage: ['TotalRecordsOnPage', optional(number())],
+      isFirstPage: ['IsFirstPage', optional(boolean())],
+      isLastPage: ['IsLastPage', optional(boolean())],
+    })
 );

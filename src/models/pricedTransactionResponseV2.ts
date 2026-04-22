@@ -32,13 +32,14 @@ export interface PricedTransactionResponseV2 {
   totalPages?: number;
 }
 
-export const pricedTransactionResponseV2Schema: Schema<PricedTransactionResponseV2> = object(
-  {
-    requestId: ['RequestId', optional(string())],
-    status: ['Status', optional(string())],
-    data: ['Data', optional(array(lazy(() => pricedResponseDataSchema)))],
-    page: ['Page', optional(number())],
-    pageSize: ['PageSize', optional(number())],
-    totalPages: ['TotalPages', optional(number())],
-  }
+export const pricedTransactionResponseV2Schema: Schema<PricedTransactionResponseV2> = lazy(
+  () =>
+    object({
+      requestId: ['RequestId', optional(string())],
+      status: ['Status', optional(string())],
+      data: ['Data', optional(array(pricedResponseDataSchema))],
+      page: ['Page', optional(number())],
+      pageSize: ['PageSize', optional(number())],
+      totalPages: ['TotalPages', optional(number())],
+    })
 );

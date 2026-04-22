@@ -38,13 +38,15 @@ export interface TransactionFeesRes {
   warnings?: Warning[];
 }
 
-export const transactionFeesResSchema: Schema<TransactionFeesRes> = object({
-  requestId: ['RequestId', optional(string())],
-  status: ['Status', optional(string())],
-  data: ['Data', optional(array(lazy(() => feeItemSchema)))],
-  page: ['Page', optional(number())],
-  totalRecords: ['TotalRecords', optional(number())],
-  totalPages: ['TotalPages', optional(number())],
-  pageSize: ['PageSize', optional(number())],
-  warnings: ['Warnings', optional(array(lazy(() => warningSchema)))],
-});
+export const transactionFeesResSchema: Schema<TransactionFeesRes> = lazy(() =>
+  object({
+    requestId: ['RequestId', optional(string())],
+    status: ['Status', optional(string())],
+    data: ['Data', optional(array(feeItemSchema))],
+    page: ['Page', optional(number())],
+    totalRecords: ['TotalRecords', optional(number())],
+    totalPages: ['TotalPages', optional(number())],
+    pageSize: ['PageSize', optional(number())],
+    warnings: ['Warnings', optional(array(warningSchema))],
+  })
+);

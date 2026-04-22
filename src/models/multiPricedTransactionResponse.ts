@@ -14,13 +14,12 @@ export interface MultiPricedTransactionResponse {
   transactions?: MultiPricedTransactionResponseTransactionsItems[];
 }
 
-export const multiPricedTransactionResponseSchema: Schema<MultiPricedTransactionResponse> = object(
-  {
-    transactions: [
-      'Transactions',
-      optional(
-        array(lazy(() => multiPricedTransactionResponseTransactionsItemsSchema))
-      ),
-    ],
-  }
+export const multiPricedTransactionResponseSchema: Schema<MultiPricedTransactionResponse> = lazy(
+  () =>
+    object({
+      transactions: [
+        'Transactions',
+        optional(array(multiPricedTransactionResponseTransactionsItemsSchema)),
+      ],
+    })
 );

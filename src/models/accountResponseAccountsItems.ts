@@ -163,106 +163,113 @@ export interface AccountResponseAccountsItems {
   isConsortiumMember?: string | null;
 }
 
-export const accountResponseAccountsItemsSchema: Schema<AccountResponseAccountsItems> = object(
-  {
-    accountFullName: ['AccountFullName', optional(nullable(string()))],
-    accountId: ['AccountId', optional(nullable(number()))],
-    accountNumber: ['AccountNumber', optional(nullable(string()))],
-    accountShortName: ['AccountShortName', optional(nullable(string()))],
-    bestOfIndicator: ['BestOfIndicator', optional(boolean())],
-    billingFrequencyType: [
-      'BillingFrequencyType',
-      optional(nullable(string())),
-    ],
-    billingFrequencyTypeId: [
-      'BillingFrequencyTypeId',
-      optional(nullable(number())),
-    ],
-    billingRunFrequency: ['BillingRunFrequency', optional(nullable(string()))],
-    billingRunFrequencyTypeId: [
-      'BillingRunFrequencyTypeId',
-      optional(nullable(number())),
-    ],
-    colCoCountryCode: ['ColCoCountryCode', optional(nullable(string()))],
-    currencyCode: ['CurrencyCode', optional(nullable(string()))],
-    currencySymbol: ['CurrencySymbol', optional(nullable(string()))],
-    day1Run: ['Day1Run', optional(nullable(number()))],
-    day2Run: ['Day2Run', optional(nullable(number()))],
-    day3Run: ['Day3Run', optional(nullable(number()))],
-    day4Run: ['Day4Run', optional(nullable(number()))],
-    frequencyType: ['FrequencyType', optional(nullable(string()))],
-    grossAmount: ['GrossAmount', optional(nullable(number()))],
-    internationalPOSLanguageCode: [
-      'InternationalPOSLanguageCode',
-      optional(nullable(string())),
-    ],
-    internationalPOSLanguageID: [
-      'InternationalPOSLanguageID',
-      optional(nullable(number())),
-    ],
-    invoiceAccountID: ['InvoiceAccountID', optional(nullable(number()))],
-    invoiceAccountNumber: [
-      'InvoiceAccountNumber',
-      optional(nullable(string())),
-    ],
-    invoiceAccountShortName: [
-      'InvoiceAccountShortName',
-      optional(nullable(string())),
-    ],
-    invoiceDistributionMethods: [
-      'InvoiceDistributionMethods',
-      optional(array(lazy(() => invoiceDistributionMethodSchema))),
-    ],
-    isInternational: ['IsInternational', optional(nullable(boolean()))],
-    isInvoicePoint: ['IsInvoicePoint', optional(nullable(boolean()))],
-    lastModifiedDate: ['LastModifiedDate', optional(nullable(string()))],
-    localCurrencyCode: ['LocalCurrencyCode', optional(nullable(string()))],
-    localCurrencySymbol: ['LocalCurrencySymbol', optional(nullable(string()))],
-    localPOSLanguageCode: [
-      'LocalPOSLanguageCode',
-      optional(nullable(string())),
-    ],
-    localPOSLanguageID: ['LocalPOSLanguageID', optional(nullable(number()))],
-    netAmount: ['NetAmount', optional(nullable(number()))],
-    outstandingBalance: ['OutstandingBalance', optional(nullable(number()))],
-    paidAmount: ['PaidAmount', optional(nullable(number()))],
-    status: ['Status', optional(nullable(string()))],
-    statusReason: ['StatusReason', optional(nullable(string()))],
-    totalActiveCardGroups: [
-      'TotalActiveCardGroups',
-      optional(nullable(number())),
-    ],
-    totalActiveCards: ['TotalActiveCards', optional(nullable(number()))],
-    totalBlockedCards: ['TotalBlockedCards', optional(nullable(number()))],
-    totalCancelledCards: ['TotalCancelledCards', optional(nullable(number()))],
-    totalCards: ['TotalCards', optional(nullable(number()))],
-    totalExpiredCards: ['TotalExpiredCards', optional(nullable(number()))],
-    totalFraudCards: ['TotalFraudCards', optional(nullable(number()))],
-    totalNewCards: ['TotalNewCards', optional(nullable(number()))],
-    totalRenewalPendingCards: [
-      'TotalRenewalPendingCards',
-      optional(nullable(number())),
-    ],
-    totalReplacedCards: ['TotalReplacedCards', optional(nullable(number()))],
-    totalTemporaryBlockCardsByCustomer: [
-      'TotalTemporaryBlockCardsByCustomer',
-      optional(nullable(number())),
-    ],
-    totalTemporaryBlockCardsByShell: [
-      'TotalTemporaryBlockCardsByShell',
-      optional(nullable(number())),
-    ],
-    vATAmount: ['VATAmount', optional(nullable(number()))],
-    isPartnerCard: ['IsPartnerCard', optional(nullable(number()))],
-    tollsCustomerId: ['TollsCustomerId', optional(nullable(string()))],
-    tollsColcoCountryTypeId: [
-      'TollsColcoCountryTypeId',
-      optional(nullable(string())),
-    ],
-    contracts: [
-      'Contracts',
-      optional(array(lazy(() => customerContractSchema))),
-    ],
-    isConsortiumMember: ['IsConsortiumMember', optional(nullable(string()))],
-  }
+export const accountResponseAccountsItemsSchema: Schema<AccountResponseAccountsItems> = lazy(
+  () =>
+    object({
+      accountFullName: ['AccountFullName', optional(nullable(string()))],
+      accountId: ['AccountId', optional(nullable(number()))],
+      accountNumber: ['AccountNumber', optional(nullable(string()))],
+      accountShortName: ['AccountShortName', optional(nullable(string()))],
+      bestOfIndicator: ['BestOfIndicator', optional(boolean())],
+      billingFrequencyType: [
+        'BillingFrequencyType',
+        optional(nullable(string())),
+      ],
+      billingFrequencyTypeId: [
+        'BillingFrequencyTypeId',
+        optional(nullable(number())),
+      ],
+      billingRunFrequency: [
+        'BillingRunFrequency',
+        optional(nullable(string())),
+      ],
+      billingRunFrequencyTypeId: [
+        'BillingRunFrequencyTypeId',
+        optional(nullable(number())),
+      ],
+      colCoCountryCode: ['ColCoCountryCode', optional(nullable(string()))],
+      currencyCode: ['CurrencyCode', optional(nullable(string()))],
+      currencySymbol: ['CurrencySymbol', optional(nullable(string()))],
+      day1Run: ['Day1Run', optional(nullable(number()))],
+      day2Run: ['Day2Run', optional(nullable(number()))],
+      day3Run: ['Day3Run', optional(nullable(number()))],
+      day4Run: ['Day4Run', optional(nullable(number()))],
+      frequencyType: ['FrequencyType', optional(nullable(string()))],
+      grossAmount: ['GrossAmount', optional(nullable(number()))],
+      internationalPOSLanguageCode: [
+        'InternationalPOSLanguageCode',
+        optional(nullable(string())),
+      ],
+      internationalPOSLanguageID: [
+        'InternationalPOSLanguageID',
+        optional(nullable(number())),
+      ],
+      invoiceAccountID: ['InvoiceAccountID', optional(nullable(number()))],
+      invoiceAccountNumber: [
+        'InvoiceAccountNumber',
+        optional(nullable(string())),
+      ],
+      invoiceAccountShortName: [
+        'InvoiceAccountShortName',
+        optional(nullable(string())),
+      ],
+      invoiceDistributionMethods: [
+        'InvoiceDistributionMethods',
+        optional(array(invoiceDistributionMethodSchema)),
+      ],
+      isInternational: ['IsInternational', optional(nullable(boolean()))],
+      isInvoicePoint: ['IsInvoicePoint', optional(nullable(boolean()))],
+      lastModifiedDate: ['LastModifiedDate', optional(nullable(string()))],
+      localCurrencyCode: ['LocalCurrencyCode', optional(nullable(string()))],
+      localCurrencySymbol: [
+        'LocalCurrencySymbol',
+        optional(nullable(string())),
+      ],
+      localPOSLanguageCode: [
+        'LocalPOSLanguageCode',
+        optional(nullable(string())),
+      ],
+      localPOSLanguageID: ['LocalPOSLanguageID', optional(nullable(number()))],
+      netAmount: ['NetAmount', optional(nullable(number()))],
+      outstandingBalance: ['OutstandingBalance', optional(nullable(number()))],
+      paidAmount: ['PaidAmount', optional(nullable(number()))],
+      status: ['Status', optional(nullable(string()))],
+      statusReason: ['StatusReason', optional(nullable(string()))],
+      totalActiveCardGroups: [
+        'TotalActiveCardGroups',
+        optional(nullable(number())),
+      ],
+      totalActiveCards: ['TotalActiveCards', optional(nullable(number()))],
+      totalBlockedCards: ['TotalBlockedCards', optional(nullable(number()))],
+      totalCancelledCards: [
+        'TotalCancelledCards',
+        optional(nullable(number())),
+      ],
+      totalCards: ['TotalCards', optional(nullable(number()))],
+      totalExpiredCards: ['TotalExpiredCards', optional(nullable(number()))],
+      totalFraudCards: ['TotalFraudCards', optional(nullable(number()))],
+      totalNewCards: ['TotalNewCards', optional(nullable(number()))],
+      totalRenewalPendingCards: [
+        'TotalRenewalPendingCards',
+        optional(nullable(number())),
+      ],
+      totalReplacedCards: ['TotalReplacedCards', optional(nullable(number()))],
+      totalTemporaryBlockCardsByCustomer: [
+        'TotalTemporaryBlockCardsByCustomer',
+        optional(nullable(number())),
+      ],
+      totalTemporaryBlockCardsByShell: [
+        'TotalTemporaryBlockCardsByShell',
+        optional(nullable(number())),
+      ],
+      vATAmount: ['VATAmount', optional(nullable(number()))],
+      isPartnerCard: ['IsPartnerCard', optional(nullable(number()))],
+      tollsCustomerId: ['TollsCustomerId', optional(nullable(string()))],
+      tollsColcoCountryTypeId: [
+        'TollsColcoCountryTypeId',
+        optional(nullable(string())),
+      ],
+      contracts: ['Contracts', optional(array(customerContractSchema))],
+      isConsortiumMember: ['IsConsortiumMember', optional(nullable(string()))],
+    })
 );

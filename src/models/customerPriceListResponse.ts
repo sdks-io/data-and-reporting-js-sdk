@@ -11,6 +11,6 @@ export interface CustomerPriceListResponse {
   priceList?: PriceList[];
 }
 
-export const customerPriceListResponseSchema: Schema<CustomerPriceListResponse> = object(
-  { priceList: ['PriceList', optional(array(lazy(() => priceListSchema)))] }
+export const customerPriceListResponseSchema: Schema<CustomerPriceListResponse> = lazy(
+  () => object({ priceList: ['PriceList', optional(array(priceListSchema))] })
 );

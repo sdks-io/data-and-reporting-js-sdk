@@ -90,16 +90,39 @@ const body: InvoiceSearchRequest = {
 };
 
 try {
-  const { result, ...httpResponse } = await invoiceController.invoiceSearch(
+  const response = await invoiceController.invoiceSearch(
     requestId,
     body
   );
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof InvoiceManagementV1Search400Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Search401Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Search403Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Search404Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Search500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -182,11 +205,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Search400Error`](../../doc/models/invoice-management-v1-search-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Search401Error`](../../doc/models/invoice-management-v1-search-401-error.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Search403Error`](../../doc/models/invoice-management-v1-search-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Search404Error`](../../doc/models/invoice-management-v1-search-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Search500Error`](../../doc/models/invoice-management-v1-search-500-error.md) |
 
 
 # Invoice Summary
@@ -252,16 +275,39 @@ const body: InvoiceSummaryRequest = {
 };
 
 try {
-  const { result, ...httpResponse } = await invoiceController.invoiceSummary(
+  const response = await invoiceController.invoiceSummary(
     requestId,
     body
   );
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof InvoiceManagementV1Summary400Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Summary401Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Summary403Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Summary404Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Summary500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -289,11 +335,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Summary400Error`](../../doc/models/invoice-management-v1-summary-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Summary401Error`](../../doc/models/invoice-management-v1-summary-401-error.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Summary403Error`](../../doc/models/invoice-management-v1-summary-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Summary404Error`](../../doc/models/invoice-management-v1-summary-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Summary500Error`](../../doc/models/invoice-management-v1-summary-500-error.md) |
 
 
 # Statement of Account
@@ -349,16 +395,39 @@ const body: StatementOfAccountRequest = {
 };
 
 try {
-  const { result, ...httpResponse } = await invoiceController.statementOfAccount(
+  const response = await invoiceController.statementOfAccount(
     requestId,
     body
   );
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof InvoiceManagementV1Statementofaccount400Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Statementofaccount401Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Statementofaccount403Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Statementofaccount404Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Statementofaccount500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -450,11 +519,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Statementofaccount400Error`](../../doc/models/invoice-management-v1-statementofaccount-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Statementofaccount401Error`](../../doc/models/invoice-management-v1-statementofaccount-401-error.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Statementofaccount403Error`](../../doc/models/invoice-management-v1-statementofaccount-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Statementofaccount404Error`](../../doc/models/invoice-management-v1-statementofaccount-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Statementofaccount500Error`](../../doc/models/invoice-management-v1-statementofaccount-500-error.md) |
 
 
 # Dates
@@ -502,16 +571,39 @@ const body: InvoiceDatesRequest = {
 };
 
 try {
-  const { result, ...httpResponse } = await invoiceController.dates(
+  const response = await invoiceController.dates(
     requestId,
     body
   );
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof InvoiceManagementV1Dates400Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Dates401Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Dates403Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Dates404Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Dates500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -539,11 +631,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Dates400Error`](../../doc/models/invoice-management-v1-dates-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Dates401Error`](../../doc/models/invoice-management-v1-dates-401-error.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Dates403Error`](../../doc/models/invoice-management-v1-dates-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Dates404Error`](../../doc/models/invoice-management-v1-dates-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Dates500Error`](../../doc/models/invoice-management-v1-dates-500-error.md) |
 
 
 # Search Statement of Account
@@ -596,16 +688,39 @@ const body: SearchStatementOfAccountRequest = {
 };
 
 try {
-  const { result, ...httpResponse } = await invoiceController.searchStatementOfAccount(
+  const response = await invoiceController.searchStatementOfAccount(
     requestId,
     body
   );
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof InvoiceManagementV1Searchstatementofaccount400Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Searchstatementofaccount401Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Searchstatementofaccount403Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Searchstatementofaccount404Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Searchstatementofaccount500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -645,11 +760,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Searchstatementofaccount400Error`](../../doc/models/invoice-management-v1-searchstatementofaccount-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Searchstatementofaccount401Error`](../../doc/models/invoice-management-v1-searchstatementofaccount-401-error.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Searchstatementofaccount403Error`](../../doc/models/invoice-management-v1-searchstatementofaccount-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Searchstatementofaccount404Error`](../../doc/models/invoice-management-v1-searchstatementofaccount-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Searchstatementofaccount500Error`](../../doc/models/invoice-management-v1-searchstatementofaccount-500-error.md) |
 
 
 # Search Documents
@@ -695,7 +810,6 @@ const body: SearchDocumentsRequest = {
       '6400013693',
       '9421000010'
     ],
-    invoiceStatus: 'NEW',
     issuingDateFrom: '2023/05/01',
     issuingDateTo: '2023/06/30',
     dueDateFrom: '2023/05/04',
@@ -714,16 +828,39 @@ const body: SearchDocumentsRequest = {
 };
 
 try {
-  const { result, ...httpResponse } = await invoiceController.searchDocuments(
+  const response = await invoiceController.searchDocuments(
     requestId,
     body
   );
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof InvoiceManagementV1Searchdocuments400Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Searchdocuments401Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Searchdocuments403Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Searchdocuments404Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Searchdocuments500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -734,7 +871,7 @@ try {
 {
   "RequestId": "a8b81c1d-f44a-4365-8113-8958061c0b7e",
   "Status": "SUCCESS",
-  "Data": [
+  "Invoices": [
     {
       "DocumentReference": 311161,
       "InvoiceNumber": "6400013693",
@@ -746,7 +883,6 @@ try {
       "NetAmount": 0,
       "TaxAmount": 0,
       "CurrencyCode": "EUR",
-      "InvoiceStatus": "NEW",
       "InvoiceDate": "2023/01/31",
       "DueDate": "2023/02/07",
       "VATCountryISOCode": "DE"
@@ -763,11 +899,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Searchdocuments400Error`](../../doc/models/invoice-management-v1-searchdocuments-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Searchdocuments401Error`](../../doc/models/invoice-management-v1-searchdocuments-401-error.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Searchdocuments403Error`](../../doc/models/invoice-management-v1-searchdocuments-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Searchdocuments404Error`](../../doc/models/invoice-management-v1-searchdocuments-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Searchdocuments500Error`](../../doc/models/invoice-management-v1-searchdocuments-500-error.md) |
 
 
 # Eid Search
@@ -810,7 +946,6 @@ const body: EIDSearchRequest = {
     fromDate: '2017/08/30',
     toDate: '2017/10/31',
     invoiceType: 'NAT',
-    invoiceStatus: 'NEW',
     sortBy: [
       'DocumentDate ASC'
     ],
@@ -820,16 +955,39 @@ const body: EIDSearchRequest = {
 };
 
 try {
-  const { result, ...httpResponse } = await invoiceController.eidSearch(
+  const response = await invoiceController.eidSearch(
     requestId,
     body
   );
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof InvoiceManagementV1Eidsearch400Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Eidsearch401Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Eidsearch403Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Eidsearch404Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Eidsearch500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -840,7 +998,7 @@ try {
 {
   "RequestId": "a0a1596f-b242-4672-b513-66c5e5554195",
   "Status": "SUCCESS",
-  "Data": [
+  "Document": [
     {
       "DocumentId": 15029,
       "AccountGroupId": "122",
@@ -850,7 +1008,6 @@ try {
       "DocumentDate": "2022/12/28",
       "NumberOfInvoices": 1,
       "FileSize": 1624,
-      "DocumentStatus": "DOWNLOADED",
       "DocumentName": "032_122_INT_28122022.TXT"
     }
   ],
@@ -867,11 +1024,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Eidsearch400Error`](../../doc/models/invoice-management-v1-eidsearch-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Eidsearch401Error`](../../doc/models/invoice-management-v1-eidsearch-401-error.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Eidsearch403Error`](../../doc/models/invoice-management-v1-eidsearch-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Eidsearch404Error`](../../doc/models/invoice-management-v1-eidsearch-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Eidsearch500Error`](../../doc/models/invoice-management-v1-eidsearch-500-error.md) |
 
 
 # Download
@@ -918,16 +1075,39 @@ const body: InvoiceDownloadRequest = {
 };
 
 try {
-  const { result, ...httpResponse } = await invoiceController.download(
+  const response = await invoiceController.download(
     requestId,
     body
   );
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof InvoiceManagementV1Download400Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Download401Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Download403Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Download404Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Download500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -936,11 +1116,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Download400Error`](../../doc/models/invoice-management-v1-download-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Download401Error`](../../doc/models/invoice-management-v1-download-401-error.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Download403Error`](../../doc/models/invoice-management-v1-download-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Download404Error`](../../doc/models/invoice-management-v1-download-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Download500Error`](../../doc/models/invoice-management-v1-download-500-error.md) |
 
 
 # Eid Download
@@ -988,16 +1168,39 @@ const body: EIDDownloadRequest = {
 };
 
 try {
-  const { result, ...httpResponse } = await invoiceController.eidDownload(
+  const response = await invoiceController.eidDownload(
     requestId,
     body
   );
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof InvoiceManagementV1Eiddownload400Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Eiddownload401Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Eiddownload403Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Eiddownload404Error) {
+      console.log(error.result);
+    } else if (error instanceof InvoiceManagementV1Eiddownload500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -1006,9 +1209,9 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`InvoiceManagementV1Eiddownload400Error`](../../doc/models/invoice-management-v1-eiddownload-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`InvoiceManagementV1Eiddownload401Error`](../../doc/models/invoice-management-v1-eiddownload-401-error.md) |
+| 403 | Forbidden | [`InvoiceManagementV1Eiddownload403Error`](../../doc/models/invoice-management-v1-eiddownload-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`InvoiceManagementV1Eiddownload404Error`](../../doc/models/invoice-management-v1-eiddownload-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`InvoiceManagementV1Eiddownload500Error`](../../doc/models/invoice-management-v1-eiddownload-500-error.md) |
 

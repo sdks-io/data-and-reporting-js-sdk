@@ -18,10 +18,11 @@ export interface InvoiceSummaryResponse {
   data?: InvoiceSummaryDetails[];
 }
 
-export const invoiceSummaryResponseSchema: Schema<InvoiceSummaryResponse> = object(
-  {
-    requestId: ['RequestId', optional(string())],
-    status: ['Status', optional(string())],
-    data: ['Data', optional(array(lazy(() => invoiceSummaryDetailsSchema)))],
-  }
+export const invoiceSummaryResponseSchema: Schema<InvoiceSummaryResponse> = lazy(
+  () =>
+    object({
+      requestId: ['RequestId', optional(string())],
+      status: ['Status', optional(string())],
+      data: ['Data', optional(array(invoiceSummaryDetailsSchema))],
+    })
 );

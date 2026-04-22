@@ -38,15 +38,6 @@ export interface EIDDocument {
   numberOfInvoices?: number | null;
   /** Document size */
   fileSize?: number | null;
-  /**
-   * Document status.
-   * Possible values:
-   * •    NEW
-   * •    VIEWED
-   * •    DOWNLOADED
-   * •    RESTORED
-   */
-  documentStatus?: string | null;
   /** Document file name. */
   documentName?: string | null;
 }
@@ -60,6 +51,5 @@ export const eIDDocumentSchema: Schema<EIDDocument> = object({
   documentDate: ['DocumentDate', optional(nullable(string()))],
   numberOfInvoices: ['NumberOfInvoices', optional(nullable(number()))],
   fileSize: ['FileSize', optional(nullable(number()))],
-  documentStatus: ['DocumentStatus', optional(nullable(string()))],
   documentName: ['DocumentName', optional(nullable(string()))],
 });

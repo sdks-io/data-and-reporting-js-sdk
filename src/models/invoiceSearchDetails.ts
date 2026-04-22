@@ -340,133 +340,145 @@ export interface InvoiceSearchDetails {
   additionalDocuments?: InvoiceSearchAdditionalDocument[];
 }
 
-export const invoiceSearchDetailsSchema: Schema<InvoiceSearchDetails> = object({
-  accountFullName: ['AccountFullName', optional(nullable(string()))],
-  accountId: ['AccountId', optional(nullable(number()))],
-  accountNumber: ['AccountNumber', optional(nullable(string()))],
-  accountShortName: ['AccountShortName', optional(nullable(string()))],
-  colCoId: ['ColCoId', optional(nullable(number()))],
-  colCoOpCoId: ['ColCoOpCoId', optional(nullable(string()))],
-  currentBillingFrequency: [
-    'CurrentBillingFrequency',
-    optional(nullable(string())),
-  ],
-  currentBillingFrequencyId: [
-    'CurrentBillingFrequencyId',
-    optional(nullable(number())),
-  ],
-  currentDistributionMethod: [
-    'CurrentDistributionMethod',
-    optional(nullable(string())),
-  ],
-  currentDistributionMethodId: [
-    'CurrentDistributionMethodId',
-    optional(nullable(number())),
-  ],
-  customerCurrencyCode: ['CustomerCurrencyCode', optional(nullable(string()))],
-  customerCurrencySymbol: [
-    'CustomerCurrencySymbol',
-    optional(nullable(string())),
-  ],
-  delCoClientNumber: ['DelCoClientNumber', optional(nullable(string()))],
-  delCoId: ['DelCoId', optional(nullable(number()))],
-  delCoOpCoId: ['DelCoOpCoId', optional(nullable(string()))],
-  documentType: ['DocumentType', optional(nullable(string()))],
-  documentTypeId: ['DocumentTypeId', optional(nullable(number()))],
-  dueDate: ['DueDate', optional(nullable(string()))],
-  grossAmountCustomerCurrency: [
-    'GrossAmountCustomerCurrency',
-    optional(nullable(number())),
-  ],
-  grossAmountTransactionCurrency: [
-    'GrossAmountTransactionCurrency',
-    optional(nullable(number())),
-  ],
-  invoiceDate: ['InvoiceDate', optional(nullable(string()))],
-  invoicedBy: ['InvoicedBy', optional(nullable(string()))],
-  invoicedOnBehalfOf: ['InvoicedOnBehalfOf', optional(nullable(string()))],
-  invoiceId: ['InvoiceId', optional(nullable(number()))],
-  invoiceNumber: ['InvoiceNumber', optional(nullable(string()))],
-  isInternational: ['IsInternational', optional(nullable(boolean()))],
-  isNational: ['IsNational', optional(nullable(boolean()))],
-  netAmountCustomerCurrency: [
-    'NetAmountCustomerCurrency',
-    optional(nullable(number())),
-  ],
-  netAmountTransactionCurrency: [
-    'NetAmountTransactionCurrency',
-    optional(nullable(number())),
-  ],
-  payerId: ['PayerId', optional(nullable(number()))],
-  payerNumber: ['PayerNumber', optional(nullable(string()))],
-  paymentTerms: ['PaymentTerms', optional(nullable(string()))],
-  paymentTermsId: ['PaymentTermsId', optional(nullable(number()))],
-  replacementInvoiceId: ['ReplacementInvoiceId', optional(nullable(number()))],
-  reversalInvoiceId: ['ReversalInvoiceId', optional(nullable(number()))],
-  status: ['Status', optional(nullable(string()))],
-  summaryDocumentBillingType: [
-    'SummaryDocumentBillingType',
-    optional(nullable(string())),
-  ],
-  summaryDocumentBillingTypeId: [
-    'SummaryDocumentBillingTypeId',
-    optional(nullable(number())),
-  ],
-  summaryDocumentDate: ['SummaryDocumentDate', optional(nullable(string()))],
-  summaryDocumentDDAmount: [
-    'SummaryDocumentDDAmount',
-    optional(nullable(number())),
-  ],
-  summaryDocumentDueDate: [
-    'SummaryDocumentDueDate',
-    optional(nullable(string())),
-  ],
-  summaryDocumentId: ['SummaryDocumentId', optional(nullable(number()))],
-  summaryDocumentIsFullyPaid: [
-    'SummaryDocumentIsFullyPaid',
-    optional(nullable(boolean())),
-  ],
-  summaryDocumentNumber: [
-    'SummaryDocumentNumber',
-    optional(nullable(string())),
-  ],
-  summaryDocumentPaidAmount: [
-    'SummaryDocumentPaidAmount',
-    optional(nullable(number())),
-  ],
-  summaryDocumentSoAReferenceNumber: [
-    'SummaryDocumentSoAReferenceNumber',
-    optional(nullable(string())),
-  ],
-  summaryDocumentStatementOfAccountId: [
-    'SummaryDocumentStatementOfAccountId',
-    optional(nullable(number())),
-  ],
-  transactionCurrencyCode: [
-    'TransactionCurrencyCode',
-    optional(nullable(string())),
-  ],
-  transactionCurrencySymbol: [
-    'TransactionCurrencySymbol',
-    optional(nullable(string())),
-  ],
-  type: ['Type', optional(nullable(string()))],
-  typeId: ['TypeId', optional(nullable(number()))],
-  vATAmountCustomerCurrency: [
-    'VATAmountCustomerCurrency',
-    optional(nullable(number())),
-  ],
-  vATAmountTransactionCurrency: [
-    'VATAmountTransactionCurrency',
-    optional(nullable(number())),
-  ],
-  vATCountry: ['VATCountry', optional(nullable(string()))],
-  vATCountryId: ['VATCountryId', optional(nullable(number()))],
-  vATCountryISOCode: ['VATCountryISOCode', optional(nullable(string()))],
-  vATCountryOpCoId: ['VATCountryOpCoId', optional(nullable(string()))],
-  documentReference: ['DocumentReference', optional(nullable(string()))],
-  additionalDocuments: [
-    'AdditionalDocuments',
-    optional(array(lazy(() => invoiceSearchAdditionalDocumentSchema))),
-  ],
-});
+export const invoiceSearchDetailsSchema: Schema<InvoiceSearchDetails> = lazy(
+  () =>
+    object({
+      accountFullName: ['AccountFullName', optional(nullable(string()))],
+      accountId: ['AccountId', optional(nullable(number()))],
+      accountNumber: ['AccountNumber', optional(nullable(string()))],
+      accountShortName: ['AccountShortName', optional(nullable(string()))],
+      colCoId: ['ColCoId', optional(nullable(number()))],
+      colCoOpCoId: ['ColCoOpCoId', optional(nullable(string()))],
+      currentBillingFrequency: [
+        'CurrentBillingFrequency',
+        optional(nullable(string())),
+      ],
+      currentBillingFrequencyId: [
+        'CurrentBillingFrequencyId',
+        optional(nullable(number())),
+      ],
+      currentDistributionMethod: [
+        'CurrentDistributionMethod',
+        optional(nullable(string())),
+      ],
+      currentDistributionMethodId: [
+        'CurrentDistributionMethodId',
+        optional(nullable(number())),
+      ],
+      customerCurrencyCode: [
+        'CustomerCurrencyCode',
+        optional(nullable(string())),
+      ],
+      customerCurrencySymbol: [
+        'CustomerCurrencySymbol',
+        optional(nullable(string())),
+      ],
+      delCoClientNumber: ['DelCoClientNumber', optional(nullable(string()))],
+      delCoId: ['DelCoId', optional(nullable(number()))],
+      delCoOpCoId: ['DelCoOpCoId', optional(nullable(string()))],
+      documentType: ['DocumentType', optional(nullable(string()))],
+      documentTypeId: ['DocumentTypeId', optional(nullable(number()))],
+      dueDate: ['DueDate', optional(nullable(string()))],
+      grossAmountCustomerCurrency: [
+        'GrossAmountCustomerCurrency',
+        optional(nullable(number())),
+      ],
+      grossAmountTransactionCurrency: [
+        'GrossAmountTransactionCurrency',
+        optional(nullable(number())),
+      ],
+      invoiceDate: ['InvoiceDate', optional(nullable(string()))],
+      invoicedBy: ['InvoicedBy', optional(nullable(string()))],
+      invoicedOnBehalfOf: ['InvoicedOnBehalfOf', optional(nullable(string()))],
+      invoiceId: ['InvoiceId', optional(nullable(number()))],
+      invoiceNumber: ['InvoiceNumber', optional(nullable(string()))],
+      isInternational: ['IsInternational', optional(nullable(boolean()))],
+      isNational: ['IsNational', optional(nullable(boolean()))],
+      netAmountCustomerCurrency: [
+        'NetAmountCustomerCurrency',
+        optional(nullable(number())),
+      ],
+      netAmountTransactionCurrency: [
+        'NetAmountTransactionCurrency',
+        optional(nullable(number())),
+      ],
+      payerId: ['PayerId', optional(nullable(number()))],
+      payerNumber: ['PayerNumber', optional(nullable(string()))],
+      paymentTerms: ['PaymentTerms', optional(nullable(string()))],
+      paymentTermsId: ['PaymentTermsId', optional(nullable(number()))],
+      replacementInvoiceId: [
+        'ReplacementInvoiceId',
+        optional(nullable(number())),
+      ],
+      reversalInvoiceId: ['ReversalInvoiceId', optional(nullable(number()))],
+      status: ['Status', optional(nullable(string()))],
+      summaryDocumentBillingType: [
+        'SummaryDocumentBillingType',
+        optional(nullable(string())),
+      ],
+      summaryDocumentBillingTypeId: [
+        'SummaryDocumentBillingTypeId',
+        optional(nullable(number())),
+      ],
+      summaryDocumentDate: [
+        'SummaryDocumentDate',
+        optional(nullable(string())),
+      ],
+      summaryDocumentDDAmount: [
+        'SummaryDocumentDDAmount',
+        optional(nullable(number())),
+      ],
+      summaryDocumentDueDate: [
+        'SummaryDocumentDueDate',
+        optional(nullable(string())),
+      ],
+      summaryDocumentId: ['SummaryDocumentId', optional(nullable(number()))],
+      summaryDocumentIsFullyPaid: [
+        'SummaryDocumentIsFullyPaid',
+        optional(nullable(boolean())),
+      ],
+      summaryDocumentNumber: [
+        'SummaryDocumentNumber',
+        optional(nullable(string())),
+      ],
+      summaryDocumentPaidAmount: [
+        'SummaryDocumentPaidAmount',
+        optional(nullable(number())),
+      ],
+      summaryDocumentSoAReferenceNumber: [
+        'SummaryDocumentSoAReferenceNumber',
+        optional(nullable(string())),
+      ],
+      summaryDocumentStatementOfAccountId: [
+        'SummaryDocumentStatementOfAccountId',
+        optional(nullable(number())),
+      ],
+      transactionCurrencyCode: [
+        'TransactionCurrencyCode',
+        optional(nullable(string())),
+      ],
+      transactionCurrencySymbol: [
+        'TransactionCurrencySymbol',
+        optional(nullable(string())),
+      ],
+      type: ['Type', optional(nullable(string()))],
+      typeId: ['TypeId', optional(nullable(number()))],
+      vATAmountCustomerCurrency: [
+        'VATAmountCustomerCurrency',
+        optional(nullable(number())),
+      ],
+      vATAmountTransactionCurrency: [
+        'VATAmountTransactionCurrency',
+        optional(nullable(number())),
+      ],
+      vATCountry: ['VATCountry', optional(nullable(string()))],
+      vATCountryId: ['VATCountryId', optional(nullable(number()))],
+      vATCountryISOCode: ['VATCountryISOCode', optional(nullable(string()))],
+      vATCountryOpCoId: ['VATCountryOpCoId', optional(nullable(string()))],
+      documentReference: ['DocumentReference', optional(nullable(string()))],
+      additionalDocuments: [
+        'AdditionalDocuments',
+        optional(array(invoiceSearchAdditionalDocumentSchema)),
+      ],
+    })
+);

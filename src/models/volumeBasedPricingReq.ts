@@ -14,8 +14,7 @@ export interface VolumeBasedPricingReq {
   filters?: VolumeBasedPricingRequest;
 }
 
-export const volumeBasedPricingReqSchema: Schema<VolumeBasedPricingReq> = object(
-  {
-    filters: ['Filters', optional(lazy(() => volumeBasedPricingRequestSchema))],
-  }
+export const volumeBasedPricingReqSchema: Schema<VolumeBasedPricingReq> = lazy(
+  () =>
+    object({ filters: ['Filters', optional(volumeBasedPricingRequestSchema)] })
 );

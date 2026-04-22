@@ -33,13 +33,14 @@ export interface RecentTransactionsResponse {
   data?: RecentTransactions[];
 }
 
-export const recentTransactionsResponseSchema: Schema<RecentTransactionsResponse> = object(
-  {
-    requestId: ['RequestId', optional(string())],
-    status: ['Status', optional(string())],
-    page: ['Page', optional(number())],
-    rowCount: ['RowCount', optional(number())],
-    totalPages: ['TotalPages', optional(number())],
-    data: ['Data', optional(array(lazy(() => recentTransactionsSchema)))],
-  }
+export const recentTransactionsResponseSchema: Schema<RecentTransactionsResponse> = lazy(
+  () =>
+    object({
+      requestId: ['RequestId', optional(string())],
+      status: ['Status', optional(string())],
+      page: ['Page', optional(number())],
+      rowCount: ['RowCount', optional(number())],
+      totalPages: ['TotalPages', optional(number())],
+      data: ['Data', optional(array(recentTransactionsSchema))],
+    })
 );

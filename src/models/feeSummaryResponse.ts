@@ -25,9 +25,11 @@ export interface FeeSummaryResponse {
   warnings?: Warning[];
 }
 
-export const feeSummaryResponseSchema: Schema<FeeSummaryResponse> = object({
-  requestId: ['RequestId', optional(string())],
-  status: ['Status', optional(string())],
-  data: ['Data', optional(array(lazy(() => feeItemSummaryAllOf0Schema)))],
-  warnings: ['Warnings', optional(array(lazy(() => warningSchema)))],
-});
+export const feeSummaryResponseSchema: Schema<FeeSummaryResponse> = lazy(() =>
+  object({
+    requestId: ['RequestId', optional(string())],
+    status: ['Status', optional(string())],
+    data: ['Data', optional(array(feeItemSummaryAllOf0Schema))],
+    warnings: ['Warnings', optional(array(warningSchema))],
+  })
+);

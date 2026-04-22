@@ -14,9 +14,8 @@ export interface AuditArrayElements {
   audits?: AuditResponseAuditsItems[];
 }
 
-export const auditArrayElementsSchema: Schema<AuditArrayElements> = object({
-  audits: [
-    'Audits',
-    optional(array(lazy(() => auditResponseAuditsItemsSchema))),
-  ],
-});
+export const auditArrayElementsSchema: Schema<AuditArrayElements> = lazy(() =>
+  object({
+    audits: ['Audits', optional(array(auditResponseAuditsItemsSchema))],
+  })
+);

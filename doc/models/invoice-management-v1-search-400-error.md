@@ -1,9 +1,9 @@
 
-# Error Object Error
+# Invoice Management V1 Search 400 Error
 
 ## Structure
 
-`ErrorObjectError`
+`InvoiceManagementV1Search400Error`
 
 ## Fields
 
@@ -17,19 +17,9 @@
 
 ```json
 {
-  "RequestId": "RequestId0",
-  "Status": "Status6",
+  "RequestId": "RequestId2",
+  "Status": "Status8",
   "Errors": [
-    {
-      "Code": "Code4",
-      "Title": "Title6",
-      "Detail": "Detail6",
-      "AdditionalInfo": {
-        "key0": "AdditionalInfo0",
-        "key1": "AdditionalInfo1",
-        "key2": "AdditionalInfo2"
-      }
-    },
     {
       "Code": "Code4",
       "Title": "Title6",

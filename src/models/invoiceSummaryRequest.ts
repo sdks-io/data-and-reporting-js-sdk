@@ -14,11 +14,9 @@ export interface InvoiceSummaryRequest {
   filters?: InvoiceSummaryRequestFilters;
 }
 
-export const invoiceSummaryRequestSchema: Schema<InvoiceSummaryRequest> = object(
-  {
-    filters: [
-      'Filters',
-      optional(lazy(() => invoiceSummaryRequestFiltersSchema)),
-    ],
-  }
+export const invoiceSummaryRequestSchema: Schema<InvoiceSummaryRequest> = lazy(
+  () =>
+    object({
+      filters: ['Filters', optional(invoiceSummaryRequestFiltersSchema)],
+    })
 );

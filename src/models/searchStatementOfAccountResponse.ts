@@ -34,14 +34,15 @@ export interface SearchStatementOfAccountResponse {
   pageSize?: number;
 }
 
-export const searchStatementOfAccountResponseSchema: Schema<SearchStatementOfAccountResponse> = object(
-  {
-    requestId: ['RequestId', optional(string())],
-    status: ['Status', optional(string())],
-    data: ['Data', optional(array(lazy(() => searchStatementOfAccountSchema)))],
-    page: ['Page', optional(number())],
-    totalRecords: ['TotalRecords', optional(number())],
-    totalPages: ['TotalPages', optional(number())],
-    pageSize: ['PageSize', optional(number())],
-  }
+export const searchStatementOfAccountResponseSchema: Schema<SearchStatementOfAccountResponse> = lazy(
+  () =>
+    object({
+      requestId: ['RequestId', optional(string())],
+      status: ['Status', optional(string())],
+      data: ['Data', optional(array(searchStatementOfAccountSchema))],
+      page: ['Page', optional(number())],
+      totalRecords: ['TotalRecords', optional(number())],
+      totalPages: ['TotalPages', optional(number())],
+      pageSize: ['PageSize', optional(number())],
+    })
 );

@@ -15,10 +15,11 @@ export interface PricedTransactionRequestV2 {
   pageSize?: number;
 }
 
-export const pricedTransactionRequestV2Schema: Schema<PricedTransactionRequestV2> = object(
-  {
-    filters: ['Filters', optional(lazy(() => filtersSchema))],
-    page: ['Page', optional(number())],
-    pageSize: ['PageSize', optional(number())],
-  }
+export const pricedTransactionRequestV2Schema: Schema<PricedTransactionRequestV2> = lazy(
+  () =>
+    object({
+      filters: ['Filters', optional(filtersSchema)],
+      page: ['Page', optional(number())],
+      pageSize: ['PageSize', optional(number())],
+    })
 );

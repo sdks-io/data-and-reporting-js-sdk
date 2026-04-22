@@ -15,168 +15,106 @@ import {
   Schema,
   string,
 } from '../schema.js';
-import {
-  CardDayTimeRestrictions,
-  cardDayTimeRestrictionsSchema,
-} from './cardDayTimeRestrictions.js';
-import {
-  CardUsageRestrictions,
-  cardUsageRestrictionsSchema,
-} from './cardUsageRestrictions.js';
+import { CartTypeAccount, cartTypeAccountSchema } from './cartTypeAccount.js';
 import {
   PurchaseCategories,
   purchaseCategoriesSchema,
 } from './purchaseCategories.js';
 
 export interface CardTypeResponseCustomerCardTypesItems {
-  /** True/False – Whether the cards of this card type can have PIN. */
-  canHavePIN?: boolean;
-  /** Card Type Id */
-  cardTypeId?: number | null;
+  /** Card Type Id in Cards Platform. */
+  cardTypeId?: number;
+  /** Token type identifier. */
+  tokenTypeId?: number;
   /** Card Type Name. */
-  cardTypeName?: string | null;
-  /** ISO currency code of the country. */
-  colCoCurrencyCode?: string | null;
-  /** Customer Card Type Id */
-  customerCardTypeId?: number | null;
-  dayTimeRestrictions?: CardDayTimeRestrictions;
-  /** Default Purchase category of the card type. */
-  defaultPurchaseCategoryId?: number | null;
-  /** Default Name to be embossed on the card */
-  embossAccountName?: string | null;
+  cardTypeName?: string;
+  /** Token Type Name. */
+  tokenTypeName?: string;
+  /** PAN Length. */
+  pANLength?: number;
   /** Default Expiry period. */
-  expiryPeriod?: number | null;
+  expiryPeriod?: number;
+  /** True/False – Whether it is a National Card type or not. */
+  isNational?: boolean;
+  /** True/False – Whether it is an International Card type or not. */
+  isInternational?: boolean;
   /** True/False – Wether it is a CRT Card type or not. */
   isCRT?: boolean;
   /** True/False – Whether it is it a Fleet Card typeor not. */
   isFleet?: boolean;
-  /** True/False – Whether it is an International Card type or not. */
-  isInternational?: boolean;
-  /** True/False – Whether it is a National Card type or not. */
-  isNational?: boolean;
-  /** True/False – Whether this card type is allowed in partner Stations. */
-  isPartnerSitesIncluded?: boolean;
   /** True/False – Whether it is only allowed in Shell Stations or not. */
   isShellSitesOnly?: boolean;
+  /** True/False – Whether this card type is allowed in partner Stations. */
+  isPartnerSitesIncluded?: boolean;
+  /** True/False – Whether the cards of this card type can have PIN. */
+  canHavePIN?: boolean;
   /** True/False - Whether it is a Virtual Card type or not. */
   isVirtual?: boolean;
-  /** True/False – Whether this card type is visible in SFH for card ordering. */
-  isVisibleToCustomers?: boolean;
   /** Whether card type is active or not. */
   isActive?: boolean;
-  isCardAvailableForDownload?: boolean;
-  isCardVisibleToCustomers?: boolean;
-  /** PAN Length */
-  pANLength?: number | null;
-  purchaseCategories?: PurchaseCategories[] | null;
-  /** Token type identifier. */
-  tokenTypeId?: number | null;
-  /** Token Type Name. */
-  tokenTypeName?: string | null;
-  usageRestrictions?: CardUsageRestrictions;
-  /** Is Europay, MasterCard, and Visa Contactless enabled or not. */
-  eMVContactless?: boolean;
-  /** Whether the card type is enabled for RFID (Radio Frequency Identification) */
-  rFID?: boolean;
-  /** PIN change supported or not. */
-  pINChangeSupported?: boolean;
-  /** Whether a PIN is mandatory for the cards of this card type. */
-  requirePIN?: boolean;
-  /** Whether offline PIN is enabled or not. */
-  offlinePIN?: boolean;
-  /** Whether card type is default or not. */
-  isDefault?: boolean;
-  /**
-   * True/False
-   * Note: ApplicationsToShowNPIITokens will be set as ‘True’ when the accessing application API key exists in the “ApplicationsToShowNPIITokens” card type configuration else “False”.
-   */
-  applicationsToShowNPIITokens?: boolean;
-  /**
-   * Id of the medium type identifier.
-   * Example: 1,2,4
-   * Full list below:
-   * 1 - Fuel Card
-   * 2 - Fuel Card with EV
-   * 3 - EV only
-   * 4 - Fuel Card and Key Fob
-   * 5 - Key Fob
-   * 6 - Virtual Card
-   * 7 - NPII Token
-   * 8 – Smartpay Token
-   */
-  mediumTypeID?: number | null;
-  /**
-   * Name of the medium type identifier.
-   * Example: Fuel Card, Fuel Card with EV, Key Fob
-   * Full list below:
-   * 1 - Fuel Card
-   * 2 - Fuel Card with EV
-   * 3 - EV only
-   * 4 - Fuel Card and Key Fob
-   * 5 - Key Fob
-   * 6 - Virtual Card
-   * 7 - NPII Token
-   * 8 - Smartpay Token
-   */
-  mediumType?: string | null;
+  /** Whether card type is available for download. */
+  isCardAvailableForDownload?: boolean | null;
+  /** ISO currency code of the country. */
+  colCoCurrencyCode?: string;
   /** Currency symbol of the country. */
-  colCoCurrencySymbol?: string | null;
+  colCoCurrencySymbol?: string;
+  /** Is Europay, MasterCard, and Visa Contactless enabled or not. */
+  eMVContactless?: boolean | null;
+  /** Whether the card type is enabled for RFID (Radio Frequency Identification) */
+  rFID?: boolean | null;
+  /** PIN change supported or not. */
+  pINChangeSupported?: boolean | null;
+  /** Whether a PIN is mandatory for the cards of this card type. */
+  requirePIN?: boolean | null;
+  /** Whether offline PIN is enabled or not. */
+  offlinePIN?: boolean | null;
+  /** Id of the medium type identifier. <br><br> Full list below - <br> 1 - Fuel Card <br> 2 - Fuel Card with EV <br> 3 - EV only  <br> 4 - Fuel Card and Key Fob <br> 5 - Key Fob <br> 6 - Virtual Card <br> 7 - NPII Token <br> 8 – Smartpay Token */
+  mediumTypeID?: number;
+  /** Name of the medium type identifier. <br><br> Full list below - <br> 1 - Fuel Card <br> 2 - Fuel Card with EV <br> 3 - EV only  <br> 4 - Fuel Card and Key Fob <br> 5 - Key Fob <br> 6 - Virtual Card <br> 7 - NPII Token <br> 8 – Smartpay Token */
+  mediumType?: string;
+  /** List of accounts. */
+  cartTypeAccounts?: CartTypeAccount[];
+  purchaseCategories?: PurchaseCategories[] | null;
 }
 
-export const cardTypeResponseCustomerCardTypesItemsSchema: Schema<CardTypeResponseCustomerCardTypesItems> = object(
-  {
-    canHavePIN: ['CanHavePIN', optional(boolean())],
-    cardTypeId: ['CardTypeId', optional(nullable(number()))],
-    cardTypeName: ['CardTypeName', optional(nullable(string()))],
-    colCoCurrencyCode: ['ColCoCurrencyCode', optional(nullable(string()))],
-    customerCardTypeId: ['CustomerCardTypeId', optional(nullable(number()))],
-    dayTimeRestrictions: [
-      'DayTimeRestrictions',
-      optional(lazy(() => cardDayTimeRestrictionsSchema)),
-    ],
-    defaultPurchaseCategoryId: [
-      'DefaultPurchaseCategoryId',
-      optional(nullable(number())),
-    ],
-    embossAccountName: ['EmbossAccountName', optional(nullable(string()))],
-    expiryPeriod: ['ExpiryPeriod', optional(nullable(number()))],
-    isCRT: ['IsCRT', optional(boolean())],
-    isFleet: ['IsFleet', optional(boolean())],
-    isInternational: ['IsInternational', optional(boolean())],
-    isNational: ['IsNational', optional(boolean())],
-    isPartnerSitesIncluded: ['IsPartnerSitesIncluded', optional(boolean())],
-    isShellSitesOnly: ['IsShellSitesOnly', optional(boolean())],
-    isVirtual: ['IsVirtual', optional(boolean())],
-    isVisibleToCustomers: ['IsVisibleToCustomers', optional(boolean())],
-    isActive: ['IsActive', optional(boolean())],
-    isCardAvailableForDownload: [
-      'IsCardAvailableForDownload',
-      optional(boolean()),
-    ],
-    isCardVisibleToCustomers: ['IsCardVisibleToCustomers', optional(boolean())],
-    pANLength: ['PANLength', optional(nullable(number()))],
-    purchaseCategories: [
-      'PurchaseCategories',
-      optional(nullable(array(lazy(() => purchaseCategoriesSchema)))),
-    ],
-    tokenTypeId: ['TokenTypeId', optional(nullable(number()))],
-    tokenTypeName: ['TokenTypeName', optional(nullable(string()))],
-    usageRestrictions: [
-      'UsageRestrictions',
-      optional(lazy(() => cardUsageRestrictionsSchema)),
-    ],
-    eMVContactless: ['EMVContactless', optional(boolean())],
-    rFID: ['RFID', optional(boolean())],
-    pINChangeSupported: ['PINChangeSupported', optional(boolean())],
-    requirePIN: ['RequirePIN', optional(boolean())],
-    offlinePIN: ['OfflinePIN', optional(boolean())],
-    isDefault: ['IsDefault', optional(boolean())],
-    applicationsToShowNPIITokens: [
-      'ApplicationsToShowNPIITokens',
-      optional(boolean()),
-    ],
-    mediumTypeID: ['MediumTypeID', optional(nullable(number()))],
-    mediumType: ['MediumType', optional(nullable(string()))],
-    colCoCurrencySymbol: ['ColCoCurrencySymbol', optional(nullable(string()))],
-  }
+export const cardTypeResponseCustomerCardTypesItemsSchema: Schema<CardTypeResponseCustomerCardTypesItems> = lazy(
+  () =>
+    object({
+      cardTypeId: ['CardTypeId', optional(number())],
+      tokenTypeId: ['TokenTypeId', optional(number())],
+      cardTypeName: ['CardTypeName', optional(string())],
+      tokenTypeName: ['TokenTypeName', optional(string())],
+      pANLength: ['PANLength', optional(number())],
+      expiryPeriod: ['ExpiryPeriod', optional(number())],
+      isNational: ['IsNational', optional(boolean())],
+      isInternational: ['IsInternational', optional(boolean())],
+      isCRT: ['IsCRT', optional(boolean())],
+      isFleet: ['IsFleet', optional(boolean())],
+      isShellSitesOnly: ['IsShellSitesOnly', optional(boolean())],
+      isPartnerSitesIncluded: ['IsPartnerSitesIncluded', optional(boolean())],
+      canHavePIN: ['CanHavePIN', optional(boolean())],
+      isVirtual: ['IsVirtual', optional(boolean())],
+      isActive: ['IsActive', optional(boolean())],
+      isCardAvailableForDownload: [
+        'IsCardAvailableForDownload',
+        optional(nullable(boolean())),
+      ],
+      colCoCurrencyCode: ['ColCoCurrencyCode', optional(string())],
+      colCoCurrencySymbol: ['ColCoCurrencySymbol', optional(string())],
+      eMVContactless: ['EMVContactless', optional(nullable(boolean()))],
+      rFID: ['RFID', optional(nullable(boolean()))],
+      pINChangeSupported: ['PINChangeSupported', optional(nullable(boolean()))],
+      requirePIN: ['RequirePIN', optional(nullable(boolean()))],
+      offlinePIN: ['OfflinePIN', optional(nullable(boolean()))],
+      mediumTypeID: ['MediumTypeID', optional(number())],
+      mediumType: ['MediumType', optional(string())],
+      cartTypeAccounts: [
+        'CartTypeAccounts',
+        optional(array(cartTypeAccountSchema)),
+      ],
+      purchaseCategories: [
+        'PurchaseCategories',
+        optional(nullable(array(purchaseCategoriesSchema))),
+      ],
+    })
 );

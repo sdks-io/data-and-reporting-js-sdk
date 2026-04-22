@@ -82,18 +82,19 @@ export interface FuelConsumptionRequest {
   period?: number;
 }
 
-export const fuelConsumptionRequestSchema: Schema<FuelConsumptionRequest> = object(
-  {
-    colCoId: ['ColCoId', optional(number())],
-    colCoCode: ['ColCoCode', optional(number())],
-    payerId: ['PayerId', optional(number())],
-    payerNumber: ['PayerNumber', optional(string())],
-    accounts: ['Accounts', optional(array(lazy(() => accountsSchema)))],
-    cardGroupId: ['CardGroupId', optional(number())],
-    cardGroupName: ['CardGroupName', optional(string())],
-    cards: ['Cards', optional(array(lazy(() => fuelConsumptionCardSchema)))],
-    fromDate: ['FromDate', optional(string())],
-    toDate: ['ToDate', optional(string())],
-    period: ['Period', optional(number())],
-  }
+export const fuelConsumptionRequestSchema: Schema<FuelConsumptionRequest> = lazy(
+  () =>
+    object({
+      colCoId: ['ColCoId', optional(number())],
+      colCoCode: ['ColCoCode', optional(number())],
+      payerId: ['PayerId', optional(number())],
+      payerNumber: ['PayerNumber', optional(string())],
+      accounts: ['Accounts', optional(array(accountsSchema))],
+      cardGroupId: ['CardGroupId', optional(number())],
+      cardGroupName: ['CardGroupName', optional(string())],
+      cards: ['Cards', optional(array(fuelConsumptionCardSchema))],
+      fromDate: ['FromDate', optional(string())],
+      toDate: ['ToDate', optional(string())],
+      period: ['Period', optional(number())],
+    })
 );

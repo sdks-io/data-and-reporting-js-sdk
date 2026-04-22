@@ -57,16 +57,39 @@ const body: LoggedInUserReq = {
 };
 
 try {
-  const { result, ...httpResponse } = await customerController.userLoggedinuser(
+  const response = await customerController.userLoggedinuser(
     requestId,
     body
   );
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof UserManagementV1Loggedinuser400Error) {
+      console.log(error.result);
+    } else if (error instanceof UserManagementV1Loggedinuser401Error) {
+      console.log(error.result);
+    } else if (error instanceof UserManagementV1Loggedinuser403Error) {
+      console.log(error.result);
+    } else if (error instanceof UserManagementV1Loggedinuser404Error) {
+      console.log(error.result);
+    } else if (error instanceof UserManagementV1Loggedinuser500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -75,11 +98,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`UserManagementV1Loggedinuser400Error`](../../doc/models/user-management-v1-loggedinuser-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`UserManagementV1Loggedinuser401Error`](../../doc/models/user-management-v1-loggedinuser-401-error.md) |
+| 403 | Forbidden | [`UserManagementV1Loggedinuser403Error`](../../doc/models/user-management-v1-loggedinuser-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`UserManagementV1Loggedinuser404Error`](../../doc/models/user-management-v1-loggedinuser-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`UserManagementV1Loggedinuser500Error`](../../doc/models/user-management-v1-loggedinuser-500-error.md) |
 
 
 # Customerpayers
@@ -127,16 +150,39 @@ const body: PayerReq = {
 };
 
 try {
-  const { result, ...httpResponse } = await customerController.customerpayers(
+  const response = await customerController.customerpayers(
     requestId,
     body
   );
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof CustomerManagementV1Payers400Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Payers401Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Payers403Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Payers404Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Payers500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -145,11 +191,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`CustomerManagementV1Payers400Error`](../../doc/models/customer-management-v1-payers-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`CustomerManagementV1Payers401Error`](../../doc/models/customer-management-v1-payers-401-error.md) |
+| 403 | Forbidden | [`CustomerManagementV1Payers403Error`](../../doc/models/customer-management-v1-payers-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`CustomerManagementV1Payers404Error`](../../doc/models/customer-management-v1-payers-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`CustomerManagementV1Payers500Error`](../../doc/models/customer-management-v1-payers-500-error.md) |
 
 
 # Customerdetail
@@ -185,16 +231,39 @@ const body: CustomerReq = {
 };
 
 try {
-  const { result, ...httpResponse } = await customerController.customerdetail(
+  const response = await customerController.customerdetail(
     requestId,
     body
   );
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof CustomerManagementV1Customer400Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Customer401Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Customer403Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Customer404Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Customer500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -203,11 +272,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`CustomerManagementV1Customer400Error`](../../doc/models/customer-management-v1-customer-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`CustomerManagementV1Customer401Error`](../../doc/models/customer-management-v1-customer-401-error.md) |
+| 403 | Forbidden | [`CustomerManagementV1Customer403Error`](../../doc/models/customer-management-v1-customer-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`CustomerManagementV1Customer404Error`](../../doc/models/customer-management-v1-customer-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`CustomerManagementV1Customer500Error`](../../doc/models/customer-management-v1-customer-500-error.md) |
 
 
 # Post-Card-Accounts
@@ -245,16 +314,39 @@ const body: AccountReq = {
 };
 
 try {
-  const { result, ...httpResponse } = await customerController.postCardAccounts(
+  const response = await customerController.postCardAccounts(
     requestId,
     body
   );
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof CustomerManagementV1Accounts400Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Accounts401Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Accounts403Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Accounts404Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Accounts500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -263,11 +355,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`CustomerManagementV1Accounts400Error`](../../doc/models/customer-management-v1-accounts-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`CustomerManagementV1Accounts401Error`](../../doc/models/customer-management-v1-accounts-401-error.md) |
+| 403 | Forbidden | [`CustomerManagementV1Accounts403Error`](../../doc/models/customer-management-v1-accounts-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`CustomerManagementV1Accounts404Error`](../../doc/models/customer-management-v1-accounts-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`CustomerManagementV1Accounts500Error`](../../doc/models/customer-management-v1-accounts-500-error.md) |
 
 
 # Customercardtypev
@@ -305,16 +397,39 @@ const body: CardTypeReq = {
 };
 
 try {
-  const { result, ...httpResponse } = await customerController.customercardtypev(
+  const response = await customerController.customercardtypev(
     requestId,
     body
   );
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof CustomerManagementV2Cardtype400Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV2Cardtype401Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV2Cardtype403Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV2Cardtype404Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV2Cardtype500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -323,11 +438,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`CustomerManagementV2Cardtype400Error`](../../doc/models/customer-management-v2-cardtype-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`CustomerManagementV2Cardtype401Error`](../../doc/models/customer-management-v2-cardtype-401-error.md) |
+| 403 | Forbidden | [`CustomerManagementV2Cardtype403Error`](../../doc/models/customer-management-v2-cardtype-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`CustomerManagementV2Cardtype404Error`](../../doc/models/customer-management-v2-cardtype-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`CustomerManagementV2Cardtype500Error`](../../doc/models/customer-management-v2-cardtype-500-error.md) |
 
 
 # Cardgroups
@@ -374,16 +489,39 @@ const body: CardGroupReq = {
 };
 
 try {
-  const { result, ...httpResponse } = await customerController.cardgroups(
+  const response = await customerController.cardgroups(
     requestId,
     body
   );
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof CustomerManagementV1Cardgroups400Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Cardgroups401Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Cardgroups403Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Cardgroups404Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Cardgroups500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -392,11 +530,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`CustomerManagementV1Cardgroups400Error`](../../doc/models/customer-management-v1-cardgroups-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`CustomerManagementV1Cardgroups401Error`](../../doc/models/customer-management-v1-cardgroups-401-error.md) |
+| 403 | Forbidden | [`CustomerManagementV1Cardgroups403Error`](../../doc/models/customer-management-v1-cardgroups-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`CustomerManagementV1Cardgroups404Error`](../../doc/models/customer-management-v1-cardgroups-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`CustomerManagementV1Cardgroups500Error`](../../doc/models/customer-management-v1-cardgroups-500-error.md) |
 
 
 # Audit Report
@@ -452,16 +590,39 @@ const body: AuditReq = {
 };
 
 try {
-  const { result, ...httpResponse } = await customerController.auditReport(
+  const response = await customerController.auditReport(
     requestId,
     body
   );
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof CustomerManagementV1Auditreport400Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Auditreport401Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Auditreport403Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Auditreport404Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Auditreport500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -470,11 +631,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`CustomerManagementV1Auditreport400Error`](../../doc/models/customer-management-v1-auditreport-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`CustomerManagementV1Auditreport401Error`](../../doc/models/customer-management-v1-auditreport-401-error.md) |
+| 403 | Forbidden | [`CustomerManagementV1Auditreport403Error`](../../doc/models/customer-management-v1-auditreport-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`CustomerManagementV1Auditreport404Error`](../../doc/models/customer-management-v1-auditreport-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`CustomerManagementV1Auditreport500Error`](../../doc/models/customer-management-v1-auditreport-500-error.md) |
 
 
 # Customer Price List
@@ -513,13 +674,36 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const requestId = 'RequestId8';
 
 try {
-  const { result, ...httpResponse } = await customerController.customerPriceList(requestId);
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+  const response = await customerController.customerPriceList(requestId);
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof CustomerManagementV1Pricelist400Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Pricelist401Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Pricelist403Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Pricelist404Error) {
+      console.log(error.result);
+    } else if (error instanceof CustomerManagementV1Pricelist500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -528,9 +712,9 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`CustomerManagementV1Pricelist400Error`](../../doc/models/customer-management-v1-pricelist-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`CustomerManagementV1Pricelist401Error`](../../doc/models/customer-management-v1-pricelist-401-error.md) |
+| 403 | Forbidden | [`CustomerManagementV1Pricelist403Error`](../../doc/models/customer-management-v1-pricelist-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`CustomerManagementV1Pricelist404Error`](../../doc/models/customer-management-v1-pricelist-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`CustomerManagementV1Pricelist500Error`](../../doc/models/customer-management-v1-pricelist-500-error.md) |
 

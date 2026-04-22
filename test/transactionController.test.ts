@@ -41,7 +41,7 @@ describe('TransactionController', () => {
         accountNumber: 'GB00001233',
         productCode: '22',
         purchasedInCountry: 'GB',
-        cardPAN: '700205******890645',
+        cardPAN: '7002051006629890645',
         fromDateTime: '2020-11-09 13:56:03.000',
         toDateTime: '2020-12-09 13:56:03.000',
         transactionStatus: 'APPROVED',

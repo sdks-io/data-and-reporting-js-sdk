@@ -14,6 +14,6 @@ export interface VolumeBasedBonusReq {
   filters?: VolumeBasedBonusRequest;
 }
 
-export const volumeBasedBonusReqSchema: Schema<VolumeBasedBonusReq> = object({
-  filters: ['Filters', optional(lazy(() => volumeBasedBonusRequestSchema))],
-});
+export const volumeBasedBonusReqSchema: Schema<VolumeBasedBonusReq> = lazy(() =>
+  object({ filters: ['Filters', optional(volumeBasedBonusRequestSchema)] })
+);

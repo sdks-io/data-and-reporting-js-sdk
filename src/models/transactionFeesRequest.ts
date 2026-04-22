@@ -69,6 +69,23 @@ export interface TransactionFeesRequest {
    */
   invoiceStatus?: string | null;
   /**
+   * Invoice Number
+   * Optional
+   */
+  invoiceNumber?: string | null;
+  /**
+   * Fee Item Posted Date From
+   * Optional
+   * Format: yyyyMMdd
+   */
+  postedDateFrom?: string | null;
+  /**
+   * Fee Item Posted Date To
+   * Optional
+   * Format: yyyyMMdd
+   */
+  postedDateTo?: string | null;
+  /**
    * Fee type group in under which the Fee item is generated.
    * Optional.
    * Allowed values:
@@ -153,28 +170,35 @@ export interface TransactionFeesRequest {
   sortOrder?: string | null;
 }
 
-export const transactionFeesRequestSchema: Schema<TransactionFeesRequest> = object(
-  {
-    colCoId: ['ColCoId', optional(nullable(number()))],
-    colCoCode: ['ColCoCode', optional(nullable(number()))],
-    payerId: ['PayerId', optional(nullable(number()))],
-    payerNumber: ['PayerNumber', optional(nullable(string()))],
-    accounts: ['Accounts', optional(array(lazy(() => accountsSchema)))],
-    cardId: ['CardId', optional(nullable(number()))],
-    cardPAN: ['CardPAN', optional(nullable(string()))],
-    invoiceStatus: ['InvoiceStatus', optional(nullable(string()))],
-    feeTypeGroup: ['FeeTypeGroup', optional(nullable(string()))],
-    feeTypeId: ['FeeTypeId', optional(nullable(number()))],
-    fromDate: ['FromDate', optional(nullable(string()))],
-    toDate: ['ToDate', optional(nullable(string()))],
-    period: ['Period', optional(nullable(number()))],
-    includeCancelledItems: [
-      'IncludeCancelledItems',
-      optional(nullable(boolean())),
-    ],
-    productId: ['ProductId', optional(nullable(number()))],
-    productCode: ['ProductCode', optional(nullable(string()))],
-    lineItemDescription: ['LineItemDescription', optional(nullable(string()))],
-    sortOrder: ['SortOrder', optional(nullable(string()))],
-  }
+export const transactionFeesRequestSchema: Schema<TransactionFeesRequest> = lazy(
+  () =>
+    object({
+      colCoId: ['ColCoId', optional(nullable(number()))],
+      colCoCode: ['ColCoCode', optional(nullable(number()))],
+      payerId: ['PayerId', optional(nullable(number()))],
+      payerNumber: ['PayerNumber', optional(nullable(string()))],
+      accounts: ['Accounts', optional(array(accountsSchema))],
+      cardId: ['CardId', optional(nullable(number()))],
+      cardPAN: ['CardPAN', optional(nullable(string()))],
+      invoiceStatus: ['InvoiceStatus', optional(nullable(string()))],
+      invoiceNumber: ['InvoiceNumber', optional(nullable(string()))],
+      postedDateFrom: ['PostedDateFrom', optional(nullable(string()))],
+      postedDateTo: ['PostedDateTo', optional(nullable(string()))],
+      feeTypeGroup: ['FeeTypeGroup', optional(nullable(string()))],
+      feeTypeId: ['FeeTypeId', optional(nullable(number()))],
+      fromDate: ['FromDate', optional(nullable(string()))],
+      toDate: ['ToDate', optional(nullable(string()))],
+      period: ['Period', optional(nullable(number()))],
+      includeCancelledItems: [
+        'IncludeCancelledItems',
+        optional(nullable(boolean())),
+      ],
+      productId: ['ProductId', optional(nullable(number()))],
+      productCode: ['ProductCode', optional(nullable(string()))],
+      lineItemDescription: [
+        'LineItemDescription',
+        optional(nullable(string())),
+      ],
+      sortOrder: ['SortOrder', optional(nullable(string()))],
+    })
 );

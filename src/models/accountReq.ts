@@ -15,8 +15,10 @@ export interface AccountReq {
   pageSize?: number | null;
 }
 
-export const accountReqSchema: Schema<AccountReq> = object({
-  filters: ['Filters', optional(lazy(() => accountRequestSchema))],
-  page: ['Page', optional(nullable(number()))],
-  pageSize: ['PageSize', optional(nullable(number()))],
-});
+export const accountReqSchema: Schema<AccountReq> = lazy(() =>
+  object({
+    filters: ['Filters', optional(accountRequestSchema)],
+    page: ['Page', optional(nullable(number()))],
+    pageSize: ['PageSize', optional(nullable(number()))],
+  })
+);

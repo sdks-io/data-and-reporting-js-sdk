@@ -25,11 +25,12 @@ export interface FuelConsumptionResponse {
   warnings?: Warning[];
 }
 
-export const fuelConsumptionResponseSchema: Schema<FuelConsumptionResponse> = object(
-  {
-    requestId: ['RequestId', optional(string())],
-    status: ['Status', optional(string())],
-    data: ['Data', optional(array(lazy(() => fuelConsumptionDataSchema)))],
-    warnings: ['Warnings', optional(array(lazy(() => warningSchema)))],
-  }
+export const fuelConsumptionResponseSchema: Schema<FuelConsumptionResponse> = lazy(
+  () =>
+    object({
+      requestId: ['RequestId', optional(string())],
+      status: ['Status', optional(string())],
+      data: ['Data', optional(array(fuelConsumptionDataSchema))],
+      warnings: ['Warnings', optional(array(warningSchema))],
+    })
 );

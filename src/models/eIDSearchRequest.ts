@@ -15,8 +15,10 @@ export interface EIDSearchRequest {
   pageSize?: number;
 }
 
-export const eIDSearchRequestSchema: Schema<EIDSearchRequest> = object({
-  filters: ['Filters', optional(lazy(() => eIDSearchReqSchema))],
-  page: ['Page', optional(number())],
-  pageSize: ['PageSize', optional(number())],
-});
+export const eIDSearchRequestSchema: Schema<EIDSearchRequest> = lazy(() =>
+  object({
+    filters: ['Filters', optional(eIDSearchReqSchema)],
+    page: ['Page', optional(number())],
+    pageSize: ['PageSize', optional(number())],
+  })
+);

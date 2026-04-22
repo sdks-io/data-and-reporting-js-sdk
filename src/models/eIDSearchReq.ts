@@ -55,16 +55,6 @@ export interface EIDSearchReq {
    */
   invoiceType?: string | null;
   /**
-   * Status of the document.
-   * Optional.
-   * Possible values:
-   * •    NEW
-   * •    VIEWED
-   * •    DOWNLOADED
-   * •    RESTORED
-   */
-  invoiceStatus?: string | null;
-  /**
    * Sort option –
    * •    InvoiceNumber ASC
    * •    InvoiceDate ASC
@@ -83,6 +73,5 @@ export const eIDSearchReqSchema: Schema<EIDSearchReq> = object({
   fromDate: ['FromDate', optional(nullable(string()))],
   toDate: ['ToDate', optional(nullable(string()))],
   invoiceType: ['InvoiceType', optional(nullable(string()))],
-  invoiceStatus: ['InvoiceStatus', optional(nullable(string()))],
   sortBy: ['SortBy', optional(array(string()))],
 });

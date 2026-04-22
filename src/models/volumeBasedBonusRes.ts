@@ -25,9 +25,11 @@ export interface VolumeBasedBonusRes {
   warnings?: Warning[];
 }
 
-export const volumeBasedBonusResSchema: Schema<VolumeBasedBonusRes> = object({
-  requestId: ['RequestId', optional(string())],
-  status: ['Status', optional(string())],
-  data: ['Data', optional(array(lazy(() => volumeBasedBonusResponseSchema)))],
-  warnings: ['Warnings', optional(array(lazy(() => warningSchema)))],
-});
+export const volumeBasedBonusResSchema: Schema<VolumeBasedBonusRes> = lazy(() =>
+  object({
+    requestId: ['RequestId', optional(string())],
+    status: ['Status', optional(string())],
+    data: ['Data', optional(array(volumeBasedBonusResponseSchema))],
+    warnings: ['Warnings', optional(array(warningSchema))],
+  })
+);

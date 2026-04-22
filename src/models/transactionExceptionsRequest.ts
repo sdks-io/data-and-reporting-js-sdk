@@ -118,22 +118,23 @@ export interface TransactionExceptionsRequest {
   useFieldId?: boolean;
 }
 
-export const transactionExceptionsRequestSchema: Schema<TransactionExceptionsRequest> = object(
-  {
-    colCoId: ['ColCoId', optional(number())],
-    colCoCode: ['ColCoCode', optional(number())],
-    payerId: ['PayerId', optional(number())],
-    payerNumber: ['PayerNumber', optional(string())],
-    accounts: ['Accounts', optional(array(lazy(() => accountsSchema)))],
-    transactionsFromDate: ['TransactionsFromDate', string()],
-    transactionsToDate: ['TransactionsToDate', string()],
-    value: ['Value', optional(number())],
-    condition: ['Condition', number()],
-    products: ['Products', optional(array(lazy(() => exceptionProductSchema)))],
-    exceptionPeriod: ['ExceptionPeriod', optional(number())],
-    outputType: ['OutputType', number()],
-    fuelOnly: ['FuelOnly', optional(boolean())],
-    siteGroupIds: ['SiteGroupIds', optional(array(number()))],
-    useFieldId: ['UseFieldId', optional(boolean())],
-  }
+export const transactionExceptionsRequestSchema: Schema<TransactionExceptionsRequest> = lazy(
+  () =>
+    object({
+      colCoId: ['ColCoId', optional(number())],
+      colCoCode: ['ColCoCode', optional(number())],
+      payerId: ['PayerId', optional(number())],
+      payerNumber: ['PayerNumber', optional(string())],
+      accounts: ['Accounts', optional(array(accountsSchema))],
+      transactionsFromDate: ['TransactionsFromDate', string()],
+      transactionsToDate: ['TransactionsToDate', string()],
+      value: ['Value', optional(number())],
+      condition: ['Condition', number()],
+      products: ['Products', optional(array(exceptionProductSchema))],
+      exceptionPeriod: ['ExceptionPeriod', optional(number())],
+      outputType: ['OutputType', number()],
+      fuelOnly: ['FuelOnly', optional(boolean())],
+      siteGroupIds: ['SiteGroupIds', optional(array(number()))],
+      useFieldId: ['UseFieldId', optional(boolean())],
+    })
 );

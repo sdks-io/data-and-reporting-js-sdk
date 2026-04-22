@@ -25,18 +25,17 @@ export interface PricedTransSummaryResp {
   warnings?: Warning[];
 }
 
-export const pricedTransSummaryRespSchema: Schema<PricedTransSummaryResp> = object(
-  {
-    requestId: ['RequestId', optional(string())],
-    status: ['Status', optional(string())],
-    data: [
-      'Data',
-      optional(
-        array(
-          lazy(() => pricedTransSummaryResponseTransactionsSummaryItemsSchema)
-        )
-      ),
-    ],
-    warnings: ['Warnings', optional(array(lazy(() => warningSchema)))],
-  }
+export const pricedTransSummaryRespSchema: Schema<PricedTransSummaryResp> = lazy(
+  () =>
+    object({
+      requestId: ['RequestId', optional(string())],
+      status: ['Status', optional(string())],
+      data: [
+        'Data',
+        optional(
+          array(pricedTransSummaryResponseTransactionsSummaryItemsSchema)
+        ),
+      ],
+      warnings: ['Warnings', optional(array(warningSchema))],
+    })
 );

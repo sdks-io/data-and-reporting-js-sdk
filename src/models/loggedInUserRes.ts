@@ -18,8 +18,10 @@ export interface LoggedInUserRes {
   data?: LoggedInUserResponse[];
 }
 
-export const loggedInUserResSchema: Schema<LoggedInUserRes> = object({
-  requestId: ['RequestId', optional(string())],
-  status: ['Status', optional(string())],
-  data: ['Data', optional(array(lazy(() => loggedInUserResponseSchema)))],
-});
+export const loggedInUserResSchema: Schema<LoggedInUserRes> = lazy(() =>
+  object({
+    requestId: ['RequestId', optional(string())],
+    status: ['Status', optional(string())],
+    data: ['Data', optional(array(loggedInUserResponseSchema))],
+  })
+);

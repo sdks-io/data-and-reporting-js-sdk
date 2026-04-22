@@ -105,20 +105,22 @@ export interface AccountRequest {
   statusList?: (string | null)[];
 }
 
-export const accountRequestSchema: Schema<AccountRequest> = object({
-  status: ['Status', optional(nullable(string()))],
-  includeCardSummary: ['IncludeCardSummary', optional(boolean())],
-  payerId: ['PayerId', optional(nullable(number()))],
-  payerNumber: ['PayerNumber', optional(nullable(string()))],
-  pageSize: ['PageSize', optional(nullable(number()))],
-  requestId: ['RequestId', optional(nullable(string()))],
-  colCoCode: ['ColCoCode', optional(nullable(number()))],
-  colCoCountryCode: ['ColCoCountryCode', optional(nullable(string()))],
-  currentPage: ['CurrentPage', optional(nullable(number()))],
-  invoicePointsOnly: ['InvoicePointsOnly', optional(nullable(boolean()))],
-  colCoId: ['ColCoId', optional(nullable(number()))],
-  returnTollsCustomerId: ['ReturnTollsCustomerId', optional(boolean())],
-  accounts: ['Accounts', optional(array(lazy(() => accountsSchema)))],
-  accountName: ['AccountName', optional(nullable(string()))],
-  statusList: ['StatusList', optional(array(nullable(string())))],
-});
+export const accountRequestSchema: Schema<AccountRequest> = lazy(() =>
+  object({
+    status: ['Status', optional(nullable(string()))],
+    includeCardSummary: ['IncludeCardSummary', optional(boolean())],
+    payerId: ['PayerId', optional(nullable(number()))],
+    payerNumber: ['PayerNumber', optional(nullable(string()))],
+    pageSize: ['PageSize', optional(nullable(number()))],
+    requestId: ['RequestId', optional(nullable(string()))],
+    colCoCode: ['ColCoCode', optional(nullable(number()))],
+    colCoCountryCode: ['ColCoCountryCode', optional(nullable(string()))],
+    currentPage: ['CurrentPage', optional(nullable(number()))],
+    invoicePointsOnly: ['InvoicePointsOnly', optional(nullable(boolean()))],
+    colCoId: ['ColCoId', optional(nullable(number()))],
+    returnTollsCustomerId: ['ReturnTollsCustomerId', optional(boolean())],
+    accounts: ['Accounts', optional(array(accountsSchema))],
+    accountName: ['AccountName', optional(nullable(string()))],
+    statusList: ['StatusList', optional(array(nullable(string())))],
+  })
+);

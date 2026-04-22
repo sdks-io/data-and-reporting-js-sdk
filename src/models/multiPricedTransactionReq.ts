@@ -18,13 +18,11 @@ export interface MultiPricedTransactionReq {
   pageSize?: number | null;
 }
 
-export const multiPricedTransactionReqSchema: Schema<MultiPricedTransactionReq> = object(
-  {
-    filters: [
-      'Filters',
-      optional(lazy(() => multiPricedTransactionRequestSchema)),
-    ],
-    page: ['Page', optional(nullable(number()))],
-    pageSize: ['PageSize', optional(nullable(number()))],
-  }
+export const multiPricedTransactionReqSchema: Schema<MultiPricedTransactionReq> = lazy(
+  () =>
+    object({
+      filters: ['Filters', optional(multiPricedTransactionRequestSchema)],
+      page: ['Page', optional(nullable(number()))],
+      pageSize: ['PageSize', optional(nullable(number()))],
+    })
 );

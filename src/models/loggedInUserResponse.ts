@@ -102,40 +102,40 @@ export interface LoggedInUserResponse {
   cardCount?: number | null;
 }
 
-export const loggedInUserResponseSchema: Schema<LoggedInUserResponse> = object({
-  userName: ['UserName', optional(nullable(string()))],
-  displayName: ['DisplayName', optional(nullable(string()))],
-  idMSSOID: ['IdMSSOID', optional(nullable(string()))],
-  preferredLanguage: ['PreferredLanguage', optional(nullable(string()))],
-  isSuperAdmin: ['IsSuperAdmin', optional(boolean())],
-  dateFormat: ['DateFormat', optional(nullable(string()))],
-  timeFormat: ['TimeFormat', optional(nullable(string()))],
-  weekBegins: ['WeekBegins', optional(nullable(number()))],
-  displayWeek: ['DisplayWeek', optional(boolean())],
-  cSVSeparator: ['CSVSeparator', optional(nullable(string()))],
-  decimalSeparator: ['DecimalSeparator', optional(nullable(string()))],
-  reportFormat: ['ReportFormat', optional(nullable(string()))],
-  hasAPIAccess: ['HasAPIAccess', optional(boolean())],
-  roles: ['Roles', optional(array(lazy(() => roleSchema)))],
-  payers: ['Payers', optional(array(lazy(() => payerAccessSchema)))],
-  accounts: ['Accounts', optional(array(lazy(() => accountAccessSchema)))],
-  collectingCompanies: [
-    'CollectingCompanies',
-    optional(array(lazy(() => colCoAccessSchema))),
-  ],
-  eIDAccessDetails: [
-    'EIDAccessDetails',
-    optional(array(lazy(() => eIDAccessSchema))),
-  ],
-  userClassificationBySystem: [
-    'UserClassificationBySystem',
-    optional(nullable(string())),
-  ],
-  userClassificationByShell: [
-    'UserClassificationByShell',
-    optional(nullable(string())),
-  ],
-  payerCount: ['PayerCount', optional(nullable(number()))],
-  accountCount: ['AccountCount', optional(nullable(number()))],
-  cardCount: ['CardCount', optional(nullable(number()))],
-});
+export const loggedInUserResponseSchema: Schema<LoggedInUserResponse> = lazy(
+  () =>
+    object({
+      userName: ['UserName', optional(nullable(string()))],
+      displayName: ['DisplayName', optional(nullable(string()))],
+      idMSSOID: ['IdMSSOID', optional(nullable(string()))],
+      preferredLanguage: ['PreferredLanguage', optional(nullable(string()))],
+      isSuperAdmin: ['IsSuperAdmin', optional(boolean())],
+      dateFormat: ['DateFormat', optional(nullable(string()))],
+      timeFormat: ['TimeFormat', optional(nullable(string()))],
+      weekBegins: ['WeekBegins', optional(nullable(number()))],
+      displayWeek: ['DisplayWeek', optional(boolean())],
+      cSVSeparator: ['CSVSeparator', optional(nullable(string()))],
+      decimalSeparator: ['DecimalSeparator', optional(nullable(string()))],
+      reportFormat: ['ReportFormat', optional(nullable(string()))],
+      hasAPIAccess: ['HasAPIAccess', optional(boolean())],
+      roles: ['Roles', optional(array(roleSchema))],
+      payers: ['Payers', optional(array(payerAccessSchema))],
+      accounts: ['Accounts', optional(array(accountAccessSchema))],
+      collectingCompanies: [
+        'CollectingCompanies',
+        optional(array(colCoAccessSchema)),
+      ],
+      eIDAccessDetails: ['EIDAccessDetails', optional(array(eIDAccessSchema))],
+      userClassificationBySystem: [
+        'UserClassificationBySystem',
+        optional(nullable(string())),
+      ],
+      userClassificationByShell: [
+        'UserClassificationByShell',
+        optional(nullable(string())),
+      ],
+      payerCount: ['PayerCount', optional(nullable(number()))],
+      accountCount: ['AccountCount', optional(nullable(number()))],
+      cardCount: ['CardCount', optional(nullable(number()))],
+    })
+);

@@ -19,15 +19,16 @@
 | `netAmount` | `number \| null \| undefined` | Optional | - |
 | `taxAmount` | `number \| null \| undefined` | Optional | - |
 | `currencyCode` | `string \| null \| undefined` | Optional | - |
-| `invoiceStatus` | `string \| null \| undefined` | Optional | - |
 | `invoiceDate` | `string \| null \| undefined` | Optional | - |
 | `dueDate` | `string \| null \| undefined` | Optional | - |
 | `vATCountryISOCode` | `string \| null \| undefined` | Optional | - |
+| `ksefDocumentReference` | `string \| undefined` | Optional | Unique identifier for the invoice in KSeF system. This field is populated only when the invoice is registered in KSeF system. |
 
 ## Example (as JSON)
 
 ```json
 {
+  "KsefDocumentReference": "1234567890123456",
   "DocumentReference": 10,
   "InvoiceNumber": "InvoiceNumber0",
   "PayerName": "PayerName0",

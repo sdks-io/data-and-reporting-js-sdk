@@ -25,7 +25,7 @@ export interface RecentTransactionReq {
   productCode?: string | null;
   /** Delco country */
   purchasedInCountry?: string | null;
-  /** Card identifier number masked */
+  /** Card PAN Number without masked */
   cardPAN?: string | null;
   /** Start date and time of transactions */
   fromDateTime?: string | null;

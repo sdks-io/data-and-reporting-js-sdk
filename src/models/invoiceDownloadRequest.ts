@@ -14,6 +14,6 @@ export interface InvoiceDownloadRequest {
   filters?: InvoiceDownloadReq;
 }
 
-export const invoiceDownloadRequestSchema: Schema<InvoiceDownloadRequest> = object(
-  { filters: ['Filters', optional(lazy(() => invoiceDownloadReqSchema))] }
+export const invoiceDownloadRequestSchema: Schema<InvoiceDownloadRequest> = lazy(
+  () => object({ filters: ['Filters', optional(invoiceDownloadReqSchema)] })
 );

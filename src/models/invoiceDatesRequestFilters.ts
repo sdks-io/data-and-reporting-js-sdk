@@ -60,14 +60,15 @@ export interface InvoiceDatesRequestFilters {
   accounts?: Accounts[];
 }
 
-export const invoiceDatesRequestFiltersSchema: Schema<InvoiceDatesRequestFilters> = object(
-  {
-    colCoCode: ['ColCoCode', optional(nullable(number()))],
-    colCoId: ['ColCoId', optional(nullable(number()))],
-    payerId: ['PayerId', optional(nullable(number()))],
-    payerNumber: ['PayerNumber', optional(nullable(string()))],
-    fromDate: ['FromDate', optional(nullable(string()))],
-    toDate: ['ToDate', optional(nullable(string()))],
-    accounts: ['Accounts', optional(array(lazy(() => accountsSchema)))],
-  }
+export const invoiceDatesRequestFiltersSchema: Schema<InvoiceDatesRequestFilters> = lazy(
+  () =>
+    object({
+      colCoCode: ['ColCoCode', optional(nullable(number()))],
+      colCoId: ['ColCoId', optional(nullable(number()))],
+      payerId: ['PayerId', optional(nullable(number()))],
+      payerNumber: ['PayerNumber', optional(nullable(string()))],
+      fromDate: ['FromDate', optional(nullable(string()))],
+      toDate: ['ToDate', optional(nullable(string()))],
+      accounts: ['Accounts', optional(array(accountsSchema))],
+    })
 );

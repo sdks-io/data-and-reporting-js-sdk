@@ -27,7 +27,7 @@
     "InvoiceNumberList": [
       "InvoiceNumberList5"
     ],
-    "InvoiceStatus": "InvoiceStatus4",
+    "IssuingDateFrom": "IssuingDateFrom8",
     "ColCoCode": 14
   },
   "Page": "Page4",

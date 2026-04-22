@@ -118,17 +118,19 @@ export interface AuditRequest {
   toDate?: string | null;
 }
 
-export const auditRequestSchema: Schema<AuditRequest> = object({
-  status: ['Status', optional(string())],
-  payerNumber: ['PayerNumber', optional(nullable(string()))],
-  payerId: ['PayerId', optional(nullable(number()))],
-  accountNumber: ['AccountNumber', optional(nullable(string()))],
-  colCoCode: ['ColCoCode', optional(nullable(number()))],
-  colCoId: ['ColCoId', optional(nullable(number()))],
-  accounts: ['Accounts', optional(lazy(() => accountsSchema))],
-  requestedOperation: ['RequestedOperation', optional(array(string()))],
-  sortOrder: ['SortOrder', optional(nullable(string()))],
-  searchText: ['SearchText', optional(nullable(string()))],
-  fromDate: ['FromDate', optional(nullable(string()))],
-  toDate: ['ToDate', optional(nullable(string()))],
-});
+export const auditRequestSchema: Schema<AuditRequest> = lazy(() =>
+  object({
+    status: ['Status', optional(string())],
+    payerNumber: ['PayerNumber', optional(nullable(string()))],
+    payerId: ['PayerId', optional(nullable(number()))],
+    accountNumber: ['AccountNumber', optional(nullable(string()))],
+    colCoCode: ['ColCoCode', optional(nullable(number()))],
+    colCoId: ['ColCoId', optional(nullable(number()))],
+    accounts: ['Accounts', optional(accountsSchema)],
+    requestedOperation: ['RequestedOperation', optional(array(string()))],
+    sortOrder: ['SortOrder', optional(nullable(string()))],
+    searchText: ['SearchText', optional(nullable(string()))],
+    fromDate: ['FromDate', optional(nullable(string()))],
+    toDate: ['ToDate', optional(nullable(string()))],
+  })
+);

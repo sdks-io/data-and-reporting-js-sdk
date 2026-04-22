@@ -27,7 +27,11 @@
     "FromDate": "FromDate6",
     "ToDate": "ToDate4",
     "InvoiceType": "InvoiceType2",
-    "InvoiceStatus": "InvoiceStatus4"
+    "SortBy": [
+      "SortBy3",
+      "SortBy4",
+      "SortBy5"
+    ]
   },
   "Page": 74,
   "PageSize": 54

@@ -24,9 +24,11 @@ export interface PayerRequest {
   includeBonusParameters?: boolean;
 }
 
-export const payerRequestSchema: Schema<PayerRequest> = object({
-  payers: ['Payers', optional(array(lazy(() => payersSchema)))],
-  returnBasicDetailsOnly: ['ReturnBasicDetailsOnly', optional(boolean())],
-  includeAddresses: ['IncludeAddresses', optional(boolean())],
-  includeBonusParameters: ['IncludeBonusParameters', optional(boolean())],
-});
+export const payerRequestSchema: Schema<PayerRequest> = lazy(() =>
+  object({
+    payers: ['Payers', optional(array(payersSchema))],
+    returnBasicDetailsOnly: ['ReturnBasicDetailsOnly', optional(boolean())],
+    includeAddresses: ['IncludeAddresses', optional(boolean())],
+    includeBonusParameters: ['IncludeBonusParameters', optional(boolean())],
+  })
+);

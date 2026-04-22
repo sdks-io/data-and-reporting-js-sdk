@@ -164,35 +164,36 @@ export interface InvoiceSearchRequestFilters {
   type?: string;
 }
 
-export const invoiceSearchRequestFiltersSchema: Schema<InvoiceSearchRequestFilters> = object(
-  {
-    colCoId: ['ColCoId', optional(nullable(number()))],
-    payerId: ['PayerId', optional(nullable(number()))],
-    payerNumber: ['PayerNumber', optional(nullable(string()))],
-    invoiceId: ['InvoiceId', optional(nullable(number()))],
-    invoiceNumber: ['InvoiceNumber', optional(nullable(string()))],
-    fromDate: ['FromDate', optional(nullable(string()))],
-    toDate: ['ToDate', optional(nullable(string()))],
-    invoiceDate: ['InvoiceDate', optional(nullable(string()))],
-    summaryDocumentId: ['SummaryDocumentId', optional(nullable(number()))],
-    summaryDocumentNumber: [
-      'SummaryDocumentNumber',
-      optional(nullable(string())),
-    ],
-    statementOfAccountId: [
-      'StatementOfAccountId',
-      optional(nullable(string())),
-    ],
-    soAReferenceNumber: ['SoAReferenceNumber', optional(nullable(string()))],
-    period: ['Period', optional(nullable(number()))],
-    invoiceStatus: ['InvoiceStatus', optional(nullable(string()))],
-    invoicedOnBehalfOf: ['InvoicedOnBehalfOf', optional(nullable(string()))],
-    includeEInvoiceDetails: [
-      'IncludeEInvoiceDetails',
-      optional(nullable(boolean())),
-    ],
-    colCoCode: ['ColCoCode', optional(nullable(number()))],
-    accounts: ['Accounts', optional(array(lazy(() => accountsSchema)))],
-    type: ['Type', optional(string())],
-  }
+export const invoiceSearchRequestFiltersSchema: Schema<InvoiceSearchRequestFilters> = lazy(
+  () =>
+    object({
+      colCoId: ['ColCoId', optional(nullable(number()))],
+      payerId: ['PayerId', optional(nullable(number()))],
+      payerNumber: ['PayerNumber', optional(nullable(string()))],
+      invoiceId: ['InvoiceId', optional(nullable(number()))],
+      invoiceNumber: ['InvoiceNumber', optional(nullable(string()))],
+      fromDate: ['FromDate', optional(nullable(string()))],
+      toDate: ['ToDate', optional(nullable(string()))],
+      invoiceDate: ['InvoiceDate', optional(nullable(string()))],
+      summaryDocumentId: ['SummaryDocumentId', optional(nullable(number()))],
+      summaryDocumentNumber: [
+        'SummaryDocumentNumber',
+        optional(nullable(string())),
+      ],
+      statementOfAccountId: [
+        'StatementOfAccountId',
+        optional(nullable(string())),
+      ],
+      soAReferenceNumber: ['SoAReferenceNumber', optional(nullable(string()))],
+      period: ['Period', optional(nullable(number()))],
+      invoiceStatus: ['InvoiceStatus', optional(nullable(string()))],
+      invoicedOnBehalfOf: ['InvoicedOnBehalfOf', optional(nullable(string()))],
+      includeEInvoiceDetails: [
+        'IncludeEInvoiceDetails',
+        optional(nullable(boolean())),
+      ],
+      colCoCode: ['ColCoCode', optional(nullable(number()))],
+      accounts: ['Accounts', optional(array(accountsSchema))],
+      type: ['Type', optional(string())],
+    })
 );

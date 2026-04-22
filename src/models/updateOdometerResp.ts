@@ -25,9 +25,11 @@ export interface UpdateOdometerResp {
   warnings?: Warning[];
 }
 
-export const updateOdometerRespSchema: Schema<UpdateOdometerResp> = object({
-  requestId: ['RequestId', optional(string())],
-  status: ['Status', optional(string())],
-  data: ['Data', optional(array(lazy(() => updateOdometerResponseSchema)))],
-  warnings: ['Warnings', optional(array(lazy(() => warningSchema)))],
-});
+export const updateOdometerRespSchema: Schema<UpdateOdometerResp> = lazy(() =>
+  object({
+    requestId: ['RequestId', optional(string())],
+    status: ['Status', optional(string())],
+    data: ['Data', optional(array(updateOdometerResponseSchema))],
+    warnings: ['Warnings', optional(array(warningSchema))],
+  })
+);

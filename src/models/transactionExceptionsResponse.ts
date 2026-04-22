@@ -16,15 +16,13 @@ export interface TransactionExceptionsResponse {
   transactionExceptions?: TransactionExceptions[] | null;
 }
 
-export const transactionExceptionsResponseSchema: Schema<TransactionExceptionsResponse> = object(
-  {
-    cardExceptions: [
-      'CardExceptions',
-      optional(array(lazy(() => cardExceptionsSchema))),
-    ],
-    transactionExceptions: [
-      'TransactionExceptions',
-      optional(nullable(array(lazy(() => transactionExceptionsSchema)))),
-    ],
-  }
+export const transactionExceptionsResponseSchema: Schema<TransactionExceptionsResponse> = lazy(
+  () =>
+    object({
+      cardExceptions: ['CardExceptions', optional(array(cardExceptionsSchema))],
+      transactionExceptions: [
+        'TransactionExceptions',
+        optional(nullable(array(transactionExceptionsSchema))),
+      ],
+    })
 );

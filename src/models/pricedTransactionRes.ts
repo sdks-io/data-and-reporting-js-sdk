@@ -41,13 +41,16 @@ export interface PricedTransactionRes {
   warnings?: Warning[];
 }
 
-export const pricedTransactionResSchema: Schema<PricedTransactionRes> = object({
-  requestId: ['RequestId', optional(string())],
-  status: ['Status', optional(string())],
-  data: ['Data', optional(array(lazy(() => pricedTransactionResponseSchema)))],
-  page: ['Page', optional(number())],
-  totalRecords: ['TotalRecords', optional(number())],
-  totalPages: ['TotalPages', optional(number())],
-  pageSize: ['PageSize', optional(number())],
-  warnings: ['Warnings', optional(array(lazy(() => warningSchema)))],
-});
+export const pricedTransactionResSchema: Schema<PricedTransactionRes> = lazy(
+  () =>
+    object({
+      requestId: ['RequestId', optional(string())],
+      status: ['Status', optional(string())],
+      data: ['Data', optional(array(pricedTransactionResponseSchema))],
+      page: ['Page', optional(number())],
+      totalRecords: ['TotalRecords', optional(number())],
+      totalPages: ['TotalPages', optional(number())],
+      pageSize: ['PageSize', optional(number())],
+      warnings: ['Warnings', optional(array(warningSchema))],
+    })
+);

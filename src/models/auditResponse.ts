@@ -41,13 +41,15 @@ export interface AuditResponse {
   warnings?: Warning[];
 }
 
-export const auditResponseSchema: Schema<AuditResponse> = object({
-  requestId: ['RequestId', optional(string())],
-  status: ['Status', optional(string())],
-  data: ['Data', optional(array(lazy(() => auditArrayElementsSchema)))],
-  page: ['Page', optional(number())],
-  totalRecords: ['TotalRecords', optional(number())],
-  totalPages: ['TotalPages', optional(number())],
-  pageSize: ['PageSize', optional(number())],
-  warnings: ['Warnings', optional(array(lazy(() => warningSchema)))],
-});
+export const auditResponseSchema: Schema<AuditResponse> = lazy(() =>
+  object({
+    requestId: ['RequestId', optional(string())],
+    status: ['Status', optional(string())],
+    data: ['Data', optional(array(auditArrayElementsSchema))],
+    page: ['Page', optional(number())],
+    totalRecords: ['TotalRecords', optional(number())],
+    totalPages: ['TotalPages', optional(number())],
+    pageSize: ['PageSize', optional(number())],
+    warnings: ['Warnings', optional(array(warningSchema))],
+  })
+);

@@ -41,18 +41,16 @@ export interface MultiPricedTransactionRes {
   warnings?: Warning[];
 }
 
-export const multiPricedTransactionResSchema: Schema<MultiPricedTransactionRes> = object(
-  {
-    requestId: ['RequestId', optional(string())],
-    status: ['Status', optional(string())],
-    data: [
-      'Data',
-      optional(array(lazy(() => multiPricedTransactionResponseSchema))),
-    ],
-    page: ['Page', optional(number())],
-    totalRecords: ['TotalRecords', optional(number())],
-    totalPages: ['TotalPages', optional(number())],
-    pageSize: ['PageSize', optional(number())],
-    warnings: ['Warnings', optional(array(lazy(() => warningSchema)))],
-  }
+export const multiPricedTransactionResSchema: Schema<MultiPricedTransactionRes> = lazy(
+  () =>
+    object({
+      requestId: ['RequestId', optional(string())],
+      status: ['Status', optional(string())],
+      data: ['Data', optional(array(multiPricedTransactionResponseSchema))],
+      page: ['Page', optional(number())],
+      totalRecords: ['TotalRecords', optional(number())],
+      totalPages: ['TotalPages', optional(number())],
+      pageSize: ['PageSize', optional(number())],
+      warnings: ['Warnings', optional(array(warningSchema))],
+    })
 );

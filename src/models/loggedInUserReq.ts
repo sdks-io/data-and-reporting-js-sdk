@@ -14,9 +14,11 @@ export interface LoggedInUserReq {
   filters?: FleetmanagementV1UserLoggedinuserRequest;
 }
 
-export const loggedInUserReqSchema: Schema<LoggedInUserReq> = object({
-  filters: [
-    'Filters',
-    optional(lazy(() => fleetmanagementV1UserLoggedinuserRequestSchema)),
-  ],
-});
+export const loggedInUserReqSchema: Schema<LoggedInUserReq> = lazy(() =>
+  object({
+    filters: [
+      'Filters',
+      optional(fleetmanagementV1UserLoggedinuserRequestSchema),
+    ],
+  })
+);

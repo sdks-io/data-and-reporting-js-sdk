@@ -21,7 +21,7 @@ export interface EIDDocumentResponse {
   requestId?: string;
   /** Indicates overall status of the request. Allowed values: SUCCESS, FAILED */
   status?: string;
-  data?: EIDDocument[];
+  document?: EIDDocument[];
   /** Number of records returned in the response */
   pageSize?: number;
   /** Current page */
@@ -36,14 +36,16 @@ export interface EIDDocumentResponse {
   isLastPage?: boolean;
 }
 
-export const eIDDocumentResponseSchema: Schema<EIDDocumentResponse> = object({
-  requestId: ['RequestId', optional(string())],
-  status: ['Status', optional(string())],
-  data: ['Data', optional(array(lazy(() => eIDDocumentSchema)))],
-  pageSize: ['PageSize', optional(number())],
-  page: ['Page', optional(number())],
-  totalPages: ['TotalPages', optional(number())],
-  totalRecords: ['TotalRecords', optional(number())],
-  isFirstPage: ['IsFirstPage', optional(boolean())],
-  isLastPage: ['IsLastPage', optional(boolean())],
-});
+export const eIDDocumentResponseSchema: Schema<EIDDocumentResponse> = lazy(() =>
+  object({
+    requestId: ['RequestId', optional(string())],
+    status: ['Status', optional(string())],
+    document: ['Document', optional(array(eIDDocumentSchema))],
+    pageSize: ['PageSize', optional(number())],
+    page: ['Page', optional(number())],
+    totalPages: ['TotalPages', optional(number())],
+    totalRecords: ['TotalRecords', optional(number())],
+    isFirstPage: ['IsFirstPage', optional(boolean())],
+    isLastPage: ['IsLastPage', optional(boolean())],
+  })
+);

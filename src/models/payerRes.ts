@@ -38,13 +38,15 @@ export interface PayerRes {
   warnings?: Warning[];
 }
 
-export const payerResSchema: Schema<PayerRes> = object({
-  requestId: ['RequestId', optional(string())],
-  status: ['Status', optional(string())],
-  data: ['Data', optional(array(lazy(() => payerDetailsSchema)))],
-  page: ['Page', optional(number())],
-  totalRecords: ['TotalRecords', optional(number())],
-  totalPages: ['TotalPages', optional(number())],
-  pageSize: ['PageSize', optional(number())],
-  warnings: ['Warnings', optional(array(lazy(() => warningSchema)))],
-});
+export const payerResSchema: Schema<PayerRes> = lazy(() =>
+  object({
+    requestId: ['RequestId', optional(string())],
+    status: ['Status', optional(string())],
+    data: ['Data', optional(array(payerDetailsSchema))],
+    page: ['Page', optional(number())],
+    totalRecords: ['TotalRecords', optional(number())],
+    totalPages: ['TotalPages', optional(number())],
+    pageSize: ['PageSize', optional(number())],
+    warnings: ['Warnings', optional(array(warningSchema))],
+  })
+);

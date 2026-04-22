@@ -28,17 +28,18 @@ export interface VolumeBasedPricingResponse {
   warnings?: Warning[];
 }
 
-export const volumeBasedPricingResponseSchema: Schema<VolumeBasedPricingResponse> = object(
-  {
-    configuration: [
-      'Configuration',
-      optional(array(lazy(() => bonusConfigurationSchema))),
-    ],
-    currentPeriodConsumption: [
-      'CurrentPeriodConsumption',
-      optional(array(lazy(() => pricingCurrentVolumeSchema))),
-    ],
-    history: ['History', optional(array(lazy(() => pricingHistorySchema)))],
-    warnings: ['Warnings', optional(array(lazy(() => warningSchema)))],
-  }
+export const volumeBasedPricingResponseSchema: Schema<VolumeBasedPricingResponse> = lazy(
+  () =>
+    object({
+      configuration: [
+        'Configuration',
+        optional(array(bonusConfigurationSchema)),
+      ],
+      currentPeriodConsumption: [
+        'CurrentPeriodConsumption',
+        optional(array(pricingCurrentVolumeSchema)),
+      ],
+      history: ['History', optional(array(pricingHistorySchema))],
+      warnings: ['Warnings', optional(array(warningSchema))],
+    })
 );

@@ -34,27 +34,28 @@ export interface StatementOfAccountResp {
   invoicesSummaries?: InvoicesSummaries[] | null;
 }
 
-export const statementOfAccountRespSchema: Schema<StatementOfAccountResp> = object(
-  {
-    lastStatementOfAccount: [
-      'LastStatementOfAccount',
-      optional(lazy(() => lastStatementOfAccount2Schema)),
-    ],
-    monthlyInvoiceTrend: [
-      'MonthlyInvoiceTrend',
-      optional(nullable(array(lazy(() => monthlyInvoiceTrendSchema)))),
-    ],
-    pastStatementOfAccounts: [
-      'PastStatementOfAccounts',
-      optional(array(lazy(() => pastStatementOfAccountsSchema))),
-    ],
-    paymentsSinceLastSOA: [
-      'PaymentsSinceLastSOA',
-      optional(nullable(array(lazy(() => paymentsSinceLastSOASchema)))),
-    ],
-    invoicesSummaries: [
-      'InvoicesSummaries',
-      optional(nullable(array(lazy(() => invoicesSummariesSchema)))),
-    ],
-  }
+export const statementOfAccountRespSchema: Schema<StatementOfAccountResp> = lazy(
+  () =>
+    object({
+      lastStatementOfAccount: [
+        'LastStatementOfAccount',
+        optional(lastStatementOfAccount2Schema),
+      ],
+      monthlyInvoiceTrend: [
+        'MonthlyInvoiceTrend',
+        optional(nullable(array(monthlyInvoiceTrendSchema))),
+      ],
+      pastStatementOfAccounts: [
+        'PastStatementOfAccounts',
+        optional(array(pastStatementOfAccountsSchema)),
+      ],
+      paymentsSinceLastSOA: [
+        'PaymentsSinceLastSOA',
+        optional(nullable(array(paymentsSinceLastSOASchema))),
+      ],
+      invoicesSummaries: [
+        'InvoicesSummaries',
+        optional(nullable(array(invoicesSummariesSchema))),
+      ],
+    })
 );

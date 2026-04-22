@@ -15,10 +15,11 @@ export interface SearchDocumentsRequest {
   pageSize?: string;
 }
 
-export const searchDocumentsRequestSchema: Schema<SearchDocumentsRequest> = object(
-  {
-    filters: ['Filters', optional(lazy(() => searchDocReqSchema))],
-    page: ['Page', optional(string())],
-    pageSize: ['PageSize', optional(string())],
-  }
+export const searchDocumentsRequestSchema: Schema<SearchDocumentsRequest> = lazy(
+  () =>
+    object({
+      filters: ['Filters', optional(searchDocReqSchema)],
+      page: ['Page', optional(string())],
+      pageSize: ['PageSize', optional(string())],
+    })
 );

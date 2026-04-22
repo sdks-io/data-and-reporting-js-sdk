@@ -66,12 +66,14 @@ export interface CardGroupRequest {
   status?: string | null;
 }
 
-export const cardGroupRequestSchema: Schema<CardGroupRequest> = object({
-  colCoId: ['ColCoId', optional(nullable(number()))],
-  colCoCode: ['ColCoCode', optional(nullable(number()))],
-  payerId: ['PayerId', optional(nullable(number()))],
-  payerNumber: ['PayerNumber', optional(nullable(string()))],
-  account: ['Account', optional(array(lazy(() => accountsSchema)))],
-  cardGroupName: ['CardGroupName', optional(nullable(string()))],
-  status: ['Status', optional(nullable(string()))],
-});
+export const cardGroupRequestSchema: Schema<CardGroupRequest> = lazy(() =>
+  object({
+    colCoId: ['ColCoId', optional(nullable(number()))],
+    colCoCode: ['ColCoCode', optional(nullable(number()))],
+    payerId: ['PayerId', optional(nullable(number()))],
+    payerNumber: ['PayerNumber', optional(nullable(string()))],
+    account: ['Account', optional(array(accountsSchema))],
+    cardGroupName: ['CardGroupName', optional(nullable(string()))],
+    status: ['Status', optional(nullable(string()))],
+  })
+);

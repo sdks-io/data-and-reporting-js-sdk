@@ -60,18 +60,19 @@ export interface UpdateOdometerRequest {
   caller?: string;
 }
 
-export const updateOdometerRequestSchema: Schema<UpdateOdometerRequest> = object(
-  {
-    colCoId: ['ColCoId', optional(number())],
-    colCoCode: ['ColCoCode', optional(number())],
-    payerId: ['PayerId', optional(number())],
-    accountId: ['AccountId', optional(number())],
-    accountNumber: ['AccountNumber', optional(string())],
-    updateOdometers: [
-      'UpdateOdometers',
-      optional(array(lazy(() => updateOdometerSchema))),
-    ],
-    notifyCaller: ['NotifyCaller', optional(boolean())],
-    caller: ['Caller', optional(string())],
-  }
+export const updateOdometerRequestSchema: Schema<UpdateOdometerRequest> = lazy(
+  () =>
+    object({
+      colCoId: ['ColCoId', optional(number())],
+      colCoCode: ['ColCoCode', optional(number())],
+      payerId: ['PayerId', optional(number())],
+      accountId: ['AccountId', optional(number())],
+      accountNumber: ['AccountNumber', optional(string())],
+      updateOdometers: [
+        'UpdateOdometers',
+        optional(array(updateOdometerSchema)),
+      ],
+      notifyCaller: ['NotifyCaller', optional(boolean())],
+      caller: ['Caller', optional(string())],
+    })
 );

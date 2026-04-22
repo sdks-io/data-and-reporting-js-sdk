@@ -14,6 +14,6 @@ export interface TransactionFeesSummaryReq {
   filters?: TransactionFeesRequest;
 }
 
-export const transactionFeesSummaryReqSchema: Schema<TransactionFeesSummaryReq> = object(
-  { filters: ['Filters', optional(lazy(() => transactionFeesRequestSchema))] }
+export const transactionFeesSummaryReqSchema: Schema<TransactionFeesSummaryReq> = lazy(
+  () => object({ filters: ['Filters', optional(transactionFeesRequestSchema)] })
 );

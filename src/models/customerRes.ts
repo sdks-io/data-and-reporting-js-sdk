@@ -18,8 +18,10 @@ export interface CustomerRes {
   data?: CustomerDetailResponse[];
 }
 
-export const customerResSchema: Schema<CustomerRes> = object({
-  requestId: ['RequestId', optional(string())],
-  status: ['Status', optional(string())],
-  data: ['Data', optional(array(lazy(() => customerDetailResponseSchema)))],
-});
+export const customerResSchema: Schema<CustomerRes> = lazy(() =>
+  object({
+    requestId: ['RequestId', optional(string())],
+    status: ['Status', optional(string())],
+    data: ['Data', optional(array(customerDetailResponseSchema))],
+  })
+);

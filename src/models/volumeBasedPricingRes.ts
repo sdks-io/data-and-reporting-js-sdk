@@ -18,13 +18,11 @@ export interface VolumeBasedPricingRes {
   data?: VolumeBasedPricingResponse[];
 }
 
-export const volumeBasedPricingResSchema: Schema<VolumeBasedPricingRes> = object(
-  {
-    requestId: ['RequestId', optional(string())],
-    status: ['Status', optional(string())],
-    data: [
-      'Data',
-      optional(array(lazy(() => volumeBasedPricingResponseSchema))),
-    ],
-  }
+export const volumeBasedPricingResSchema: Schema<VolumeBasedPricingRes> = lazy(
+  () =>
+    object({
+      requestId: ['RequestId', optional(string())],
+      status: ['Status', optional(string())],
+      data: ['Data', optional(array(volumeBasedPricingResponseSchema))],
+    })
 );

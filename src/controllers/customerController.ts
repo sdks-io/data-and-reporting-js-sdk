@@ -35,7 +35,46 @@ import { PayerReq, payerReqSchema } from '../models/payerReq.js';
 import { PayerRes, payerResSchema } from '../models/payerRes.js';
 import { optional, string } from '../schema.js';
 import { BaseController } from './baseController.js';
-import { ErrorObjectError } from '../errors/errorObjectError.js';
+import { CustomerManagementV1Accounts400Error } from '../errors/customerManagementV1Accounts400Error.js';
+import { CustomerManagementV1Accounts401Error } from '../errors/customerManagementV1Accounts401Error.js';
+import { CustomerManagementV1Accounts403Error } from '../errors/customerManagementV1Accounts403Error.js';
+import { CustomerManagementV1Accounts404Error } from '../errors/customerManagementV1Accounts404Error.js';
+import { CustomerManagementV1Accounts500Error } from '../errors/customerManagementV1Accounts500Error.js';
+import { CustomerManagementV1Auditreport400Error } from '../errors/customerManagementV1Auditreport400Error.js';
+import { CustomerManagementV1Auditreport401Error } from '../errors/customerManagementV1Auditreport401Error.js';
+import { CustomerManagementV1Auditreport403Error } from '../errors/customerManagementV1Auditreport403Error.js';
+import { CustomerManagementV1Auditreport404Error } from '../errors/customerManagementV1Auditreport404Error.js';
+import { CustomerManagementV1Auditreport500Error } from '../errors/customerManagementV1Auditreport500Error.js';
+import { CustomerManagementV1Cardgroups400Error } from '../errors/customerManagementV1Cardgroups400Error.js';
+import { CustomerManagementV1Cardgroups401Error } from '../errors/customerManagementV1Cardgroups401Error.js';
+import { CustomerManagementV1Cardgroups403Error } from '../errors/customerManagementV1Cardgroups403Error.js';
+import { CustomerManagementV1Cardgroups404Error } from '../errors/customerManagementV1Cardgroups404Error.js';
+import { CustomerManagementV1Cardgroups500Error } from '../errors/customerManagementV1Cardgroups500Error.js';
+import { CustomerManagementV1Customer400Error } from '../errors/customerManagementV1Customer400Error.js';
+import { CustomerManagementV1Customer401Error } from '../errors/customerManagementV1Customer401Error.js';
+import { CustomerManagementV1Customer403Error } from '../errors/customerManagementV1Customer403Error.js';
+import { CustomerManagementV1Customer404Error } from '../errors/customerManagementV1Customer404Error.js';
+import { CustomerManagementV1Customer500Error } from '../errors/customerManagementV1Customer500Error.js';
+import { CustomerManagementV1Payers400Error } from '../errors/customerManagementV1Payers400Error.js';
+import { CustomerManagementV1Payers401Error } from '../errors/customerManagementV1Payers401Error.js';
+import { CustomerManagementV1Payers403Error } from '../errors/customerManagementV1Payers403Error.js';
+import { CustomerManagementV1Payers404Error } from '../errors/customerManagementV1Payers404Error.js';
+import { CustomerManagementV1Payers500Error } from '../errors/customerManagementV1Payers500Error.js';
+import { CustomerManagementV1Pricelist400Error } from '../errors/customerManagementV1Pricelist400Error.js';
+import { CustomerManagementV1Pricelist401Error } from '../errors/customerManagementV1Pricelist401Error.js';
+import { CustomerManagementV1Pricelist403Error } from '../errors/customerManagementV1Pricelist403Error.js';
+import { CustomerManagementV1Pricelist404Error } from '../errors/customerManagementV1Pricelist404Error.js';
+import { CustomerManagementV1Pricelist500Error } from '../errors/customerManagementV1Pricelist500Error.js';
+import { CustomerManagementV2Cardtype400Error } from '../errors/customerManagementV2Cardtype400Error.js';
+import { CustomerManagementV2Cardtype401Error } from '../errors/customerManagementV2Cardtype401Error.js';
+import { CustomerManagementV2Cardtype403Error } from '../errors/customerManagementV2Cardtype403Error.js';
+import { CustomerManagementV2Cardtype404Error } from '../errors/customerManagementV2Cardtype404Error.js';
+import { CustomerManagementV2Cardtype500Error } from '../errors/customerManagementV2Cardtype500Error.js';
+import { UserManagementV1Loggedinuser400Error } from '../errors/userManagementV1Loggedinuser400Error.js';
+import { UserManagementV1Loggedinuser401Error } from '../errors/userManagementV1Loggedinuser401Error.js';
+import { UserManagementV1Loggedinuser403Error } from '../errors/userManagementV1Loggedinuser403Error.js';
+import { UserManagementV1Loggedinuser404Error } from '../errors/userManagementV1Loggedinuser404Error.js';
+import { UserManagementV1Loggedinuser500Error } from '../errors/userManagementV1Loggedinuser500Error.js';
 
 export class CustomerController extends BaseController {
   /**
@@ -65,24 +104,24 @@ export class CustomerController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
-      'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n'
+      UserManagementV1Loggedinuser400Error,
+      'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
-      'The request has not been applied because it lacks valid  authentication credentials for the target resource.\n'
+      UserManagementV1Loggedinuser401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, UserManagementV1Loggedinuser403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
-      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n'
+      UserManagementV1Loggedinuser404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
-      'The server encountered an unexpected condition that  prevented it from fulfilling the request.\n'
+      UserManagementV1Loggedinuser500Error,
+      'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
     return req.callAsJson(loggedInUserResSchema, requestOptions);
@@ -122,24 +161,24 @@ export class CustomerController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
-      'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n'
+      CustomerManagementV1Payers400Error,
+      'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
-      'The request has not been applied because it lacks valid  authentication credentials for the target resource.\n'
+      CustomerManagementV1Payers401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, CustomerManagementV1Payers403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
-      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n'
+      CustomerManagementV1Payers404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
-      'The server encountered an unexpected condition that  prevented it from fulfilling the request.\n'
+      CustomerManagementV1Payers500Error,
+      'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
     return req.callAsJson(payerResSchema, requestOptions);
@@ -170,24 +209,24 @@ export class CustomerController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
-      'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n'
+      CustomerManagementV1Customer400Error,
+      'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
-      'The request has not been applied because it lacks valid  authentication credentials for the target resource.\n'
+      CustomerManagementV1Customer401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, CustomerManagementV1Customer403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
-      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n'
+      CustomerManagementV1Customer404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
-      'The server encountered an unexpected condition that  prevented it from fulfilling the request.\n'
+      CustomerManagementV1Customer500Error,
+      'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
     return req.callAsJson(customerResSchema, requestOptions);
@@ -217,24 +256,24 @@ export class CustomerController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
-      'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n'
+      CustomerManagementV1Accounts400Error,
+      'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
-      'The request has not been applied because it lacks valid  authentication credentials for the target resource.\n'
+      CustomerManagementV1Accounts401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, CustomerManagementV1Accounts403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
-      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n'
+      CustomerManagementV1Accounts404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
-      'The server encountered an unexpected condition that  prevented it from fulfilling the request.\n'
+      CustomerManagementV1Accounts500Error,
+      'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
     return req.callAsJson(accountResSchema, requestOptions);
@@ -258,7 +297,7 @@ export class CustomerController extends BaseController {
     body: CardTypeReq,
     requestOptions?: RequestOptions
   ): Promise<ApiResponse<CardTypeRes>> {
-    const req = this.createRequest('POST', '/customer-management/v1/cardtype');
+    const req = this.createRequest('POST', '/customer-management/v2/cardtype');
     const mapped = req.prepareArgs({
       requestId: [requestId, string()],
       body: [body, cardTypeReqSchema],
@@ -268,24 +307,24 @@ export class CustomerController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
-      'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n'
+      CustomerManagementV2Cardtype400Error,
+      'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
-      'The request has not been applied because it lacks valid  authentication credentials for the target resource.\n'
+      CustomerManagementV2Cardtype401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, CustomerManagementV2Cardtype403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
-      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n'
+      CustomerManagementV2Cardtype404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
-      'The server encountered an unexpected condition that  prevented it from fulfilling the request.\n'
+      CustomerManagementV2Cardtype500Error,
+      'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
     return req.callAsJson(cardTypeResSchema, requestOptions);
@@ -327,24 +366,24 @@ export class CustomerController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
-      'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n'
+      CustomerManagementV1Cardgroups400Error,
+      'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
-      'The request has not been applied because it lacks valid  authentication credentials for the target resource.\n'
+      CustomerManagementV1Cardgroups401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, CustomerManagementV1Cardgroups403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
-      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n'
+      CustomerManagementV1Cardgroups404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
-      'The server encountered an unexpected condition that  prevented it from fulfilling the request.\n'
+      CustomerManagementV1Cardgroups500Error,
+      'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
     return req.callAsJson(cardGroupResSchema, requestOptions);
@@ -413,24 +452,24 @@ export class CustomerController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
-      'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n'
+      CustomerManagementV1Auditreport400Error,
+      'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
-      'The request has not been applied because it lacks valid  authentication credentials for the target resource.\n'
+      CustomerManagementV1Auditreport401Error,
+      'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, CustomerManagementV1Auditreport403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
-      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n'
+      CustomerManagementV1Auditreport404Error,
+      'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
-      'The server encountered an unexpected condition that  prevented it from fulfilling the request.\n'
+      CustomerManagementV1Auditreport500Error,
+      'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
     return req.callAsJson(auditResponseSchema, requestOptions);
@@ -481,23 +520,23 @@ export class CustomerController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      CustomerManagementV1Pricelist400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      CustomerManagementV1Pricelist401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, CustomerManagementV1Pricelist403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
+      CustomerManagementV1Pricelist404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      CustomerManagementV1Pricelist500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);

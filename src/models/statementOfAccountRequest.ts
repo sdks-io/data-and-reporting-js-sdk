@@ -14,11 +14,9 @@ export interface StatementOfAccountRequest {
   filters?: StatementOfAccountRequestFilters;
 }
 
-export const statementOfAccountRequestSchema: Schema<StatementOfAccountRequest> = object(
-  {
-    filters: [
-      'Filters',
-      optional(lazy(() => statementOfAccountRequestFiltersSchema)),
-    ],
-  }
+export const statementOfAccountRequestSchema: Schema<StatementOfAccountRequest> = lazy(
+  () =>
+    object({
+      filters: ['Filters', optional(statementOfAccountRequestFiltersSchema)],
+    })
 );

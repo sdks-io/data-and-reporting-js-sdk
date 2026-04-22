@@ -14,11 +14,9 @@ export interface TransactionExceptionsReq {
   filters?: TransactionExceptionsRequest;
 }
 
-export const transactionExceptionsReqSchema: Schema<TransactionExceptionsReq> = object(
-  {
-    filters: [
-      'Filters',
-      optional(lazy(() => transactionExceptionsRequestSchema)),
-    ],
-  }
+export const transactionExceptionsReqSchema: Schema<TransactionExceptionsReq> = lazy(
+  () =>
+    object({
+      filters: ['Filters', optional(transactionExceptionsRequestSchema)],
+    })
 );

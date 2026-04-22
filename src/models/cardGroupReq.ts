@@ -18,8 +18,10 @@ export interface CardGroupReq {
   pageSize?: number | null;
 }
 
-export const cardGroupReqSchema: Schema<CardGroupReq> = object({
-  filters: ['Filters', optional(lazy(() => cardGroupRequestSchema))],
-  page: ['Page', optional(nullable(number()))],
-  pageSize: ['PageSize', optional(nullable(number()))],
-});
+export const cardGroupReqSchema: Schema<CardGroupReq> = lazy(() =>
+  object({
+    filters: ['Filters', optional(cardGroupRequestSchema)],
+    page: ['Page', optional(nullable(number()))],
+    pageSize: ['PageSize', optional(nullable(number()))],
+  })
+);

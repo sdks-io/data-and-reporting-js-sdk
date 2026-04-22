@@ -25,14 +25,12 @@ export interface TransactionExceptionsRes {
   warnings?: Warning[];
 }
 
-export const transactionExceptionsResSchema: Schema<TransactionExceptionsRes> = object(
-  {
-    requestId: ['RequestId', optional(string())],
-    status: ['Status', optional(string())],
-    data: [
-      'Data',
-      optional(array(lazy(() => transactionExceptionsResponseSchema))),
-    ],
-    warnings: ['Warnings', optional(array(lazy(() => warningSchema)))],
-  }
+export const transactionExceptionsResSchema: Schema<TransactionExceptionsRes> = lazy(
+  () =>
+    object({
+      requestId: ['RequestId', optional(string())],
+      status: ['Status', optional(string())],
+      data: ['Data', optional(array(transactionExceptionsResponseSchema))],
+      warnings: ['Warnings', optional(array(warningSchema))],
+    })
 );

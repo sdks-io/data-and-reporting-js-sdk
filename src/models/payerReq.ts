@@ -15,8 +15,10 @@ export interface PayerReq {
   pageSize?: number | null;
 }
 
-export const payerReqSchema: Schema<PayerReq> = object({
-  filters: ['Filters', optional(lazy(() => payerRequestSchema))],
-  page: ['Page', optional(nullable(number()))],
-  pageSize: ['PageSize', optional(nullable(number()))],
-});
+export const payerReqSchema: Schema<PayerReq> = lazy(() =>
+  object({
+    filters: ['Filters', optional(payerRequestSchema)],
+    page: ['Page', optional(nullable(number()))],
+    pageSize: ['PageSize', optional(nullable(number()))],
+  })
+);

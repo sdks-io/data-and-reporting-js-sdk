@@ -11,6 +11,6 @@ export interface CardTypeReq {
   filters?: CardTypeRequest;
 }
 
-export const cardTypeReqSchema: Schema<CardTypeReq> = object({
-  filters: ['Filters', optional(lazy(() => cardTypeRequestSchema))],
-});
+export const cardTypeReqSchema: Schema<CardTypeReq> = lazy(() =>
+  object({ filters: ['Filters', optional(cardTypeRequestSchema)] })
+);

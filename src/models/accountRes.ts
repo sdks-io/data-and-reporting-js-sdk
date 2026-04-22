@@ -41,16 +41,15 @@ export interface AccountRes {
   warnings?: Warning[];
 }
 
-export const accountResSchema: Schema<AccountRes> = object({
-  requestId: ['RequestId', optional(string())],
-  status: ['Status', optional(string())],
-  data: [
-    'Data',
-    optional(array(lazy(() => accountResponseAccountsItemsSchema))),
-  ],
-  page: ['Page', optional(number())],
-  totalRecords: ['TotalRecords', optional(number())],
-  totalPages: ['TotalPages', optional(number())],
-  pageSize: ['PageSize', optional(number())],
-  warnings: ['Warnings', optional(array(lazy(() => warningSchema)))],
-});
+export const accountResSchema: Schema<AccountRes> = lazy(() =>
+  object({
+    requestId: ['RequestId', optional(string())],
+    status: ['Status', optional(string())],
+    data: ['Data', optional(array(accountResponseAccountsItemsSchema))],
+    page: ['Page', optional(number())],
+    totalRecords: ['TotalRecords', optional(number())],
+    totalPages: ['TotalPages', optional(number())],
+    pageSize: ['PageSize', optional(number())],
+    warnings: ['Warnings', optional(array(warningSchema))],
+  })
+);

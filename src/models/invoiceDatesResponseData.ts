@@ -18,10 +18,11 @@ export interface InvoiceDatesResponseData {
   data?: InvoiceDatesData[];
 }
 
-export const invoiceDatesResponseDataSchema: Schema<InvoiceDatesResponseData> = object(
-  {
-    requestId: ['RequestId', optional(string())],
-    status: ['Status', optional(string())],
-    data: ['Data', optional(array(lazy(() => invoiceDatesDataSchema)))],
-  }
+export const invoiceDatesResponseDataSchema: Schema<InvoiceDatesResponseData> = lazy(
+  () =>
+    object({
+      requestId: ['RequestId', optional(string())],
+      status: ['Status', optional(string())],
+      data: ['Data', optional(array(invoiceDatesDataSchema))],
+    })
 );

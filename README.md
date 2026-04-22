@@ -38,10 +38,10 @@ Go to the Shell Developer Portal: [https://developer.shell.com](https://develope
 Run the following command from your project directory to install the package from npm:
 
 ```bash
-npm install data-and-reporting-sdk@2.0.0
+npm install data-and-reporting-sdk@3.0.0
 ```
 
-For additional package details, see the [Npm page for the data-and-reporting-sdk@2.0.0 npm](https://www.npmjs.com/package/data-and-reporting-sdk/v/2.0.0).
+For additional package details, see the [Npm page for the data-and-reporting-sdk@3.0.0 npm](https://www.npmjs.com/package/data-and-reporting-sdk/v/3.0.0).
 
 ## Test the SDK
 
@@ -61,19 +61,21 @@ npm run test:coverage
 
 ## Initialize the API Client
 
-**_Note:_** Documentation for the client can be found [here.](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/2.0.0/doc/client.md)
+**_Note:_** Documentation for the client can be found [here.](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/3.0.0/doc/client.md)
 
 The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| environment | `Environment` | The API environment. <br> **Default: `Environment.SIT`** |
+| environment | [`Environment`](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/3.0.0/README.md#environments) | The API environment. <br> **Default: `Environment.SIT`** |
 | timeout | `number` | Timeout for API calls.<br>*Default*: `0` |
-| httpClientOptions | [`Partial<HttpClientOptions>`](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/2.0.0/doc/http-client-options.md) | Stable configurable http client options. |
+| httpClientOptions | [`Partial<HttpClientOptions>`](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/3.0.0/doc/http-client-options.md) | Stable configurable http client options. |
 | unstableHttpClientOptions | `any` | Unstable configurable http client options. |
-| clientCredentialsAuthCredentials | [`ClientCredentialsAuthCredentials`](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/2.0.0/doc/auth/oauth-2-client-credentials-grant.md) | The credential object for clientCredentialsAuth |
+| clientCredentialsAuthCredentials | [`ClientCredentialsAuthCredentials`](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/3.0.0/doc/auth/oauth-2-client-credentials-grant.md) | The credential object for clientCredentialsAuth |
 
 The API client can be initialized as follows:
+
+### Code-Based Client Initialization
 
 ```ts
 import { Client, Environment } from 'data-and-reporting-sdk';
@@ -87,6 +89,47 @@ const client = new Client({
   environment: Environment.SIT,
 });
 ```
+
+### Configuration-Based Client Initialization
+
+```ts
+import * as path from 'path';
+import * as fs from 'fs';
+import { Client } from 'data-and-reporting-sdk';
+
+// Provide absolute path for the configuration file
+const absolutePath = path.resolve('./config.json');
+
+// Read the configuration file content
+const fileContent = fs.readFileSync(absolutePath, 'utf-8');
+
+// Initialize client from JSON configuration content
+const client = Client.fromJsonConfig(fileContent);
+```
+
+See the [Configuration-Based Client Initialization](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/3.0.0/doc/configuration-based-client-initialization.md) section for details.
+
+### Environment-Based Client Initialization
+
+```ts
+import * as dotenv from 'dotenv';
+import * as path from 'path';
+import * as fs from 'fs';
+import { Client } from 'data-and-reporting-sdk';
+
+// Optional - Provide absolute path for the .env file
+const absolutePath = path.resolve('./.env');
+
+if (fs.existsSync(absolutePath)) {
+  // Load environment variables from .env file
+  dotenv.config({ path: absolutePath, override: true });
+}
+
+// Initialize client using environment variables
+const client = Client.fromEnvironment(process.env);
+```
+
+See the [Environment-Based Client Initialization](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/3.0.0/doc/environment-based-client-initialization.md) section for details.
 
 ## Environments
 
@@ -103,28 +146,30 @@ The SDK can be configured to use a different environment for making API calls. A
 
 This API uses the following authentication schemes.
 
-* [`BearerToken (OAuth 2 Client Credentials Grant)`](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/2.0.0/doc/auth/oauth-2-client-credentials-grant.md)
+* [`BearerToken (OAuth 2 Client Credentials Grant)`](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/3.0.0/doc/auth/oauth-2-client-credentials-grant.md)
 
 ## List of APIs
 
-* [Customer](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/2.0.0/doc/controllers/customer.md)
-* [Transaction](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/2.0.0/doc/controllers/transaction.md)
-* [Invoice](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/2.0.0/doc/controllers/invoice.md)
+* [Customer](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/3.0.0/doc/controllers/customer.md)
+* [Transaction](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/3.0.0/doc/controllers/transaction.md)
+* [Invoice](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/3.0.0/doc/controllers/invoice.md)
 
 ## SDK Infrastructure
 
 ### Configuration
 
-* [HttpClientOptions](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/2.0.0/doc/http-client-options.md)
-* [RetryConfiguration](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/2.0.0/doc/retry-configuration.md)
-* [ProxySettings](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/2.0.0/doc/proxy-settings.md)
+* [HttpClientOptions](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/3.0.0/doc/http-client-options.md)
+* [RetryConfiguration](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/3.0.0/doc/retry-configuration.md)
+* [ProxySettings](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/3.0.0/doc/proxy-settings.md)
+* [Configuration-Based Client Initialization](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/3.0.0/doc/configuration-based-client-initialization.md)
+* [Environment-Based Client Initialization](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/3.0.0/doc/environment-based-client-initialization.md)
 
 ### HTTP
 
-* [HttpRequest](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/2.0.0/doc/http-request.md)
+* [HttpRequest](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/3.0.0/doc/http-request.md)
 
 ### Utilities
 
-* [ApiResponse](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/2.0.0/doc/api-response.md)
-* [ApiError](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/2.0.0/doc/api-error.md)
+* [ApiResponse](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/3.0.0/doc/api-response.md)
+* [ApiError](https://www.github.com/sdks-io/data-and-reporting-js-sdk/tree/3.0.0/doc/api-error.md)
 

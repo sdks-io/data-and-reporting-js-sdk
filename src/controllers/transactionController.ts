@@ -111,7 +111,71 @@ import {
 } from '../models/volumeBasedPricingRes.js';
 import { optional, string } from '../schema.js';
 import { BaseController } from './baseController.js';
-import { ErrorObjectError } from '../errors/errorObjectError.js';
+import { TransactionDataV1Cardusagesummary400Error } from '../errors/transactionDataV1Cardusagesummary400Error.js';
+import { TransactionDataV1Cardusagesummary401Error } from '../errors/transactionDataV1Cardusagesummary401Error.js';
+import { TransactionDataV1Cardusagesummary403Error } from '../errors/transactionDataV1Cardusagesummary403Error.js';
+import { TransactionDataV1Cardusagesummary404Error } from '../errors/transactionDataV1Cardusagesummary404Error.js';
+import { TransactionDataV1Cardusagesummary500Error } from '../errors/transactionDataV1Cardusagesummary500Error.js';
+import { TransactionDataV1Exceptions400Error } from '../errors/transactionDataV1Exceptions400Error.js';
+import { TransactionDataV1Exceptions401Error } from '../errors/transactionDataV1Exceptions401Error.js';
+import { TransactionDataV1Exceptions403Error } from '../errors/transactionDataV1Exceptions403Error.js';
+import { TransactionDataV1Exceptions404Error } from '../errors/transactionDataV1Exceptions404Error.js';
+import { TransactionDataV1Exceptions500Error } from '../errors/transactionDataV1Exceptions500Error.js';
+import { TransactionDataV1Fees400Error } from '../errors/transactionDataV1Fees400Error.js';
+import { TransactionDataV1Fees401Error } from '../errors/transactionDataV1Fees401Error.js';
+import { TransactionDataV1Fees403Error } from '../errors/transactionDataV1Fees403Error.js';
+import { TransactionDataV1Fees404Error } from '../errors/transactionDataV1Fees404Error.js';
+import { TransactionDataV1Fees500Error } from '../errors/transactionDataV1Fees500Error.js';
+import { TransactionDataV1Feessummary400Error } from '../errors/transactionDataV1Feessummary400Error.js';
+import { TransactionDataV1Feessummary401Error } from '../errors/transactionDataV1Feessummary401Error.js';
+import { TransactionDataV1Feessummary403Error } from '../errors/transactionDataV1Feessummary403Error.js';
+import { TransactionDataV1Feessummary404Error } from '../errors/transactionDataV1Feessummary404Error.js';
+import { TransactionDataV1Feessummary500Error } from '../errors/transactionDataV1Feessummary500Error.js';
+import { TransactionDataV1Fuelconsumption400Error } from '../errors/transactionDataV1Fuelconsumption400Error.js';
+import { TransactionDataV1Fuelconsumption401Error } from '../errors/transactionDataV1Fuelconsumption401Error.js';
+import { TransactionDataV1Fuelconsumption403Error } from '../errors/transactionDataV1Fuelconsumption403Error.js';
+import { TransactionDataV1Fuelconsumption404Error } from '../errors/transactionDataV1Fuelconsumption404Error.js';
+import { TransactionDataV1Fuelconsumption500Error } from '../errors/transactionDataV1Fuelconsumption500Error.js';
+import { TransactionDataV1Multipayerspricedtransactions400Error } from '../errors/transactionDataV1Multipayerspricedtransactions400Error.js';
+import { TransactionDataV1Multipayerspricedtransactions401Error } from '../errors/transactionDataV1Multipayerspricedtransactions401Error.js';
+import { TransactionDataV1Multipayerspricedtransactions403Error } from '../errors/transactionDataV1Multipayerspricedtransactions403Error.js';
+import { TransactionDataV1Multipayerspricedtransactions404Error } from '../errors/transactionDataV1Multipayerspricedtransactions404Error.js';
+import { TransactionDataV1Multipayerspricedtransactions500Error } from '../errors/transactionDataV1Multipayerspricedtransactions500Error.js';
+import { TransactionDataV1Priced400Error } from '../errors/transactionDataV1Priced400Error.js';
+import { TransactionDataV1Priced401Error } from '../errors/transactionDataV1Priced401Error.js';
+import { TransactionDataV1Priced403Error } from '../errors/transactionDataV1Priced403Error.js';
+import { TransactionDataV1Priced404Error } from '../errors/transactionDataV1Priced404Error.js';
+import { TransactionDataV1Priced500Error } from '../errors/transactionDataV1Priced500Error.js';
+import { TransactionDataV1Pricedtransaction400Error } from '../errors/transactionDataV1Pricedtransaction400Error.js';
+import { TransactionDataV1Pricedtransaction401Error } from '../errors/transactionDataV1Pricedtransaction401Error.js';
+import { TransactionDataV1Pricedtransaction403Error } from '../errors/transactionDataV1Pricedtransaction403Error.js';
+import { TransactionDataV1Pricedtransaction404Error } from '../errors/transactionDataV1Pricedtransaction404Error.js';
+import { TransactionDataV1Pricedtransaction500Error } from '../errors/transactionDataV1Pricedtransaction500Error.js';
+import { TransactionDataV1Pricedtransactionssummary400Error } from '../errors/transactionDataV1Pricedtransactionssummary400Error.js';
+import { TransactionDataV1Pricedtransactionssummary401Error } from '../errors/transactionDataV1Pricedtransactionssummary401Error.js';
+import { TransactionDataV1Pricedtransactionssummary403Error } from '../errors/transactionDataV1Pricedtransactionssummary403Error.js';
+import { TransactionDataV1Pricedtransactionssummary404Error } from '../errors/transactionDataV1Pricedtransactionssummary404Error.js';
+import { TransactionDataV1Pricedtransactionssummary500Error } from '../errors/transactionDataV1Pricedtransactionssummary500Error.js';
+import { TransactionDataV1Recent400Error } from '../errors/transactionDataV1Recent400Error.js';
+import { TransactionDataV1Recent401Error } from '../errors/transactionDataV1Recent401Error.js';
+import { TransactionDataV1Recent403Error } from '../errors/transactionDataV1Recent403Error.js';
+import { TransactionDataV1Recent404Error } from '../errors/transactionDataV1Recent404Error.js';
+import { TransactionDataV1Recent500Error } from '../errors/transactionDataV1Recent500Error.js';
+import { TransactionDataV1Updateodometer400Error } from '../errors/transactionDataV1Updateodometer400Error.js';
+import { TransactionDataV1Updateodometer401Error } from '../errors/transactionDataV1Updateodometer401Error.js';
+import { TransactionDataV1Updateodometer403Error } from '../errors/transactionDataV1Updateodometer403Error.js';
+import { TransactionDataV1Updateodometer404Error } from '../errors/transactionDataV1Updateodometer404Error.js';
+import { TransactionDataV1Updateodometer500Error } from '../errors/transactionDataV1Updateodometer500Error.js';
+import { TransactionDataV1Volumebasedbonus400Error } from '../errors/transactionDataV1Volumebasedbonus400Error.js';
+import { TransactionDataV1Volumebasedbonus401Error } from '../errors/transactionDataV1Volumebasedbonus401Error.js';
+import { TransactionDataV1Volumebasedbonus403Error } from '../errors/transactionDataV1Volumebasedbonus403Error.js';
+import { TransactionDataV1Volumebasedbonus404Error } from '../errors/transactionDataV1Volumebasedbonus404Error.js';
+import { TransactionDataV1Volumebasedbonus500Error } from '../errors/transactionDataV1Volumebasedbonus500Error.js';
+import { TransactionDataV1Volumebasedpricing400Error } from '../errors/transactionDataV1Volumebasedpricing400Error.js';
+import { TransactionDataV1Volumebasedpricing401Error } from '../errors/transactionDataV1Volumebasedpricing401Error.js';
+import { TransactionDataV1Volumebasedpricing403Error } from '../errors/transactionDataV1Volumebasedpricing403Error.js';
+import { TransactionDataV1Volumebasedpricing404Error } from '../errors/transactionDataV1Volumebasedpricing404Error.js';
+import { TransactionDataV1Volumebasedpricing500Error } from '../errors/transactionDataV1Volumebasedpricing500Error.js';
 
 export class TransactionController extends BaseController {
   /**
@@ -213,23 +277,23 @@ export class TransactionController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      TransactionDataV1Pricedtransaction400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      TransactionDataV1Pricedtransaction401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, TransactionDataV1Pricedtransaction403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
+      TransactionDataV1Pricedtransaction404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      TransactionDataV1Pricedtransaction500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
@@ -330,23 +394,27 @@ export class TransactionController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      TransactionDataV1Pricedtransactionssummary400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      TransactionDataV1Pricedtransactionssummary401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(
+      403,
+      TransactionDataV1Pricedtransactionssummary403Error,
+      'Forbidden'
+    );
     req.throwOn(
       404,
-      ErrorObjectError,
+      TransactionDataV1Pricedtransactionssummary404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      TransactionDataV1Pricedtransactionssummary500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
@@ -438,23 +506,27 @@ export class TransactionController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      TransactionDataV1Multipayerspricedtransactions400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      TransactionDataV1Multipayerspricedtransactions401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(
+      403,
+      TransactionDataV1Multipayerspricedtransactions403Error,
+      'Forbidden'
+    );
     req.throwOn(
       404,
-      ErrorObjectError,
+      TransactionDataV1Multipayerspricedtransactions404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      TransactionDataV1Multipayerspricedtransactions500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
@@ -490,23 +562,23 @@ export class TransactionController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      TransactionDataV1Cardusagesummary400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      TransactionDataV1Cardusagesummary401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, TransactionDataV1Cardusagesummary403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
+      TransactionDataV1Cardusagesummary404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      TransactionDataV1Cardusagesummary500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
@@ -534,7 +606,7 @@ export class TransactionController extends BaseController {
   ): Promise<ApiResponse<VolumeBasedBonusRes>> {
     const req = this.createRequest(
       'POST',
-      '/transaction-data/v1/volumebasedbonuss'
+      '/transaction-data/v1/volumebasedbonus'
     );
     const mapped = req.prepareArgs({
       requestId: [requestId, string()],
@@ -545,23 +617,23 @@ export class TransactionController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      TransactionDataV1Volumebasedbonus400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      TransactionDataV1Volumebasedbonus401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, TransactionDataV1Volumebasedbonus403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
+      TransactionDataV1Volumebasedbonus404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      TransactionDataV1Volumebasedbonus500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
@@ -601,23 +673,23 @@ export class TransactionController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      TransactionDataV1Volumebasedpricing400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      TransactionDataV1Volumebasedpricing401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, TransactionDataV1Volumebasedpricing403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
+      TransactionDataV1Volumebasedpricing404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      TransactionDataV1Volumebasedpricing500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
@@ -674,23 +746,23 @@ export class TransactionController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      TransactionDataV1Fees400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      TransactionDataV1Fees401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, TransactionDataV1Fees403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
+      TransactionDataV1Fees404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      TransactionDataV1Fees500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
@@ -746,23 +818,23 @@ export class TransactionController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      TransactionDataV1Feessummary400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      TransactionDataV1Feessummary401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, TransactionDataV1Feessummary403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
+      TransactionDataV1Feessummary404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      TransactionDataV1Feessummary500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
@@ -802,23 +874,23 @@ export class TransactionController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      TransactionDataV1Fuelconsumption400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      TransactionDataV1Fuelconsumption401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, TransactionDataV1Fuelconsumption403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
+      TransactionDataV1Fuelconsumption404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      TransactionDataV1Fuelconsumption500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
@@ -854,23 +926,23 @@ export class TransactionController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      TransactionDataV1Updateodometer400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      TransactionDataV1Updateodometer401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, TransactionDataV1Updateodometer403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
+      TransactionDataV1Updateodometer404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      TransactionDataV1Updateodometer500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
@@ -906,23 +978,23 @@ export class TransactionController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      TransactionDataV1Exceptions400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      TransactionDataV1Exceptions401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, TransactionDataV1Exceptions403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
+      TransactionDataV1Exceptions404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      TransactionDataV1Exceptions500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
@@ -975,23 +1047,23 @@ export class TransactionController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      TransactionDataV1Recent400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      TransactionDataV1Recent401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, TransactionDataV1Recent403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
+      TransactionDataV1Recent404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      TransactionDataV1Recent500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);
@@ -1085,23 +1157,23 @@ export class TransactionController extends BaseController {
     req.json(mapped.body);
     req.throwOn(
       400,
-      ErrorObjectError,
+      TransactionDataV1Priced400Error,
       'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).'
     );
     req.throwOn(
       401,
-      ErrorObjectError,
+      TransactionDataV1Priced401Error,
       'The request has not been applied because it lacks valid  authentication credentials for the target resource.'
     );
-    req.throwOn(403, ErrorObjectError, 'Forbidden');
+    req.throwOn(403, TransactionDataV1Priced403Error, 'Forbidden');
     req.throwOn(
       404,
-      ErrorObjectError,
+      TransactionDataV1Priced404Error,
       'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.'
     );
     req.throwOn(
       500,
-      ErrorObjectError,
+      TransactionDataV1Priced500Error,
       'The server encountered an unexpected condition that  prevented it from fulfilling the request.'
     );
     req.authenticate([{ bearerToken: true }]);

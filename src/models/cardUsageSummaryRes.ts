@@ -25,9 +25,11 @@ export interface CardUsageSummaryRes {
   warnings?: Warning[];
 }
 
-export const cardUsageSummaryResSchema: Schema<CardUsageSummaryRes> = object({
-  requestId: ['RequestId', optional(string())],
-  status: ['Status', optional(string())],
-  data: ['Data', optional(array(lazy(() => cardUsageSummaryResponseSchema)))],
-  warnings: ['Warnings', optional(array(lazy(() => warningSchema)))],
-});
+export const cardUsageSummaryResSchema: Schema<CardUsageSummaryRes> = lazy(() =>
+  object({
+    requestId: ['RequestId', optional(string())],
+    status: ['Status', optional(string())],
+    data: ['Data', optional(array(cardUsageSummaryResponseSchema))],
+    warnings: ['Warnings', optional(array(warningSchema))],
+  })
+);

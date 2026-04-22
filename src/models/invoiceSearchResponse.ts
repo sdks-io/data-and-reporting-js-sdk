@@ -35,14 +35,15 @@ export interface InvoiceSearchResponse {
   totalPages?: number | null;
 }
 
-export const invoiceSearchResponseSchema: Schema<InvoiceSearchResponse> = object(
-  {
-    requestId: ['RequestId', optional(nullable(string()))],
-    status: ['Status', optional(nullable(string()))],
-    data: ['Data', optional(array(lazy(() => invoiceSearchDetailsSchema)))],
-    page: ['Page', optional(nullable(number()))],
-    pageSize: ['PageSize', optional(nullable(number()))],
-    totalRecords: ['TotalRecords', optional(nullable(number()))],
-    totalPages: ['TotalPages', optional(nullable(number()))],
-  }
+export const invoiceSearchResponseSchema: Schema<InvoiceSearchResponse> = lazy(
+  () =>
+    object({
+      requestId: ['RequestId', optional(nullable(string()))],
+      status: ['Status', optional(nullable(string()))],
+      data: ['Data', optional(array(invoiceSearchDetailsSchema))],
+      page: ['Page', optional(nullable(number()))],
+      pageSize: ['PageSize', optional(nullable(number()))],
+      totalRecords: ['TotalRecords', optional(nullable(number()))],
+      totalPages: ['TotalPages', optional(nullable(number()))],
+    })
 );

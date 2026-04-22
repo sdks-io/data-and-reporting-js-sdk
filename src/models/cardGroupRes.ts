@@ -41,16 +41,15 @@ export interface CardGroupRes {
   warnings?: Warning[];
 }
 
-export const cardGroupResSchema: Schema<CardGroupRes> = object({
-  requestId: ['RequestId', optional(string())],
-  status: ['Status', optional(string())],
-  data: [
-    'Data',
-    optional(array(lazy(() => cardGroupResponseCardGroupsItemsSchema))),
-  ],
-  page: ['Page', optional(number())],
-  totalRecords: ['TotalRecords', optional(number())],
-  totalPages: ['TotalPages', optional(number())],
-  pageSize: ['PageSize', optional(number())],
-  warnings: ['Warnings', optional(array(lazy(() => warningSchema)))],
-});
+export const cardGroupResSchema: Schema<CardGroupRes> = lazy(() =>
+  object({
+    requestId: ['RequestId', optional(string())],
+    status: ['Status', optional(string())],
+    data: ['Data', optional(array(cardGroupResponseCardGroupsItemsSchema))],
+    page: ['Page', optional(number())],
+    totalRecords: ['TotalRecords', optional(number())],
+    totalPages: ['TotalPages', optional(number())],
+    pageSize: ['PageSize', optional(number())],
+    warnings: ['Warnings', optional(array(warningSchema))],
+  })
+);

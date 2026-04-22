@@ -30,9 +30,12 @@ export interface InvoiceSearchRequest {
   sortBy?: number[];
 }
 
-export const invoiceSearchRequestSchema: Schema<InvoiceSearchRequest> = object({
-  filters: ['Filters', optional(lazy(() => invoiceSearchRequestFiltersSchema))],
-  pageSize: ['PageSize', optional(number())],
-  page: ['Page', optional(number())],
-  sortBy: ['SortBy', optional(array(number()))],
-});
+export const invoiceSearchRequestSchema: Schema<InvoiceSearchRequest> = lazy(
+  () =>
+    object({
+      filters: ['Filters', optional(invoiceSearchRequestFiltersSchema)],
+      pageSize: ['PageSize', optional(number())],
+      page: ['Page', optional(number())],
+      sortBy: ['SortBy', optional(array(number()))],
+    })
+);

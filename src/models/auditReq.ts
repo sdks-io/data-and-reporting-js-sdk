@@ -15,8 +15,10 @@ export interface AuditReq {
   pageSize?: number | null;
 }
 
-export const auditReqSchema: Schema<AuditReq> = object({
-  filters: ['Filters', optional(lazy(() => auditRequestSchema))],
-  page: ['Page', optional(nullable(number()))],
-  pageSize: ['PageSize', optional(nullable(number()))],
-});
+export const auditReqSchema: Schema<AuditReq> = lazy(() =>
+  object({
+    filters: ['Filters', optional(auditRequestSchema)],
+    page: ['Page', optional(nullable(number()))],
+    pageSize: ['PageSize', optional(nullable(number()))],
+  })
+);

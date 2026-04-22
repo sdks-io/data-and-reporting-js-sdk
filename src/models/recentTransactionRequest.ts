@@ -18,10 +18,11 @@ export interface RecentTransactionRequest {
   filters: RecentTransactionReq;
 }
 
-export const recentTransactionRequestSchema: Schema<RecentTransactionRequest> = object(
-  {
-    pageSize: ['PageSize', number()],
-    page: ['Page', number()],
-    filters: ['Filters', lazy(() => recentTransactionReqSchema)],
-  }
+export const recentTransactionRequestSchema: Schema<RecentTransactionRequest> = lazy(
+  () =>
+    object({
+      pageSize: ['PageSize', number()],
+      page: ['Page', number()],
+      filters: ['Filters', recentTransactionReqSchema],
+    })
 );

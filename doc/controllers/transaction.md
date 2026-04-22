@@ -96,16 +96,39 @@ const body: PriceTransactionReq = {
 };
 
 try {
-  const { result, ...httpResponse } = await transactionController.pricedTransactions(
+  const response = await transactionController.pricedTransactions(
     requestId,
     body
   );
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof TransactionDataV1Pricedtransaction400Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Pricedtransaction401Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Pricedtransaction403Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Pricedtransaction404Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Pricedtransaction500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -114,11 +137,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Pricedtransaction400Error`](../../doc/models/transaction-data-v1-pricedtransaction-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Pricedtransaction401Error`](../../doc/models/transaction-data-v1-pricedtransaction-401-error.md) |
+| 403 | Forbidden | [`TransactionDataV1Pricedtransaction403Error`](../../doc/models/transaction-data-v1-pricedtransaction-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Pricedtransaction404Error`](../../doc/models/transaction-data-v1-pricedtransaction-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Pricedtransaction500Error`](../../doc/models/transaction-data-v1-pricedtransaction-500-error.md) |
 
 
 # Priced Transactions Summary
@@ -184,13 +207,36 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const requestId = 'RequestId8';
 
 try {
-  const { result, ...httpResponse } = await transactionController.pricedTransactionsSummary(requestId);
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+  const response = await transactionController.pricedTransactionsSummary(requestId);
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof TransactionDataV1Pricedtransactionssummary400Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Pricedtransactionssummary401Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Pricedtransactionssummary403Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Pricedtransactionssummary404Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Pricedtransactionssummary500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -199,11 +245,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Pricedtransactionssummary400Error`](../../doc/models/transaction-data-v1-pricedtransactionssummary-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Pricedtransactionssummary401Error`](../../doc/models/transaction-data-v1-pricedtransactionssummary-401-error.md) |
+| 403 | Forbidden | [`TransactionDataV1Pricedtransactionssummary403Error`](../../doc/models/transaction-data-v1-pricedtransactionssummary-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Pricedtransactionssummary404Error`](../../doc/models/transaction-data-v1-pricedtransactionssummary-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Pricedtransactionssummary500Error`](../../doc/models/transaction-data-v1-pricedtransactionssummary-500-error.md) |
 
 
 # Multipriced Transactions
@@ -270,16 +316,39 @@ const body: MultiPricedTransactionReq = {
 };
 
 try {
-  const { result, ...httpResponse } = await transactionController.multipricedTransactions(
+  const response = await transactionController.multipricedTransactions(
     requestId,
     body
   );
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof TransactionDataV1Multipayerspricedtransactions400Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Multipayerspricedtransactions401Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Multipayerspricedtransactions403Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Multipayerspricedtransactions404Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Multipayerspricedtransactions500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -288,11 +357,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Multipayerspricedtransactions400Error`](../../doc/models/transaction-data-v1-multipayerspricedtransactions-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Multipayerspricedtransactions401Error`](../../doc/models/transaction-data-v1-multipayerspricedtransactions-401-error.md) |
+| 403 | Forbidden | [`TransactionDataV1Multipayerspricedtransactions403Error`](../../doc/models/transaction-data-v1-multipayerspricedtransactions-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Multipayerspricedtransactions404Error`](../../doc/models/transaction-data-v1-multipayerspricedtransactions-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Multipayerspricedtransactions500Error`](../../doc/models/transaction-data-v1-multipayerspricedtransactions-500-error.md) |
 
 
 # Card Usage Summary
@@ -326,13 +395,36 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const requestId = 'RequestId8';
 
 try {
-  const { result, ...httpResponse } = await transactionController.cardUsageSummary(requestId);
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+  const response = await transactionController.cardUsageSummary(requestId);
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof TransactionDataV1Cardusagesummary400Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Cardusagesummary401Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Cardusagesummary403Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Cardusagesummary404Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Cardusagesummary500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -378,11 +470,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Cardusagesummary400Error`](../../doc/models/transaction-data-v1-cardusagesummary-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Cardusagesummary401Error`](../../doc/models/transaction-data-v1-cardusagesummary-401-error.md) |
+| 403 | Forbidden | [`TransactionDataV1Cardusagesummary403Error`](../../doc/models/transaction-data-v1-cardusagesummary-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Cardusagesummary404Error`](../../doc/models/transaction-data-v1-cardusagesummary-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Cardusagesummary500Error`](../../doc/models/transaction-data-v1-cardusagesummary-500-error.md) |
 
 
 # Volume Based Bonus
@@ -416,13 +508,36 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const requestId = 'RequestId8';
 
 try {
-  const { result, ...httpResponse } = await transactionController.volumeBasedBonus(requestId);
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+  const response = await transactionController.volumeBasedBonus(requestId);
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof TransactionDataV1Volumebasedbonus400Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Volumebasedbonus401Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Volumebasedbonus403Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Volumebasedbonus404Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Volumebasedbonus500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -558,11 +673,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Volumebasedbonus400Error`](../../doc/models/transaction-data-v1-volumebasedbonus-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Volumebasedbonus401Error`](../../doc/models/transaction-data-v1-volumebasedbonus-401-error.md) |
+| 403 | Forbidden | [`TransactionDataV1Volumebasedbonus403Error`](../../doc/models/transaction-data-v1-volumebasedbonus-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Volumebasedbonus404Error`](../../doc/models/transaction-data-v1-volumebasedbonus-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Volumebasedbonus500Error`](../../doc/models/transaction-data-v1-volumebasedbonus-500-error.md) |
 
 
 # Volume Based Pricing
@@ -596,13 +711,36 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const requestId = 'RequestId8';
 
 try {
-  const { result, ...httpResponse } = await transactionController.volumeBasedPricing(requestId);
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+  const response = await transactionController.volumeBasedPricing(requestId);
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof TransactionDataV1Volumebasedpricing400Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Volumebasedpricing401Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Volumebasedpricing403Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Volumebasedpricing404Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Volumebasedpricing500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -704,11 +842,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Volumebasedpricing400Error`](../../doc/models/transaction-data-v1-volumebasedpricing-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Volumebasedpricing401Error`](../../doc/models/transaction-data-v1-volumebasedpricing-401-error.md) |
+| 403 | Forbidden | [`TransactionDataV1Volumebasedpricing403Error`](../../doc/models/transaction-data-v1-volumebasedpricing-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Volumebasedpricing404Error`](../../doc/models/transaction-data-v1-volumebasedpricing-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Volumebasedpricing500Error`](../../doc/models/transaction-data-v1-volumebasedpricing-500-error.md) |
 
 
 # Fees
@@ -759,16 +897,39 @@ const body: TransactionFeesReq = {
 };
 
 try {
-  const { result, ...httpResponse } = await transactionController.fees(
+  const response = await transactionController.fees(
     requestId,
     body
   );
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof TransactionDataV1Fees400Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Fees401Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Fees403Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Fees404Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Fees500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -777,11 +938,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Fees400Error`](../../doc/models/transaction-data-v1-fees-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Fees401Error`](../../doc/models/transaction-data-v1-fees-401-error.md) |
+| 403 | Forbidden | [`TransactionDataV1Fees403Error`](../../doc/models/transaction-data-v1-fees-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Fees404Error`](../../doc/models/transaction-data-v1-fees-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Fees500Error`](../../doc/models/transaction-data-v1-fees-500-error.md) |
 
 
 # Fee Summary Response
@@ -827,13 +988,36 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const requestId = 'RequestId8';
 
 try {
-  const { result, ...httpResponse } = await transactionController.feeSummaryResponse(requestId);
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+  const response = await transactionController.feeSummaryResponse(requestId);
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof TransactionDataV1Feessummary400Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Feessummary401Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Feessummary403Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Feessummary404Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Feessummary500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -842,11 +1026,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Feessummary400Error`](../../doc/models/transaction-data-v1-feessummary-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Feessummary401Error`](../../doc/models/transaction-data-v1-feessummary-401-error.md) |
+| 403 | Forbidden | [`TransactionDataV1Feessummary403Error`](../../doc/models/transaction-data-v1-feessummary-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Feessummary404Error`](../../doc/models/transaction-data-v1-feessummary-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Feessummary500Error`](../../doc/models/transaction-data-v1-feessummary-500-error.md) |
 
 
 # Fuel Consumption
@@ -880,13 +1064,36 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const requestId = 'RequestId8';
 
 try {
-  const { result, ...httpResponse } = await transactionController.fuelConsumption(requestId);
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+  const response = await transactionController.fuelConsumption(requestId);
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof TransactionDataV1Fuelconsumption400Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Fuelconsumption401Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Fuelconsumption403Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Fuelconsumption404Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Fuelconsumption500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -895,11 +1102,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Fuelconsumption400Error`](../../doc/models/transaction-data-v1-fuelconsumption-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Fuelconsumption401Error`](../../doc/models/transaction-data-v1-fuelconsumption-401-error.md) |
+| 403 | Forbidden | [`TransactionDataV1Fuelconsumption403Error`](../../doc/models/transaction-data-v1-fuelconsumption-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Fuelconsumption404Error`](../../doc/models/transaction-data-v1-fuelconsumption-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Fuelconsumption500Error`](../../doc/models/transaction-data-v1-fuelconsumption-500-error.md) |
 
 
 # Update Odometer
@@ -933,13 +1140,36 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const requestId = 'RequestId8';
 
 try {
-  const { result, ...httpResponse } = await transactionController.updateOdometer(requestId);
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+  const response = await transactionController.updateOdometer(requestId);
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof TransactionDataV1Updateodometer400Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Updateodometer401Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Updateodometer403Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Updateodometer404Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Updateodometer500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -948,11 +1178,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Updateodometer400Error`](../../doc/models/transaction-data-v1-updateodometer-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Updateodometer401Error`](../../doc/models/transaction-data-v1-updateodometer-401-error.md) |
+| 403 | Forbidden | [`TransactionDataV1Updateodometer403Error`](../../doc/models/transaction-data-v1-updateodometer-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Updateodometer404Error`](../../doc/models/transaction-data-v1-updateodometer-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Updateodometer500Error`](../../doc/models/transaction-data-v1-updateodometer-500-error.md) |
 
 
 # Transaction Exceptions
@@ -986,13 +1216,36 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const requestId = 'RequestId8';
 
 try {
-  const { result, ...httpResponse } = await transactionController.transactionExceptions(requestId);
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+  const response = await transactionController.transactionExceptions(requestId);
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof TransactionDataV1Exceptions400Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Exceptions401Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Exceptions403Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Exceptions404Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Exceptions500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -1001,11 +1254,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Exceptions400Error`](../../doc/models/transaction-data-v1-exceptions-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Exceptions401Error`](../../doc/models/transaction-data-v1-exceptions-401-error.md) |
+| 403 | Forbidden | [`TransactionDataV1Exceptions403Error`](../../doc/models/transaction-data-v1-exceptions-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Exceptions404Error`](../../doc/models/transaction-data-v1-exceptions-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Exceptions500Error`](../../doc/models/transaction-data-v1-exceptions-500-error.md) |
 
 
 # Recent Transactions New
@@ -1064,7 +1317,7 @@ const body: RecentTransactionRequest = {
     accountNumber: 'GB00001233',
     productCode: '22',
     purchasedInCountry: 'GB',
-    cardPAN: '700205******890645',
+    cardPAN: '7002051006629890645',
     fromDateTime: '2020-11-09 13:56:03.000',
     toDateTime: '2020-12-09 13:56:03.000',
     transactionStatus: 'APPROVED',
@@ -1078,16 +1331,39 @@ const body: RecentTransactionRequest = {
 };
 
 try {
-  const { result, ...httpResponse } = await transactionController.recentTransactionsNew(
+  const response = await transactionController.recentTransactionsNew(
     requestId,
     body
   );
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof TransactionDataV1Recent400Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Recent401Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Recent403Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Recent404Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Recent500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -1184,11 +1460,11 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Recent400Error`](../../doc/models/transaction-data-v1-recent-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Recent401Error`](../../doc/models/transaction-data-v1-recent-401-error.md) |
+| 403 | Forbidden | [`TransactionDataV1Recent403Error`](../../doc/models/transaction-data-v1-recent-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Recent404Error`](../../doc/models/transaction-data-v1-recent-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Recent500Error`](../../doc/models/transaction-data-v1-recent-500-error.md) |
 
 
 # Priced Transactions V2
@@ -1298,16 +1574,39 @@ const body: PricedTransactionRequestV2 = {
 };
 
 try {
-  const { result, ...httpResponse } = await transactionController.pricedTransactionsV2(
+  const response = await transactionController.pricedTransactionsV2(
     requestId,
     body
   );
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
 } catch (error) {
   if (error instanceof ApiError) {
-    const errors = error.result;
-    // const { statusCode, headers } = error;
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof TransactionDataV1Priced400Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Priced401Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Priced403Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Priced404Error) {
+      console.log(error.result);
+    } else if (error instanceof TransactionDataV1Priced500Error) {
+      console.log(error.result);
+    }
   }
 }
 ```
@@ -1502,9 +1801,9 @@ try {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 403 | Forbidden | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
-| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`ErrorObjectError`](../../doc/models/error-object-error.md) |
+| 400 | The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). | [`TransactionDataV1Priced400Error`](../../doc/models/transaction-data-v1-priced-400-error.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`TransactionDataV1Priced401Error`](../../doc/models/transaction-data-v1-priced-401-error.md) |
+| 403 | Forbidden | [`TransactionDataV1Priced403Error`](../../doc/models/transaction-data-v1-priced-403-error.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`TransactionDataV1Priced404Error`](../../doc/models/transaction-data-v1-priced-404-error.md) |
+| 500 | The server encountered an unexpected condition that  prevented it from fulfilling the request. | [`TransactionDataV1Priced500Error`](../../doc/models/transaction-data-v1-priced-500-error.md) |
 

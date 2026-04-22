@@ -14,6 +14,6 @@ export interface FuelConsumptionReq {
   filters?: FuelConsumptionRequest;
 }
 
-export const fuelConsumptionReqSchema: Schema<FuelConsumptionReq> = object({
-  filters: ['Filters', optional(lazy(() => fuelConsumptionRequestSchema))],
-});
+export const fuelConsumptionReqSchema: Schema<FuelConsumptionReq> = lazy(() =>
+  object({ filters: ['Filters', optional(fuelConsumptionRequestSchema)] })
+);
